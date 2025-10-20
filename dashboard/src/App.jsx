@@ -12,6 +12,9 @@ import {
   Cell,
   ReferenceLine,
 } from "recharts";
+import { Link } from "react-router-dom";
+
+
 
 // --- Helper UI atoms (Tailwind only) ---
 const Card = ({ title, subtitle, children, className = "" }) => (
@@ -26,6 +29,7 @@ const Card = ({ title, subtitle, children, className = "" }) => (
   </div>
 );
 
+
 const KPICard = ({ value, label, suffix = "", accent = "text-blue-600" }) => (
   <Card className="h-[120px] flex items-center justify-center">
     <div className="text-center">
@@ -35,9 +39,7 @@ const KPICard = ({ value, label, suffix = "", accent = "text-blue-600" }) => (
   </Card>
 );
 
-const Tag = ({ children, active }) => (
-  <span className={`px-3 py-1 rounded-xl text-xs border ${active ? "bg-blue-600 text-white border-blue-600" : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"}`}>{children}</span>
-);
+
 
 // --- Mock fetch with graceful fallback ---
 async function fetchJSON(url, fallback) {
@@ -163,35 +165,23 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900" style={{ margin: 0, width: '100vw', minHeight: '100vh' }}>
-      {/* Top bar */}
-      <div className="mx-auto max-w-none px-5 pt-6 pb-3">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-xl font-semibold">Flexera Win/Loss AI Dashboard</h1>
-            <p className="text-xs text-slate-500">AI-powered sales analytics • Last updated {new Date(meta.updatedAt || Date.now()).toLocaleString()}</p>
-          </div>
-          <div className="flex gap-2">
-            <Tag active>Dashboard Home</Tag>
-            <Tag>Deal Detail View</Tag>
-            <Tag>Competitor Tracker</Tag>
-          </div>
-        </div>
+      <div className="mx-auto max-w-none px-5 pt-4 pb-1 text-xs text-slate-500">
+        Last updated {new Date(meta.updatedAt || Date.now()).toLocaleString()}
       </div>
-
       {/* Filter bar */}
       <div className="mx-auto max-w-none px-5">
         <Card className="p-0">
           <div className="p-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
             <select className="px-3 py-2 rounded-xl border border-slate-200 text-sm" value={filters.region} onChange={(e)=>setFilters(f=>({...f, region:e.target.value}))}>
-              <option>Regions</option>
+              <option>All Regions</option>
               {regions.map(r=> <option key={r}>{r}</option>)}
             </select>
             <select className="px-3 py-2 rounded-xl border border-slate-200 text-sm" value={filters.product} onChange={(e)=>setFilters(f=>({...f, product:e.target.value}))}>
-              <option>Products</option>
+              <option>All Products</option>
               {products.map(p=> <option key={p}>{p}</option>)}
             </select>
             <select className="px-3 py-2 rounded-xl border border-slate-200 text-sm" value={filters.competitor} onChange={(e)=>setFilters(f=>({...f, competitor:e.target.value}))}>
-              <option>Competitors</option>
+              <option>All Competitors</option>
               {competitors.map(c=> <option key={c}>{c}</option>)}
             </select>
             <button className="px-3 py-2 rounded-xl text-sm border border-slate-200 hover:bg-slate-50" onClick={()=>setFilters({region:"All", product:"All", competitor:"All"})}>Reset</button>
@@ -290,7 +280,11 @@ export default function App() {
               <tbody>
                 {filtered.slice(0, 50).map((o) => (
                   <tr key={o.id} className="border-b border-slate-100 hover:bg-slate-50">
-                    <td className="py-2 pr-4">{o.id}</td>
+                    <td className="py-2 pr-4">
+                      <Link to={`/deal/${encodeURIComponent(o.id)}`} className="text-indigo-600 hover:underline">
+                        {o.id}
+                      </Link>
+                    </td>
                     <td className="py-2 pr-4">{o.region}</td>
                     <td className="py-2 pr-4">{o.product}</td>
                     <td className="py-2 pr-4">{o.competitor}</td>
