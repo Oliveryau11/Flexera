@@ -6,7 +6,7 @@ import CompetitorTracker from "./pages/CompetitorTracker.jsx";
 export default function Root() {
   const tab = ({ isActive }) =>
     "px-3 py-2 rounded-xl text-sm font-medium " +
-    (isActive ? "bg-indigo-600 text-white" : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-50");
+    (isActive ? "bg-[#0056D2] border-[#0056D2] text-white"     : "bg-white text-slate-700 border-slate-200 hover:border-[#0056D2] hover:text-[#0056D2] hover:bg-slate-50");
 
   return (
     <div className="min-h-screen bg-slate-50">
