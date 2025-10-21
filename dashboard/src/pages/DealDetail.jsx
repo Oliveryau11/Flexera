@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 
 function Badge({ children, tone = "slate" }) {
   const tones = {
@@ -73,18 +73,51 @@ async function fetchDeal(id) {
   };
 }
 
+function normalizeFromRow(row) {
+  // turns your minimal table row (id/region/product/competitor/owner/p_win/acv)
+  // into the full shape the detail page expects
+  const stage =
+    row.p_win >= 0.7 ? "Negotiation" :
+    row.p_win >= 0.4 ? "Proposal" : "Discovery";
+  return {
+    id: row.id,
+    title: `${row.product} — ${row.region} (${row.competitor})`,
+    accountExecutive: row.owner || "—",
+    region: row.region,
+    amount: row.acv || 0,
+    stage,
+    winProbability: row.p_win ?? 0.5,
+    factors: [],
+    recommendation: "—",
+    activity: [],
+    competitor: { name: row.competitor, intel: "" },
+    notes: { themes: [], decisionMakers: [] },
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+
 export default function DealDetail() {
   const { id } = useParams();
+  const location = useLocation();
   const [deal, setDeal] = useState(null);
 
   useEffect(() => {
     let mounted = true;
+    const fromState = location.state?.deal;
+    // If you navigated from the table, normalize that row into a full "deal" shape:
+    if (fromState && mounted) {
+      const normalized = normalizeFromRow(fromState);
+      setDeal(normalized);
+      return () => { mounted = false; };
+    }
+    // Otherwise, fetch by id (fetchDeal already has an internal fallback sample)
     (async () => {
       const data = await fetchDeal(id);
       if (mounted) setDeal(data);
     })();
-    return () => (mounted = false);
-  }, [id]);
+    return () => { mounted = false; };
+  }, [id, location.key]);
 
   const kpis = useMemo(() => {
     if (!deal) return [];

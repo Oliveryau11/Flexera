@@ -172,18 +172,33 @@ export default function App() {
       <div className="mx-auto max-w-none px-5">
         <Card className="p-0">
           <div className="p-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            <select className="px-3 py-2 rounded-xl border border-slate-200 text-sm" value={filters.region} onChange={(e)=>setFilters(f=>({...f, region:e.target.value}))}>
-              <option>All Regions</option>
-              {regions.map(r=> <option key={r}>{r}</option>)}
+            <select
+              className="px-3 py-2 rounded-xl border border-slate-200 text-sm"
+              value={filters.region}
+              onChange={(e) => setFilters(f => ({ ...f, region: e.target.value }))}
+            >
+              <option value="All">All Regions</option>
+              {regions.map(r => <option key={r} value={r}>{r}</option>)}
             </select>
-            <select className="px-3 py-2 rounded-xl border border-slate-200 text-sm" value={filters.product} onChange={(e)=>setFilters(f=>({...f, product:e.target.value}))}>
-              <option>All Products</option>
-              {products.map(p=> <option key={p}>{p}</option>)}
+
+            <select
+              className="px-3 py-2 rounded-xl border border-slate-200 text-sm"
+              value={filters.product}
+              onChange={(e) => setFilters(f => ({ ...f, product: e.target.value }))}
+            >
+              <option value="All">All Products</option>
+              {products.map(p => <option key={p} value={p}>{p}</option>)}
             </select>
-            <select className="px-3 py-2 rounded-xl border border-slate-200 text-sm" value={filters.competitor} onChange={(e)=>setFilters(f=>({...f, competitor:e.target.value}))}>
-              <option>All Competitors</option>
-              {competitors.map(c=> <option key={c}>{c}</option>)}
+
+            <select
+              className="px-3 py-2 rounded-xl border border-slate-200 text-sm"
+              value={filters.competitor}
+              onChange={(e) => setFilters(f => ({ ...f, competitor: e.target.value }))}
+            >
+              <option value="All">All Competitors</option>
+              {competitors.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
+
             <button className="px-3 py-2 rounded-xl text-sm border border-slate-200 hover:bg-slate-50" onClick={()=>setFilters({region:"All", product:"All", competitor:"All"})}>Reset</button>
             <div className="hidden md:flex items-center text-xs text-slate-500 col-span-2">{filtered.length} opportunities</div>
           </div>
@@ -281,7 +296,11 @@ export default function App() {
                 {filtered.slice(0, 50).map((o) => (
                   <tr key={o.id} className="border-b border-slate-100 hover:bg-slate-50">
                     <td className="py-2 pr-4">
-                      <Link to={`/deal/${encodeURIComponent(o.id)}`} className="text-indigo-600 hover:underline">
+                      <Link
+                        to={`/deal/${encodeURIComponent(o.id)}`}
+                        state={{ deal: o }}
+                        className="text-indigo-600 hover:underline"
+                      >
                         {o.id}
                       </Link>
                     </td>
