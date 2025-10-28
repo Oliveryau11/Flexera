@@ -146,4 +146,58 @@ def train_and_score():
         print("\n[Info] No unlabeled (Unknown) opportunities to score.")
 
 if __name__ == "__main__":
+   if __name__ == "__main__":
     train_and_score()
+
+    # === Evaluate model accuracy on Closed Won/Lost deals ===
+    try:
+        df_eval = pd.read_csv("win_probabilities.csv")
+
+        # Identify actual outcomes from Stage
+        df_eval["actual"] = df_eval["Stage"].apply(
+            lambda x: 1 if "Closed Won" in str(x) else (0 if "Closed Lost" in str(x) else None)
+        )
+
+        # Drop rows without known outcomes
+        df_eval = df_eval.dropna(subset=["actual"])
+
+        # Convert probabilities to binary predictions
+        df_eval["predicted"] = (df_eval["Win Probability"] >= 0.5).astype(int)
+
+        # Compute metrics
+        from sklearn.metrics import (
+            accuracy_score, precision_score, recall_score, roc_auc_score, confusion_matrix
+        )
+
+        acc = accuracy_score(df_eval["actual"], df_eval["predicted"])
+        prec = precision_score(df_eval["actual"], df_eval["predicted"], zero_division=0)
+        rec = recall_score(df_eval["actual"], df_eval["predicted"], zero_division=0)
+        auc = roc_auc_score(df_eval["actual"], df_eval["Win Probability"])
+        cm = confusion_matrix(df_eval["actual"], df_eval["predicted"])
+
+        # Print to console
+        print("\n=== Win/Loss Model Evaluation on Closed Deals ===")
+        print(f"Accuracy:  {acc:.3f}")
+        print(f"Precision: {prec:.3f}")
+        print(f"Recall:    {rec:.3f}")
+        print(f"AUC:       {auc:.3f}")
+        print("\nConfusion Matrix:")
+        print(cm)
+
+        # Save metrics to CSV
+        metrics_df = pd.DataFrame([{
+            "Accuracy": round(acc, 3),
+            "Precision": round(prec, 3),
+            "Recall": round(rec, 3),
+            "AUC": round(auc, 3),
+            "True Negatives": cm[0, 0],
+            "False Positives": cm[0, 1],
+            "False Negatives": cm[1, 0],
+            "True Positives": cm[1, 1],
+        }])
+
+        metrics_df.to_csv("model_metrics.csv", index=False)
+        print("\n[Saved] Model metrics → model_metrics.csv")
+
+    except Exception as e:
+        print(f"\n[Warn] Could not evaluate model automatically: {e}")
