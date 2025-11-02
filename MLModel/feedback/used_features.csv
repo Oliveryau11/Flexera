@@ -1,0 +1,56 @@
+feature_type,feature_name
+categorical,Opportunity Name
+categorical,Account Name
+categorical,Organization Name
+categorical,Account Region
+categorical,Assigned to Region
+categorical,Calculated Segment
+categorical,Opportunity Record Type
+categorical,Close Date Quarter
+categorical,Close Date Month
+categorical,Created Date Quarter
+categorical,Created Date Month
+categorical,Opportunity Owner Name
+categorical,Opportunity Owner Manager
+categorical,Revenue License Type
+categorical,Product Reporting Solution Area
+categorical,Product Reporting Segment
+categorical,Product Reporting Division
+categorical,RevOps Product Group
+categorical,RevOps Product Subgroup
+categorical,Flexera One
+categorical,Primary Partner Account Name
+categorical,Primary Partner Organization Name
+categorical,Opportunity Primary Partner Role
+categorical,Partner Involved
+categorical,Project Blackbeard
+categorical,ROSA
+categorical,ISO Code
+categorical,ACV Type
+categorical,Primary Alliances Manager
+categorical,Flexera 6Sense Segment Name
+categorical,Primary Competitor
+numeric,Account Number of Employees
+numeric,Organization Number of Employees
+numeric,Calculated Number of Employees
+numeric,Close Date Year
+numeric,Close Date Month Number
+numeric,Close Date Week Number
+numeric,Created Date Year
+numeric,Created Date Month Number
+numeric,Created Date Week Number
+numeric,Opportunity Line Quantity
+numeric,Partner Deal Registration
+numeric,Exchange Rate
+numeric,Opportunity Line ACV USD
+numeric,Opportunity Age Days
+numeric,Opportunity Age Months
+numeric,Sales Cycle Days
+numeric,Sales Cycle Months
+numeric,CloseDatePushes
+numeric,Secondary Alliances Manager
+numeric,Opportunity Engagement Level (People.ai)
+numeric,Flexera 6Sense Intent Score
+numeric,Flexera 6Sense Numerical Reach Score
+numeric,Revenera 6Sense Intent Score
+numeric,Revenera 6Sense Numerical Reach Score
