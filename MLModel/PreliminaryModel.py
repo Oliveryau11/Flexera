@@ -18,6 +18,48 @@ Outputs:
   feedback/used_features.csv
 """
 
+# ==============================================================
+#  Flexera MLModel - PreliminaryModel.py
+#  --------------------------------------------------------------
+#  Purpose:
+#      Main training + scoring pipeline for Flexera opportunity win prediction.
+#
+#  Notes for future extension (to enable when data volume increases):
+#
+#  1️⃣  Cross-Validation Support (K-Fold)
+#       - Replace simple train_test_split() with StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+#       - Move calibration and threshold search inside each fold and average metrics
+#       - Expected effect: smoother AUC / precision-recall metrics, less variance
+#
+#  2️⃣  Temporal Split (time-based validation)
+#       - Sort dataset by 'Created Date' or 'Close Date'
+#       - Use earliest 70–80% as train, latest 20–30% as validation
+#       - Helps simulate real-world forecasting and prevent data leakage
+#
+#  3️⃣  Feature Expansion
+#       - Add domain-specific aggregates:
+#           e.g. avg deal size per region, account historical win ratio, 
+#           time since last opportunity, opportunity age features, etc.
+#       - Use external joinable sources if available (account CRM metadata, marketing engagement data)
+#
+#  4️⃣  Regularization tuning
+#       - LogisticRegression: adjust `C` based on dataset size
+#       - RandomForest: increase n_estimators, tune max_depth when data grows
+#
+#  5️⃣  Scalability
+#       - For large datasets, consider incremental training or batch scoring:
+#           e.g. partial_fit() for logistic regression, or Dask/Joblib parallelization
+#
+#  6️⃣  Model Registry & Drift Monitoring (optional)
+#       - Save model version metadata + feature list + metrics summary
+#       - Compare old vs new AUC / precision metrics over time
+#
+#  --------------------------------------------------------------
+#  Current Version: Light pipeline (single train/val split)
+#  Next Upgrade Target: K-Fold + Temporal CV with robust calibration
+# ==============================================================
+
+
 from pathlib import Path
 import json
 import numpy as np
