@@ -27,48 +27,45 @@ Outputs:
 #  Purpose:
 #      Main training + scoring pipeline for Flexera opportunity win prediction.
 #
-#  Notes for future extension (to enable when data volume increases):
+#  Notes for future extension (now partially implemented):
 #
 #  1️⃣  Cross-Validation Support (K-Fold)
-#       - Replace simple train_test_split() with StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-#       - Move calibration and threshold search inside each fold and average metrics
-#       - Expected effect: smoother AUC / precision-recall metrics, less variance
+#       - USE_KFOLD_MODEL_SELECTION = True will run StratifiedKFold
+#         on the full labeled dataset to rank models by cv AUC/PR-AUC.
 #
 #  2️⃣  Temporal Split (time-based validation)
-#       - Sort dataset by 'Created Date' or 'Close Date'
-#       - Use earliest 70–80% as train, latest 20–30% as validation
-#       - Helps simulate real-world forecasting and prevent data leakage
+#       - USE_TEMPORAL_SPLIT = True will split train/val by TEMP_SPLIT_COL
+#         (e.g. 'Created Date' or 'Close Date') and TEMP_SPLIT_FRACTION.
 #
 #  3️⃣  Feature Expansion
-#       - Add domain-specific aggregates:
-#           e.g. avg deal size per region, account historical win ratio, 
+#       - To be plugged in later before pick_cols():
+#           e.g. avg deal size per region, account historical win ratio,
 #           time since last opportunity, opportunity age features, etc.
-#       - Use external joinable sources if available (account CRM metadata, marketing engagement data)
 #
 #  4️⃣  Regularization tuning
 #       - LogisticRegression: adjust `C` based on dataset size
 #       - RandomForest: increase n_estimators, tune max_depth when data grows
-#gi
+#
 #  5️⃣  Scalability
 #       - For large datasets, consider incremental training or batch scoring:
 #           e.g. partial_fit() for logistic regression, or Dask/Joblib parallelization
 #
 #  6️⃣  Model Registry & Drift Monitoring (optional)
-#       - Save model version metadata + feature list + metrics summary
-#       - Compare old vs new AUC / precision metrics over time
+#       - Each run writes a JSON snapshot (model_registry.json) with
+#         model metadata, feature list and metrics for comparison over time.
 #
 #  --------------------------------------------------------------
 #  Current Version: Light pipeline (single train/val split)
-#  Next Upgrade Target: K-Fold + Temporal CV with robust calibration
+#  Next Upgrade Target: Richer feature engineering + model registry tooling
 # ==============================================================
-
 
 from pathlib import Path
 import json
 import numpy as np
 import pandas as pd
 import re
-from typing import Optional, List
+from typing import Optional, List, Dict
+from datetime import datetime
 
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
@@ -77,7 +74,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.calibration import CalibratedClassifierCV
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, StratifiedKFold
 from sklearn.metrics import (
     roc_auc_score, average_precision_score, f1_score, precision_score,
     recall_score, balanced_accuracy_score, brier_score_loss, confusion_matrix,
@@ -98,15 +95,26 @@ OWNER_CANDIDATES = ["Opportunity Owner Name", "Owner", "Opportunity Owner"]
 AMOUNT_CANDIDATES= ["Amount", "Opportunity Line ACV USD", "ACV", "ARR"]
 STAGE_COL        = "Stage"
 CLOSE_DATE_COL   = "Close Date"
+CREATED_DATE_COL = "Created Date"   # for optional temporal split
 
 TARGET_PRECISION = 0.95
 TEST_SIZE        = 0.30
 RANDOM_STATE     = 42
 
+# ---- New toggles: K-Fold & Temporal Split ----
+USE_KFOLD_MODEL_SELECTION = True   # True -> run CV to pick model type
+N_FOLDS                    = 5
+
+USE_TEMPORAL_SPLIT   = True       # True -> split by time instead of random
+TEMP_SPLIT_COL       = CREATED_DATE_COL  # or CLOSE_DATE_COL
+TEMP_SPLIT_FRACTION  = 0.8         # first 80% as train, last 20% as val
+
 OUT_METRICS = Path("model_metrics.csv")
 OUT_PROBS   = Path("win_probabilities.csv")
 FEEDBACK_DIR = Path("feedback")
 FEEDBACK_DIR.mkdir(exist_ok=True)
+
+MODEL_REGISTRY_PATH = Path("model_registry.json")
 
 UNKNOWN_LABELS = {"unknown", "na", "n/a", "", "none", "nan", None}
 LEAK_PATTERNS  = ["forecast", "cro win", "win", "loss"]  # training-time exclusion
@@ -390,7 +398,7 @@ def group_feature_importance(imp_df: pd.DataFrame) -> pd.DataFrame:
     )
     return grouped
 
-# -------- NEW: segment performance helper --------
+# -------- segment performance helper --------
 def segment_performance(
     df_labeled: pd.DataFrame,
     probs: np.ndarray,
@@ -450,6 +458,72 @@ def segment_performance(
 
     return out
 
+# -------- NEW: K-Fold model selection helper --------
+def cross_validate_models(models: Dict[str, Pipeline],
+                          X: pd.DataFrame,
+                          y: np.ndarray,
+                          n_splits: int = 5) -> Dict[str, Dict[str, float]]:
+    """
+    Run StratifiedKFold CV for each candidate model (without calibration),
+    return mean AUC and PR-AUC per model.
+    """
+    cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=RANDOM_STATE)
+    metrics = {name: {"cv_auc": [], "cv_prauc": []} for name in models}
+
+    for fold, (tr_idx, va_idx) in enumerate(cv.split(X, y), start=1):
+        Xtr, Xva = X.iloc[tr_idx], X.iloc[va_idx]
+        ytr, yva = y[tr_idx], y[va_idx]
+
+        for name, pipe in models.items():
+            pipe.fit(Xtr, ytr)
+            prob = pipe.predict_proba(Xva)[:, 1]
+            auc = roc_auc_score(yva, prob)
+            prauc = average_precision_score(yva, prob)
+            metrics[name]["cv_auc"].append(auc)
+            metrics[name]["cv_prauc"].append(prauc)
+
+    out: Dict[str, Dict[str, float]] = {}
+    for name, m in metrics.items():
+        out[name] = {
+            "cv_auc": float(np.mean(m["cv_auc"])) if m["cv_auc"] else np.nan,
+            "cv_prauc": float(np.mean(m["cv_prauc"])) if m["cv_prauc"] else np.nan,
+        }
+    return out
+
+# -------- NEW: temporal or random train/val split helper --------
+def make_train_val_split(train_df: pd.DataFrame,
+                         feat_cols: List[str]):
+
+    if USE_TEMPORAL_SPLIT and (TEMP_SPLIT_COL in train_df.columns):
+        print(f"[Split] Using temporal split on '{TEMP_SPLIT_COL}' "
+              f"with fraction={TEMP_SPLIT_FRACTION}")
+        df_tmp = train_df[feat_cols + ["y", TEMP_SPLIT_COL]].copy()
+        df_tmp["_ts"] = pd.to_datetime(df_tmp[TEMP_SPLIT_COL], errors="coerce")
+        df_tmp = df_tmp.dropna(subset=["_ts"]).sort_values("_ts")
+
+        if len(df_tmp) < 10:
+            print("[Split] Too few rows with valid timestamps; falling back to random split.")
+        else:
+            cut = int(len(df_tmp) * TEMP_SPLIT_FRACTION)
+            cut = max(1, min(cut, len(df_tmp) - 1))
+            train_idx = df_tmp.index[:cut]
+            val_idx   = df_tmp.index[cut:]
+
+            X_train = train_df.loc[train_idx, feat_cols].copy()
+            X_val   = train_df.loc[val_idx, feat_cols].copy()
+            y_train = train_df.loc[train_idx, "y"].astype(int).values
+            y_val   = train_df.loc[val_idx, "y"].astype(int).values
+            return X_train, X_val, y_train, y_val
+
+    # default: stratified random split
+    print("[Split] Using stratified random train/val split")
+    X = train_df[feat_cols].copy()
+    y = train_df["y"].astype(int).values
+    X_train, X_val, y_train, y_val = train_test_split(
+        X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE, stratify=y
+    )
+    return X_train, X_val, y_train, y_val
+
 # ----------------------- Main -----------------------
 def train_and_score():
     # ---------- Load ----------
@@ -487,15 +561,28 @@ def train_and_score():
     print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'used_features.csv'}")
     print(f"[Diag] #categorical={len(cat_cols)}  #numeric={len(num_cols)}")
 
-    # 2) Build X/y, then split
-    X = train_df[feat_cols].copy()
-    y = train_df["y"].astype(int).values
+    # X/y on full train_df（用于 K-Fold / split）
+    X_full = train_df[feat_cols].copy()
+    y_full = train_df["y"].astype(int).values
 
-    X_train, X_val, y_train, y_val = train_test_split(
-        X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE, stratify=y
-    )
+    # 2) Build preprocessor & models
+    pre = build_preprocessor(cat_cols, num_cols)
+    models = get_models(pre)
 
-    # 3) Make train/val use EXACT SAME non-empty columns
+    # 2.1 可选：K-Fold 模型选择（不带 calibration，仅用来选 LogReg vs RF）
+    cv_metrics: Dict[str, Dict[str, float]] = {}
+    if USE_KFOLD_MODEL_SELECTION:
+        print(f"[CV] Running StratifiedKFold (n_splits={N_FOLDS}) for model selection...")
+        cv_metrics = cross_validate_models(models, X_full, y_full, n_splits=N_FOLDS)
+        for name, m in cv_metrics.items():
+            print(f"[CV] {name}: cv_auc={m['cv_auc']:.4f}, cv_prauc={m['cv_prauc']:.4f}")
+    else:
+        print("[CV] K-Fold model selection disabled; using single holdout metrics only.")
+
+    # 3) Train/val split（时间切分 or 随机切分）
+    X_train, X_val, y_train, y_val = make_train_val_split(train_df, feat_cols)
+
+    # 3.1 只保留同时在 train & val 非空的列
     def nonempty_cols(df):
         return [c for c in df.columns if df[c].notna().any()]
 
@@ -512,7 +599,7 @@ def train_and_score():
 
     rows = []
     best_name, best_cal, best_val_prob, best_thr_prec = None, None, None, None
-    best_auc = -1.0
+    best_sel_metric = -1.0  # 用于选模型（优先 cv_auc，否则 val_auc）
 
     for name, pipe in models.items():
         cal = CalibratedClassifierCV(estimator=pipe, method="isotonic", cv=3)
@@ -528,8 +615,14 @@ def train_and_score():
         thr_prec, hit = pick_precision_first_threshold(y_val, val_prob, TARGET_PRECISION)
         metrics_prec = evaluate_at_threshold(y_val, val_prob, thr_prec)
 
+        # attach CV metrics if available
+        cv_auc   = cv_metrics.get(name, {}).get("cv_auc", np.nan)
+        cv_prauc = cv_metrics.get(name, {}).get("cv_prauc", np.nan)
+
         row = {
             "model": name,
+            "cv_auc": round(float(cv_auc), 4) if not np.isnan(cv_auc) else None,
+            "cv_prauc": round(float(cv_prauc), 4) if not np.isnan(cv_prauc) else None,
             "val_auc": round(float(auc), 4),
             "val_prauc": round(float(prauc), 4),
             "brier": round(float(brier), 4),
@@ -553,18 +646,24 @@ def train_and_score():
 
         rows.append(row)
 
-        # choose best by AUC (you can switch to precision@target if your goal is precision-first)
-        if auc > best_auc:
-            best_auc = auc
+        # 选模型：如果开了 K-Fold，就用 cv_auc；否则用 val_auc
+        if USE_KFOLD_MODEL_SELECTION and not np.isnan(cv_auc):
+            sel_metric = cv_auc
+        else:
+            sel_metric = auc
+
+        if sel_metric > best_sel_metric:
+            best_sel_metric = sel_metric
             best_name = name
             best_cal = cal
             best_val_prob = val_prob
             best_thr_prec = thr_prec
 
     # write metrics
-    pd.DataFrame(rows).to_csv(OUT_METRICS, index=False)
+    metrics_df = pd.DataFrame(rows)
+    metrics_df.to_csv(OUT_METRICS, index=False)
     print(f"[Metrics] wrote -> {OUT_METRICS}")
-    print(pd.DataFrame(rows))
+    print(metrics_df)
 
     # ---------- Feedback pack on validation ----------
     # 1) error analysis: FPs and FNs at the precision-first threshold
@@ -648,14 +747,13 @@ def train_and_score():
         loss_drv.to_csv(FEEDBACK_DIR / "loss_drivers.csv", index=False)
     print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'loss_drivers.csv'}")
 
-    # ---------- NEW: segment analysis (regions, deal types, combos) ----------
+    # ---------- segment analysis (regions, deal types, combos) ----------
     if best_cal is not None and len(train_df) > 0:
-        # probs for ALL labeled rows (same feature set/order as training)
         X_all = train_df[feat_cols].copy()
         X_all = X_all[[c for c in feat_cols if c in X_all.columns]]
         prob_all = best_cal.predict_proba(X_all)[:, 1]
 
-        # 4.1 Regions: EMEA / APAC / AMER etc.
+        # Regions: EMEA / APAC / AMER etc.
         region_cols = ["Account Region", "Assigned to Region"]
         segment_performance(
             train_df,
@@ -666,7 +764,7 @@ def train_and_score():
             outfile=FEEDBACK_DIR / "segment_perf_regions.csv",
         )
 
-        # 4.2 Deal types: New / Renewal / Expansion etc.
+        # Deal types: New / Renewal / Expansion etc.
         dealtype_cols = ["Sale Type", "Opportunity Record Type"]
         segment_performance(
             train_df,
@@ -677,7 +775,7 @@ def train_and_score():
             outfile=FEEDBACK_DIR / "segment_perf_dealtypes.csv",
         )
 
-        # 4.3 Region × Sale Type combo (e.g. "EMEA | Renewal")
+        # Region × Sale Type combo (e.g. "EMEA | Renewal")
         if ("Account Region" in train_df.columns) and ("Sale Type" in train_df.columns):
             combo_df = train_df.copy()
             combo_df["Region x SaleType"] = (
@@ -727,6 +825,29 @@ def train_and_score():
         print(f"[Scoring] wrote -> {OUT_PROBS}")
     else:
         print("[Info] No unknown/open opportunities to score.")
+
+    # ---------- Model registry snapshot ----------
+    try:
+        registry_entry = {
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "excel_path": str(EXCEL_PATH),
+            "sheet": SHEET,
+            "target_col": TARGET_COL,
+            "best_model": best_name,
+            "use_kfold_model_selection": USE_KFOLD_MODEL_SELECTION,
+            "n_folds": N_FOLDS if USE_KFOLD_MODEL_SELECTION else None,
+            "use_temporal_split": USE_TEMPORAL_SPLIT,
+            "temp_split_col": TEMP_SPLIT_COL if USE_TEMPORAL_SPLIT else None,
+            "metrics": metrics_df.to_dict(orient="records"),
+            "features": feat_cols,
+            "n_train_rows": int(len(train_df)),
+            "n_score_rows": int(len(score_df)),
+        }
+        with MODEL_REGISTRY_PATH.open("w", encoding="utf-8") as f:
+            json.dump(registry_entry, f, indent=2)
+        print(f"[Registry] wrote -> {MODEL_REGISTRY_PATH}")
+    except Exception as e:
+        print(f"[Warn] failed to write model registry: {e}")
 
 if __name__ == "__main__":
     train_and_score()
