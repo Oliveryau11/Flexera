@@ -1,27 +1,30 @@
 base_field,importance_mean_sum,importance_mean_max,features_count
-Account Name,0.0,0.0,12
-Flexera 6Sense Numerical Reach Score,0.0,0.0,1
-Sales Cycle Months,0.0,0.0,1
+Account Shipping Country,0.023333333333333296,0.023333333333333296,6
+Account Number of Employees,0.0,0.0,1
+Exchange Rate,0.0,0.0,1
 Sales Cycle Days,0.0,0.0,1
 Revenera 6Sense Numerical Reach Score,0.0,0.0,1
-Partner Deal Registration,0.0,0.0,1
+Revenera 6Sense Intent Score,0.0,0.0,1
 Organization Number of Employees,0.0,0.0,1
+Opportunity Number,0.0,0.0,1
 Opportunity Line Quantity,0.0,0.0,1
+Opportunity Line Number,0.0,0.0,1
 Opportunity Line ACV USD,0.0,0.0,1
-Opportunity Engagement Level (People.ai),0.0,0.0,1
 Opportunity Age Months,0.0,0.0,1
-Account Number of Employees,0.0,0.0,1
 Opportunity Age Days,0.0,0.0,1
+Flexera 6Sense Numerical Reach Score,0.0,0.0,1
 Flexera 6Sense Intent Score,0.0,0.0,1
-Exchange Rate,0.0,0.0,1
 Created Date Year,0.0,0.0,1
+Account Region,0.0,0.0,3
 Created Date Week Number,0.0,0.0,1
+Created Date Quarter,0.0,0.0,4
 Created Date Month Number,0.0,0.0,1
 CloseDatePushes,0.0,0.0,1
 Close Date Year,0.0,0.0,1
 Close Date Week Number,0.0,0.0,1
+Close Date Quarter,0.0,0.0,4
 Close Date Month Number,0.0,0.0,1
+Close Date Month,0.0,0.0,12
 Calculated Number of Employees,0.0,0.0,1
-Secondary Alliances Manager,0.0,0.0,1
-Opportunity Name,-0.02222222222222221,0.0,19
-Revenera 6Sense Intent Score,-0.02222222222222221,-0.02222222222222221,1
+Assigned to Region,0.0,0.0,3
+Sales Cycle Months,0.0,0.0,1

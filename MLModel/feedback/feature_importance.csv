@@ -1,34 +1,37 @@
 feature,importance_mean,importance_std
+Account Shipping Country_France,0.023333333333333296,0.008164965809277286
+Opportunity Number,0.0,0.0
+Account Shipping Country_United States,0.0,0.0
+Account Region_APAC,0.0,0.0
+Account Region_EMEA,0.0,0.0
+Assigned to Region_AMER,0.0,0.0
+Assigned to Region_APAC,0.0,0.0
+Assigned to Region_EMEA,0.0,0.0
+Close Date Quarter_Q1,0.0,0.0
+Close Date Quarter_Q2,0.0,0.0
+Close Date Quarter_Q3,0.0,0.0
+Close Date Quarter_Q4,0.0,0.0
+Close Date Month_April,0.0,0.0
+Close Date Month_August,0.0,0.0
+Close Date Month_December,0.0,0.0
+Close Date Month_February,0.0,0.0
+Close Date Month_January,0.0,0.0
+Close Date Month_July,0.0,0.0
+Close Date Month_June,0.0,0.0
+Close Date Month_March,0.0,0.0
+Close Date Month_May,0.0,0.0
+Close Date Month_November,0.0,0.0
+Close Date Month_October,0.0,0.0
+Close Date Month_September,0.0,0.0
+Created Date Quarter_Q1,0.0,0.0
+Created Date Quarter_Q2,0.0,0.0
+Created Date Quarter_Q3,0.0,0.0
+Account Region_AMER,0.0,0.0
+Account Shipping Country_United Kingdom,0.0,0.0
+Opportunity Line Number,0.0,0.0
+Account Shipping Country_India,0.0,0.0
 Account Number of Employees,0.0,0.0
-Opportunity Name_Opportunity 7,0.0,0.0
-Opportunity Name_Opportunity 32,0.0,0.0
-Opportunity Name_Opportunity 34,0.0,0.0
-Opportunity Name_Opportunity 39,0.0,0.0
-Opportunity Name_Opportunity 41,0.0,0.0
-Opportunity Name_Opportunity 45,0.0,0.0
-Opportunity Name_Opportunity 47,0.0,0.0
-Opportunity Name_Opportunity 49,0.0,0.0
-Opportunity Name_Opportunity 54,0.0,0.0
-Opportunity Name_Opportunity 55,0.0,0.0
-Opportunity Name_Opportunity 59,0.0,0.0
-Opportunity Name_Opportunity 66,0.0,0.0
-Opportunity Name_Opportunity 73,0.0,0.0
 Organization Number of Employees,0.0,0.0
-Account Name_Account 1,0.0,0.0
-Account Name_Account 11,0.0,0.0
-Account Name_Account 15,0.0,0.0
-Account Name_Account 2,0.0,0.0
-Account Name_Account 22,0.0,0.0
-Account Name_Account 32,0.0,0.0
-Account Name_Account 34,0.0,0.0
-Account Name_Account 39,0.0,0.0
-Account Name_Account 41,0.0,0.0
-Account Name_Account 45,0.0,0.0
-Account Name_Account 47,0.0,0.0
-Opportunity Name_Opportunity 22,0.0,0.0
-Opportunity Name_Opportunity 2,0.0,0.0
-Opportunity Name_Opportunity 15,0.0,0.0
-Opportunity Age Days,0.0,0.0
 Calculated Number of Employees,0.0,0.0
 Close Date Year,0.0,0.0
 Close Date Month Number,0.0,0.0
@@ -37,20 +40,17 @@ Created Date Year,0.0,0.0
 Created Date Month Number,0.0,0.0
 Created Date Week Number,0.0,0.0
 Opportunity Line Quantity,0.0,0.0
-Partner Deal Registration,0.0,0.0
 Exchange Rate,0.0,0.0
 Opportunity Line ACV USD,0.0,0.0
+Opportunity Age Days,0.0,0.0
 Opportunity Age Months,0.0,0.0
-Opportunity Name_Opportunity 11,0.0,0.0
 Sales Cycle Days,0.0,0.0
 Sales Cycle Months,0.0,0.0
 CloseDatePushes,0.0,0.0
-Secondary Alliances Manager,0.0,0.0
-Opportunity Engagement Level (People.ai),0.0,0.0
 Flexera 6Sense Intent Score,0.0,0.0
 Flexera 6Sense Numerical Reach Score,0.0,0.0
+Revenera 6Sense Intent Score,0.0,0.0
 Revenera 6Sense Numerical Reach Score,0.0,0.0
-Opportunity Name_Opportunity 1,0.0,0.0
-Account Name_Account 49,0.0,0.0
-Opportunity Name_Opportunity 56,-0.02222222222222221,0.044444444444444425
-Revenera 6Sense Intent Score,-0.02222222222222221,0.044444444444444425
+Account Shipping Country_Australia,0.0,0.0
+Account Shipping Country_Germany,0.0,0.0
+Created Date Quarter_Q4,0.0,0.0

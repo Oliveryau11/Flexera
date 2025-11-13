@@ -16,6 +16,9 @@ Outputs:
   feedback/calibration_table.csv
   feedback/loss_drivers.csv
   feedback/used_features.csv
+  feedback/segment_perf_regions.csv
+  feedback/segment_perf_dealtypes.csv
+  feedback/segment_perf_region_x_saletype.csv
 """
 
 # ==============================================================
@@ -45,7 +48,7 @@ Outputs:
 #  4️⃣  Regularization tuning
 #       - LogisticRegression: adjust `C` based on dataset size
 #       - RandomForest: increase n_estimators, tune max_depth when data grows
-#
+#gi
 #  5️⃣  Scalability
 #       - For large datasets, consider incremental training or batch scoring:
 #           e.g. partial_fit() for logistic regression, or Dask/Joblib parallelization
@@ -65,6 +68,7 @@ import json
 import numpy as np
 import pandas as pd
 import re
+from typing import Optional, List
 
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
@@ -83,7 +87,7 @@ from sklearn.inspection import permutation_importance
 from scipy import sparse
 
 # ----------------------- Config -----------------------
-EXCEL_PATH = Path("RealDummyData.xlsx")
+EXCEL_PATH = Path("data.xlsx")
 SHEET = "Opportunities"
 TARGET_COL = "CRO Win"
 
@@ -109,13 +113,13 @@ LEAK_PATTERNS  = ["forecast", "cro win", "win", "loss"]  # training-time exclusi
 # ------------------------------------------------------
 
 # ----------------------- Utilities -----------------------
-def first_present(df, candidates):
+def first_present(df, candidates: List[str]) -> Optional[str]:
     for c in candidates:
         if c in df.columns:
             return c
     return None
 
-def load_data():
+def load_data() -> pd.DataFrame:
     df = pd.read_excel(EXCEL_PATH, sheet_name=SHEET)
     # Remove fully duplicated columns (some Excel exports repeat headers)
     df = df.loc[:, ~df.columns.duplicated()].copy()
@@ -156,7 +160,7 @@ def looks_like_id_value(series: pd.Series, sample_size: int = 200, ratio_thresh:
     hits = sample.str.fullmatch(ID_VALUE_RE).fillna(False).mean()
     return hits >= ratio_thresh
 
-def pick_cols(df):
+def pick_cols(df: pd.DataFrame):
     """
     Safer, leak-resistant column picking (name + value based):
     - drop all-missing
@@ -386,6 +390,66 @@ def group_feature_importance(imp_df: pd.DataFrame) -> pd.DataFrame:
     )
     return grouped
 
+# -------- NEW: segment performance helper --------
+def segment_performance(
+    df_labeled: pd.DataFrame,
+    probs: np.ndarray,
+    thr: float,
+    segment_cols: List[str],
+    min_rows: int = 20,
+    outfile: Optional[Path] = None,
+) -> pd.DataFrame:
+    """
+    Compute per-segment performance (precision/recall/F1/etc.) for labeled data.
+
+    df_labeled : dataframe with 'y' column (0/1)
+    probs      : predicted win probability for each row in df_labeled (same order)
+    thr        : classification threshold
+    segment_cols : list of column names to slice by
+    min_rows   : only report segments with at least this many rows
+    outfile    : optional path to CSV
+    """
+    df = df_labeled.copy()
+    df["p_win"] = probs
+    df["is_win"] = (df["y"] == 1).astype(int)
+
+    rows = []
+    for col in segment_cols:
+        if col not in df.columns:
+            print(f"[Seg] skip '{col}' (not in dataframe)")
+            continue
+
+        for val, sub in df.groupby(col, dropna=False):
+            if len(sub) < min_rows:
+                continue
+
+            pred = (sub["p_win"] >= thr).astype(int)
+            rows.append({
+                "segment_field": col,
+                "segment_value": val,
+                "n": len(sub),
+                "win_rate": sub["is_win"].mean(),
+                "avg_p_win": sub["p_win"].mean(),
+                "precision": precision_score(sub["is_win"], pred, zero_division=0),
+                "recall": recall_score(sub["is_win"], pred, zero_division=0),
+                "f1": f1_score(sub["is_win"], pred, zero_division=0),
+            })
+
+    if not rows:
+        out = pd.DataFrame([{
+            "info": f"No segments with at least min_rows={min_rows}"
+        }])
+    else:
+        out = pd.DataFrame(rows).sort_values(
+            ["segment_field", "win_rate"], ascending=[True, False]
+        )
+
+    if outfile is not None:
+        out.to_csv(outfile, index=False)
+        print(f"[Feedback] wrote -> {outfile}")
+
+    return out
+
 # ----------------------- Main -----------------------
 def train_and_score():
     # ---------- Load ----------
@@ -583,6 +647,54 @@ def train_and_score():
     else:
         loss_drv.to_csv(FEEDBACK_DIR / "loss_drivers.csv", index=False)
     print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'loss_drivers.csv'}")
+
+    # ---------- NEW: segment analysis (regions, deal types, combos) ----------
+    if best_cal is not None and len(train_df) > 0:
+        # probs for ALL labeled rows (same feature set/order as training)
+        X_all = train_df[feat_cols].copy()
+        X_all = X_all[[c for c in feat_cols if c in X_all.columns]]
+        prob_all = best_cal.predict_proba(X_all)[:, 1]
+
+        # 4.1 Regions: EMEA / APAC / AMER etc.
+        region_cols = ["Account Region", "Assigned to Region"]
+        segment_performance(
+            train_df,
+            prob_all,
+            best_thr_prec,
+            segment_cols=region_cols,
+            min_rows=10,
+            outfile=FEEDBACK_DIR / "segment_perf_regions.csv",
+        )
+
+        # 4.2 Deal types: New / Renewal / Expansion etc.
+        dealtype_cols = ["Sale Type", "Opportunity Record Type"]
+        segment_performance(
+            train_df,
+            prob_all,
+            best_thr_prec,
+            segment_cols=dealtype_cols,
+            min_rows=10,
+            outfile=FEEDBACK_DIR / "segment_perf_dealtypes.csv",
+        )
+
+        # 4.3 Region × Sale Type combo (e.g. "EMEA | Renewal")
+        if ("Account Region" in train_df.columns) and ("Sale Type" in train_df.columns):
+            combo_df = train_df.copy()
+            combo_df["Region x SaleType"] = (
+                combo_df["Account Region"].astype(str)
+                + " | "
+                + combo_df["Sale Type"].astype(str)
+            )
+            segment_performance(
+                combo_df,
+                prob_all,
+                best_thr_prec,
+                segment_cols=["Region x SaleType"],
+                min_rows=10,
+                outfile=FEEDBACK_DIR / "segment_perf_region_x_saletype.csv",
+            )
+        else:
+            print("[Seg] Skipping Region x SaleType combo (columns missing).")
 
     # ---------- Score unknown/open opportunities ----------
     if best_cal is not None and not score_df.empty:

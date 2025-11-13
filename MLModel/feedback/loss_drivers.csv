@@ -1,10 +1,12 @@
 field,value,count,loss_rate,Opportunity Reason Lost Detail,Account Region,Account Shipping Country
-Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",4,1.0,,,
-Opportunity Reason Lost,Unknown,22,0.045454545454545456,,,
-Opportunity Reason Lost Detail,,22,0.045454545454545456,Unknown,,
-Account Region,,6,0.5,,APAC,
-Account Region,,15,0.26666666666666666,,EMEA,
-Account Region,,7,0.0,,NAM,
-Account Shipping Country,,7,0.42857142857142855,,,Australia
-Account Shipping Country,,8,0.125,,,Germany
-Account Shipping Country,,5,0.0,,,United States
+Opportunity Reason Lost,,164,0.7804878048780488,,,
+Opportunity Reason Lost Detail,,164,0.7804878048780488,,,
+Account Region,,69,0.8840579710144928,,AMER,
+Account Region,,63,0.8253968253968254,,EMEA,
+Account Region,,68,0.75,,APAC,
+Account Shipping Country,,35,0.9428571428571428,,,France
+Account Shipping Country,,27,0.8888888888888888,,,Germany
+Account Shipping Country,,35,0.8571428571428571,,,Australia
+Account Shipping Country,,29,0.7931034482758621,,,India
+Account Shipping Country,,38,0.7631578947368421,,,United States
+Account Shipping Country,,36,0.6944444444444444,,,United Kingdom
