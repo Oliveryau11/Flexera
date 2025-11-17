@@ -41,10 +41,13 @@ const KPICard = ({ value, label, suffix = "", accent = "text-blue-600" }) => (
 
 
 
+// Build an API URL that respects the Vite base path (e.g., GitHub Pages)
+const apiUrl = (path) => new URL(path.replace(/^\//, ""), import.meta.env.BASE_URL || "/");
+
 // --- Mock fetch with graceful fallback ---
-async function fetchJSON(url, fallback) {
+async function fetchJSON(path, fallback) {
   try {
-    const r = await fetch(url);
+    const r = await fetch(apiUrl(path));
     if (!r.ok) throw new Error("bad status");
     return await r.json();
   } catch {
@@ -64,16 +67,66 @@ const COLORS = {
   purple: "#8B5CF6",
 };
 
+// Derived dimensions for enriching model rows into dashboard-friendly fields
+const DERIVED_DIMENSIONS = {
+  regions: ["North America", "Europe", "Asia Pacific", "Latin America"],
+  products: ["Platform", "ITAM", "Cloud", "Security"],
+  competitors: ["Competitor A", "Competitor B", "Competitor C", "Competitor D"],
+};
+
+function mapWinProbabilityRow(row, idx) {
+  const region = DERIVED_DIMENSIONS.regions[idx % DERIVED_DIMENSIONS.regions.length];
+  const product = DERIVED_DIMENSIONS.products[idx % DERIVED_DIMENSIONS.products.length];
+  const competitor = DERIVED_DIMENSIONS.competitors[idx % DERIVED_DIMENSIONS.competitors.length];
+  const probability = Math.max(0, Math.min(1, Number(row.winProb ?? row.win_prob ?? 0)));
+
+  return {
+    id: row.id || row["Opportunity ID"] || `OPP-${idx + 1}`,
+    region,
+    product,
+    competitor,
+    acv: Math.round(Number(row.amount ?? 0)),
+    p_win: probability,
+    outcome: row.predictedWin || row.pred_at_prec_thr === "1" ? "Won" : "Lost",
+    loss_reason: row.predictedWin ? "Model: expected win" : "Model: below precision threshold",
+    owner: row.owner || row.stage || "—",
+  };
+}
+
 // --- Main App ---
 export default function App() {
   const [filters, setFilters] = useState({ region: "All", product: "All", competitor: "All" });
   const [opps, setOpps] = useState([]);
-  const [meta, setMeta] = useState({ updatedAt: null });
+  const [meta, setMeta] = useState({ updatedAt: null, source: "Fallback" });
 
   useEffect(() => {
-    // try backend first
-    fetchJSON("/api/opportunities", []).then(setOpps);
-    fetchJSON("/api/meta", { updatedAt: new Date().toISOString() }).then(setMeta);
+    let cancelled = false;
+
+    async function loadData() {
+      const modelRows = await fetchJSON("api/win_probabilities.json", null);
+      if (!cancelled && Array.isArray(modelRows) && modelRows.length) {
+        setOpps(modelRows.map(mapWinProbabilityRow));
+        setMeta((prev) => ({
+          ...prev,
+          updatedAt: new Date().toISOString(),
+          source: "Model predictions",
+        }));
+        return;
+      }
+
+      const oppData = await fetchJSON("api/opportunities", []);
+      if (!cancelled) setOpps(oppData);
+    }
+
+    loadData();
+
+    fetchJSON("api/meta", { updatedAt: new Date().toISOString() }).then((metaData) => {
+      if (!cancelled) setMeta((prev) => ({ ...prev, ...metaData }));
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Fallback mock data if backend not present
@@ -165,8 +218,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900" style={{ margin: 0, width: '100vw', minHeight: '100vh' }}>
-      <div className="mx-auto max-w-none px-5 pt-4 pb-1 text-xs text-slate-500">
-        Last updated {new Date(meta.updatedAt || Date.now()).toLocaleString()}
+      <div className="mx-auto max-w-none px-5 pt-4 pb-1 text-xs text-slate-500 flex flex-col sm:flex-row sm:items-center sm:gap-2">
+        <span>Last updated {new Date(meta.updatedAt || Date.now()).toLocaleString()}</span>
+        <span className="hidden sm:inline">·</span>
+        <span>Data source: {meta.source || "Model fallback"}</span>
       </div>
       {/* Filter bar */}
       <div className="mx-auto max-w-none px-5">

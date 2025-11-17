@@ -1,0 +1,722 @@
+[
+  {
+    "id": "0061M00001ADscDQAT",
+    "name": "Opportunity 3",
+    "stage": "Merged",
+    "owner": "Owner 3",
+    "closeDate": "2022-06-09",
+    "amount": 3991.77,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001QYZsKQAX",
+    "name": "Opportunity 24",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 24",
+    "closeDate": "2023-06-26",
+    "amount": 11548.5,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000DQkrGYAT",
+    "name": "Opportunity 92",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 92",
+    "closeDate": "2023-01-31",
+    "amount": 60000.0,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000E8zMRYAZ",
+    "name": "Opportunity 91",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 91",
+    "closeDate": "2027-09-29",
+    "amount": 2024.99,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000RNerfYAD",
+    "name": "Opportunity 88",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 88",
+    "closeDate": "2026-10-26",
+    "amount": 151610.35,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M000016OiidQAC",
+    "name": "Opportunity 79",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 79",
+    "closeDate": "2022-05-17",
+    "amount": 1087.06,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001TILE8QAP",
+    "name": "Opportunity 74",
+    "stage": "Merged",
+    "owner": "Owner 74",
+    "closeDate": "2024-10-03",
+    "amount": 1193.62,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001QafgrQAB",
+    "name": "Opportunity 72",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 72",
+    "closeDate": "2023-05-15",
+    "amount": 2474.25,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001ADjgtQAD",
+    "name": "Opportunity 68",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 68",
+    "closeDate": "2024-03-28",
+    "amount": 793.93,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001TH8blQAD",
+    "name": "Opportunity 65",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 65",
+    "closeDate": "2023-10-27",
+    "amount": 1410.74,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001JCkPOQA1",
+    "name": "Opportunity 62",
+    "stage": "Merged",
+    "owner": "Owner 62",
+    "closeDate": "2023-08-25",
+    "amount": 24315.76,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001AERRwQAP",
+    "name": "Opportunity 52",
+    "stage": "Merged",
+    "owner": "Owner 52",
+    "closeDate": "2022-09-28",
+    "amount": 1581.26,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M0000193rmzQAA",
+    "name": "Opportunity 51",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 51",
+    "closeDate": "2022-04-15",
+    "amount": 1137.0,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001JDsMnQAL",
+    "name": "Opportunity 26",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 26",
+    "closeDate": "2023-07-19",
+    "amount": 1229.04,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M0000175cF1QAI",
+    "name": "Opportunity 58",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 58",
+    "closeDate": "2023-08-31",
+    "amount": 4353.1,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001AEUEdQAP",
+    "name": "Opportunity 100",
+    "stage": "Merged",
+    "owner": "Owner 100",
+    "closeDate": "2022-09-11",
+    "amount": 6030.48,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001ADe5yQAD",
+    "name": "Opportunity 9",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 9",
+    "closeDate": "2022-05-13",
+    "amount": 4400.94,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001RYNb6QAH",
+    "name": "Opportunity 13",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 13",
+    "closeDate": "2023-06-30",
+    "amount": 71672.48,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000Sjt8JYAR",
+    "name": "Opportunity 20",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 20",
+    "closeDate": "2026-09-14",
+    "amount": 1283.94,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000CHO7OYAX",
+    "name": "Opportunity 14",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 14",
+    "closeDate": "2023-02-08",
+    "amount": 31201.11,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001G3w5VQAR",
+    "name": "Opportunity 16",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 16",
+    "closeDate": "2022-06-06",
+    "amount": 1430.97,
+    "winProb": 1.0,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001QYHxHQAX",
+    "name": "Opportunity 40",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 40",
+    "closeDate": "2023-09-25",
+    "amount": 38051.96,
+    "winProb": 0.9997124530784287,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000CH57rYAD",
+    "name": "Opportunity 90",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 90",
+    "closeDate": "2024-06-27",
+    "amount": 53300.0,
+    "winProb": 0.998996119368794,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000OKpWnYAL",
+    "name": "Opportunity 18",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 18",
+    "closeDate": "2026-05-30",
+    "amount": 49134.11,
+    "winProb": 0.9895549383535576,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001SXuQKQA1",
+    "name": "Opportunity 33",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 33",
+    "closeDate": "2024-08-05",
+    "amount": 1195.56,
+    "winProb": 0.9895299218434929,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000O2tSSYAZ",
+    "name": "Opportunity 35",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 35",
+    "closeDate": "2026-06-30",
+    "amount": 921.74,
+    "winProb": 0.9820054487710047,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001ADnWdQAL",
+    "name": "Opportunity 53",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 53",
+    "closeDate": "2022-05-31",
+    "amount": 40446.37,
+    "winProb": 0.9811352460151054,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001ADjccQAD",
+    "name": "Opportunity 84",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 84",
+    "closeDate": "2022-05-23",
+    "amount": 263.59,
+    "winProb": 0.9732187588501789,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000R5qzJYAR",
+    "name": "Opportunity 99",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 99",
+    "closeDate": "2027-06-18",
+    "amount": 4662.5,
+    "winProb": 0.9712897000209687,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001Tgn5nQAB",
+    "name": "Opportunity 44",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 44",
+    "closeDate": "2024-11-06",
+    "amount": 328.9,
+    "winProb": 0.9560083111914337,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001AE3XiQAL",
+    "name": "Opportunity 37",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 37",
+    "closeDate": "2022-04-25",
+    "amount": 2921.76,
+    "winProb": 0.9534948665217406,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000Aw8ykYAB",
+    "name": "Opportunity 67",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 67",
+    "closeDate": "2027-06-16",
+    "amount": 2405.06,
+    "winProb": 0.9435352209077702,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001DO6m8QAD",
+    "name": "Opportunity 36",
+    "stage": "Merged",
+    "owner": "Owner 36",
+    "closeDate": "2023-11-30",
+    "amount": 1459.0,
+    "winProb": 0.9293868529119638,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001PoWHvQAN",
+    "name": "Opportunity 60",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 60",
+    "closeDate": "2023-04-27",
+    "amount": 0.0,
+    "winProb": 0.9183724037118949,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL000006b64bYAA",
+    "name": "Opportunity 12",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 12",
+    "closeDate": "2026-09-12",
+    "amount": 2672.29,
+    "winProb": 0.9180559538631828,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001DOJGxQAP",
+    "name": "Opportunity 83",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 83",
+    "closeDate": "2024-12-19",
+    "amount": 53441.47,
+    "winProb": 0.9100650664490159,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M000013s5ohQAA",
+    "name": "Opportunity 29",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 29",
+    "closeDate": "2022-12-19",
+    "amount": 10484.86,
+    "winProb": 0.9017654038428761,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001ADhkDQAT",
+    "name": "Opportunity 89",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 89",
+    "closeDate": "2024-03-07",
+    "amount": 3691.44,
+    "winProb": 0.8998179405627743,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000CH8IqYAL",
+    "name": "Opportunity 75",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 75",
+    "closeDate": "2024-10-17",
+    "amount": 24241.24,
+    "winProb": 0.8863058705320986,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001AEVMnQAP",
+    "name": "Opportunity 93",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 93",
+    "closeDate": "2024-05-06",
+    "amount": 1218.18,
+    "winProb": 0.8830789283582582,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000CH3W4YAL",
+    "name": "Opportunity 17",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 17",
+    "closeDate": "2024-11-14",
+    "amount": 7680.0,
+    "winProb": 0.8726342483737444,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000M48TlYAJ",
+    "name": "Opportunity 10",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 10",
+    "closeDate": "2026-03-31",
+    "amount": 9129.51,
+    "winProb": 0.8671998956988975,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000HikWoYAJ",
+    "name": "Opportunity 6",
+    "stage": "1 - Active",
+    "owner": "Owner 6",
+    "closeDate": "2025-12-28",
+    "amount": 1571.37,
+    "winProb": 0.8664818939687707,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000Dy3BdYAJ",
+    "name": "Opportunity 5",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 5",
+    "closeDate": "2026-09-28",
+    "amount": 14462.33,
+    "winProb": 0.8634113710910046,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000RI4iSYAT",
+    "name": "Opportunity 4",
+    "stage": "3 - Establishing Value",
+    "owner": "Owner 4",
+    "closeDate": "2025-11-21",
+    "amount": 18978.0,
+    "winProb": 0.8497824876760971,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000M1uJeYAJ",
+    "name": "Opportunity 31",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 31",
+    "closeDate": "2026-04-26",
+    "amount": 3123.26,
+    "winProb": 0.8468272930979746,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000G5TMsYAN",
+    "name": "Opportunity 76",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 76",
+    "closeDate": "2027-12-18",
+    "amount": 2550.36,
+    "winProb": 0.8425528618744624,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL000007Y2hhYAC",
+    "name": "Opportunity 27",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 27",
+    "closeDate": "2025-05-06",
+    "amount": 1369.57,
+    "winProb": 0.8359683267025143,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001G3al3QAB",
+    "name": "Opportunity 95",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 95",
+    "closeDate": "2023-04-25",
+    "amount": 190.87,
+    "winProb": 0.8337186401945083,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001ADtMmQAL",
+    "name": "Opportunity 78",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 78",
+    "closeDate": "2022-04-19",
+    "amount": 63.0,
+    "winProb": 0.8239135838190048,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000JWd3OYAT",
+    "name": "Opportunity 64",
+    "stage": "6 - Negotiating",
+    "owner": "Owner 64",
+    "closeDate": "2026-03-02",
+    "amount": 48960.81,
+    "winProb": 0.8089009562023036,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001RX3YpQAL",
+    "name": "Opportunity 96",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 96",
+    "closeDate": "2024-04-22",
+    "amount": 2328.7,
+    "winProb": 0.8031068796326598,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL000006wBakYAE",
+    "name": "Opportunity 80",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 80",
+    "closeDate": "2024-03-18",
+    "amount": 9128.31,
+    "winProb": 0.795203788816034,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000OD1IDYA1",
+    "name": "Opportunity 97",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 97",
+    "closeDate": "2027-06-10",
+    "amount": 1485.38,
+    "winProb": 0.7928916376221796,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL000008DyzSYAS",
+    "name": "Opportunity 86",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 86",
+    "closeDate": "2027-04-08",
+    "amount": 1950.78,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001Pldb1QAB",
+    "name": "Opportunity 98",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 98",
+    "closeDate": "2026-03-31",
+    "amount": 2828.18,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "0061M00001AEFDzQAP",
+    "name": "Opportunity 8",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 8",
+    "closeDate": "2022-01-28",
+    "amount": 720.0,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000CH7cXYAT",
+    "name": "Opportunity 25",
+    "stage": "7 - Closed Won",
+    "owner": "Owner 25",
+    "closeDate": "2024-10-21",
+    "amount": 15775.1,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000E1SAHYA3",
+    "name": "Opportunity 23",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 23",
+    "closeDate": "2024-11-14",
+    "amount": 17205.76,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000DQm04YAD",
+    "name": "Opportunity 82",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 82",
+    "closeDate": "2023-10-27",
+    "amount": 11139.1,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001Pldb1QAB",
+    "name": "Opportunity 81",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 81",
+    "closeDate": "2026-03-31",
+    "amount": 53735.39,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000GPuM0YAL",
+    "name": "Opportunity 77",
+    "stage": "6 - Negotiating",
+    "owner": "Owner 77",
+    "closeDate": "2025-11-19",
+    "amount": 19455.14,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001DO1iNQAT",
+    "name": "Opportunity 38",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 38",
+    "closeDate": "2022-11-21",
+    "amount": 4536.45,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001DOBg6QAH",
+    "name": "Opportunity 63",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 63",
+    "closeDate": "2022-12-20",
+    "amount": 3528.0,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "0068Y00001SrH0rQAF",
+    "name": "Opportunity 61",
+    "stage": "Merged",
+    "owner": "Owner 61",
+    "closeDate": "2024-08-30",
+    "amount": 3924.72,
+    "winProb": 0.7777777777777777,
+    "predictedWin": true
+  },
+  {
+    "id": "006PL00000O3IqcYAF",
+    "name": "Opportunity 87",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 87",
+    "closeDate": "2027-05-26",
+    "amount": 26798.59,
+    "winProb": 0.6913210901312435,
+    "predictedWin": false
+  },
+  {
+    "id": "006PL00000HsKZRYA3",
+    "name": "Opportunity 19",
+    "stage": "1 - Auto-Forecast",
+    "owner": "Owner 19",
+    "closeDate": "2026-01-05",
+    "amount": 0.0,
+    "winProb": 0.5837442048572836,
+    "predictedWin": false
+  },
+  {
+    "id": "006PL000008WjDYYA0",
+    "name": "Opportunity 50",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 50",
+    "closeDate": "2025-02-03",
+    "amount": 14059.4,
+    "winProb": 0.5795277795047936,
+    "predictedWin": false
+  },
+  {
+    "id": "006PL000008WjDYYA0",
+    "name": "Opportunity 48",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 48",
+    "closeDate": "2025-02-03",
+    "amount": 42178.21,
+    "winProb": 0.5071591372383875,
+    "predictedWin": false
+  },
+  {
+    "id": "0068Y00001SXLaxQAH",
+    "name": "Opportunity 46",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 46",
+    "closeDate": "2023-08-07",
+    "amount": 24786.0,
+    "winProb": 0.4444444444444444,
+    "predictedWin": false
+  },
+  {
+    "id": "006PL00000H7wOsYAJ",
+    "name": "Opportunity 57",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 57",
+    "closeDate": "2025-02-20",
+    "amount": 26463.52,
+    "winProb": 0.4444444444444444,
+    "predictedWin": false
+  },
+  {
+    "id": "0068Y00001AFGnRQAX",
+    "name": "Opportunity 69",
+    "stage": "8 - Closed Lost",
+    "owner": "Owner 69",
+    "closeDate": "2022-04-07",
+    "amount": 44135.0,
+    "winProb": 0.18562655348632515,
+    "predictedWin": false
+  }
+]
