@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 
+/* ----------------- 小UI ----------------- */
 function Badge({ children, tone = "slate" }) {
   const tones = {
     slate: "bg-slate-100 text-slate-700",
@@ -27,94 +28,124 @@ function Card({ title, subtitle, action, children, className = "" }) {
   );
 }
 
-// Fake API for now; replace with your backend
-async function fetchDeal(id) {
-  // try real API first
-  try {
-    const res = await fetch(`/api/deals/${id}`);
-    if (res.ok) return await res.json();
-  } catch (_) {}
-  // fallback sample to mirror your screenshot
-  return {
-    id,
-    title: "Enterprise Software Implementation – Acme Corp",
-    accountExecutive: "Sarah Johnson",
-    region: "North America",
-    amount: 125000,
-    stage: "Negotiation",
-    winProbability: 0.74,
-    factors: [
-      { label: "Strong technical fit", impact: +0.15 },
-      { label: "Budget approved", impact: +0.12 },
-      { label: "Multiple stakeholder engagement", impact: +0.08 },
-      { label: "Competitive pressure", impact: -0.06 },
-      { label: "Timeline constraints", impact: -0.05 },
-    ],
-    recommendation: "Focus on value proposition to counter competitive pressure",
-    activity: [
-      { label: "Demo scheduled with technical team", ago: "2 days ago", source: "Salesforce", color: "bg-emerald-500" },
-      { label: "Pricing proposal sent", ago: "4 days ago", source: "People.ai", color: "bg-violet-500" },
-      { label: "Technical requirements call", ago: "1 week ago", source: "Salesforce", color: "bg-amber-500" },
-      { label: "Initial discovery meeting", ago: "2 weeks ago", source: "People.ai", color: "bg-sky-500" },
-    ],
-    competitor: {
-      name: "Salesforce",
-      intel:
-        'Client mentioned Salesforce pricing in last call. They seem impressed with their reporting capabilities but concerned about implementation timeline.',
-    },
-    notes: {
-      themes: ["Integration Requirements", "Budget Approval", "Timeline Pressure", "Technical Evaluation"],
-      decisionMakers: [
-        { name: "John Smith", role: "CTO (Technical Decision)" },
-        { name: "Maria Lopez", role: "CFO (Budget Approval)" },
-      ],
-    },
-    updatedAt: new Date().toISOString(),
-  };
+/* ----------------- 数据读取（与首页口径一致） ----------------- */
+async function fetchXLSXRows(url, sheetName = "Opportunities") {
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+  const buf = await res.arrayBuffer();
+  const XLSX = await import("xlsx");
+  const wb = XLSX.read(buf, { type: "array" });
+  const ws = wb.Sheets[sheetName];
+  if (!ws) return [];
+  return XLSX.utils.sheet_to_json(ws, { defval: null });
 }
+async function fetchCSVRows(url) {
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+  const text = await res.text();
+  const lines = text.trim().split(/\r?\n/);
+  if (lines.length <= 1) return [];
+  const headers = lines[0].split(",").map(h => h.trim());
+  return lines.slice(1).map((line) => {
+    const cols = line.split(",").map(c => c.trim());
+    const row = {};
+    headers.forEach((h, i) => (row[h] = cols[i]));
+    return row;
+  });
+}
+const toNum = (v) => {
+  if (v === "" || v == null) return NaN;
+  const n = Number(v);
+  return Number.isFinite(n) ? n : NaN;
+};
 
+/* 把首页表格行（或 Excel+CSV 合并后的行）规范化为详情页需要的字段 */
 function normalizeFromRow(row) {
-  // turns your minimal table row (id/region/product/competitor/owner/p_win/acv)
-  // into the full shape the detail page expects
+  const p = Number.isFinite(row.p_win) ? row.p_win : Number.isFinite(row.winProbability) ? row.winProbability : 0.5;
   const stage =
-    row.p_win >= 0.7 ? "Negotiation" :
-    row.p_win >= 0.4 ? "Proposal" : "Discovery";
+    row.stage ||
+    (p >= 0.7 ? "Negotiation" : p >= 0.4 ? "Proposal" : "Discovery");
+
   return {
     id: row.id,
-    title: `${row.product} — ${row.region} (${row.competitor})`,
-    accountExecutive: row.owner || "—",
-    region: row.region,
-    amount: row.acv || 0,
+    title: row.name || row.title || row["Opportunity Name"] || `${row.product || "Deal"} — ${row.region || ""}`.trim(),
+    accountExecutive: row.owner || row["Owner"] || row["Opportunity Owner"] || "—",
+    region: row.region || row["Account Region"] || "—",
+    amount: Number.isFinite(toNum(row.acv)) ? Math.round(toNum(row.acv)) :
+            Number.isFinite(toNum(row["Opportunity Line ACV USD"])) ? Math.round(toNum(row["Opportunity Line ACV USD"])) : 0,
     stage,
-    winProbability: row.p_win ?? 0.5,
+    winProbability: p,
+    competitor: { name: row.competitor || row["Primary Competitor"] || "—", intel: "" },
+    // 占位：这些可以之后替换为真实字段
     factors: [],
     recommendation: "—",
     activity: [],
-    competitor: { name: row.competitor, intel: "" },
     notes: { themes: [], decisionMakers: [] },
     updatedAt: new Date().toISOString(),
   };
 }
 
+/* 若直接打开详情页：从 Excel+CSV 合并找到该 id */
+async function loadDealById(id) {
+  const excelRows = await fetchXLSXRows("/api/RealDummyData.xlsx", "Opportunities");
+  let csvRows = [];
+  try { csvRows = await fetchCSVRows("/api/win_probabilities.csv"); } catch {}
+  const csvMap = new Map();
+  for (const r of csvRows) {
+    const key = String(r["Opportunity ID"] || r.OpportunityID || r.id || "").trim();
+    if (key) csvMap.set(key, r);
+  }
 
+  // 合并出我们需要的最小字段
+  for (let i = 0; i < excelRows.length; i++) {
+    const e = excelRows[i];
+    const oppId = String(e["Opportunity ID"] || e.OpportunityID || e.id || "").trim();
+    if (String(oppId) !== String(id)) continue;
+
+    const csv = csvMap.get(String(oppId));
+    const pRaw = csv ? toNum(csv.win_prob ?? csv.winProb) : NaN;
+
+    const row = {
+      id: oppId,
+      name: e["Opportunity Name"],
+      owner: e["Owner"] || e["Opportunity Owner"],
+      region: e["Account Region"],
+      acv: e["Opportunity Line ACV USD"],
+      stage: e["Stage"],
+      competitor: e["Primary Competitor"],
+      p_win: Number.isFinite(pRaw) ? Math.max(0, Math.min(1, pRaw)) : undefined,
+      product: e["Product Reporting Solution Area"],
+    };
+    return normalizeFromRow(row);
+  }
+  return null;
+}
+
+/* ----------------- 页面 ----------------- */
 export default function DealDetail() {
   const { id } = useParams();
   const location = useLocation();
   const [deal, setDeal] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     let mounted = true;
+    // 1) 有 state（从表格点进来）
     const fromState = location.state?.deal;
-    // If you navigated from the table, normalize that row into a full "deal" shape:
     if (fromState && mounted) {
-      const normalized = normalizeFromRow(fromState);
-      setDeal(normalized);
+      setDeal(normalizeFromRow(fromState));
       return () => { mounted = false; };
     }
-    // Otherwise, fetch by id (fetchDeal already has an internal fallback sample)
+    // 2) 无 state（刷新/直链）：从 Excel+CSV 查
     (async () => {
-      const data = await fetchDeal(id);
-      if (mounted) setDeal(data);
+      try {
+        const d = await loadDealById(id);
+        if (!mounted) return;
+        if (d) setDeal(d);
+        else setError("Deal not found");
+      } catch (e) {
+        if (mounted) setError("Load error");
+      }
     })();
     return () => { mounted = false; };
   }, [id, location.key]);
@@ -124,12 +155,20 @@ export default function DealDetail() {
     return [
       { label: "Account Executive", value: deal.accountExecutive },
       { label: "Region", value: deal.region },
-      { label: "Amount", value: `$${deal.amount.toLocaleString()}` },
+      { label: "Amount", value: `$${(deal.amount || 0).toLocaleString()}` },
       { label: "Stage", value: deal.stage, badge: true },
     ];
   }, [deal]);
 
-  if (!deal) return <div className="text-sm text-slate-500">Loading…</div>;
+  if (error) {
+    return (
+      <div className="p-5">
+        <div className="text-rose-600 font-medium mb-2">{error}</div>
+        <Link to="/" className="text-indigo-600 text-sm hover:underline">← Back to dashboard</Link>
+      </div>
+    );
+  }
+  if (!deal) return <div className="text-sm text-slate-500 p-5">Loading…</div>;
 
   return (
     <div className="space-y-6">
@@ -171,11 +210,16 @@ export default function DealDetail() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <Card
           title="Activity Timeline"
-          subtitle="Recent activities from Salesforce & People.ai"
+          subtitle="Recent activities (placeholder)"
           className="lg:col-span-2"
         >
+          {/* 占位：如需接 Salesforce/日志，替换下面数组即可 */}
           <ul className="space-y-3">
-            {deal.activity.map((a, i) => (
+            {[
+              { label: "Initial discovery meeting", ago: "2 weeks ago", source: "CRM", color: "bg-sky-500" },
+              { label: "Requirements call", ago: "1 week ago", source: "CRM", color: "bg-amber-500" },
+              { label: "Pricing proposal sent", ago: "4 days ago", source: "Email", color: "bg-violet-500" },
+            ].map((a, i) => (
               <li key={i} className="flex items-start gap-3">
                 <span className={`mt-1 h-2.5 w-2.5 rounded-full ${a.color}`} />
                 <div>
@@ -200,20 +244,27 @@ export default function DealDetail() {
               {Math.round((deal.winProbability ?? 0) * 100)}%
             </div>
 
+            {/* 占位因子，可替换为真实解释 */}
             <div className="mt-4">
               <div className="text-sm font-medium">Key Factors:</div>
               <ul className="mt-2 space-y-1 text-sm text-slate-700">
-                {deal.factors.map((f) => (
-                  <li key={f.label}>
-                    • {f.label} ({f.impact > 0 ? "+" : ""}{Math.round(f.impact * 100)}%)
-                  </li>
-                ))}
+                {deal.factors?.length ? deal.factors.map((f) => (
+                  <li key={f.label}>• {f.label} ({f.impact > 0 ? "+" : ""}{Math.round(f.impact * 100)}%)</li>
+                )) : (
+                  <>
+                    <li>• Region: {deal.region}</li>
+                    {deal.competitor?.name && <li>• Competitive pressure: {deal.competitor.name}</li>}
+                    <li>• Deal size: ${deal.amount.toLocaleString()}</li>
+                  </>
+                )}
               </ul>
             </div>
 
             <div className="mt-4 border-t pt-3 text-sm">
               <span className="font-medium">Recommendation:</span>{" "}
-              {deal.recommendation}.
+              {deal.recommendation && deal.recommendation !== "—"
+                ? deal.recommendation
+                : "Highlight ROI and implementation speed versus competitors."}
             </div>
           </div>
         </Card>
@@ -224,11 +275,11 @@ export default function DealDetail() {
         <Card title="Competitor Analysis" subtitle="NLP-based competitor detection">
           <div className="flex items-center gap-2 text-sm">
             <span className="font-medium">Primary Competitor</span>
-            <Badge tone="red">{deal.competitor.name}</Badge>
+            <Badge tone="red">{deal.competitor?.name || "—"}</Badge>
           </div>
 
           <blockquote className="mt-3 rounded-xl bg-indigo-50 text-indigo-900 p-4 text-sm leading-relaxed">
-            “{deal.competitor.intel}”
+            “{deal.competitor?.intel || "No explicit competitor intel found. Continue discovery to confirm evaluation set."}”
           </blockquote>
         </Card>
 
@@ -236,7 +287,7 @@ export default function DealDetail() {
           <div className="text-sm">
             <div className="font-medium">Key Themes:</div>
             <div className="mt-2 flex flex-wrap gap-2">
-              {deal.notes.themes.map((t) => (
+              {(deal.notes?.themes?.length ? deal.notes.themes : [deal.region, deal.competitor?.name].filter(Boolean)).map((t) => (
                 <span key={t} className="px-2.5 py-1 rounded-full text-xs bg-slate-100 text-slate-700">
                   {t}
                 </span>
@@ -245,12 +296,15 @@ export default function DealDetail() {
 
             <div className="mt-4 font-medium">Decision Makers:</div>
             <ul className="mt-2 space-y-1">
-              {deal.notes.decisionMakers.map((p) => (
+              {(deal.notes?.decisionMakers?.length ? deal.notes.decisionMakers : []).map((p) => (
                 <li key={p.name} className="flex items-center justify-between">
                   <span>{p.name}</span>
                   <span className="text-slate-500 text-xs">{p.role}</span>
                 </li>
               ))}
+              {!deal.notes?.decisionMakers?.length && (
+                <li className="text-xs text-slate-500">No contacts listed.</li>
+              )}
             </ul>
           </div>
         </Card>
