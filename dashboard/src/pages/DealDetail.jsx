@@ -144,7 +144,7 @@ export default function DealDetail() {
         if (d) setDeal(d);
         else setError("Deal not found");
       } catch (e) {
-        if (mounted) setError("Load error");
+        if (mounted) setError("No Deal");
       }
     })();
     return () => { mounted = false; };
