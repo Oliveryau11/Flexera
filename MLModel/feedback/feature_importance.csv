@@ -1,56 +1,26 @@
 feature,importance_mean,importance_std
-Account Shipping Country_France,0.010000000000000009,0.012247448713915901
-Opportunity Number,0.0,0.0
-Account Shipping Country_United States,0.0,0.0
-Account Region_APAC,0.0,0.0
-Account Region_EMEA,0.0,0.0
-Assigned to Region_AMER,0.0,0.0
-Assigned to Region_APAC,0.0,0.0
-Assigned to Region_EMEA,0.0,0.0
-Close Date Quarter_Q1,0.0,0.0
-Close Date Quarter_Q2,0.0,0.0
-Close Date Quarter_Q3,0.0,0.0
-Close Date Quarter_Q4,0.0,0.0
-Close Date Month_April,0.0,0.0
-Close Date Month_August,0.0,0.0
-Close Date Month_December,0.0,0.0
-Close Date Month_February,0.0,0.0
-Close Date Month_January,0.0,0.0
-Close Date Month_July,0.0,0.0
-Close Date Month_June,0.0,0.0
-Close Date Month_March,0.0,0.0
-Close Date Month_May,0.0,0.0
-Close Date Month_November,0.0,0.0
-Close Date Month_October,0.0,0.0
-Close Date Month_September,0.0,0.0
-Created Date Quarter_Q1,0.0,0.0
-Created Date Quarter_Q2,0.0,0.0
-Created Date Quarter_Q3,0.0,0.0
-Account Region_AMER,0.0,0.0
-Account Shipping Country_United Kingdom,0.0,0.0
-Opportunity Line Number,0.0,0.0
-Account Shipping Country_India,0.0,0.0
-Account Number of Employees,0.0,0.0
-Organization Number of Employees,0.0,0.0
-Calculated Number of Employees,0.0,0.0
-Close Date Year,0.0,0.0
-Close Date Month Number,0.0,0.0
-Close Date Week Number,0.0,0.0
-Created Date Year,0.0,0.0
-Created Date Month Number,0.0,0.0
-Created Date Week Number,0.0,0.0
-Opportunity Line Quantity,0.0,0.0
-Exchange Rate,0.0,0.0
-Opportunity Line ACV USD,0.0,0.0
-Opportunity Age Days,0.0,0.0
-Opportunity Age Months,0.0,0.0
-Sales Cycle Days,0.0,0.0
-Sales Cycle Months,0.0,0.0
-CloseDatePushes,0.0,0.0
-Flexera 6Sense Intent Score,0.0,0.0
-Flexera 6Sense Numerical Reach Score,0.0,0.0
-Revenera 6Sense Intent Score,0.0,0.0
-Revenera 6Sense Numerical Reach Score,0.0,0.0
-Account Shipping Country_Australia,0.0,0.0
-Account Shipping Country_Germany,0.0,0.0
-Created Date Quarter_Q4,-0.019999999999999928,0.009999999999999964
+Account Shipping Country_Azerbaijan,0.06020560307619873,0.0011558943821405672
+StartDate - Day,0.03380679588793849,0.001886915003642523
+StartDateTime - Year,0.022851761751549904,0.0012955655078702784
+Account Shipping Country_Austria,0.017750922074864662,0.0007250292372252149
+EndDateTime - Year,0.016291297182767027,0.0011667122366818545
+Account Shipping Country_Andorra,0.009526799026916754,0.00134702039024563
+EndDate - Day,0.009134426744094815,0.0005405061714736618
+StartDateTime - Day,0.008726359569960018,0.0008443209703405989
+Account Shipping Country_Albania,0.007219650003923772,0.001715703610537189
+EndDate - Year,0.005681550655261702,0.000580074350233883
+Account Shipping Country_Angola,0.0047241622851762035,0.00024516203957959876
+Account Shipping Country_Argentina,0.0026367417405634974,0.0008194476956576426
+Account Shipping Country_Australia,0.002605351957937696,0.0007500778871756122
+Account Shipping Country_Belgium,0.0014439300007847767,0.00031232439366131264
+Account Shipping Country_Bahamas,0.0010829475005886158,0.00023489962406178386
+Opportunity Close Date - Day,0.00026681315231893434,0.00039890967675239764
+EndDateTime - Day,7.847445656439245e-05,0.0003474212292424049
+StartDate - Year,4.708467393865767e-05,0.0007185449669471592
+Account Shipping Country_Brazil,-0.0009887781527112781,0.0013884435724458178
+Opportunity Created Date - Year,-0.0010044730440241345,0.0004923295029854111
+Account Shipping Country_Bangladesh,-0.001349760652907439,0.0015016328713634312
+Account Shipping Country_Bahrain,-0.0014282351094718538,0.0012342213451361772
+Account Shipping Country_Bermuda,-0.0026210468492505303,0.0010903149608700348
+Opportunity Close Date - Year,-0.0042376206544769476,0.0008048893607444513
+Opportunity Created Date - Day,-0.005163619241936712,0.0009844088067530073

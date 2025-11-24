@@ -1,56 +1,26 @@
 feature_type,feature_name
 categorical,Account Shipping Country
+categorical,CalculatedSegment
+categorical,EndDate - Quarter
+categorical,EndDateTime - Quarter
+categorical,Name
+categorical,Opportunity Close Date - Quarter
+categorical,Opportunity Close Date - Month
+categorical,Opportunity Created Date - Quarter
+categorical,Organization Name
+categorical,SOB
+categorical,StartDate - Quarter
+categorical,StartDateTime - Quarter
 categorical,Account Region
-categorical,Assigned to Region
-categorical,Close Date Quarter
-categorical,Close Date Month
-categorical,Created Date Quarter
-categorical,Open Pipeline Opportunity
-categorical,Opportunity Reason Lost Detail
-categorical,Opportunity Owner Name
-categorical,Opportunity Owner Manager
-categorical,Upgrade Opportunity
-categorical,Product Reporting Solution Area
-categorical,RevOps Product Group
-categorical,Flexera/Snow Product
-categorical,Product Classification
-categorical,Flexera One
-categorical,Primary Partner Account Name
-categorical,Primary Partner Organization Name
-categorical,Partner Involved
-categorical,Project Blackbeard
-categorical,Partner Deal Registration
-categorical,Opportunity Deal Registration
-categorical,Source of Business
-categorical,ROSA
-categorical,ISO Code
-categorical,ACV Type
-categorical,Primary Alliances Manager
-categorical,Secondary Alliances Manager
-categorical,Opportunity Engagement Level (People.ai)
-categorical,Delivery Lead
-categorical,Campaign Name
-categorical,Primary Competitor
-numeric,Opportunity Number
-numeric,Opportunity Line Number
-numeric,Account Number of Employees
-numeric,Organization Number of Employees
-numeric,Calculated Number of Employees
-numeric,Close Date Year
-numeric,Close Date Month Number
-numeric,Close Date Week Number
-numeric,Created Date Year
-numeric,Created Date Month Number
-numeric,Created Date Week Number
-numeric,Opportunity Line Quantity
-numeric,Exchange Rate
-numeric,Opportunity Line ACV USD
-numeric,Opportunity Age Days
-numeric,Opportunity Age Months
-numeric,Sales Cycle Days
-numeric,Sales Cycle Months
-numeric,CloseDatePushes
-numeric,Flexera 6Sense Intent Score
-numeric,Flexera 6Sense Numerical Reach Score
-numeric,Revenera 6Sense Intent Score
-numeric,Revenera 6Sense Numerical Reach Score
+numeric,EndDate - Year
+numeric,EndDate - Day
+numeric,EndDateTime - Year
+numeric,EndDateTime - Day
+numeric,Opportunity Close Date - Year
+numeric,Opportunity Close Date - Day
+numeric,Opportunity Created Date - Year
+numeric,Opportunity Created Date - Day
+numeric,StartDate - Year
+numeric,StartDate - Day
+numeric,StartDateTime - Year
+numeric,StartDateTime - Day

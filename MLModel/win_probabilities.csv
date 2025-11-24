@@ -1,73 +1,3213 @@
-Opportunity ID,Opportunity Name,Stage,Owner,Close Date,Amount,win_prob,pred_at_prec_thr
-0061M00001ADscDQAT,Opportunity 3,Merged,Owner 3,2022-06-09,3991.77,1.0,1
-0068Y00001QYZsKQAX,Opportunity 24,7 - Closed Won,Owner 24,2023-06-26,11548.5,1.0,1
-006PL00000DQkrGYAT,Opportunity 92,8 - Closed Lost,Owner 92,2023-01-31,60000.0,1.0,1
-006PL00000E8zMRYAZ,Opportunity 91,1 - Auto-Forecast,Owner 91,2027-09-29,2024.99,1.0,1
-006PL00000RNerfYAD,Opportunity 88,1 - Auto-Forecast,Owner 88,2026-10-26,151610.35,1.0,1
-0061M000016OiidQAC,Opportunity 79,8 - Closed Lost,Owner 79,2022-05-17,1087.06,1.0,1
-0068Y00001TILE8QAP,Opportunity 74,Merged,Owner 74,2024-10-03,1193.62,1.0,1
-0068Y00001QafgrQAB,Opportunity 72,7 - Closed Won,Owner 72,2023-05-15,2474.25,1.0,1
-0061M00001ADjgtQAD,Opportunity 68,7 - Closed Won,Owner 68,2024-03-28,793.93,1.0,1
-0068Y00001TH8blQAD,Opportunity 65,7 - Closed Won,Owner 65,2023-10-27,1410.74,1.0,1
-0068Y00001JCkPOQA1,Opportunity 62,Merged,Owner 62,2023-08-25,24315.76,1.0,1
-0061M00001AERRwQAP,Opportunity 52,Merged,Owner 52,2022-09-28,1581.26,1.0,1
-0061M0000193rmzQAA,Opportunity 51,8 - Closed Lost,Owner 51,2022-04-15,1137.0,1.0,1
-0068Y00001JDsMnQAL,Opportunity 26,7 - Closed Won,Owner 26,2023-07-19,1229.04,1.0,1
-0061M0000175cF1QAI,Opportunity 58,7 - Closed Won,Owner 58,2023-08-31,4353.1,1.0,1
-0061M00001AEUEdQAP,Opportunity 100,Merged,Owner 100,2022-09-11,6030.48,1.0,1
-0061M00001ADe5yQAD,Opportunity 9,7 - Closed Won,Owner 9,2022-05-13,4400.94,1.0,1
-0068Y00001RYNb6QAH,Opportunity 13,7 - Closed Won,Owner 13,2023-06-30,71672.48,1.0,1
-006PL00000Sjt8JYAR,Opportunity 20,1 - Auto-Forecast,Owner 20,2026-09-14,1283.94,1.0,1
-006PL00000CHO7OYAX,Opportunity 14,7 - Closed Won,Owner 14,2023-02-08,31201.11,1.0,1
-0068Y00001G3w5VQAR,Opportunity 16,7 - Closed Won,Owner 16,2022-06-06,1430.97,1.0,1
-0068Y00001QYHxHQAX,Opportunity 40,7 - Closed Won,Owner 40,2023-09-25,38051.96,0.9997124530784287,1
-006PL00000CH57rYAD,Opportunity 90,7 - Closed Won,Owner 90,2024-06-27,53300.0,0.998996119368794,1
-006PL00000OKpWnYAL,Opportunity 18,1 - Auto-Forecast,Owner 18,2026-05-30,49134.11,0.9895549383535576,1
-0068Y00001SXuQKQA1,Opportunity 33,7 - Closed Won,Owner 33,2024-08-05,1195.56,0.9895299218434929,1
-006PL00000O2tSSYAZ,Opportunity 35,1 - Auto-Forecast,Owner 35,2026-06-30,921.74,0.9820054487710047,1
-0061M00001ADnWdQAL,Opportunity 53,7 - Closed Won,Owner 53,2022-05-31,40446.37,0.9811352460151054,1
-0061M00001ADjccQAD,Opportunity 84,7 - Closed Won,Owner 84,2022-05-23,263.59,0.9732187588501789,1
-006PL00000R5qzJYAR,Opportunity 99,1 - Auto-Forecast,Owner 99,2027-06-18,4662.5,0.9712897000209687,1
-0068Y00001Tgn5nQAB,Opportunity 44,7 - Closed Won,Owner 44,2024-11-06,328.9,0.9560083111914337,1
-0061M00001AE3XiQAL,Opportunity 37,7 - Closed Won,Owner 37,2022-04-25,2921.76,0.9534948665217406,1
-006PL00000Aw8ykYAB,Opportunity 67,1 - Auto-Forecast,Owner 67,2027-06-16,2405.06,0.9435352209077702,1
-0068Y00001DO6m8QAD,Opportunity 36,Merged,Owner 36,2023-11-30,1459.0,0.9293868529119638,1
-0068Y00001PoWHvQAN,Opportunity 60,8 - Closed Lost,Owner 60,2023-04-27,0.0,0.9183724037118949,1
-006PL000006b64bYAA,Opportunity 12,1 - Auto-Forecast,Owner 12,2026-09-12,2672.29,0.9180559538631828,1
-0068Y00001DOJGxQAP,Opportunity 83,7 - Closed Won,Owner 83,2024-12-19,53441.47,0.9100650664490159,1
-0061M000013s5ohQAA,Opportunity 29,8 - Closed Lost,Owner 29,2022-12-19,10484.86,0.9017654038428761,1
-0061M00001ADhkDQAT,Opportunity 89,7 - Closed Won,Owner 89,2024-03-07,3691.44,0.8998179405627743,1
-006PL00000CH8IqYAL,Opportunity 75,8 - Closed Lost,Owner 75,2024-10-17,24241.24,0.8863058705320986,1
-0061M00001AEVMnQAP,Opportunity 93,8 - Closed Lost,Owner 93,2024-05-06,1218.18,0.8830789283582582,1
-006PL00000CH3W4YAL,Opportunity 17,8 - Closed Lost,Owner 17,2024-11-14,7680.0,0.8726342483737444,1
-006PL00000M48TlYAJ,Opportunity 10,1 - Auto-Forecast,Owner 10,2026-03-31,9129.51,0.8671998956988975,1
-006PL00000HikWoYAJ,Opportunity 6,1 - Active,Owner 6,2025-12-28,1571.37,0.8664818939687707,1
-006PL00000Dy3BdYAJ,Opportunity 5,1 - Auto-Forecast,Owner 5,2026-09-28,14462.33,0.8634113710910046,1
-006PL00000RI4iSYAT,Opportunity 4,3 - Establishing Value,Owner 4,2025-11-21,18978.0,0.8497824876760971,1
-006PL00000M1uJeYAJ,Opportunity 31,1 - Auto-Forecast,Owner 31,2026-04-26,3123.26,0.8468272930979746,1
-006PL00000G5TMsYAN,Opportunity 76,1 - Auto-Forecast,Owner 76,2027-12-18,2550.36,0.8425528618744624,1
-006PL000007Y2hhYAC,Opportunity 27,7 - Closed Won,Owner 27,2025-05-06,1369.57,0.8359683267025143,1
-0068Y00001G3al3QAB,Opportunity 95,7 - Closed Won,Owner 95,2023-04-25,190.87,0.8337186401945083,1
-0061M00001ADtMmQAL,Opportunity 78,7 - Closed Won,Owner 78,2022-04-19,63.0,0.8239135838190048,1
-006PL00000JWd3OYAT,Opportunity 64,6 - Negotiating,Owner 64,2026-03-02,48960.81,0.8089009562023036,1
-0068Y00001RX3YpQAL,Opportunity 96,7 - Closed Won,Owner 96,2024-04-22,2328.7,0.8031068796326598,1
-006PL000006wBakYAE,Opportunity 80,8 - Closed Lost,Owner 80,2024-03-18,9128.31,0.795203788816034,1
-006PL00000OD1IDYA1,Opportunity 97,1 - Auto-Forecast,Owner 97,2027-06-10,1485.38,0.7928916376221796,1
-006PL000008DyzSYAS,Opportunity 86,1 - Auto-Forecast,Owner 86,2027-04-08,1950.78,0.7777777777777777,1
-0068Y00001Pldb1QAB,Opportunity 98,1 - Auto-Forecast,Owner 98,2026-03-31,2828.18,0.7777777777777777,1
-0061M00001AEFDzQAP,Opportunity 8,8 - Closed Lost,Owner 8,2022-01-28,720.0,0.7777777777777777,1
-006PL00000CH7cXYAT,Opportunity 25,7 - Closed Won,Owner 25,2024-10-21,15775.1,0.7777777777777777,1
-006PL00000E1SAHYA3,Opportunity 23,8 - Closed Lost,Owner 23,2024-11-14,17205.76,0.7777777777777777,1
-006PL00000DQm04YAD,Opportunity 82,8 - Closed Lost,Owner 82,2023-10-27,11139.1,0.7777777777777777,1
-0068Y00001Pldb1QAB,Opportunity 81,1 - Auto-Forecast,Owner 81,2026-03-31,53735.39,0.7777777777777777,1
-006PL00000GPuM0YAL,Opportunity 77,6 - Negotiating,Owner 77,2025-11-19,19455.14,0.7777777777777777,1
-0068Y00001DO1iNQAT,Opportunity 38,8 - Closed Lost,Owner 38,2022-11-21,4536.45,0.7777777777777777,1
-0068Y00001DOBg6QAH,Opportunity 63,8 - Closed Lost,Owner 63,2022-12-20,3528.0,0.7777777777777777,1
-0068Y00001SrH0rQAF,Opportunity 61,Merged,Owner 61,2024-08-30,3924.72,0.7777777777777777,1
-006PL00000O3IqcYAF,Opportunity 87,1 - Auto-Forecast,Owner 87,2027-05-26,26798.59,0.6913210901312435,0
-006PL00000HsKZRYA3,Opportunity 19,1 - Auto-Forecast,Owner 19,2026-01-05,0.0,0.5837442048572836,0
-006PL000008WjDYYA0,Opportunity 50,8 - Closed Lost,Owner 50,2025-02-03,14059.4,0.5795277795047936,0
-006PL000008WjDYYA0,Opportunity 48,8 - Closed Lost,Owner 48,2025-02-03,42178.21,0.5071591372383875,0
-0068Y00001SXLaxQAH,Opportunity 46,8 - Closed Lost,Owner 46,2023-08-07,24786.0,0.4444444444444444,0
-006PL00000H7wOsYAJ,Opportunity 57,8 - Closed Lost,Owner 57,2025-02-20,26463.52,0.4444444444444444,0
-0068Y00001AFGnRQAX,Opportunity 69,8 - Closed Lost,Owner 69,2022-04-07,44135.0,0.18562655348632515,0
+Opportunity Name,Stage,win_prob,pred_at_prec_thr
+Jeroen Braak(SVM User),1 - Active,0.9609551891106394,1
+Jeroen Braak(SVM User),1 - Active,0.915911041024095,1
+Lennert Stepien,1 - Active,0.910092420486282,1
+Charlotte Prost (IS),1 - Active,0.895064678714318,1
+Michael Lelchuk,1 - Active,0.8764679556446139,1
+Patrick Phillips,4 - Eliminating Alternatives,0.8724426695341475,1
+Patrick Phillips,1 - Active,0.8609206833465436,0
+Patrick Phillips,1 - Active,0.8609206833465436,0
+Patrick Phillips,1 - Active,0.8609206833465436,0
+Susanne Klindt,1 - Active,0.8543972223831919,0
+Monica Schell,1 - Active,0.8538459464644433,0
+Andrew Evert,6 - Negotiating,0.8538459464644433,0
+Andrew Evert,1 - Active,0.8538459464644433,0
+Don Rosado,5 - Solution of Choice,0.8538459464644433,0
+Siegfried Gammay,6 - Negotiating,0.8538459464644433,0
+Patrick Phillips,5 - Solution of Choice,0.8538459464644433,0
+David Barros,4 - Eliminating Alternatives,0.8538459464644433,0
+Patrick Phillips,4 - Eliminating Alternatives,0.8538459464644433,0
+Jelle Wijndelts,1 - Active,0.8538459464644433,0
+Charlotte Prost (IS),5 - Solution of Choice,0.8538459464644433,0
+Patrick Phillips,1 - Active,0.8522125997295423,0
+Siegfried Gammay,4 - Eliminating Alternatives,0.846218531480616,0
+Michael Lelchuk,5 - Solution of Choice,0.846218531480616,0
+Monica Schell,4 - Eliminating Alternatives,0.846218531480616,0
+Charlotte Prost (IS),2 - Presenting Solution,0.8459862434434499,0
+Adrian Escarcega,6 - Negotiating,0.8432243293918992,0
+Susanne Klindt,4 - Eliminating Alternatives,0.8377706447820502,0
+Marco Antonio Cruz Martín,1 - Active,0.8364624339196404,0
+Don Rosado,1 - Active,0.8364624339196404,0
+Jeroen Braak(SVM User),6 - Negotiating,0.8364624339196404,0
+Jelle Wijndelts,1 - Active,0.8354040357805982,0
+Jan-Willem Oliedam,5 - Solution of Choice,0.8353646263709059,0
+Susanne Klindt,1 - Active,0.8347004765689588,0
+Jelle Wijndelts,1 - Active,0.8324098336918814,0
+Monica Schell,6 - Negotiating,0.8321684158349082,0
+Sophie Newman,3 - Establishing Value,0.8306959078999498,0
+Sophie Newman,4 - Eliminating Alternatives,0.8306959078999498,0
+Kavya Bhaskara (IS),1 - Active,0.8306959078999498,0
+Marco Antonio Cruz Martín,6 - Negotiating,0.8306959078999498,0
+Don Rosado,4 - Eliminating Alternatives,0.8306959078999498,0
+Susanne Klindt,1 - Active,0.8306959078999498,0
+Don Rosado,2 - Presenting Solution,0.8306959078999498,0
+Sophie Newman,3 - Establishing Value,0.8306959078999498,0
+Sophie Newman,1 - Active,0.8306959078999498,0
+Siegfried Gammay,6 - Negotiating,0.8306959078999498,0
+Siegfried Gammay,4 - Eliminating Alternatives,0.8306959078999498,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.8258408168470962,0
+Siegfried Gammay,6 - Negotiating,0.8200742908274057,0
+Michael Lelchuk,1 - Active,0.8200742908274057,0
+Don Rosado,5 - Solution of Choice,0.8200742908274057,0
+Don Rosado,1 - Active,0.819881412199932,0
+Patrick Phillips,4 - Eliminating Alternatives,0.819881412199932,0
+Patrick Phillips,2 - Presenting Solution,0.819881412199932,0
+Michael Lelchuk,1 - Active,0.819881412199932,0
+Eric Cassens,1 - Active,0.8168780802914081,0
+Roberto Sterz,2 - Presenting Solution,0.8168780802914081,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.8168780802914081,0
+Andrew Evert,1 - Active,0.8168780802914081,0
+Jan-Willem Oliedam,1 - Active,0.8168780802914081,0
+Jeroen Braak(SVM User),1 - Active,0.8168780802914081,0
+Roberto Sterz,3 - Establishing Value,0.8168780802914081,0
+Roberto Sterz,2 - Presenting Solution,0.8168780802914081,0
+Andrew Evert,5 - Solution of Choice,0.8168780802914081,0
+Jan-Willem Oliedam,6 - Negotiating,0.8168780802914081,0
+Roberto Sterz,1 - Active,0.8168780802914081,0
+Don Rosado,1 - Active,0.813158936299374,0
+Patrick Phillips,1 - Active,0.8129670345530681,0
+Marshall Stevenson,1 - Active,0.8129670345530681,0
+Linda Venderbush,6 - Negotiating,0.8118301106110809,0
+Sophie Newman,1 - Active,0.8113688009608389,0
+Sophie Newman,5 - Solution of Choice,0.8092597951273879,0
+Daniel Estreicher,1 - Active,0.8083633572882749,0
+Daniel Estreicher,6 - Negotiating,0.8083633572882749,0
+James Smyth,6 - Negotiating,0.8083633572882749,0
+Susanne Klindt,3 - Establishing Value,0.8062109185069598,0
+Susanne Klindt,1 - Active,0.8062109185069598,0
+Kenza Ghaiti,1 - Active,0.8060635845913904,0
+Anja Kilian,3 - Establishing Value,0.8060635845913904,0
+Selphvy Ong,1 - Active,0.8060635845913904,0
+Eric Cassens,3 - Establishing Value,0.8060635845913904,0
+Russ Foster,6 - Negotiating,0.8060635845913904,0
+Anja Kilian,4 - Eliminating Alternatives,0.8060635845913904,0
+Lennert Stepien,1 - Active,0.8060635845913904,0
+Patrick Phillips,5 - Solution of Choice,0.8060635845913904,0
+Alex Dinu,6 - Negotiating,0.8060635845913904,0
+Susanne Klindt,6 - Negotiating,0.8060635845913904,0
+Lennert Stepien,3 - Establishing Value,0.8060635845913904,0
+Eric Cassens,6 - Negotiating,0.8060635845913904,0
+Eric Cassens,1 - Active,0.8049233240749979,0
+Sophie Newman,4 - Eliminating Alternatives,0.8044244645593777,0
+Sophie Newman,4 - Eliminating Alternatives,0.8044244645593777,0
+Hananias Espindola,6 - Negotiating,0.8034776204876445,0
+Sophie Newman,1 - Active,0.8023454174805239,0
+Sophie Newman,1 - Active,0.8023454174805239,0
+Riya Nadig Prabhakar,1 - Active,0.8007471838882948,0
+Roberto Sterz,1 - Active,0.7993411086908323,0
+Roberto Sterz,3 - Establishing Value,0.7991492069445263,0
+Roberto Sterz,1 - Active,0.7991492069445263,0
+Ramona Renton,1 - Active,0.7991492069445263,0
+Sophie Newman,6 - Negotiating,0.7991492069445263,0
+Monica Schell,1 - Active,0.7991492069445263,0
+Jeroen Braak(SVM User),6 - Negotiating,0.7975509733522972,0
+Anja Kilian,5 - Solution of Choice,0.7975509733522972,0
+Monica Schell,6 - Negotiating,0.7967551445870864,0
+Stuart Gomez,1 - Active,0.7965632428407806,0
+Anja Kilian,4 - Eliminating Alternatives,0.7949650092485513,0
+Jelle Wijndelts,1 - Active,0.7936399276139571,0
+Jelle Wijndelts,2 - Presenting Solution,0.7936399276139571,0
+Patricia Stephens,1 - Active,0.792160802861252,0
+Jelle Wijndelts,1 - Active,0.7906882949262936,0
+Carl Eckert,6 - Negotiating,0.7870444774328097,0
+Jeroen Braak(SVM User),1 - Active,0.7869167798207549,0
+Marshall Stevenson,1 - Active,0.7867364776522794,0
+Riya Nadig Prabhakar,1 - Active,0.7867364776522794,0
+Michael Wein,1 - Active,0.7826369933374425,0
+Siegfried Gammay,1 - Active,0.7826369933374425,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.7801300997859458,0
+Roberto Sterz,1 - Active,0.7801300997859458,0
+Jan-Willem Oliedam,1 - Active,0.7801300997859458,0
+Drishya Anna Cherian,1 - Active,0.7800666778537494,0
+Monica Schell,2 - Presenting Solution,0.780002402173891,0
+Monica Schell,3 - Establishing Value,0.780002402173891,0
+Kim Christiansen,1 - Active,0.780002402173891,0
+Monica Schell,1 - Active,0.780002402173891,0
+Jelle Wijndelts,4 - Eliminating Alternatives,0.7798221000054154,0
+Jelle Wijndelts,6 - Negotiating,0.7798221000054154,0
+Hananias Espindola,6 - Negotiating,0.7797554390251843,0
+Siegfried Gammay,1 - Active,0.7791702400146364,0
+Don Rosado,4 - Eliminating Alternatives,0.7768704673177518,0
+Amritha Shankar (IS),1 - Active,0.7742845032140061,0
+Monica Schell,1 - Active,0.7742845032140061,0
+Patrick Phillips,1 - Active,0.7742845032140061,0
+Siegfried Gammay,4 - Eliminating Alternatives,0.7733739837398375,0
+Michael Lelchuk,1 - Active,0.7713611879871826,0
+Don Rosado,1 - Active,0.7713611879871826,0
+Don Rosado,3 - Establishing Value,0.7713611879871826,0
+Carl Eckert,6 - Negotiating,0.7675896728816441,0
+Carl Eckert,6 - Negotiating,0.7675896728816441,0
+Susanne Klindt,6 - Negotiating,0.7645292801097074,0
+Siegfried Gammay,2 - Presenting Solution,0.7606752952347802,0
+Siegfried Gammay,1 - Active,0.7606752952347802,0
+Carl Eckert,6 - Negotiating,0.7606752952347802,0
+Marta Greliak-Telesinska,6 - Negotiating,0.7606752952347802,0
+Marta Greliak-Telesinska,4 - Eliminating Alternatives,0.7606752952347802,0
+Nikolaus Häring,4 - Eliminating Alternatives,0.7604283320860733,0
+Charlotte Prost (IS),2 - Presenting Solution,0.7604283320860733,0
+Charlotte Prost (IS),1 - Active,0.7604283320860733,0
+Nikolaus Häring,3 - Establishing Value,0.7604283320860733,0
+Nikolaus Häring,1 - Active,0.7604283320860733,0
+Jelle Wijndelts,4 - Eliminating Alternatives,0.7598431330755254,0
+Kelsey Young,3 - Establishing Value,0.7580627362551676,0
+Lennert Stepien,2 - Presenting Solution,0.7578513601591713,0
+Roberto Sterz,1 - Active,0.7575433603786409,0
+Sophie Newman,6 - Negotiating,0.7575433603786409,0
+Sophie Newman,6 - Negotiating,0.7575433603786409,0
+Sophie Newman,2 - Presenting Solution,0.7575433603786409,0
+Don Rosado,2 - Presenting Solution,0.7575433603786409,0
+Michael Lelchuk,4 - Eliminating Alternatives,0.7575433603786409,0
+Don Rosado,1 - Active,0.7575433603786409,0
+Amritha Shankar (IS),1 - Active,0.7575433603786409,0
+Charlotte Prost (IS),1 - Active,0.7574271568054903,0
+Sophie Newman,1 - Active,0.7549573962748951,0
+Sarah Farmer,1 - Active,0.7549573962748951,0
+Roberto Sterz,2 - Presenting Solution,0.7549573962748951,0
+Patrick Phillips,1 - Active,0.7549573962748951,0
+Lennert Stepien,4 - Eliminating Alternatives,0.7549573962748951,0
+Sophie Newman,1 - Active,0.7549573962748951,0
+Michael Wein,2 - Presenting Solution,0.7524313059586292,0
+Bo Erlandsson,1 - Active,0.7505623217515458,0
+Jeff Ploetz,6 - Negotiating,0.7487050186957567,0
+Sophie Newman,2 - Presenting Solution,0.7485811854209489,0
+Sophie Newman,1 - Active,0.7485811854209489,0
+Amy Buchanan,1 - Active,0.7485773210837019,0
+Bethany Haveron,4 - Eliminating Alternatives,0.7424032537161674,0
+Sarah Farmer,2 - Presenting Solution,0.7422505404829329,0
+James Smyth,6 - Negotiating,0.7385242532200603,0
+Sophie Newman,1 - Active,0.7385242532200603,0
+Russ Foster,2 - Presenting Solution,0.7383965556080057,0
+James Smyth,6 - Negotiating,0.7383965556080057,0
+Timothy Boudreau,1 - Active,0.7383965556080057,0
+Jan-Willem Oliedam,1 - Active,0.7383965556080057,0
+Jelle Wijndelts,4 - Eliminating Alternatives,0.7383965556080057,0
+Jelle Wijndelts,3 - Establishing Value,0.7383965556080057,0
+Russ Foster,2 - Presenting Solution,0.7383965556080057,0
+Jelle Wijndelts,2 - Presenting Solution,0.7383965556080057,0
+Susanne Klindt,2 - Presenting Solution,0.7383965556080057,0
+Jelle Wijndelts,1 - Active,0.7383965556080057,0
+Sweta Sharma,6 - Negotiating,0.7381000498663793,0
+Andrew Evert,5 - Solution of Choice,0.7325372433816398,0
+Jelle Wijndelts,1 - Active,0.7324502890178355,0
+Michael Papp,1 - Active,0.7312352148124348,0
+Monica Schell,6 - Negotiating,0.7312352148124348,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.7312352148124348,0
+Russ Foster,2 - Presenting Solution,0.7312352148124348,0
+Jan-Willem Oliedam,1 - Active,0.7312352148124348,0
+Patrick Phillips,1 - Active,0.7312352148124348,0
+Lennert Stepien,3 - Establishing Value,0.7312352148124348,0
+Siegfried Gammay,3 - Establishing Value,0.7312352148124348,0
+Matthew McDonough,4 - Eliminating Alternatives,0.729250214144591,0
+Patrick Phillips,1 - Active,0.726668114378092,0
+Patrick Phillips,4 - Eliminating Alternatives,0.726668114378092,0
+Lars Wilkens,6 - Negotiating,0.7260884741399188,0
+Eric Cassens,1 - Active,0.7253931940744173,0
+Eric Cassens,3 - Establishing Value,0.7253931940744173,0
+Jamie Allen,1 - Active,0.724856386780576,0
+Monica Schell,1 - Active,0.7247620284669613,0
+Jamie Allen,1 - Active,0.7247055295869079,0
+Timothy Boudreau,2 - Presenting Solution,0.7233909019182252,0
+Carl Eckert,1 - Active,0.72278429422532,0
+Carl Eckert,1 - Active,0.72278429422532,0
+Raven Keenan,3 - Establishing Value,0.7220888733490202,0
+Jelle Wijndelts,2 - Presenting Solution,0.72153920919949,0
+Andrew Evert,1 - Active,0.72153920919949,0
+Limor Gabbay Shalom,6 - Negotiating,0.72153920919949,0
+Ramona Renton,4 - Eliminating Alternatives,0.7199109807553773,0
+Veronica Silva,6 - Negotiating,0.7175813232025249,0
+Jelle Wijndelts,1 - Active,0.7174760539678718,0
+Ramona Renton,1 - Active,0.7148395192523805,0
+Andrew Evert,1 - Active,0.7143778684039191,0
+Raven Keenan,2 - Presenting Solution,0.7143778684039191,0
+Don Rosado,6 - Negotiating,0.7137100882287019,0
+Graham Burne,5 - Solution of Choice,0.7102349713232572,0
+Matthew Campbell,1 - Active,0.7102349713232572,0
+Carl Eckert,6 - Negotiating,0.7101072737112025,0
+Patrick Phillips,1 - Active,0.7101072737112025,0
+Michael Lelchuk,6 - Negotiating,0.7101072737112025,0
+Sophie Newman,1 - Active,0.7101072737112025,0
+Sophie Newman,1 - Active,0.7101072737112025,0
+Patrick Phillips,1 - Active,0.7101072737112025,0
+Jelle Wijndelts,3 - Establishing Value,0.7099563537562359,0
+Monica Schell,4 - Eliminating Alternatives,0.7098703182574239,0
+Raven Keenan,1 - Active,0.7098703182574239,0
+Anja Kilian,6 - Negotiating,0.7098561033537746,0
+Sophie Newman,2 - Presenting Solution,0.7098561033537746,0
+Sophie Newman,3 - Establishing Value,0.7098561033537746,0
+Jan-Willem Oliedam,1 - Active,0.7098561033537746,0
+Nick Marchese,4 - Eliminating Alternatives,0.7076668953941163,0
+Matthew Clifford,1 - Active,0.7076668953941163,0
+Amy Buchanan,2 - Presenting Solution,0.7030536343468615,0
+Jeff Ploetz,6 - Negotiating,0.7029459329156317,0
+Amy Buchanan,1 - Active,0.7029459329156317,0
+Amritha Shankar (IS),1 - Active,0.7029459329156317,0
+Jeff Stramaglia,6 - Negotiating,0.7029459329156317,0
+Roberto Fabre,6 - Negotiating,0.7026947625582037,0
+Bruce Passey,4 - Eliminating Alternatives,0.7005838738162663,0
+Lars Wilkens,5 - Solution of Choice,0.7005838738162663,0
+Kyran Pritchard,4 - Eliminating Alternatives,0.7005838738162663,0
+Roberto Fabre,1 - Active,0.7005838738162663,0
+Bo Erlandsson,5 - Solution of Choice,0.7005838738162663,0
+Barry Lafferty,5 - Solution of Choice,0.7005838738162663,0
+Siegfried Gammay,3 - Establishing Value,0.7005838738162663,0
+Sophie Newman,4 - Eliminating Alternatives,0.7005838738162663,0
+Kim Christiansen,1 - Active,0.7005838738162663,0
+Kelsey Young,5 - Solution of Choice,0.7005838738162663,0
+Sarah Farmer,6 - Negotiating,0.7005838738162663,0
+Markham Tate,1 - Active,0.7005838738162663,0
+Carl Eckert,6 - Negotiating,0.7001504439525098,0
+Siegfried Gammay,2 - Presenting Solution,0.698453882900755,0
+Stuart Gomez,1 - Active,0.698453882900755,0
+Amy Buchanan,2 - Presenting Solution,0.6984383827691364,0
+Patrick Phillips,3 - Establishing Value,0.6983292491972367,0
+Don Rosado,1 - Active,0.6962215762127301,0
+Anja Kilian,3 - Establishing Value,0.6959980044520502,0
+Anja Kilian,4 - Eliminating Alternatives,0.6959980044520502,0
+Anja Kilian,5 - Solution of Choice,0.6959980044520502,0
+Patrick Phillips,1 - Active,0.6955124123132695,0
+Bo Erlandsson,5 - Solution of Choice,0.6955124123132695,0
+Sam Nixon,6 - Negotiating,0.6955124123132695,0
+Kelsey Young,6 - Negotiating,0.6955124123132695,0
+Bart Jeurissen,4 - Eliminating Alternatives,0.6921329532291515,0
+Siegfried Gammay,1 - Active,0.6865502373555774,0
+Roberto Sterz,1 - Active,0.686349637609895,0
+Amy Buchanan,1 - Active,0.6849208545457258,0
+Lennert Stepien,2 - Presenting Solution,0.6837265274077505,0
+Adam Thomson,1 - Active,0.6837265274077505,0
+Anja Kilian,1 - Active,0.6836482081900299,0
+Emma Kettle,6 - Negotiating,0.683239700374532,0
+Adam Thomson,4 - Eliminating Alternatives,0.683239700374532,0
+Alex Blogg,5 - Solution of Choice,0.6824804762286396,0
+Andrew Evert,1 - Active,0.6815668214569715,0
+Patrick Phillips,4 - Eliminating Alternatives,0.6793776134973132,0
+Senol Verim,4 - Eliminating Alternatives,0.6786550659047538,0
+Patrick Bradley,6 - Negotiating,0.6786550659047538,0
+Anja Kilian,1 - Active,0.6740933589111173,0
+Tom Wells,1 - Active,0.6722945919194632,0
+Timothy Hirsch,1 - Active,0.6722945919194632,0
+Florian de la Motte,3 - Establishing Value,0.6722945919194632,0
+Amy Buchanan,1 - Active,0.6722945919194632,0
+Jelle Wijndelts,3 - Establishing Value,0.6722945919194632,0
+Jelle Wijndelts,2 - Presenting Solution,0.6722945919194632,0
+Sweta Sharma,6 - Negotiating,0.6722162727017426,0
+Roberto Fabre,5 - Solution of Choice,0.6720434215620351,0
+Alex Malam,1 - Active,0.669854213602377,0
+Carl Eckert,1 - Active,0.669854213602377,0
+Michael Vardo,1 - Active,0.6697887969430054,0
+Yeshvir Monteiro,1 - Active,0.6688622563009711,0
+Lennert Stepien,1 - Active,0.6678025419045865,0
+Roberto Fabre,1 - Active,0.6678025419045865,0
+Anja Kilian,2 - Presenting Solution,0.6677242226868657,0
+Anja Kilian,3 - Establishing Value,0.6677242226868657,0
+Marshall Stevenson,4 - Eliminating Alternatives,0.6677242226868657,0
+Sophie Newman,2 - Presenting Solution,0.667708722555247,0
+Lorena Rivas Garcia,2 - Presenting Solution,0.667708722555247,0
+Don Rosado,1 - Active,0.6675995889833471,0
+Amy Buchanan,1 - Active,0.6672231304164664,0
+Russ Foster,2 - Presenting Solution,0.6672231304164664,0
+Sophie Newman,4 - Eliminating Alternatives,0.6672231304164664,0
+Kas Subhan,6 - Negotiating,0.6669719600590384,0
+Bo Erlandsson,3 - Establishing Value,0.6669719600590384,0
+Amy Buchanan,5 - Solution of Choice,0.6669719600590384,0
+Bo Erlandsson,2 - Presenting Solution,0.6669719600590384,0
+Matt Spearing,2 - Presenting Solution,0.6657065382008049,0
+Michael Ciabattari,5 - Solution of Choice,0.6647827520993802,0
+Michael Ciabattari,4 - Eliminating Alternatives,0.6647827520993802,0
+Michael Ciabattari,1 - Active,0.6647827520993802,0
+Michael Wein,4 - Eliminating Alternatives,0.6647827520993802,0
+Eric Cassens,5 - Solution of Choice,0.6632166725403704,0
+Eric Cassens,1 - Active,0.6632166725403704,0
+Marlee Ragan,2 - Presenting Solution,0.6628970800986206,0
+Marlee Ragan,3 - Establishing Value,0.6628970800986206,0
+Marlee Ragan,1 - Active,0.6628970800986206,0
+Russ Foster,2 - Presenting Solution,0.6628970800986206,0
+Amy Buchanan,1 - Active,0.6627310804015898,0
+Bo Erlandsson,2 - Presenting Solution,0.6627310804015898,0
+Charlotte Prost (IS),3 - Establishing Value,0.6627310804015898,0
+Randi Hapenny,3 - Establishing Value,0.6627310804015898,0
+Bo Erlandsson,1 - Active,0.6578256185956238,0
+Jelle Wijndelts,6 - Negotiating,0.6574458209443024,0
+Marco Antonio Cruz Martín,1 - Active,0.6551351055233714,0
+Matthew Campbell,3 - Establishing Value,0.6549504184777288,0
+Timothy Boudreau,4 - Eliminating Alternatives,0.6549504184777288,0
+Frans Peters,2 - Presenting Solution,0.6549504184777288,0
+Kim Christiansen,1 - Active,0.6549504184777288,0
+Kim Christiansen,4 - Eliminating Alternatives,0.6549504184777288,0
+Sam Nixon,5 - Solution of Choice,0.6546992481203008,0
+Michael Wein,4 - Eliminating Alternatives,0.6545043503568168,0
+Jan-Willem Oliedam,6 - Negotiating,0.6545043503568168,0
+Sophie Newman,2 - Presenting Solution,0.6541911943318365,0
+Sophie Newman,2 - Presenting Solution,0.6541911943318365,0
+Jelle Wijndelts,1 - Active,0.6529968671938614,0
+Carl Eckert,6 - Negotiating,0.6525100401606426,0
+Bart Jeurissen,1 - Active,0.6525100401606426,0
+Carl Eckert,6 - Negotiating,0.6525100401606426,0
+Bart Jeurissen,2 - Presenting Solution,0.6525100401606426,0
+Sabrina Xing Fang,1 - Active,0.6525100401606426,0
+Sabrina Xing Fang,4 - Eliminating Alternatives,0.6525100401606426,0
+Markus Linder,1 - Active,0.6525100401606426,0
+Carl Eckert,6 - Negotiating,0.6525100401606426,0
+Andrew Evert,1 - Active,0.6525100401606426,0
+Markus Linder,4 - Eliminating Alternatives,0.6525100401606426,0
+Andrew Evert,4 - Eliminating Alternatives,0.6525100401606426,0
+Senol Verim,1 - Active,0.6504583684628522,0
+Phil Sanderson,2 - Presenting Solution,0.6504583684628522,0
+John Rockliff,1 - Active,0.6504583684628522,0
+Amy Buchanan,4 - Eliminating Alternatives,0.6501146136505228,0
+Kavya Bhaskara (IS),1 - Active,0.6501146136505228,0
+Don Rosado,5 - Solution of Choice,0.6486627235628338,0
+Lorena Rivas Garcia,3 - Establishing Value,0.6479254056908647,0
+Lorena Rivas Garcia,4 - Eliminating Alternatives,0.6479254056908647,0
+Michael Wein,5 - Solution of Choice,0.6479254056908647,0
+Michael Ciabattari,1 - Active,0.6465635977674165,0
+Matthew Campbell,1 - Active,0.6465635977674165,0
+Michael Ciabattari,2 - Presenting Solution,0.6465635977674165,0
+Jeroen Braak(AR User),2 - Presenting Solution,0.644908276005837,0
+Steve Bryant,5 - Solution of Choice,0.643363698697228,0
+Craig Valentine,3 - Establishing Value,0.643363698697228,0
+Craig Valentine,1 - Active,0.643363698697228,0
+Kyran Pritchard,2 - Presenting Solution,0.6431723939637629,0
+Senol Verim,3 - Establishing Value,0.6431723939637629,0
+Don Rosado,5 - Solution of Choice,0.6424131698178706,0
+Bart Jeurissen,3 - Establishing Value,0.6422316384180791,0
+Monica Schell,1 - Active,0.6420715477525398,0
+Alex Malam,3 - Establishing Value,0.6415649317055739,0
+Roberto Sterz,4 - Eliminating Alternatives,0.6415649317055739,0
+Amy Buchanan,1 - Active,0.6415649317055739,0
+Alex Malam,2 - Presenting Solution,0.6415649317055739,0
+Alex Blogg,1 - Active,0.6398368145028402,0
+Alex Blogg,4 - Eliminating Alternatives,0.6398368145028402,0
+Lorena Rivas Garcia,1 - Active,0.6394207425743964,0
+Jelle Wijndelts,6 - Negotiating,0.6393121748076047,0
+Don Rosado,6 - Negotiating,0.6392620896503555,0
+Randi Hapenny,1 - Active,0.6391934544531929,0
+Ivan Tomovic,3 - Establishing Value,0.6386826781622355,0
+Kas Subhan,2 - Presenting Solution,0.6386826781622355,0
+Kas Subhan,1 - Active,0.6386826781622355,0
+Bo Erlandsson,1 - Active,0.6378419017117851,0
+Matt Spearing,1 - Active,0.6371660859465739,0
+Alex Malam,2 - Presenting Solution,0.6370728816906972,0
+Andrew Evert,6 - Negotiating,0.6370728816906972,0
+James Smyth,6 - Negotiating,0.6370728816906972,0
+Amy Buchanan,2 - Presenting Solution,0.6364934702025772,0
+Kristie Witherow,5 - Solution of Choice,0.6364934702025772,0
+Jan-Willem Oliedam,3 - Establishing Value,0.6364934702025772,0
+Marshall Stevenson,1 - Active,0.6364934702025772,0
+Jeff Ploetz,2 - Presenting Solution,0.6364934702025772,0
+Sarah Farmer,5 - Solution of Choice,0.6364934702025772,0
+Lennert Stepien,4 - Eliminating Alternatives,0.6364934702025772,0
+Bo Erlandsson,2 - Presenting Solution,0.6364934702025772,0
+Graham Burne,1 - Active,0.6364934702025772,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.6364934702025772,0
+Don Rosado,3 - Establishing Value,0.6356687279807688,0
+Andrew Evert,6 - Negotiating,0.6356526937521269,0
+Phil Sanderson,3 - Establishing Value,0.6347855732534505,0
+Timothy Hirsch,3 - Establishing Value,0.6347855732534505,0
+Frans Peters,1 - Active,0.6347855732534505,0
+Amritha Shankar (IS),1 - Active,0.6341906281473587,0
+Henrik Holm,5 - Solution of Choice,0.6341906281473587,0
+Phil Sanderson,4 - Eliminating Alternatives,0.6335227990493096,0
+Phil Sanderson,2 - Presenting Solution,0.6335227990493096,0
+Phil Sanderson,3 - Establishing Value,0.6335227990493096,0
+Phil Sanderson,1 - Active,0.6335227990493096,0
+Phil Sanderson,5 - Solution of Choice,0.6335227990493096,0
+Jeroen Braak(SVM User),6 - Negotiating,0.6327272573932832,0
+Eric Cassens,2 - Presenting Solution,0.6320014201877004,0
+Patrick Phillips,2 - Presenting Solution,0.6320014201877004,0
+Andrew Sullivan,3 - Establishing Value,0.6320014201877004,0
+Jeff Ploetz,1 - Active,0.6320014201877004,0
+Jan-Willem Oliedam,5 - Solution of Choice,0.6310824207322234,0
+Andrew Evert,5 - Solution of Choice,0.6297869071916079,0
+Kenyan Branscomb,2 - Presenting Solution,0.629030749034433,0
+Kenyan Branscomb,1 - Active,0.629030749034433,0
+Sonny Lee,1 - Active,0.6279325203172382,0
+Sam Nixon,1 - Active,0.6272658730418145,0
+Sam Nixon,3 - Establishing Value,0.6272658730418145,0
+Siegfried Gammay,2 - Presenting Solution,0.6269046536482694,0
+Sourav Patari,1 - Active,0.6264099662234978,0
+Bo Erlandsson,2 - Presenting Solution,0.6264099662234978,0
+Roberto Sterz,3 - Establishing Value,0.6264099662234978,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.6262150684600137,0
+Jan-Willem Oliedam,5 - Solution of Choice,0.6262150684600137,0
+Jelle Wijndelts,6 - Negotiating,0.6262150684600137,0
+Barry Lafferty,1 - Active,0.6262150684600137,0
+Marshall Stevenson,1 - Active,0.6247154456886111,0
+Markus Linder,5 - Solution of Choice,0.6247154456886111,0
+David Barros,1 - Active,0.6247154456886111,0
+Alex Dinu,2 - Presenting Solution,0.6242207582638395,0
+Roberto Sterz,4 - Eliminating Alternatives,0.6219179162086211,0
+Alex Malam,1 - Active,0.6217230184451371,0
+Erik Oberthier,1 - Active,0.6217230184451371,0
+Roberto Sterz,4 - Eliminating Alternatives,0.6217230184451371,0
+Monica Schell,4 - Eliminating Alternatives,0.6212870964376989,0
+Jeroen Braak(AR User),1 - Active,0.6204545454545455,0
+Alex Malam,4 - Eliminating Alternatives,0.6197287082489629,0
+Sourav Patari,2 - Presenting Solution,0.6197287082489629,0
+Roberto Fabre,5 - Solution of Choice,0.6197287082489629,0
+Roberto Fabre,6 - Negotiating,0.6197287082489629,0
+Kristie Witherow,3 - Establishing Value,0.6197287082489629,0
+Roberto Sterz,5 - Solution of Choice,0.6197287082489629,0
+Patrick Phillips,4 - Eliminating Alternatives,0.6197287082489629,0
+Alex Malam,3 - Establishing Value,0.6197287082489629,0
+Alex Malam,2 - Presenting Solution,0.6197287082489629,0
+Alex Malam,1 - Active,0.6197287082489629,0
+Bo Erlandsson,3 - Establishing Value,0.6197287082489629,0
+Patrick Phillips,3 - Establishing Value,0.6163989290495314,0
+Tarek Majaj,5 - Solution of Choice,0.6158339375535271,0
+Jeroen Braak(SVM User),1 - Active,0.6158339375535271,0
+Bo Erlandsson,4 - Eliminating Alternatives,0.6158339375535271,0
+Kas Subhan,1 - Active,0.6146319417095317,0
+Kas Subhan,2 - Presenting Solution,0.6146319417095317,0
+Kas Subhan,4 - Eliminating Alternatives,0.6146319417095317,0
+Kas Subhan,3 - Establishing Value,0.6146319417095317,0
+Ivan Tomovic,3 - Establishing Value,0.6144370439460477,0
+Michael Lelchuk,5 - Solution of Choice,0.6143662372110649,0
+Eric Cassens,3 - Establishing Value,0.6139532322582361,0
+Patrick Phillips,2 - Presenting Solution,0.6139423565212762,0
+Andrew Sullivan,3 - Establishing Value,0.6136594998732788,0
+Andrew Sullivan,2 - Presenting Solution,0.6136594998732788,0
+Matt Spearing,1 - Active,0.6124427337498736,0
+Amy Buchanan,1 - Active,0.6124427337498736,0
+Amy Buchanan,1 - Active,0.6124427337498736,0
+Chris Testa,6 - Negotiating,0.6124427337498736,0
+Florian de la Motte,3 - Establishing Value,0.6124427337498736,0
+Jan-Willem Oliedam,1 - Active,0.6115475326060372,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.6113418875386505,0
+Giovanni Ottimo,1 - Active,0.6108500417710944,0
+Patrick Phillips,4 - Eliminating Alternatives,0.6108500417710944,0
+Kim Christiansen,4 - Eliminating Alternatives,0.6094503065063993,0
+Monica Schell,1 - Active,0.6086608338114362,0
+Henrik Holm,1 - Active,0.6062451209992193,0
+Bart Jeurissen,1 - Active,0.6057785802680976,0
+Frans Peters,3 - Establishing Value,0.6054706958458641,0
+Jelle Wijndelts,5 - Solution of Choice,0.6050173869846002,0
+Kenyan Branscomb,3 - Establishing Value,0.6049823467950787,0
+Bruce Passey,1 - Active,0.6040559130395612,0
+Matt Spearing,6 - Negotiating,0.6040559130395612,0
+Michael Wein,2 - Presenting Solution,0.6040559130395612,0
+Henrik Holm,1 - Active,0.6040559130395612,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.6039466725811443,0
+Michael Wein,1 - Active,0.6035971990460299,0
+Amy Buchanan,2 - Presenting Solution,0.6035893723084395,0
+Sourav Patari,4 - Eliminating Alternatives,0.6027931388354205,0
+Phil Sanderson,5 - Solution of Choice,0.6027931388354205,0
+Marshall Stevenson,2 - Presenting Solution,0.6010634857960869,0
+Michael Ciabattari,2 - Presenting Solution,0.6004902967802019,0
+Michael Ciabattari,1 - Active,0.6004902967802019,0
+Patrick Phillips,3 - Establishing Value,0.5983824320688728,0
+Matt Spearing,4 - Eliminating Alternatives,0.5983010888205437,0
+Matt Spearing,5 - Solution of Choice,0.5983010888205437,0
+Matt Spearing,3 - Establishing Value,0.5983010888205437,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.5971651922800488,0
+Carl Eckert,1 - Active,0.5952103783357175,0
+Carl Eckert,1 - Active,0.5952103783357175,0
+Carl Eckert,1 - Active,0.5952103783357175,0
+Don Rosado,3 - Establishing Value,0.5944674512345701,0
+Amy Buchanan,1 - Active,0.5934992000522414,0
+Monica Schell,4 - Eliminating Alternatives,0.593310970565876,0
+Bethany Haveron,1 - Active,0.5921652635577425,0
+Lars Wilkens,3 - Establishing Value,0.5917636295171393,0
+Marshall Stevenson,3 - Establishing Value,0.5913166603697019,0
+Andrew Evert,1 - Active,0.5913166603697019,0
+Sonny Lee,1 - Active,0.5913166603697019,0
+Marshall Stevenson,2 - Presenting Solution,0.5913166603697019,0
+Randi Hapenny,3 - Establishing Value,0.5913166603697019,0
+Timothy Boudreau,1 - Active,0.5913166603697019,0
+Monica Schell,4 - Eliminating Alternatives,0.5913166603697019,0
+Lennert Stepien,2 - Presenting Solution,0.5913166603697019,0
+Giovanni Ottimo,1 - Active,0.5913166603697019,0
+Jeroen Allebe,4 - Eliminating Alternatives,0.5910151143214545,0
+Nicholas Levine,2 - Presenting Solution,0.5908879999569873,0
+Jan-Willem Oliedam,1 - Active,0.5906679348974847,0
+Matt Spearing,4 - Eliminating Alternatives,0.5906679348974847,0
+Michael Vardo,3 - Establishing Value,0.589439825702288,0
+Jeff Ploetz,1 - Active,0.5874967961533336,0
+Roberto Sterz,4 - Eliminating Alternatives,0.5872506177426299,0
+Michael Vardo,1 - Active,0.5872506177426299,0
+Raven Keenan,4 - Eliminating Alternatives,0.5864175247550816,0
+Adam Thomson,4 - Eliminating Alternatives,0.5863959499421104,0
+Jan-Willem Oliedam,1 - Active,0.5857332567917615,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.5857332567917615,0
+Eric Cassens,1 - Active,0.5857332567917615,0
+Kyran Pritchard,1 - Active,0.5851190476190476,0
+Nick Marchese,2 - Presenting Solution,0.5848924803413111,0
+Nick Marchese,1 - Active,0.5848924803413111,0
+Marta Greliak-Telesinska,2 - Presenting Solution,0.5837784428474301,0
+Nicholas Levine,2 - Presenting Solution,0.5837784428474301,0
+Marta Greliak-Telesinska,1 - Active,0.5837784428474301,0
+Informatica Cloud,2 - Presenting Solution,0.5837784428474301,0
+Carl Eckert,2 - Presenting Solution,0.5837784428474301,0
+Sabrina Xing Fang,6 - Negotiating,0.5837784428474301,0
+Sophie Newman,4 - Eliminating Alternatives,0.5837148962148963,0
+Sourav Patari,1 - Active,0.5829298396593895,0
+Timothy Boudreau,1 - Active,0.5829298396593895,0
+Marta Greliak-Telesinska,1 - Active,0.5829298396593895,0
+Marshall Stevenson,1 - Active,0.5829298396593895,0
+Maria Capria,4 - Eliminating Alternatives,0.5829298396593895,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Nicholas Levine,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Carter Newton,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Nicholas Levine,2 - Presenting Solution,0.5809164899854772,0
+Tina Bell,2 - Presenting Solution,0.5809164899854772,0
+Tina Bell,2 - Presenting Solution,0.5809164899854772,0
+Nicholas Levine,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Tina Bell,2 - Presenting Solution,0.5809164899854772,0
+Tina Bell,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Tina Bell,2 - Presenting Solution,0.5809164899854772,0
+Tina Bell,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Nicholas Levine,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carl Eckert,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Nicholas Levine,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Nicholas Levine,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Tina Bell,2 - Presenting Solution,0.5809164899854772,0
+Nicholas Levine,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Carter Newton,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Nicholas Levine,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Informatica Cloud,2 - Presenting Solution,0.5809164899854772,0
+Matthew McDonough,2 - Presenting Solution,0.5809164899854772,0
+Lars Wilkens,2 - Presenting Solution,0.580736712578891,0
+Phil Sanderson,1 - Active,0.580736712578891,0
+Matt Spearing,5 - Solution of Choice,0.580736712578891,0
+Ramona Renton,3 - Establishing Value,0.580736712578891,0
+Matthew Clifford,2 - Presenting Solution,0.5792863928325533,0
+Herrick Griffin,1 - Active,0.5792863928325533,0
+Alex Malam,4 - Eliminating Alternatives,0.5786434347118995,0
+Randi Hapenny,4 - Eliminating Alternatives,0.5778472012388804,0
+Matthew Clifford,2 - Presenting Solution,0.5769722160000664,0
+Andrew Sullivan,3 - Establishing Value,0.5759701902928823,0
+Andrew Sullivan,2 - Presenting Solution,0.5759701902928823,0
+Andrew Sullivan,4 - Eliminating Alternatives,0.5759701902928823,0
+Andrew Sullivan,1 - Active,0.5759701902928823,0
+Roberto Sterz,4 - Eliminating Alternatives,0.5754258189942837,0
+Maria Capria,5 - Solution of Choice,0.5748339775993657,0
+Monica Schell,1 - Active,0.5744083518999438,0
+Monica Schell,4 - Eliminating Alternatives,0.5744083518999435,0
+Lorena Rivas Garcia,1 - Active,0.5734605448530238,0
+Lorena Rivas Garcia,4 - Eliminating Alternatives,0.5734605448530238,0
+Lorena Rivas Garcia,2 - Presenting Solution,0.5734605448530238,0
+Michael Papp,4 - Eliminating Alternatives,0.5726514379168259,0
+Andrew Evert,4 - Eliminating Alternatives,0.5726514379168259,0
+Bo Erlandsson,2 - Presenting Solution,0.5726514379168259,0
+Bo Erlandsson,1 - Active,0.5726514379168259,0
+Michael Soave,1 - Active,0.5726514379168259,0
+Michael Soave,2 - Presenting Solution,0.5726514379168259,0
+Lennert Stepien,3 - Establishing Value,0.5720782489009409,0
+Florian de la Motte,3 - Establishing Value,0.5720715806238225,0
+Andrew Sullivan,5 - Solution of Choice,0.5720715806238225,0
+Raven Keenan,3 - Establishing Value,0.5715338776023424,0
+Alex Malam,3 - Establishing Value,0.5715338776023424,0
+Patrick Phillips,5 - Solution of Choice,0.5715338776023424,0
+Linda Venderbush,2 - Presenting Solution,0.5707376441293234,0
+Robert Van Leer,1 - Active,0.5699064443008954,0
+Robert Van Leer,4 - Eliminating Alternatives,0.5699064443008954,0
+Andrew Sullivan,1 - Active,0.5699064443008954,0
+Amy Buchanan,1 - Active,0.5698890409412827,0
+Timothy Hirsch,1 - Active,0.5698890409412827,0
+Lorena Rivas Garcia,3 - Establishing Value,0.5689684948381472,0
+Lorena Rivas Garcia,2 - Presenting Solution,0.5689684948381472,0
+Lorena Rivas Garcia,1 - Active,0.5689684948381472,0
+Ian Camino,2 - Presenting Solution,0.5678756912673705,0
+Linda Venderbush,2 - Presenting Solution,0.5678756912673705,0
+Linda Venderbush,2 - Presenting Solution,0.5678756912673705,0
+Linda Venderbush,2 - Presenting Solution,0.5678756912673705,0
+Linda Venderbush,2 - Presenting Solution,0.5678756912673705,0
+Linda Venderbush,2 - Presenting Solution,0.5678756912673705,0
+Linda Venderbush,2 - Presenting Solution,0.5678756912673705,0
+Linda Venderbush,2 - Presenting Solution,0.5678756912673705,0
+Linda Venderbush,2 - Presenting Solution,0.5678756912673705,0
+Brian Smogard,1 - Active,0.5673487344368146,0
+Anja Kilian,3 - Establishing Value,0.5663707227731618,0
+Marta Greliak-Telesinska,5 - Solution of Choice,0.5662455941144467,0
+Hananias Espindola,1 - Active,0.5662455941144467,0
+Lorena Rivas Garcia,6 - Negotiating,0.5662455941144467,0
+Brian Smogard,5 - Solution of Choice,0.5660691767249145,0
+Alex Dinu,2 - Presenting Solution,0.5650737241427114,0
+Marta Greliak-Telesinska,4 - Eliminating Alternatives,0.5650737241427114,0
+Alex Dinu,2 - Presenting Solution,0.5650737241427114,0
+Nicholas Levine,2 - Presenting Solution,0.5650737241427114,0
+Alex Dinu,2 - Presenting Solution,0.5650737241427114,0
+Alex Dinu,2 - Presenting Solution,0.5650737241427114,0
+Anja Kilian,3 - Establishing Value,0.5650737241427114,0
+Matthew McDonough,2 - Presenting Solution,0.5650737241427114,0
+Roberto Fabre,1 - Active,0.5650737241427114,0
+Matthew McDonough,2 - Presenting Solution,0.5650737241427114,0
+Tina Bell,2 - Presenting Solution,0.5633836412524938,0
+Graham Burne,4 - Eliminating Alternatives,0.5633836412524938,0
+Senol Verim,1 - Active,0.5616825203390577,0
+Jan-Willem Oliedam,1 - Active,0.5616825203390577,0
+Amy Buchanan,1 - Active,0.561519623590583,0
+Marshall Stevenson,2 - Presenting Solution,0.561519623590583,0
+Marco Antonio Cruz Martín,3 - Establishing Value,0.561519623590583,0
+Lennert Stepien,2 - Presenting Solution,0.561519623590583,0
+Giorgio Scappaticcio,3 - Establishing Value,0.561519623590583,0
+Phil Sanderson,1 - Active,0.5613530574898984,0
+Phil Sanderson,2 - Presenting Solution,0.5613530574898984,0
+Andrew Broaddus,2 - Presenting Solution,0.5605816741278348,0
+Sweta Sharma,2 - Presenting Solution,0.5605816741278348,0
+Tina Bell,2 - Presenting Solution,0.5605816741278348,0
+Samuel Barlow,2 - Presenting Solution,0.5605816741278348,0
+Andrew Broaddus,2 - Presenting Solution,0.5605816741278348,0
+Lennert Stepien,1 - Active,0.559628042558332,0
+Marshall Stevenson,3 - Establishing Value,0.559628042558332,0
+Matt Spearing,4 - Eliminating Alternatives,0.5592611656636047,0
+Matt Spearing,3 - Establishing Value,0.5592611656636047,0
+Monica Schell,2 - Presenting Solution,0.5590584886543835,0
+Patrick Phillips,3 - Establishing Value,0.5590584886543835,0
+Lennert Stepien,5 - Solution of Choice,0.5589596196153573,0
+Markus Linder,3 - Establishing Value,0.5579839020628494,0
+Jelle Wijndelts,3 - Establishing Value,0.5579006204006204,0
+Mandar Desai,3 - Establishing Value,0.5536149622518032,0
+Frans Peters,2 - Presenting Solution,0.5536149622518032,0
+Frans Peters,1 - Active,0.5536149622518032,0
+Jeroen Braak(SVM User),6 - Negotiating,0.5532956996287454,0
+Barry Lafferty,2 - Presenting Solution,0.5532956996287454,0
+Jan-Willem Oliedam,3 - Establishing Value,0.5532956996287454,0
+Jelle Wijndelts,4 - Eliminating Alternatives,0.5528291588976236,0
+Sweta Sharma,1 - Active,0.5528291588976236,0
+Susanne Klindt,4 - Eliminating Alternatives,0.5528291588976236,0
+Nathaniel Dean,2 - Presenting Solution,0.5520329254246047,0
+Nathaniel Dean,2 - Presenting Solution,0.5520329254246047,0
+Nathaniel Dean,2 - Presenting Solution,0.5520329254246047,0
+Alex Dinu,2 - Presenting Solution,0.5520329254246047,0
+Nikolaus Häring,5 - Solution of Choice,0.5520329254246047,0
+Informatica Cloud,2 - Presenting Solution,0.5520329254246047,0
+Nathaniel Dean,2 - Presenting Solution,0.5520329254246047,0
+Nathaniel Dean,2 - Presenting Solution,0.5520329254246047,0
+Bryony Hearn,4 - Eliminating Alternatives,0.5520329254246047,0
+Nathaniel Dean,2 - Presenting Solution,0.5520329254246047,0
+Tina Bell,2 - Presenting Solution,0.5520329254246047,0
+Nathaniel Dean,2 - Presenting Solution,0.5520329254246047,0
+Nathaniel Dean,2 - Presenting Solution,0.5520329254246047,0
+Nathaniel Dean,2 - Presenting Solution,0.5520329254246047,0
+Veronica Silva,2 - Presenting Solution,0.5519341964838892,0
+Matthew Clifford,1 - Active,0.5512412218480196,0
+Marco Antonio Cruz Martín,2 - Presenting Solution,0.5512412218480196,0
+Monica Schell,1 - Active,0.5512412218480196,0
+Lars Wilkens,3 - Establishing Value,0.5508743449532923,0
+Yeshvir Monteiro,1 - Active,0.5508743449532923,0
+Phil Sanderson,3 - Establishing Value,0.549971515424967,0
+Phil Sanderson,4 - Eliminating Alternatives,0.549971515424967,0
+Giorgio Scappaticcio,1 - Active,0.5490668850287183,0
+Benjamin Zammit,1 - Active,0.5480123920913395,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Tina Bell,1 - Active,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Linda Venderbush,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Roberto Fabre,3 - Establishing Value,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Hananias Espindola,5 - Solution of Choice,0.547540875409728,0
+Bryony Hearn,3 - Establishing Value,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+James Smyth,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Russ Foster,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Lorena Rivas Garcia,4 - Eliminating Alternatives,0.547540875409728,0
+Nathaniel Dean,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Russ Foster,2 - Presenting Solution,0.547540875409728,0
+Jeff Ploetz,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Veronica Silva,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Marcelo Boriero,1 - Active,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Russ Foster,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Andrew Broaddus,2 - Presenting Solution,0.547540875409728,0
+Lars Wilkens,4 - Eliminating Alternatives,0.5449431033447428,0
+Bruce Passey,2 - Presenting Solution,0.5449431033447428,0
+Florian de la Motte,2 - Presenting Solution,0.5449431033447428,0
+Henrik Holm,3 - Establishing Value,0.5449431033447428,0
+Ramona Renton,1 - Active,0.5436827521174968,0
+Markus Linder,1 - Active,0.5433556569018174,0
+Ramona Renton,5 - Solution of Choice,0.5433365605092396,0
+James Smyth,2 - Presenting Solution,0.5423872927913566,0
+James Smyth,2 - Presenting Solution,0.5423872927913566,0
+James Smyth,2 - Presenting Solution,0.5423872927913566,0
+James Smyth,2 - Presenting Solution,0.5423872927913566,0
+Patrick Phillips,5 - Solution of Choice,0.540556446958886,0
+Jan-Willem Oliedam,3 - Establishing Value,0.540556446958886,0
+Kristin Santistevan,3 - Establishing Value,0.540556446958886,0
+Graham Burne,1 - Active,0.540556446958886,0
+Matthew Clifford,2 - Presenting Solution,0.540556446958886,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Carl Eckert,6 - Negotiating,0.5402549009106387,0
+Bethany Haveron,4 - Eliminating Alternatives,0.5402549009106387,0
+sfdc owner,2 - Presenting Solution,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Nathaniel Dean,2 - Presenting Solution,0.5402549009106387,0
+Lorena Rivas Garcia,2 - Presenting Solution,0.5402549009106387,0
+Andrew Broaddus,2 - Presenting Solution,0.5402549009106387,0
+Lorena Rivas Garcia,1 - Active,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Samuel Barlow,2 - Presenting Solution,0.5402549009106387,0
+Lorena Rivas Garcia,3 - Establishing Value,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Daniel Estreicher,6 - Negotiating,0.5402549009106387,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.5402549009106387,0
+sfdc owner,2 - Presenting Solution,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Florian de la Motte,6 - Negotiating,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+sfdc owner,2 - Presenting Solution,0.5402549009106387,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.5402549009106387,0
+Samuel Barlow,2 - Presenting Solution,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Samuel Barlow,2 - Presenting Solution,0.5402549009106387,0
+Ivan Tomovic,5 - Solution of Choice,0.5402549009106387,0
+Jeff Ploetz,2 - Presenting Solution,0.5402549009106387,0
+Andrew Sullivan,4 - Eliminating Alternatives,0.5400160859177253,0
+Bruce Passey,2 - Presenting Solution,0.5400160859177253,0
+Giorgio Scappaticcio,2 - Presenting Solution,0.5387884832861548,0
+Amy Buchanan,2 - Presenting Solution,0.5382004231299129,0
+Bryony Hearn,3 - Establishing Value,0.5382004231299129,0
+Michael Soave,4 - Eliminating Alternatives,0.5382004231299129,0
+Graham Burne,4 - Eliminating Alternatives,0.5378509495947984,0
+Bruce Passey,1 - Active,0.5378335462351856,0
+Jan-Willem Oliedam,5 - Solution of Choice,0.5378335462351856,0
+Amy Buchanan,4 - Eliminating Alternatives,0.5378335462351856,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.5378335462351856,0
+Randi Hapenny,2 - Presenting Solution,0.5378335462351856,0
+Don Rosado,5 - Solution of Choice,0.5376709229716713,0
+Marco Antonio Cruz Martín,1 - Active,0.5365736859940431,0
+Randi Hapenny,1 - Active,0.5365736859940431,0
+Andrew Sullivan,1 - Active,0.5360260863106115,0
+Andrew Sullivan,2 - Presenting Solution,0.5360260863106115,0
+Bethany Haveron,3 - Establishing Value,0.5351013182922673,0
+Russ Foster,2 - Presenting Solution,0.5351013182922673,0
+Russ Foster,2 - Presenting Solution,0.5351013182922673,0
+Russ Foster,2 - Presenting Solution,0.5351013182922673,0
+James Smyth,2 - Presenting Solution,0.5351013182922673,0
+James Smyth,2 - Presenting Solution,0.5351013182922673,0
+Jamie Salmon,1 - Active,0.5351013182922673,0
+Russ Foster,2 - Presenting Solution,0.5351013182922673,0
+Russ Foster,2 - Presenting Solution,0.5351013182922673,0
+Tina Bell,2 - Presenting Solution,0.5351013182922673,0
+Russ Foster,2 - Presenting Solution,0.5351013182922673,0
+Russ Foster,2 - Presenting Solution,0.5351013182922673,0
+Samuel Barlow,2 - Presenting Solution,0.5351013182922673,0
+Russ Foster,2 - Presenting Solution,0.5351013182922673,0
+Russ Foster,2 - Presenting Solution,0.5351013182922673,0
+Jan-Willem Oliedam,1 - Active,0.5349715933732329,0
+Lorena Rivas Garcia,5 - Solution of Choice,0.5349715933732329,0
+Jelle Wijndelts,6 - Negotiating,0.5321696262485737,0
+Marco Antonio Cruz Martín,1 - Active,0.5321696262485737,0
+Randi Hapenny,1 - Active,0.5321696262485737,0
+Markus Linder,1 - Active,0.5321696262485737,0
+Andrew Evert,1 - Active,0.5321696262485737,0
+Siegfried Gammay,2 - Presenting Solution,0.5321182408616694,0
+Matthew Campbell,4 - Eliminating Alternatives,0.5314189428288173,0
+Andrew Evert,1 - Active,0.5314189428288173,0
+Hananias Espindola,1 - Active,0.5312667967202483,0
+Hananias Espindola,6 - Negotiating,0.5312667967202483,0
+Veronica Silva,2 - Presenting Solution,0.5312667967202483,0
+Hananias Espindola,2 - Presenting Solution,0.5312667967202483,0
+Ramona Renton,1 - Active,0.529464128884486,0
+Eric Cassens,5 - Solution of Choice,0.529464128884486,0
+Khubaib Manatt,2 - Presenting Solution,0.5268669227685622,0
+Marco Antonio Cruz Martín,1 - Active,0.5268669227685622,0
+Marco Antonio Cruz Martín,2 - Presenting Solution,0.5268669227685622,0
+Andrew Sullivan,2 - Presenting Solution,0.5266021760225331,0
+Kavya Bhaskara (IS),1 - Active,0.5266021760225331,0
+Michael Soave,3 - Establishing Value,0.5257476845680481,0
+Matthew Clifford,3 - Establishing Value,0.5253982110329335,0
+Hananias Espindola,6 - Negotiating,0.523980822221159,0
+Dan Orr,5 - Solution of Choice,0.523980822221159,0
+Matt Spearing,1 - Active,0.5230207689224083,0
+Khubaib Manatt,2 - Presenting Solution,0.5217133401501908,0
+Samuel Barlow,2 - Presenting Solution,0.5217133401501908,0
+Samuel Barlow,2 - Presenting Solution,0.5217133401501908,0
+Samuel Barlow,2 - Presenting Solution,0.5217133401501908,0
+Samuel Barlow,2 - Presenting Solution,0.5217133401501908,0
+Samuel Barlow,2 - Presenting Solution,0.5217133401501908,0
+Samuel Barlow,2 - Presenting Solution,0.5217133401501908,0
+Samuel Barlow,2 - Presenting Solution,0.5217133401501908,0
+Samuel Barlow,2 - Presenting Solution,0.5217133401501908,0
+Khubaib Manatt,2 - Presenting Solution,0.5217133401501908,0
+Patrick Phillips,5 - Solution of Choice,0.5191462308900797,0
+Don Rosado,6 - Negotiating,0.5191462308900797,0
+Giovanni Ottimo,4 - Eliminating Alternatives,0.5191462308900797,0
+Giovanni Ottimo,5 - Solution of Choice,0.5191462308900797,0
+Raven Keenan,5 - Solution of Choice,0.5191462308900797,0
+Lorena Rivas Garcia,1 - Active,0.519128827530467,0
+Kyran Pritchard,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Lani Edwards,4 - Eliminating Alternatives,0.519128827530467,0
+Lani Edwards,3 - Establishing Value,0.519128827530467,0
+Lani Edwards,2 - Presenting Solution,0.519128827530467,0
+Lani Edwards,5 - Solution of Choice,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.519128827530467,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Craig Valentine,2 - Presenting Solution,0.519128827530467,0
+Marta Greliak-Telesinska,3 - Establishing Value,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Velan Tasks,1 - Active,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Ramona Renton,6 - Negotiating,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Bo Erlandsson,3 - Establishing Value,0.519128827530467,0
+Roberto Fabre,4 - Eliminating Alternatives,0.519128827530467,0
+Michael Wein,1 - Active,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Marco Antonio Cruz Martín,5 - Solution of Choice,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Florian de la Motte,3 - Establishing Value,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Stuart Gomez,4 - Eliminating Alternatives,0.519128827530467,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.519128827530467,0
+Jan-Willem Oliedam,1 - Active,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Matthew Clifford,1 - Active,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Ivan Tomovic,4 - Eliminating Alternatives,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Tom Wells,1 - Active,0.519128827530467,0
+Lars Wilkens,5 - Solution of Choice,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Kim Christiansen,3 - Establishing Value,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Lars Wilkens,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Adrian Escarcega,2 - Presenting Solution,0.519128827530467,0
+Sophie Newman,3 - Establishing Value,0.519128827530467,0
+Andrew Sullivan,4 - Eliminating Alternatives,0.519128827530467,0
+Sophie Newman,3 - Establishing Value,0.519128827530467,0
+Tom Wells,5 - Solution of Choice,0.519128827530467,0
+Sonny Lee,1 - Active,0.5178671863040369,0
+James Smyth,2 - Presenting Solution,0.5178671863040369,0
+Marta Greliak-Telesinska,3 - Establishing Value,0.5178671863040369,0
+Marta Greliak-Telesinska,4 - Eliminating Alternatives,0.5178671863040369,0
+Marta Greliak-Telesinska,1 - Active,0.5178671863040369,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.517585692995529,0
+Andrew Evert,4 - Eliminating Alternatives,0.5164233301663793,0
+Bo Erlandsson,3 - Establishing Value,0.5164233301663793,0
+Amy Buchanan,3 - Establishing Value,0.5164233301663793,0
+James Smyth,2 - Presenting Solution,0.5161577845946352,0
+James Smyth,2 - Presenting Solution,0.5161577845946352,0
+Bethany Haveron,2 - Presenting Solution,0.5161577845946352,0
+James Smyth,2 - Presenting Solution,0.5161577845946352,0
+James Smyth,2 - Presenting Solution,0.5161577845946352,0
+James Smyth,2 - Presenting Solution,0.5161577845946352,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.5139752449120955,0
+Amy Buchanan,1 - Active,0.5139752449120955,0
+Nick Marchese,1 - Active,0.5139752449120955,0
+James Smyth,2 - Presenting Solution,0.5139752449120955,0
+Jan-Willem Oliedam,1 - Active,0.5139752449120955,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.5139752449120955,0
+Timothy Boudreau,4 - Eliminating Alternatives,0.5110801487140716,0
+Bryony Hearn,1 - Active,0.5110801487140716,0
+Roberto Fabre,5 - Solution of Choice,0.5107594101797673,0
+Giovanni Ottimo,1 - Active,0.5107594101797673,0
+Kristin Santistevan,1 - Active,0.5107594101797673,0
+Andrew Sullivan,5 - Solution of Choice,0.5107594101797673,0
+Lorena Rivas Garcia,3 - Establishing Value,0.5107594101797673,0
+Michael Soave,1 - Active,0.5106906214332502,0
+Andrew Sullivan,1 - Active,0.5090840785977471,0
+Monica Schell,6 - Negotiating,0.5066934923282149,0
+Matt Spearing,1 - Active,0.5056058275613958,0
+Thomas Culkeen,4 - Eliminating Alternatives,0.505037288523527,0
+Phil Sanderson,4 - Eliminating Alternatives,0.505037288523527,0
+Mandar Desai,1 - Active,0.5029908673742067,0
+Kelsey Young,1 - Active,0.5028547488409872,0
+Florian de la Motte,1 - Active,0.5028547488409872,0
+Bes Istrefi,1 - Active,0.5028547488409872,0
+Patrick Phillips,4 - Eliminating Alternatives,0.5028547488409872,0
+Lani Edwards,1 - Active,0.5028547488409872,0
+Daniel Estreicher,1 - Active,0.5028547488409872,0
+Graham Burne,6 - Negotiating,0.5028547488409872,0
+Bes Istrefi,2 - Presenting Solution,0.5028547488409872,0
+Sabrina Xing Fang,6 - Negotiating,0.5028547488409872,0
+Jan-Willem Oliedam,1 - Active,0.5028547488409872,0
+Kelsey Young,6 - Negotiating,0.5028547488409872,0
+Bes Istrefi,4 - Eliminating Alternatives,0.5028547488409872,0
+Sonny Lee,4 - Eliminating Alternatives,0.5028547488409872,0
+Matthew Campbell,4 - Eliminating Alternatives,0.5028547488409872,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Marcelo Boriero,1 - Active,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Sarah Farmer,1 - Active,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Samuel Barlow,2 - Presenting Solution,0.5019028103044497,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Khubaib Manatt,2 - Presenting Solution,0.5015931076145573,0
+Henrik Holm,1 - Active,0.5007191114617403,0
+Michael Nolfo,1 - Active,0.5001492514768996,0
+Michael Nolfo,2 - Presenting Solution,0.5001492514768996,0
+Senol Verim,5 - Solution of Choice,0.4979171443370811,0
+Patrick Phillips,5 - Solution of Choice,0.4979171443370811,0
+Sabrina Xing Fang,1 - Active,0.4979171443370811,0
+Sonny Lee,5 - Solution of Choice,0.4979171443370811,0
+Ivan Tomovic,1 - Active,0.4977186114616606,0
+Barry Lafferty,1 - Active,0.4977186114616606,0
+Bruce Passey,3 - Establishing Value,0.4977186114616606,0
+Marcelo Boriero,3 - Establishing Value,0.4977186114616606,0
+Amy Buchanan,6 - Negotiating,0.4977186114616606,0
+Christopher Amoroso,1 - Active,0.4977186114616606,0
+Ivan Tomovic,2 - Presenting Solution,0.4977186114616606,0
+Monica Schell,1 - Active,0.4977186114616606,0
+Melissa Booth,1 - Active,0.4977186114616606,0
+Florian de la Motte,4 - Eliminating Alternatives,0.4977186114616606,0
+Amy Buchanan,4 - Eliminating Alternatives,0.4977186114616606,0
+Sonny Lee,5 - Solution of Choice,0.4977186114616606,0
+Henrik Holm,4 - Eliminating Alternatives,0.4977186114616606,0
+Senol Verim,3 - Establishing Value,0.4977186114616606,0
+Matt Spearing,5 - Solution of Choice,0.4977186114616606,0
+Raven Keenan,6 - Negotiating,0.4977186114616606,0
+Kyran Pritchard,3 - Establishing Value,0.4977186114616606,0
+Lorena Rivas Garcia,3 - Establishing Value,0.4977186114616606,0
+Matt Spearing,4 - Eliminating Alternatives,0.4977186114616606,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Hananias Espindola,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Hananias Espindola,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Carl Eckert,1 - Active,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Hananias Espindola,2 - Presenting Solution,0.497701166222616,0
+Khubaib Manatt,2 - Presenting Solution,0.497701166222616,0
+Hananias Espindola,2 - Presenting Solution,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Hananias Espindola,2 - Presenting Solution,0.497701166222616,0
+Tarek Majaj,2 - Presenting Solution,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Tarek Majaj,1 - Active,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Hananias Espindola,2 - Presenting Solution,0.497701166222616,0
+Mandar Desai,1 - Active,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Hananias Espindola,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Carl Eckert,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Russ Foster,2 - Presenting Solution,0.497701166222616,0
+Hananias Espindola,2 - Presenting Solution,0.497701166222616,0
+Ian Camino,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Sweta Sharma,2 - Presenting Solution,0.497701166222616,0
+Informatica Cloud,2 - Presenting Solution,0.497701166222616,0
+Hananias Espindola,2 - Presenting Solution,0.497701166222616,0
+Andrew Sullivan,3 - Establishing Value,0.49441654274377056,0
+Andrew Sullivan,2 - Presenting Solution,0.49441654274377056,0
+Eric Cassens,5 - Solution of Choice,0.4925650288432892,0
+Marcelo Boriero,1 - Active,0.4925650288432892,0
+Jan-Willem Oliedam,6 - Negotiating,0.4925650288432892,0
+Tom Wells,1 - Active,0.4925650288432892,0
+Roberto Fabre,4 - Eliminating Alternatives,0.4925650288432892,0
+Graham Burne,2 - Presenting Solution,0.4925650288432892,0
+Alex Malam,2 - Presenting Solution,0.4925650288432892,0
+Bethany Haveron,1 - Active,0.4923790007806402,0
+Andrew Sullivan,2 - Presenting Solution,0.48730698563421343,0
+Phil Sanderson,4 - Eliminating Alternatives,0.4863116922543152,0
+Tina Bell,2 - Presenting Solution,0.4856287316149701,0
+Bethany Haveron,4 - Eliminating Alternatives,0.4856287316149701,0
+Amy Buchanan,1 - Active,0.4852658728997958,0
+Ivan Tomovic,6 - Negotiating,0.4852658728997958,0
+Sonny Lee,2 - Presenting Solution,0.4852658728997958,0
+Patrick Phillips,2 - Presenting Solution,0.4852658728997958,0
+Marcelo Boriero,5 - Solution of Choice,0.4852658728997958,0
+Amy Buchanan,4 - Eliminating Alternatives,0.4852658728997958,0
+Matthew Clifford,3 - Establishing Value,0.4852658728997958,0
+Florian de la Motte,2 - Presenting Solution,0.4852658728997958,0
+Marco Antonio Cruz Martín,1 - Active,0.4852658728997958,0
+Andrew Evert,4 - Eliminating Alternatives,0.4852658728997958,0
+Marco Antonio Cruz Martín,3 - Establishing Value,0.4852658728997958,0
+Monica Schell,5 - Solution of Choice,0.48487634561897447,0
+Jeroen Braak(SVM User),1 - Active,0.48487634561897447,0
+Marcelo Boriero,1 - Active,0.48487634561897447,0
+Michael Vardo,5 - Solution of Choice,0.48487634561897447,0
+Sonny Lee,4 - Eliminating Alternatives,0.48487634561897447,0
+Sabrina Xing Fang,5 - Solution of Choice,0.48487634561897447,0
+Lars Wilkens,1 - Active,0.48487634561897447,0
+Sabrina Xing Fang,1 - Active,0.48487634561897447,0
+Michael Vardo,6 - Negotiating,0.48487634561897447,0
+Amy Buchanan,4 - Eliminating Alternatives,0.48487634561897447,0
+Sarah Farmer,5 - Solution of Choice,0.48487634561897447,0
+Monica Schell,5 - Solution of Choice,0.48444503277226064,0
+Andrew Sullivan,1 - Active,0.48176669858627036,0
+Thomas Culkeen,1 - Active,0.48144453277218097,0
+Bethany Haveron,3 - Establishing Value,0.48144453277218097,0
+Marshall Stevenson,1 - Active,0.48144453277218097,0
+Sarah Farmer,2 - Presenting Solution,0.48144453277218097,0
+Amy Buchanan,5 - Solution of Choice,0.48144453277218097,0
+Ramona Renton,5 - Solution of Choice,0.48144453277218097,0
+Lorena Rivas Garcia,2 - Presenting Solution,0.48049259423564333,0
+Lorena Rivas Garcia,1 - Active,0.48049259423564333,0
+Fatma Schober,1 - Active,0.48049259423564333,0
+Sonny Lee,3 - Establishing Value,0.4801122902814243,0
+Sean Carroll,3 - Establishing Value,0.4801122902814243,0
+Global Territory,1 - Active,0.4801122902814243,0
+Anja Kilian,4 - Eliminating Alternatives,0.4801122902814243,0
+Andrew Evert,5 - Solution of Choice,0.47972276300060307,0
+Sonny Lee,2 - Presenting Solution,0.47972276300060307,0
+Giovanni Ottimo,3 - Establishing Value,0.47972276300060307,0
+Roberto Fabre,4 - Eliminating Alternatives,0.47972276300060307,0
+Randi Hapenny,1 - Active,0.47972276300060307,0
+Marco Antonio Cruz Martín,4 - Eliminating Alternatives,0.47972276300060307,0
+Michael Vardo,2 - Presenting Solution,0.47972276300060307,0
+Michael Papp,6 - Negotiating,0.47972276300060307,0
+Michael Papp,5 - Solution of Choice,0.47972276300060307,0
+Michael Papp,4 - Eliminating Alternatives,0.47972276300060307,0
+Lars Wilkens,1 - Active,0.47972276300060307,0
+Anja Kilian,2 - Presenting Solution,0.47972276300060307,0
+Bethany Haveron,2 - Presenting Solution,0.47972276300060307,0
+Eric Cassens,6 - Negotiating,0.47933605857103134,0
+,,0.47908577265423746,0
+Frans Peters,5 - Solution of Choice,0.47669825616830924,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Henrik Holm,6 - Negotiating,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Sweta Sharma,2 - Presenting Solution,0.47629095015380957,0
+Cindy Grogan MSP,6 - Negotiating,0.47629095015380957,0
+Arun Singh,4 - Eliminating Alternatives,0.47629095015380957,0
+Amy Buchanan,2 - Presenting Solution,0.4741824759526599,0
+Sonny Lee,2 - Presenting Solution,0.4741824759526599,0
+Roberto Sterz,5 - Solution of Choice,0.4741824759526599,0
+Florian de la Motte,1 - Active,0.47333138173302114,0
+Sarah Farmer,3 - Establishing Value,0.4723315257630518,0
+Roberto Fabre,1 - Active,0.4709687847118338,0
+Hananias Espindola,1 - Active,0.4704689264115494,0
+Hananias Espindola,3 - Establishing Value,0.4704689264115494,0
+Kelsey Young,3 - Establishing Value,0.4704689264115494,0
+Marcelo Boriero,3 - Establishing Value,0.4704689264115494,0
+Kim Christiansen,6 - Negotiating,0.4704689264115494,0
+Dan Orr,1 - Active,0.46901173151173153,0
+Dan Orr,2 - Presenting Solution,0.46901173151173153,0
+Sonny Lee,4 - Eliminating Alternatives,0.4689917942103161,0
+Markham Tate,4 - Eliminating Alternatives,0.4689917942103161,0
+Markham Tate,3 - Establishing Value,0.4689917942103161,0
+Florian de la Motte,1 - Active,0.4689917942103161,0
+Giorgio Scappaticcio,3 - Establishing Value,0.4689917942103161,0
+Tom Wells,2 - Presenting Solution,0.4689917942103161,0
+Ramona Renton,1 - Active,0.4689917942103161,0
+Stephane Mackenzie Thornton,3 - Establishing Value,0.4689917942103161,0
+Robert Van Leer,6 - Negotiating,0.4689917942103161,0
+Sebastian Eggers,3 - Establishing Value,0.4689917942103161,0
+Daniel Estreicher,3 - Establishing Value,0.4689917942103161,0
+Michael Wein,3 - Establishing Value,0.46860226692949486,0
+Marcelo Boriero,4 - Eliminating Alternatives,0.46860226692949486,0
+Mandar Desai,4 - Eliminating Alternatives,0.46860226692949486,0
+Jan-Willem Oliedam,3 - Establishing Value,0.46860226692949486,0
+Frans Peters,1 - Active,0.46860226692949486,0
+Sonny Lee,3 - Establishing Value,0.46860226692949486,0
+Frans Peters,1 - Active,0.46860226692949486,0
+Michael Vardo,1 - Active,0.46860226692949486,0
+Eric Cassens,5 - Solution of Choice,0.46860226692949486,0
+Florian de la Motte,4 - Eliminating Alternatives,0.46860226692949486,0
+Andrew Sullivan,1 - Active,0.46860226692949486,0
+Samuel Barlow,6 - Negotiating,0.46860226692949486,0
+Tom Wells,2 - Presenting Solution,0.46860226692949486,0
+Giorgio Scappaticcio,1 - Active,0.46860226692949486,0
+Thomas Culkeen,4 - Eliminating Alternatives,0.46860226692949486,0
+Randi Hapenny,4 - Eliminating Alternatives,0.46860226692949486,0
+Tom Wells,1 - Active,0.46860226692949486,0
+Marlee Ragan,5 - Solution of Choice,0.46860226692949486,0
+Amritha Shankar (IS),1 - Active,0.46860226692949486,0
+Graham Burne,6 - Negotiating,0.4680398556737786,0
+Giorgio Scappaticcio,2 - Presenting Solution,0.46765032839295717,0
+Giorgio Scappaticcio,5 - Solution of Choice,0.46765032839295717,0
+Patrick Phillips,1 - Active,0.46685939434912244,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Sourav Patari,4 - Eliminating Alternatives,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Hananias Espindola,2 - Presenting Solution,0.465315343793178,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Jeroen Braak(SVM User),6 - Negotiating,0.4642185155461637,0
+Ian Camino,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Michael Papp,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Amy Buchanan,1 - Active,0.4642185155461637,0
+Senol Verim,5 - Solution of Choice,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Ian Camino,2 - Presenting Solution,0.4642185155461637,0
+Sweta Sharma,2 - Presenting Solution,0.4642185155461637,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.4642185155461637,0
+Hananias Espindola,6 - Negotiating,0.46385814889336013,0
+Jan-Willem Oliedam,3 - Establishing Value,0.4638382115919448,0
+Marta Greliak-Telesinska,2 - Presenting Solution,0.4638382115919448,0
+Gabriella Vecchitto (AR),1 - Active,0.4638382115919448,0
+Melissa Booth,5 - Solution of Choice,0.4638382115919448,0
+Bo Erlandsson,5 - Solution of Choice,0.4638382115919448,0
+Michael Wein,5 - Solution of Choice,0.4638382115919448,0
+Matt Spearing,5 - Solution of Choice,0.4638382115919448,0
+Marta Greliak-Telesinska,3 - Establishing Value,0.4638382115919448,0
+Sweta Sharma,2 - Presenting Solution,0.46375664049585863,0
+Sweta Sharma,2 - Presenting Solution,0.46375664049585863,0
+Graham Burne,1 - Active,0.4634486843111234,0
+Sarah Farmer,2 - Presenting Solution,0.4634486843111234,0
+Gabriella Vecchitto (AR),1 - Active,0.4634486843111234,0
+Jan-Willem Oliedam,3 - Establishing Value,0.4634486843111234,0
+Kenza Ghaiti,1 - Active,0.4634486843111234,0
+Lorena Rivas Garcia,4 - Eliminating Alternatives,0.4634486843111234,0
+Cindy Grogan MSP,6 - Negotiating,0.4634486843111234,0
+Sarah Farmer,1 - Active,0.4634486843111234,0
+Michael Papp,1 - Active,0.4634486843111234,0
+Andrew Sullivan,6 - Negotiating,0.4634486843111234,0
+Michael Ciabattari,4 - Eliminating Alternatives,0.4634486843111234,0
+Jan-Willem Oliedam,3 - Establishing Value,0.4634486843111234,0
+Fatma Schober,2 - Presenting Solution,0.45851604614996905,0
+Sarah Farmer,2 - Presenting Solution,0.4581265188691477,0
+John Rockliff,4 - Eliminating Alternatives,0.45790839726318033,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.45469470602235423,0
+Nick Marchese,3 - Establishing Value,0.45469470602235423,0
+Senol Verim,1 - Active,0.45381859563101573,0
+Amy Buchanan,1 - Active,0.45381859563101573,0
+Anja Kilian,1 - Active,0.45381859563101573,0
+Amy Buchanan,2 - Presenting Solution,0.45381859563101573,0
+Monica Schell,6 - Negotiating,0.45381859563101573,0
+Senol Verim,4 - Eliminating Alternatives,0.45179569769733713,0
+Sweta Sharma,2 - Presenting Solution,0.45176577698429893,0
+Sonny Lee,1 - Active,0.45176577698429893,0
+Matt Spearing,5 - Solution of Choice,0.45176577698429893,0
+Graham Burne,3 - Establishing Value,0.45176577698429893,0
+Sweta Sharma,2 - Presenting Solution,0.45176577698429893,0
+Sweta Sharma,2 - Presenting Solution,0.45176577698429893,0
+Matt Spearing,2 - Presenting Solution,0.45176577698429893,0
+Jan-Willem Oliedam,6 - Negotiating,0.45176577698429893,0
+Florian de la Motte,1 - Active,0.45176577698429893,0
+Sweta Sharma,2 - Presenting Solution,0.45176577698429893,0
+Sweta Sharma,2 - Presenting Solution,0.45176577698429893,0
+Sonny Lee,3 - Establishing Value,0.45176577698429893,0
+Giorgio Scappaticcio,1 - Active,0.4513762497034775,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.4513762497034775,0
+Henrik Holm,3 - Establishing Value,0.4513762497034775,0
+Jan-Willem Oliedam,3 - Establishing Value,0.4513762497034775,0
+Giorgio Scappaticcio,4 - Eliminating Alternatives,0.4513762497034775,0
+Matt Spearing,2 - Presenting Solution,0.4513762497034775,0
+Sabrina Xing Fang,1 - Active,0.4513762497034775,0
+Matt Spearing,4 - Eliminating Alternatives,0.4513762497034775,0
+Amy Buchanan,1 - Active,0.4513762497034775,0
+Adam Thomson,1 - Active,0.4513762497034775,0
+Lorena Rivas Garcia,2 - Presenting Solution,0.4513762497034775,0
+Amy Buchanan,4 - Eliminating Alternatives,0.4513762497034775,0
+Randi Hapenny,2 - Presenting Solution,0.4513762497034775,0
+Michael Papp,4 - Eliminating Alternatives,0.4513168160998564,0
+Stephane Mackenzie Thornton,2 - Presenting Solution,0.44905871034274303,0
+Tina Bell,2 - Presenting Solution,0.44905871034274303,0
+Monica Schell,4 - Eliminating Alternatives,0.44905871034274303,0
+Timothy Boudreau,1 - Active,0.44905871034274303,0
+Alex Malam,6 - Negotiating,0.44905871034274303,0
+Ramona Renton,5 - Solution of Choice,0.44905871034274303,0
+Bart Jeurissen,2 - Presenting Solution,0.44866501301264433,0
+Bart Jeurissen,5 - Solution of Choice,0.44866501301264433,0
+Jelle Wijndelts,5 - Solution of Choice,0.44866501301264433,0
+Monica Schell,6 - Negotiating,0.44866501301264433,0
+Henrik Holm,1 - Active,0.44753802976974716,0
+Anja Kilian,2 - Presenting Solution,0.44583596265553443,0
+Rabah Belmiloud,1 - Active,0.44583596265553443,0
+Andrew Evert,4 - Eliminating Alternatives,0.44583596265553443,0
+Arun Singh,3 - Establishing Value,0.4439051277243716,0
+Jeroen Allebe,2 - Presenting Solution,0.4439051277243716,0
+Gabriella Vecchitto (AR),2 - Presenting Solution,0.4439051277243716,0
+Hananias Espindola,6 - Negotiating,0.4439051277243716,0
+Arun Singh,2 - Presenting Solution,0.4439051277243716,0
+Jeroen Allebe,5 - Solution of Choice,0.4439051277243716,0
+Ian Camino,2 - Presenting Solution,0.4439051277243716,0
+Ian Camino,2 - Presenting Solution,0.4439051277243716,0
+Riya Nadig Prabhakar,1 - Active,0.44010956759929565,0
+Riya Nadig Prabhakar,1 - Active,0.44010956759929565,0
+Stuart Reynolds,1 - Active,0.4375445169415361,0
+Amy Buchanan,4 - Eliminating Alternatives,0.4375445169415361,0
+Sabrina Xing Fang,1 - Active,0.4375445169415361,0
+Bryony Hearn,1 - Active,0.4375445169415361,0
+Lorena Rivas Garcia,2 - Presenting Solution,0.4375445169415361,0
+Lorena Rivas Garcia,1 - Active,0.4375445169415361,0
+Andrew Sullivan,3 - Establishing Value,0.4375445169415361,0
+Thomas Culkeen,1 - Active,0.4375445169415361,0
+Michael Nolfo,1 - Active,0.4366059717808783,0
+Michael Ciabattari,3 - Establishing Value,0.4366059717808783,0
+Frans Peters,2 - Presenting Solution,0.4366059717808783,0
+Andrew Sullivan,2 - Presenting Solution,0.43621644450005687,0
+Andrew Sullivan,3 - Establishing Value,0.43621644450005687,0
+Ivan Tomovic,2 - Presenting Solution,0.43621644450005687,0
+Ivan Tomovic,1 - Active,0.43621644450005687,0
+Michael Wein,1 - Active,0.43621644450005687,0
+Michael Wein,2 - Presenting Solution,0.43621644450005687,0
+Tom Wells,3 - Establishing Value,0.43621644450005687,0
+Raven Keenan,4 - Eliminating Alternatives,0.43621644450005687,0
+Lennert Stepien,4 - Eliminating Alternatives,0.43621644450005687,0
+Marshall Stevenson,3 - Establishing Value,0.43621644450005687,0
+Timothy Hirsch,4 - Eliminating Alternatives,0.43621644450005687,0
+Barry Lafferty,3 - Establishing Value,0.43621644450005687,0
+Frans Peters,2 - Presenting Solution,0.43621644450005687,0
+Michael Vardo,3 - Establishing Value,0.43621644450005687,0
+Kristie Witherow,2 - Presenting Solution,0.43552161900785746,0
+William Dales,1 - Active,0.43524887194036593,0
+Kenyan Branscomb,4 - Eliminating Alternatives,0.4351487768810604,0
+Jeroen Allebe,2 - Presenting Solution,0.4351487768810604,0
+Matthew Clifford,4 - Eliminating Alternatives,0.4343781116056295,0
+Sean Carroll,1 - Active,0.43335083250456763,0
+Alex Blogg,1 - Active,0.4323909343231647,0
+Amy Buchanan,4 - Eliminating Alternatives,0.4323909343231647,0
+Marta Greliak-Telesinska,1 - Active,0.4323909343231647,0
+Patrick Phillips,5 - Solution of Choice,0.4323909343231647,0
+Sarah Farmer,1 - Active,0.4323909343231647,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Ian Camino,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Sweta Sharma,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Ian Camino,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Ian Camino,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Roberto Fabre,5 - Solution of Choice,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Rich Villa,1 - Active,0.4318326931167258,0
+Sweta Sharma,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Ian Camino,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Ian Camino,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Ian Camino,2 - Presenting Solution,0.4318326931167258,0
+Sweta Sharma,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Patrick Bradley,2 - Presenting Solution,0.4318326931167258,0
+Andrew Sullivan,5 - Solution of Choice,0.43145238916250683,0
+Stuart Gomez,2 - Presenting Solution,0.43145238916250683,0
+Marcelo Boriero,6 - Negotiating,0.43145238916250683,0
+Kelsey Young,4 - Eliminating Alternatives,0.43145238916250683,0
+Justin Barkley,6 - Negotiating,0.43145238916250683,0
+Monica Schell,6 - Negotiating,0.43131594813552,0
+Frans Peters,2 - Presenting Solution,0.4310897435897436,0
+Kim Christiansen,2 - Presenting Solution,0.4310628618816854,0
+Sarah Farmer,3 - Establishing Value,0.4310628618816854,0
+Alex Malam,4 - Eliminating Alternatives,0.4310628618816854,0
+Sabrina Xing Fang,6 - Negotiating,0.4310628618816854,0
+Michael Ciabattari,4 - Eliminating Alternatives,0.4310628618816854,0
+Frans Peters,3 - Establishing Value,0.4310628618816854,0
+Craig Valentine,1 - Active,0.4310628618816854,0
+Craig Valentine,3 - Establishing Value,0.4310628618816854,0
+Sonny Lee,3 - Establishing Value,0.4310628618816854,0
+Senol Verim,1 - Active,0.4306761574521138,0
+Frans Peters,1 - Active,0.4306761574521138,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Ian Camino,2 - Presenting Solution,0.4303754982169079,0
+Kristie Witherow,1 - Active,0.4303680363894861,0
+Sonny Lee,4 - Eliminating Alternatives,0.42999519426268895,0
+Matt Spearing,6 - Negotiating,0.4296056669818677,0
+Jeroen Allebe,1 - Active,0.42945699921397873,0
+Dan Orr,3 - Establishing Value,0.42690554474695447,0
+Amy Buchanan,2 - Presenting Solution,0.42690554474695447,0
+Sarah Farmer,5 - Solution of Choice,0.42616236551714853,0
+Hananias Espindola,2 - Presenting Solution,0.4246714806141036,0
+Hananias Espindola,2 - Presenting Solution,0.4246714806141036,0
+Hananias Espindola,2 - Presenting Solution,0.4246714806141036,0
+Erik Oberthier,4 - Eliminating Alternatives,0.4242681821095918,0
+Graham Burne,2 - Presenting Solution,0.42280482113204904,0
+Stephane Mackenzie Thornton,1 - Active,0.4226380374790269,0
+Andrew Sullivan,1 - Active,0.4226380374790269,0
+Patrick Bradley,2 - Presenting Solution,0.42230888359291624,0
+Bryony Hearn,1 - Active,0.42230888359291624,0
+Siegfried Gammay,1 - Active,0.4218405152831382,0
+Hananias Espindola,6 - Negotiating,0.42175196212858307,0
+Phil Sanderson,2 - Presenting Solution,0.42175196212858307,0
+Hananias Espindola,1 - Active,0.42175196212858307,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.4208980939427029,0
+Ian Camino,2 - Presenting Solution,0.4208516886930984,0
+Ian Camino,2 - Presenting Solution,0.4208516886930984,0
+Ian Camino,2 - Presenting Solution,0.4208516886930984,0
+Ian Camino,2 - Presenting Solution,0.4208516886930984,0
+Ian Camino,2 - Presenting Solution,0.4208516886930984,0
+Ian Camino,2 - Presenting Solution,0.4208516886930984,0
+Ian Camino,2 - Presenting Solution,0.4208516886930984,0
+Ian Camino,2 - Presenting Solution,0.4208516886930984,0
+Ian Camino,2 - Presenting Solution,0.4208516886930984,0
+Senol Verim,2 - Presenting Solution,0.42050856666188147,0
+Andrew Sullivan,1 - Active,0.42050856666188147,0
+Marcelo Boriero,1 - Active,0.42050856666188147,0
+Lars Wilkens,2 - Presenting Solution,0.42050856666188147,0
+Kim Christiansen,4 - Eliminating Alternatives,0.4203184997155189,0
+Alex Malam,5 - Solution of Choice,0.4203184997155189,0
+Jeff Lockheart,1 - Active,0.4203184997155189,0
+Graham Burne,3 - Establishing Value,0.4203184997155189,0
+Kim Christiansen,1 - Active,0.4203184997155189,0
+Alex Malam,5 - Solution of Choice,0.4203184997155189,0
+Sarah Farmer,3 - Establishing Value,0.4203184997155189,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Ian Camino,2 - Presenting Solution,0.41937995455486093,0
+Ian Camino,2 - Presenting Solution,0.41937995455486093,0
+Ian Camino,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Ian Camino,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Ian Camino,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Ian Camino,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Ian Camino,2 - Presenting Solution,0.41937995455486093,0
+Roberto Fabre,4 - Eliminating Alternatives,0.41937995455486093,0
+Ian Camino,2 - Presenting Solution,0.41937995455486093,0
+Patrick Bradley,2 - Presenting Solution,0.41937995455486093,0
+Sourav Patari,4 - Eliminating Alternatives,0.41937995455486093,0
+Kas Subhan,4 - Eliminating Alternatives,0.4189904272740397,0
+Bryony Hearn,3 - Establishing Value,0.4189904272740397,0
+Henrik Holm,4 - Eliminating Alternatives,0.4189904272740397,0
+Mandar Desai,2 - Presenting Solution,0.4189904272740397,0
+Sonny Lee,1 - Active,0.4189904272740397,0
+Kenza Ghaiti,4 - Eliminating Alternatives,0.4189904272740397,0
+Bo Erlandsson,1 - Active,0.4189904272740397,0
+Patrick Phillips,1 - Active,0.4182956017818402,0
+Kristin Santistevan,3 - Establishing Value,0.4182956017818402,0
+Ian Camino,2 - Presenting Solution,0.41792275965504305,0
+Ian Camino,2 - Presenting Solution,0.41792275965504305,0
+Rich Villa,2 - Presenting Solution,0.41792275965504305,0
+Jan-Willem Oliedam,5 - Solution of Choice,0.4175332323742218,0
+Graham Burne,5 - Solution of Choice,0.4175332323742218,0
+Lennert Stepien,3 - Establishing Value,0.4175332323742218,0
+Erik Oberthier,3 - Establishing Value,0.4144528061850896,0
+Erik Oberthier,1 - Active,0.4144528061850896,0
+Amy Buchanan,4 - Eliminating Alternatives,0.4144528061850896,0
+Gretchen David,1 - Active,0.4140998006623226,0
+Sarah Farmer,1 - Active,0.4140899309095027,0
+Frans Peters,4 - Eliminating Alternatives,0.41406327890426836,0
+Matt Spearing,5 - Solution of Choice,0.41345014022609655,0
+Senol Verim,3 - Establishing Value,0.41188534537158383,0
+Steve Bryant,1 - Active,0.4107946901917094,0
+Giorgio Scappaticcio,3 - Establishing Value,0.4107946901917094,0
+Sweta Sharma,2 - Presenting Solution,0.40985614503105144,0
+Sweta Sharma,2 - Presenting Solution,0.40985614503105144,0
+Sweta Sharma,2 - Presenting Solution,0.40985614503105144,0
+Sweta Sharma,2 - Presenting Solution,0.40985614503105144,0
+Sweta Sharma,2 - Presenting Solution,0.40985614503105144,0
+Sweta Sharma,2 - Presenting Solution,0.40985614503105144,0
+Sourav Patari,3 - Establishing Value,0.4096795275209372,0
+Sourav Patari,2 - Presenting Solution,0.4096795275209372,0
+Hananias Espindola,1 - Active,0.4096795275209372,0
+Michael Wein,4 - Eliminating Alternatives,0.40946661775023013,0
+Florian de la Motte,4 - Eliminating Alternatives,0.40946661775023013,0
+Hananias Espindola,3 - Establishing Value,0.40929922356671833,0
+Hananias Espindola,2 - Presenting Solution,0.40929922356671833,0
+Hananias Espindola,1 - Active,0.40929922356671833,0
+Hananias Espindola,4 - Eliminating Alternatives,0.40929922356671833,0
+Hananias Espindola,5 - Solution of Choice,0.40929922356671833,0
+Melissa Booth,1 - Active,0.40929922356671833,0
+Amy Buchanan,1 - Active,0.4089096962858969,0
+Andrew Sullivan,5 - Solution of Choice,0.4089096962858969,0
+Phil Sanderson,6 - Negotiating,0.4089096962858969,0
+Ramona Renton,6 - Negotiating,0.4089096962858969,0
+Alex Malam,5 - Solution of Choice,0.4089096962858969,0
+Melissa Booth,4 - Eliminating Alternatives,0.4089096962858969,0
+Jason Snook,3 - Establishing Value,0.4089096962858969,0
+Markus Linder,4 - Eliminating Alternatives,0.4089096962858969,0
+Graham Burne,6 - Negotiating,0.4089096962858969,0
+Frans Peters,3 - Establishing Value,0.4085229918563252,0
+Ian Camino,2 - Presenting Solution,0.40839895013123356,0
+Ian Camino,2 - Presenting Solution,0.40839895013123356,0
+Michael Papp,1 - Active,0.4080094228504123,0
+Andrew Evert,1 - Active,0.4066890741616425,0
+Mandar Desai,4 - Eliminating Alternatives,0.40627233364853427,0
+Henrik Holm,5 - Solution of Choice,0.4054120202530096,0
+Matthew Campbell,1 - Active,0.4051586945120982,0
+Matthew Campbell,3 - Establishing Value,0.4051586945120982,0
+Andrew Sullivan,4 - Eliminating Alternatives,0.4051586945120982,0
+Andrew Sullivan,5 - Solution of Choice,0.4051586945120982,0
+Kavya Bhaskara (IS),1 - Active,0.4051586945120982,0
+Marco Antonio Cruz Martín,4 - Eliminating Alternatives,0.4045661213856932,0
+Kelsey Young,1 - Active,0.4037014996122803,0
+Kelsey Young,4 - Eliminating Alternatives,0.4037014996122803,0
+Siegfried Gammay,3 - Establishing Value,0.4031357965784195,0
+Amy Buchanan,4 - Eliminating Alternatives,0.40249597870336357,0
+Henrik Holm,5 - Solution of Choice,0.4009650100751297,0
+Ian Camino,2 - Presenting Solution,0.4009650100751297,0
+Ian Camino,2 - Presenting Solution,0.4009650100751297,0
+Ian Camino,2 - Presenting Solution,0.40015571799712774,0
+Amy Buchanan,4 - Eliminating Alternatives,0.40000511189372673,0
+Randi Hapenny,2 - Presenting Solution,0.40000511189372673,0
+Don Rosado,1 - Active,0.40000511189372673,0
+Matt Spearing,4 - Eliminating Alternatives,0.40000511189372673,0
+Amy Buchanan,4 - Eliminating Alternatives,0.40000511189372673,0
+Sonny Lee,2 - Presenting Solution,0.40000511189372673,0
+Sean Carroll,5 - Solution of Choice,0.3995078151753118,0
+Sarah Farmer,2 - Presenting Solution,0.398930125706082,0
+Amy Buchanan,3 - Establishing Value,0.39854791699390896,0
+Michael Ciabattari,3 - Establishing Value,0.39854791699390896,0
+Sam Nixon,3 - Establishing Value,0.39854791699390896,0
+Jeroen Allebe,5 - Solution of Choice,0.39722678895907243,0
+Kelsey Young,4 - Eliminating Alternatives,0.3968695303152165,0
+Florian de la Motte,4 - Eliminating Alternatives,0.396837261678251,0
+Erik Oberthier,4 - Eliminating Alternatives,0.396837261678251,0
+Frans Peters,1 - Active,0.396837261678251,0
+Matthew Schaefer,5 - Solution of Choice,0.396837261678251,0
+Bo Erlandsson,2 - Presenting Solution,0.396837261678251,0
+Dan Orr,5 - Solution of Choice,0.396837261678251,0
+Marlee Ragan,4 - Eliminating Alternatives,0.396837261678251,0
+Timothy Hirsch,4 - Eliminating Alternatives,0.39672554016816314,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Ian Camino,2 - Presenting Solution,0.39627773801002153,0
+Brian Smogard,3 - Establishing Value,0.3958882107292001,0
+Sarah Farmer,1 - Active,0.39526834526834526,0
+Michael Vardo,6 - Negotiating,0.39377654308771054,0
+Markus Linder,2 - Presenting Solution,0.39377654308771054,0
+Jeff Stramaglia,6 - Negotiating,0.39377654308771054,0
+Sarah Farmer,4 - Eliminating Alternatives,0.39377654308771054,0
+Sonny Lee,2 - Presenting Solution,0.39373258455141436,0
+Bo Erlandsson,1 - Active,0.3917470711440903,0
+Michael Papp,5 - Solution of Choice,0.39129697463030794,0
+Kelsey Young,2 - Presenting Solution,0.39129697463030794,0
+Sweta Sharma,2 - Presenting Solution,0.3908085259834324,0
+Ian Camino,2 - Presenting Solution,0.3908085259834324,0
+Ian Camino,2 - Presenting Solution,0.3908085259834324,0
+Adam Thomson,3 - Establishing Value,0.39041899870261104,0
+Ian Camino,2 - Presenting Solution,0.39041899870261104,0
+Justin Barkley,1 - Active,0.3894508166739228,0
+Bes Istrefi,2 - Presenting Solution,0.3894508166739228,0
+Roberto Fabre,1 - Active,0.3894508166739228,0
+Roberto Fabre,2 - Presenting Solution,0.3894508166739228,0
+Bes Istrefi,1 - Active,0.3894508166739228,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Stephane Mackenzie Thornton,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Sonny Lee,1 - Active,0.3885122715132649,0
+Sonny Lee,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Ian Camino,2 - Presenting Solution,0.3885122715132649,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Ian Camino,2 - Presenting Solution,0.3881227442324436,0
+Raven Keenan,6 - Negotiating,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Jan-Willem Oliedam,3 - Establishing Value,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Ian Camino,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Ian Camino,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Kim Christiansen,1 - Active,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Ian Camino,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Ian Camino,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Marijke Harmsen A,1 - Active,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Ian Camino,2 - Presenting Solution,0.3881227442324436,0
+Limor Gabbay Shalom,2 - Presenting Solution,0.3881227442324436,0
+Ian Camino,2 - Presenting Solution,0.3881227442324436,0
+Marco Antonio Cruz Martín,1 - Active,0.38793267728608094,0
+Marcelo Boriero,3 - Establishing Value,0.38793267728608094,0
+Jeff Lockheart,3 - Establishing Value,0.38793267728608094,0
+Sonny Lee,2 - Presenting Solution,0.38793267728608094,0
+Don Rosado,1 - Active,0.38793267728608094,0
+Ramona Renton,2 - Presenting Solution,0.38793267728608094,0
+Sonny Lee,1 - Active,0.38793267728608094,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.38793267728608094,0
+Bes Istrefi,3 - Establishing Value,0.38793267728608094,0
+Randi Hapenny,3 - Establishing Value,0.38793267728608094,0
+Jan-Willem Oliedam,2 - Presenting Solution,0.38793267728608094,0
+Tom Wells,3 - Establishing Value,0.38793267728608094,0
+Sarah Farmer,1 - Active,0.3874279187402441,0
+Kristin Santistevan,2 - Presenting Solution,0.3874279187402441,0
+Velan Tasks,1 - Active,0.3873134521544415,0
+Ian Camino,2 - Presenting Solution,0.3866655493326257,0
+Amy Buchanan,4 - Eliminating Alternatives,0.3866655493326257,0
+Gabriella Vecchitto (AR),1 - Active,0.38647548238626306,0
+Tom Wells,5 - Solution of Choice,0.38647548238626306,0
+Giorgio Scappaticcio,2 - Presenting Solution,0.3864267048726968,0
+Giorgio Scappaticcio,4 - Eliminating Alternatives,0.3859097793524023,0
+Sourav Patari,2 - Presenting Solution,0.3846760895170789,0
+Steve Thiebault,1 - Active,0.3846760895170789,0
+Akshay Agrawal,5 - Solution of Choice,0.3844525844525844,0
+Kyran Pritchard,3 - Establishing Value,0.3844525844525844,0
+Alex Blogg,4 - Eliminating Alternatives,0.3832222478679066,0
+Stuart Gomez,6 - Negotiating,0.3832222478679066,0
+Sarah Farmer,4 - Eliminating Alternatives,0.3832222478679066,0
+Rabah Belmiloud,1 - Active,0.3830420506743639,0
+Florian de la Motte,2 - Presenting Solution,0.3830420506743639,0
+Stuart Gomez,2 - Presenting Solution,0.3830055289163096,0
+Timothy Hirsch,2 - Presenting Solution,0.3830055289163096,0
+Stuart Reynolds,1 - Active,0.3830055289163096,0
+Stuart Reynolds,2 - Presenting Solution,0.3830055289163096,0
+Bethany Haveron,2 - Presenting Solution,0.38258245718450046,0
+Sonny Lee,2 - Presenting Solution,0.3817139782328847,0
+Stephane Mackenzie Thornton,1 - Active,0.3817139782328847,0
+Graham Burne,1 - Active,0.3817041084800648,0
+Ian Camino,2 - Presenting Solution,0.3815900130704904,0
+Alex Huggett,1 - Active,0.38101766232998774,0
+Sarah Farmer,3 - Establishing Value,0.38101766232998774,0
+Randi Hapenny,1 - Active,0.38101766232998774,0
+Kenza Ghaiti,1 - Active,0.38025678333306684,0
+Ian Camino,2 - Presenting Solution,0.38025678333306684,0
+Lennert Stepien,4 - Eliminating Alternatives,0.3794995229421459,0
+Alex Blogg,3 - Establishing Value,0.3794995229421459,0
+Michael Papp,6 - Negotiating,0.3784088677622714,0
+Florian de la Motte,2 - Presenting Solution,0.3784088677622714,0
+Monica Schell,6 - Negotiating,0.3784088677622714,0
+Ramona Renton,5 - Solution of Choice,0.3778519462979382,0
+Matthew Campbell,1 - Active,0.3778519462979382,0
+Adam Thomson,3 - Establishing Value,0.3778519462979382,0
+Brian Smogard,2 - Presenting Solution,0.3778519462979382,0
+Randi Hapenny,3 - Establishing Value,0.3778519462979382,0
+Stephane Mackenzie Thornton,4 - Eliminating Alternatives,0.3778519462979382,0
+Randi Hapenny,1 - Active,0.3778519462979382,0
+Steve Bryant,4 - Eliminating Alternatives,0.3778519462979382,0
+Steve Bryant,5 - Solution of Choice,0.3778519462979382,0
+Jeroen Allebe,5 - Solution of Choice,0.3778519462979382,0
+Frans Peters,4 - Eliminating Alternatives,0.3778519462979382,0
+Jeroen Allebe,3 - Establishing Value,0.3773561266959464,0
+Sonny Lee,5 - Solution of Choice,0.3768405916815811,0
+Stuart Gomez,4 - Eliminating Alternatives,0.3758290483642596,0
+Andrew Evert,4 - Eliminating Alternatives,0.3758290483642596,0
+Kim Christiansen,5 - Solution of Choice,0.3758290483642596,0
+Brian Smogard,1 - Active,0.3758290483642596,0
+Henrik Holm,3 - Establishing Value,0.3749338644922349,0
+Bes Istrefi,1 - Active,0.37461378566909626,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Ian Camino,2 - Presenting Solution,0.3745443372114135,0
+Nick Marchese,4 - Eliminating Alternatives,0.3743542702650509,0
+Frans Peters,4 - Eliminating Alternatives,0.3731916857268969,0
+Patrick Phillips,6 - Negotiating,0.37218029895625526,0
+Andrew Sullivan,4 - Eliminating Alternatives,0.37162337749192204,0
+Kas Subhan,5 - Solution of Choice,0.37162337749192204,0
+Amy Buchanan,1 - Active,0.37162337749192204,0
+Andrew Evert,5 - Solution of Choice,0.37047774155531243,0
+Stuart Gomez,1 - Active,0.36941879195400323,0
+Andrew Sullivan,3 - Establishing Value,0.36941879195400323,0
+Ian Camino,2 - Presenting Solution,0.36865536038764385,0
+Ian Camino,2 - Presenting Solution,0.36865536038764385,0
+Ian Camino,2 - Presenting Solution,0.36865536038764385,0
+Ian Camino,2 - Presenting Solution,0.36865536038764385,0
+Ian Camino,2 - Presenting Solution,0.36865536038764385,0
+Senol Verim,1 - Active,0.3681257014590347,0
+Marta Greliak-Telesinska,3 - Establishing Value,0.36804315131628274,0
+Patrick Bradley,2 - Presenting Solution,0.3663591059174764,0
+Jeroen Braak(AR User),5 - Solution of Choice,0.3663591059174764,0
+Ian Camino,2 - Presenting Solution,0.36596957863665497,0
+Ian Camino,2 - Presenting Solution,0.36596957863665497,0
+Carl Eckert,6 - Negotiating,0.36596957863665497,0
+Barry Lafferty,2 - Presenting Solution,0.36596957863665497,0
+Samuel Barlow,1 - Active,0.36596957863665497,0
+Bethany Haveron,5 - Solution of Choice,0.36596957863665497,0
+Chris Gangloff,4 - Eliminating Alternatives,0.36596957863665497,0
+Ian Camino,2 - Presenting Solution,0.36596957863665497,0
+Jeroen Braak(AR User),4 - Eliminating Alternatives,0.36596957863665497,0
+Ian Camino,2 - Presenting Solution,0.36596957863665497,0
+Amy Buchanan,1 - Active,0.3657795116902924,0
+Michael Soave,5 - Solution of Choice,0.3657795116902924,0
+Sarah Farmer,4 - Eliminating Alternatives,0.3657795116902924,0
+Arun Singh,1 - Active,0.3657795116902924,0
+Timothy Hirsch,5 - Solution of Choice,0.3657795116902924,0
+Barry Lafferty,4 - Eliminating Alternatives,0.3657795116902924,0
+Priyanka Basavaraj,1 - Active,0.3657795116902924,0
+Phil Sanderson,5 - Solution of Choice,0.3657795116902924,0
+Stuart Gomez,3 - Establishing Value,0.3657795116902924,0
+Michael Vardo,6 - Negotiating,0.3637566137566137,0
+Tarek Majaj,4 - Eliminating Alternatives,0.3637566137566137,0
+Michael Wein,3 - Establishing Value,0.3637566137566137,0
+Sam Nixon,2 - Presenting Solution,0.3637566137566137,0
+Sam Nixon,4 - Eliminating Alternatives,0.3637566137566137,0
+Michael Wein,2 - Presenting Solution,0.3637566137566137,0
+Kenza Ghaiti,2 - Presenting Solution,0.3637566137566137,0
+Jeroen Allebe,4 - Eliminating Alternatives,0.3637566137566137,0
+Dan Orr,1 - Active,0.3637566137566137,0
+Frans Peters,1 - Active,0.3637566137566137,0
+Amy Buchanan,2 - Presenting Solution,0.3633322159992924,0
+Kelsey Young,4 - Eliminating Alternatives,0.3633322159992924,0
+Jason Snook,4 - Eliminating Alternatives,0.3633322159992924,0
+Frans Peters,4 - Eliminating Alternatives,0.3633322159992924,0
+Jeroen Allebe,4 - Eliminating Alternatives,0.3631421490529297,0
+Steve Bryant,2 - Presenting Solution,0.3631421490529297,0
+Michael Papp,3 - Establishing Value,0.36238985316789063,0
+Stuart Gomez,3 - Establishing Value,0.3620445872113774,0
+Bo Erlandsson,6 - Negotiating,0.36111925111925114,0
+Sonny Lee,1 - Active,0.3604292915887119,0
+Ian Camino,2 - Presenting Solution,0.3604292915887119,0
+Sweta Sharma,2 - Presenting Solution,0.3595608126370961,0
+Bes Istrefi,1 - Active,0.3595608126370961,0
+Bethany Haveron,4 - Eliminating Alternatives,0.3595608126370961,0
+Sweta Sharma,2 - Presenting Solution,0.3595608126370961,0
+Randi Hapenny,4 - Eliminating Alternatives,0.3595509428842762,0
+Amy Buchanan,6 - Negotiating,0.3593612487146523,0
+Kim Christiansen,4 - Eliminating Alternatives,0.3593612487146523,0
+Jeroen Allebe,6 - Negotiating,0.3585953738940291,0
+Melissa Booth,3 - Establishing Value,0.35840530694766654,0
+Ramona Renton,5 - Solution of Choice,0.35790405381483453,0
+Lars Wilkens,6 - Negotiating,0.35790405381483453,0
+Michael Ciabattari,6 - Negotiating,0.3577919289513492,0
+Marcelo Boriero,2 - Presenting Solution,0.3577919289513492,0
+Andrew Sullivan,1 - Active,0.35734635734635734,0
+Andrew Sullivan,2 - Presenting Solution,0.35734635734635734,0
+Jan-Willem Oliedam,5 - Solution of Choice,0.35706499424448485,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.35706499424448485,0
+Nick Marchese,2 - Presenting Solution,0.35706499424448485,0
+Giovanni Ottimo,5 - Solution of Choice,0.35706499424448485,0
+Akshay Agrawal,1 - Active,0.35706499424448485,0
+Graham Burne,3 - Establishing Value,0.35706499424448485,0
+Cindy Grogan MSP,1 - Active,0.35706499424448485,0
+Jeroen Braak(AR User),1 - Active,0.3569234499997335,0
+Susanne Klindt,1 - Active,0.3569234499997335,0
+Susanne Klindt,2 - Presenting Solution,0.3569234499997335,0
+Michael Nolfo,3 - Establishing Value,0.3562557021664829,0
+Timothy Hirsch,6 - Negotiating,0.3562557021664829,0
+Senol Verim,4 - Eliminating Alternatives,0.3562557021664829,0
+Amy Buchanan,6 - Negotiating,0.3552628045178076,0
+Andrew Sullivan,5 - Solution of Choice,0.3551829790147547,0
+Marco Antonio Cruz Martín,2 - Presenting Solution,0.35423280423280423,0
+Jeroen Allebe,5 - Solution of Choice,0.3536183395291202,0
+Jason Snook,2 - Presenting Solution,0.3536183395291202,0
+Stuart Gomez,4 - Eliminating Alternatives,0.3536183395291202,0
+Brett Dean,3 - Establishing Value,0.3531326799086362,0
+Daniel Estreicher,5 - Solution of Choice,0.3515954415954416,0
+Brett Dean,1 - Active,0.3511325476318285,0
+Sean Carroll,1 - Active,0.3511325476318285,0
+Kristin Santistevan,5 - Solution of Choice,0.35083642543846877,0
+Lennert Stepien,1 - Active,0.350656228244926,0
+Kyran Pritchard,1 - Active,0.350656228244926,0
+Sven Seidenberg,3 - Establishing Value,0.350656228244926,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.3500271333604667,0
+Giorgio Scappaticcio,4 - Eliminating Alternatives,0.3493792305386509,0
+Nitisha Srivastva,1 - Active,0.3493792305386509,0
+Graham Burne,1 - Active,0.3493792305386509,0
+Raven Keenan,3 - Establishing Value,0.3491990333451081,0
+Fatma Schober,3 - Establishing Value,0.3486333303112474,0
+Velan Tasks,1 - Active,0.34863183990054986,0
+Marta Greliak-Telesinska,3 - Establishing Value,0.34863183990054986,0
+Susanne Klindt,1 - Active,0.3481981020956953,0
+Randi Hapenny,3 - Establishing Value,0.34782254782254785,0
+Randi Hapenny,5 - Solution of Choice,0.347389770723104,0
+Sven Seidenberg,2 - Presenting Solution,0.3471761354114295,0
+Markus Linder,1 - Active,0.3455922605838853,0
+Markus Linder,3 - Establishing Value,0.3455922605838853,0
+Marco Antonio Cruz Martín,5 - Solution of Choice,0.34527059191966836,0
+Lorena Rivas Garcia,1 - Active,0.3444276594389099,0
+Raven Keenan,2 - Presenting Solution,0.3444276594389099,0
+Frans Peters,4 - Eliminating Alternatives,0.3432526230831316,0
+Bethany Haveron,1 - Active,0.3422279632396583,0
+Bart Jeurissen,6 - Negotiating,0.342223073900991,0
+Amy Buchanan,3 - Establishing Value,0.3414636892897762,0
+Raven Keenan,1 - Active,0.3407658790011731,0
+Lennert Stepien,5 - Solution of Choice,0.3407658790011731,0
+Markus Linder,3 - Establishing Value,0.3399079824072091,0
+Alex Malam,1 - Active,0.3385414699847689,0
+Bo Erlandsson,3 - Establishing Value,0.3382849647483194,0
+Amy Buchanan,2 - Presenting Solution,0.3372080831188638,0
+Graham Burne,3 - Establishing Value,0.3372080831188638,0
+Kyran Pritchard,4 - Eliminating Alternatives,0.3372080831188638,0
+Miguel Valdez,1 - Active,0.337077821223896,0
+Sonny Lee,2 - Presenting Solution,0.337077821223896,0
+Lorena Rivas Garcia,3 - Establishing Value,0.3359993944336422,0
+Alex Malam,2 - Presenting Solution,0.3359041073474063,0
+Sonny Lee,3 - Establishing Value,0.33505492329021735,0
+Sonny Lee,6 - Negotiating,0.33505343287951983,0
+Kenza Ghaiti,5 - Solution of Choice,0.3349118286486963,0
+Giovanni Ottimo,6 - Negotiating,0.3349118286486963,0
+Amy Buchanan,6 - Negotiating,0.3349118286486963,0
+Sonny Lee,2 - Presenting Solution,0.3349118286486963,0
+Chris Gangloff,1 - Active,0.3349118286486963,0
+Chris Gangloff,3 - Establishing Value,0.3349118286486963,0
+Marcelo Boriero,5 - Solution of Choice,0.3349118286486963,0
+Monica Schell,1 - Active,0.3349118286486963,0
+Randi Hapenny,4 - Eliminating Alternatives,0.3349118286486963,0
+Adam Thomson,1 - Active,0.3349118286486963,0
+Sonny Lee,1 - Active,0.3349118286486963,0
+Michael Papp,3 - Establishing Value,0.3349118286486963,0
+Herrick Griffin,2 - Presenting Solution,0.3349118286486963,0
+Carl Eckert,1 - Active,0.3349118286486963,0
+Roberto Fabre,4 - Eliminating Alternatives,0.3347918657325404,0
+Marcelo Boriero,2 - Presenting Solution,0.3345421995338243,0
+Michael Papp,5 - Solution of Choice,0.3345421995338243,0
+Andrew Sullivan,2 - Presenting Solution,0.3345421995338243,0
+Sourav Patari,3 - Establishing Value,0.3335020890600444,0
+Velan Tasks,1 - Active,0.33288893071501763,0
+Michael Wein,3 - Establishing Value,0.33288893071501763,0
+Adam Thomson,2 - Presenting Solution,0.33288893071501763,0
+Bo Erlandsson,4 - Eliminating Alternatives,0.33288893071501763,0
+Susanne Klindt,1 - Active,0.33288893071501763,0
+Marcelo Boriero,6 - Negotiating,0.33288893071501763,0
+Lennert Stepien,3 - Establishing Value,0.33233761399590545,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Michael Ciabattari,5 - Solution of Choice,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Brian Smogard,6 - Negotiating,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Sabrina Xing Fang,6 - Negotiating,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Timothy Hirsch,4 - Eliminating Alternatives,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Jason Snook,4 - Eliminating Alternatives,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Ian Camino,2 - Presenting Solution,0.33227446601133365,0
+Graham Burne,2 - Presenting Solution,0.3308492524178798,0
+Rabah Belmiloud,4 - Eliminating Alternatives,0.33025156807765504,0
+Sonny Lee,4 - Eliminating Alternatives,0.33025156807765504,0
+Adam Thomson,4 - Eliminating Alternatives,0.33025156807765504,0
+Lennert Stepien,1 - Active,0.33017423566430276,0
+Adam Thomson,2 - Presenting Solution,0.32868325984268015,0
+Kim Christiansen,1 - Active,0.32868325984268015,0
+Stephane Mackenzie Thornton,4 - Eliminating Alternatives,0.32868325984268015,0
+Rich Villa,2 - Presenting Solution,0.32868325984268015,0
+Ivan Tomovic,5 - Solution of Choice,0.32868325984268015,0
+Rich Villa,1 - Active,0.32868325984268015,0
+Amy Buchanan,4 - Eliminating Alternatives,0.32868325984268015,0
+Marco Antonio Cruz Martín,3 - Establishing Value,0.32868325984268015,0
+Kristin Santistevan,4 - Eliminating Alternatives,0.32868325984268015,0
+Arun Singh,3 - Establishing Value,0.3285030626491374,0
+Rickie Sandland,1 - Active,0.3285030626491374,0
+Arun Singh,4 - Eliminating Alternatives,0.3285030626491374,0
+Lorena Rivas Garcia,4 - Eliminating Alternatives,0.3285030626491374,0
+Marco Antonio Cruz Martín,4 - Eliminating Alternatives,0.3285030626491374,0
+Arun Singh,2 - Presenting Solution,0.3285030626491374,0
+Sven Seidenberg,1 - Active,0.3285030626491374,0
+Arun Singh,5 - Solution of Choice,0.3285030626491374,0
+Raven Keenan,5 - Solution of Choice,0.3285030626491374,0
+Bethany Haveron,4 - Eliminating Alternatives,0.3285030626491374,0
+Patrick Bradley,2 - Presenting Solution,0.3285030626491374,0
+Andrew Sullivan,5 - Solution of Choice,0.32834215167548503,0
+Kristie Witherow,1 - Active,0.3275376239060705,0
+Veronica Silva,1 - Active,0.3275376239060705,0
+Alex Malam,2 - Presenting Solution,0.32648016471545876,0
+Stephane Mackenzie Thornton,3 - Establishing Value,0.32648016471545876,0
+Sebastian Eggers,1 - Active,0.32648016471545876,0
+Mandar Desai,3 - Establishing Value,0.32648016471545876,0
+Michael Papp,2 - Presenting Solution,0.32648016471545876,0
+Giovanni Ottimo,1 - Active,0.32648016471545876,0
+Alex Malam,1 - Active,0.32648016471545876,0
+Velan Tasks,1 - Active,0.32647867430476124,0
+Brett Dean,1 - Active,0.32647867430476124,0
+Marta Greliak-Telesinska,4 - Eliminating Alternatives,0.32647867430476124,0
+Bryony Hearn,4 - Eliminating Alternatives,0.32647867430476124,0
+Brian Smogard,5 - Solution of Choice,0.32647867430476124,0
+Erik Oberthier,1 - Active,0.32647867430476124,0
+Michael Nolfo,4 - Eliminating Alternatives,0.3260458972053175,0
+Matt Spearing,3 - Establishing Value,0.3260458972053175,0
+Miguel Valdez,4 - Eliminating Alternatives,0.3260458972053175,0
+Daniel Estreicher,5 - Solution of Choice,0.3260458972053175,0
+Maria Capria,4 - Eliminating Alternatives,0.3260458972053175,0
+Markus Linder,4 - Eliminating Alternatives,0.3258657000117748,0
+Amy Buchanan,1 - Active,0.3258657000117748,0
+Bruce Passey,4 - Eliminating Alternatives,0.3258657000117748,0
+Marcelo Boriero,4 - Eliminating Alternatives,0.3258657000117748,0
+Marlee Ragan,1 - Active,0.3258657000117748,0
+Michael Ciabattari,3 - Establishing Value,0.32551472597239184,0
+Michael Ciabattari,1 - Active,0.32551472597239184,0
+Tom Wells,1 - Active,0.3243152959731586,0
+Timothy Hirsch,1 - Active,0.3243152959731586,0
+Amy Buchanan,5 - Solution of Choice,0.3243152959731586,0
+Jan-Willem Oliedam,3 - Establishing Value,0.3243152959731586,0
+Bryony Hearn,1 - Active,0.3238428020780962,0
+Melissa Booth,1 - Active,0.3238428020780962,0
+Mandar Desai,5 - Solution of Choice,0.3238428020780962,0
+Michael Nolfo,3 - Establishing Value,0.32384131166739866,0
+Jeroen Allebe,3 - Establishing Value,0.32384131166739866,0
+Lorena Rivas Garcia,4 - Eliminating Alternatives,0.32384131166739866,0
+Kristie Witherow,5 - Solution of Choice,0.3236053095702219,0
+Henrik Holm,4 - Eliminating Alternatives,0.3222744938431213,0
+Bo Erlandsson,2 - Presenting Solution,0.3222744938431213,0
+Marlee Ragan,1 - Active,0.3222744938431213,0
+Sabrina Xing Fang,5 - Solution of Choice,0.3222744938431213,0
+Michael Wein,3 - Establishing Value,0.3222744938431213,0
+Randi Hapenny,1 - Active,0.3222744938431213,0
+Kristin Santistevan,5 - Solution of Choice,0.3222744938431213,0
+Graham Burne,3 - Establishing Value,0.3222744938431213,0
+Alex Blogg,3 - Establishing Value,0.3222744938431213,0
+Michael Soave,6 - Negotiating,0.3222744938431213,0
+Roberto Fabre,4 - Eliminating Alternatives,0.3222744938431213,0
+Senol Verim,3 - Establishing Value,0.3222744938431213,0
+Fatma Schober,4 - Eliminating Alternatives,0.3222744938431213,0
+Frans Peters,3 - Establishing Value,0.3213090551000543,0
+Edward Eisman,1 - Active,0.32112885790651163,0
+Markus Linder,5 - Solution of Choice,0.32112885790651163,0
+Lani Edwards,1 - Active,0.32112885790651163,0
+Edward Eisman,3 - Establishing Value,0.32112885790651163,0
+Henrik Holm,6 - Negotiating,0.32007479764386976,0
+Bryony Hearn,1 - Active,0.32007479764386976,0
+Arun Singh,1 - Active,0.32007479764386976,0
+Amy Buchanan,4 - Eliminating Alternatives,0.3200699083052024,0
+Michael Nolfo,5 - Solution of Choice,0.3200699083052024,0
+Monica Schell,5 - Solution of Choice,0.3200699083052024,0
+Graham Burne,4 - Eliminating Alternatives,0.3200699083052024,0
+Jeroen Allebe,1 - Active,0.3200699083052024,0
+Lennert Stepien,4 - Eliminating Alternatives,0.3200699083052024,0
+Raven Keenan,5 - Solution of Choice,0.3200699083052024,0
+Kenyan Branscomb,4 - Eliminating Alternatives,0.3200699083052024,0
+Alex Blogg,2 - Presenting Solution,0.3200699083052024,0
+Lennert Stepien,4 - Eliminating Alternatives,0.3200699083052024,0
+Michael Papp,4 - Eliminating Alternatives,0.3200699083052024,0
+Kim Christiansen,2 - Presenting Solution,0.3200699083052024,0
+Gabriella Vecchitto (AR),1 - Active,0.31963713120575865,0
+Gabriella Vecchitto (AR),2 - Presenting Solution,0.31963713120575865,0
+Marcelo Boriero,4 - Eliminating Alternatives,0.31963713120575865,0
+Kim Christiansen,4 - Eliminating Alternatives,0.31963713120575865,0
+Gabriella Vecchitto (AR),1 - Active,0.31963713120575865,0
+Brett Dean,2 - Presenting Solution,0.31963713120575865,0
+Bes Istrefi,2 - Presenting Solution,0.31963713120575865,0
+Alex Malam,5 - Solution of Choice,0.3191731266748332,0
+Timothy Hirsch,4 - Eliminating Alternatives,0.319105959972833,0
+Adam Thomson,3 - Establishing Value,0.31910446956213545,0
+Arun Singh,1 - Active,0.31805189971019115,0
+Jeroen Braak(SVM User),5 - Solution of Choice,0.31790652997359975,0
+Stuart Gomez,3 - Establishing Value,0.3177548168114206,0
+Michael Ciabattari,5 - Solution of Choice,0.3175125612494289,0
+Sourav Patari,3 - Establishing Value,0.3174374350065072,0
+Arun Singh,6 - Negotiating,0.3174374350065072,0
+Rich Villa,5 - Solution of Choice,0.3174325456678398,0
+Marina Gravelle,1 - Active,0.3174325456678398,0
+Florian de la Motte,3 - Establishing Value,0.3174325456678398,0
+Bes Istrefi,1 - Active,0.3174325456678398,0
+Michael Nolfo,4 - Eliminating Alternatives,0.3174325456678398,0
+Kas Subhan,5 - Solution of Choice,0.3174325456678398,0
+Roberto Fabre,1 - Active,0.3174325456678398,0
+Tom Wells,4 - Eliminating Alternatives,0.3174325456678398,0
+Erik Oberthier,3 - Establishing Value,0.3174325456678398,0
+Michael Papp,1 - Active,0.3174325456678398,0
+Sonny Lee,4 - Eliminating Alternatives,0.3174325456678398,0
+Brian Smogard,4 - Eliminating Alternatives,0.3154145370728285,0
+Mandar Desai,2 - Presenting Solution,0.3154145370728285,0
+Sourav Patari,3 - Establishing Value,0.3154145370728285,0
+Michael Nolfo,1 - Active,0.3152691673362371,0
+Roberto Fabre,4 - Eliminating Alternatives,0.3152691673362371,0
+Marco Antonio Cruz Martín,5 - Solution of Choice,0.3152691673362371,0
+Sonny Lee,6 - Negotiating,0.3152691673362371,0
+Lorena Rivas Garcia,5 - Solution of Choice,0.3150223026788981,0
+Daniel Estreicher,1 - Active,0.31490028910049545,0
+Stuart Reynolds,1 - Active,0.31490028910049545,0
+Matthew Campbell,4 - Eliminating Alternatives,0.31465898536214515,0
+Gretchen David,2 - Presenting Solution,0.3138462288378536,0
+Lennert Stepien,1 - Active,0.3138462288378536,0
+Sonny Lee,6 - Negotiating,0.31378958652628297,0
+Yeshvir Monteiro,1 - Active,0.31354914593908306,0
+Sarah Farmer,6 - Negotiating,0.3133255322818496,0
+Marlee Ragan,3 - Establishing Value,0.3126957035625766,0
+Andrew Evert,4 - Eliminating Alternatives,0.3126957035625766,0
+Adam Thomson,3 - Establishing Value,0.3126957035625766,0
+Mandar Desai,1 - Active,0.31263608742846655,0
+Melissa Booth,5 - Solution of Choice,0.31263608742846655,0
+Jeroen Allebe,3 - Establishing Value,0.31263608742846655,0
+Michael Wein,1 - Active,0.31228637093288136,0
+Rabah Belmiloud,3 - Establishing Value,0.31164164329993477,0
+Sonny Lee,3 - Establishing Value,0.31164164329993477,0
+Michael Papp,3 - Establishing Value,0.31164164329993477,0
+Roberto Fabre,3 - Establishing Value,0.31164164329993477,0
+Giovanni Ottimo,5 - Solution of Choice,0.31164164329993477,0
+Andrew Sullivan,4 - Eliminating Alternatives,0.3113445604011642,0
+Sonny Lee,1 - Active,0.3113445604011642,0
+Sonny Lee,4 - Eliminating Alternatives,0.3113445604011642,0
+Bob Coen,2 - Presenting Solution,0.311208866200491,0
+Markus Linder,3 - Establishing Value,0.3109117833017204,0
+Veronica Silva,1 - Active,0.31067769496756537,0
+Bob Coen,1 - Active,0.31067769496756537,0
+Bibi Nafrin B N,1 - Active,0.31053232523097396,0
+Ivan Tomovic,4 - Eliminating Alternatives,0.31053232523097396,0
+Bibi Nafrin B N,1 - Active,0.31053232523097396,0
+Giorgio Scappaticcio,6 - Negotiating,0.3094782649683321,0
+Sonny Lee,2 - Presenting Solution,0.3094782649683321,0
+Marcelo Boriero,2 - Presenting Solution,0.3091811820695616,0
+Raven Keenan,1 - Active,0.3091811820695616,0
+Bes Istrefi,2 - Presenting Solution,0.3091811820695616,0
+Sonny Lee,3 - Establishing Value,0.3091811820695616,0
+Amy Buchanan,2 - Presenting Solution,0.30908089731619137,0
+Bart Jeurissen,3 - Establishing Value,0.30907940690549385,0
+Raven Keenan,4 - Eliminating Alternatives,0.30900428066257213,0
+Michael Nolfo,5 - Solution of Choice,0.30900428066257213,0
+Bes Istrefi,2 - Presenting Solution,0.30900428066257213,0
+Bryony Hearn,1 - Active,0.30900428066257213,0
+Michael Papp,5 - Solution of Choice,0.30900428066257213,0
+Graham Burne,2 - Presenting Solution,0.30870719776380157,0
+Raven Keenan,4 - Eliminating Alternatives,0.30870719776380157,0
+Amy Buchanan,4 - Eliminating Alternatives,0.30870719776380157,0
+Amritha Shankar (IS),1 - Active,0.30870719776380157,0
+Sabrina Xing Fang,1 - Active,0.3086135366793392,0
+Marta Greliak-Telesinska,6 - Negotiating,0.3086135366793392,0
+Michael Ciabattari,1 - Active,0.3085220854883776,0
+Sonny Lee,4 - Eliminating Alternatives,0.3084800768644291,0
+Jeroen Allebe,3 - Establishing Value,0.308430416556129,0
+Kristie Witherow,6 - Negotiating,0.3082502193625863,0
+Kristie Witherow,5 - Solution of Choice,0.3082502193625863,0
+Henrik Holm,2 - Presenting Solution,0.3082502193625863,0
+Andrew Sullivan,3 - Establishing Value,0.3076737869431729,0
+Andrew Sullivan,2 - Presenting Solution,0.3076737869431729,0
+Andrew Sullivan,1 - Active,0.3076737869431729,0
+Richard Brown,2 - Presenting Solution,0.3076737869431729,0
+Brian Smogard,6 - Negotiating,0.3069160285738912,0
+Graham Burne,5 - Solution of Choice,0.3068409023309695,0
+Kas Subhan,1 - Active,0.3068409023309695,0
+Kenyan Branscomb,1 - Active,0.3068409023309695,0
+Tarek Majaj,3 - Establishing Value,0.30647202409522784,0
+Kristie Witherow,4 - Eliminating Alternatives,0.3062273214289077,0
+Kristie Witherow,1 - Active,0.3062273214289077,0
+Jeroen Allebe,2 - Presenting Solution,0.3062273214289077,0
+Kristie Witherow,2 - Presenting Solution,0.3062273214289077,0
+Frans Peters,4 - Eliminating Alternatives,0.30622583101821016,0
+Sven Seidenberg,4 - Eliminating Alternatives,0.3061749411964573,0
+Drishya Anna Cherian,1 - Active,0.3061749411964573,0
+Graham Burne,2 - Presenting Solution,0.3061749411964573,0
+Frans Peters,3 - Establishing Value,0.30503642430581024,0
+Matthew Schaefer,4 - Eliminating Alternatives,0.30487522644385384,0
+Bethany Haveron,3 - Establishing Value,0.3042674385573089,0
+Jamie Allen,4 - Eliminating Alternatives,0.3042674385573089,0
+Kenza Ghaiti,4 - Eliminating Alternatives,0.3042674385573089,0
+Lennert Stepien,4 - Eliminating Alternatives,0.3042674385573089,0
+Sonny Lee,1 - Active,0.3042674385573089,0
+Lani Edwards,6 - Negotiating,0.3042674385573089,0
+Daniel Estreicher,4 - Eliminating Alternatives,0.3042674385573089,0
+Michael Wein,4 - Eliminating Alternatives,0.3042674385573089,0
+Andrew Sullivan,5 - Solution of Choice,0.3039703556585384,0
+Rabah Belmiloud,5 - Solution of Choice,0.3039703556585384,0
+Lennert Stepien,2 - Presenting Solution,0.3039703556585384,0
+Rich Villa,3 - Establishing Value,0.3039703556585384,0
+Graham Burne,2 - Presenting Solution,0.3039703556585384,0
+Kenza Ghaiti,2 - Presenting Solution,0.3039703556585384,0
+Stephane Mackenzie Thornton,3 - Establishing Value,0.3039703556585384,0
+Roberto Fabre,2 - Presenting Solution,0.3021040602257063,0
+Steve Thiebault,3 - Establishing Value,0.3021040602257063,0
+Phil Sanderson,1 - Active,0.30202165055657015,0
+Chris Gangloff,1 - Active,0.30202165055657015,0
+Andrew Sullivan,4 - Eliminating Alternatives,0.30202165055657015,0
+Edward Eisman,2 - Presenting Solution,0.30202165055657015,0
+Sourav Patari,1 - Active,0.30202165055657015,0
+Henrik Holm,2 - Presenting Solution,0.30202165055657015,0
+Sarah Farmer,4 - Eliminating Alternatives,0.30202165055657015,0
+Steve Thiebault,2 - Presenting Solution,0.30202165055657015,0
+Miguel Valdez,3 - Establishing Value,0.3018069773269358,0
+Rich Villa,4 - Eliminating Alternatives,0.3018069773269358,0
+Randi Hapenny,4 - Eliminating Alternatives,0.3015513897866839,0
+Marta Greliak-Telesinska,4 - Eliminating Alternatives,0.301265020943614,0
+Jeroen Allebe,4 - Eliminating Alternatives,0.30050726257433236,0
+Sonny Lee,1 - Active,0.3001852716740716,0
+Rabah Belmiloud,2 - Presenting Solution,0.29988818877530105,0
+Henrik Holm,3 - Establishing Value,0.2998219543573186,0
+Rich Villa,4 - Eliminating Alternatives,0.2998170650186513,0
+Sonny Lee,3 - Establishing Value,0.2998170650186513,0
+Erik Oberthier,1 - Active,0.2998170650186513,0
+Erik Oberthier,3 - Establishing Value,0.2998170650186513,0
+Sourav Patari,3 - Establishing Value,0.2998170650186513,0
+Roberto Fabre,3 - Establishing Value,0.2979648348400888,0
+Steve Bryant,4 - Eliminating Alternatives,0.29765368668704867,0
+Craig Valentine,1 - Active,0.29754790903670897,0
+Don Rosado,1 - Active,0.2975019735248694,0
+Don Rosado,1 - Active,0.2975019735248694,0
+Nick Marchese,1 - Active,0.2975019735248694,0
+Giorgio Scappaticcio,2 - Presenting Solution,0.29749085053432883,0
+Roberto Fabre,3 - Establishing Value,0.29725082613793835,0
+Kristin Santistevan,1 - Active,0.29725082613793835,0
+Bethany Haveron,5 - Solution of Choice,0.29644696143858623,0
+Gretchen David,4 - Eliminating Alternatives,0.2953274722027262,0
+Nick Marchese,4 - Eliminating Alternatives,0.29495859396698454,0
+Graham Burne,4 - Eliminating Alternatives,0.2942423759006673,0
+Sourav Patari,4 - Eliminating Alternatives,0.2942423759006673,0
+Lani Edwards,1 - Active,0.29417718504405804,0
+Rich Villa,1 - Active,0.2939452930018968,0
+Charlotte Sjostedt,1 - Active,0.2939452930018968,0
+Rich Villa,2 - Presenting Solution,0.2939452930018968,0
+Timothy Hirsch,3 - Establishing Value,0.29389081620098817,0
+Roberto Fabre,5 - Solution of Choice,0.29389081620098817,0
+Senol Verim,6 - Negotiating,0.29389081620098817,0
+Bethany Haveron,2 - Presenting Solution,0.2935933855513025,0
+Amy Buchanan,1 - Active,0.2935933855513025,0
+Sam Roane,1 - Active,0.2935933855513025,0
+Craig Valentine,4 - Eliminating Alternatives,0.2935933855513025,0
+Stephane Mackenzie Thornton,5 - Solution of Choice,0.2935933855513025,0
+Lennert Stepien,5 - Solution of Choice,0.2935933855513025,0
+Mandar Desai,5 - Solution of Choice,0.2935933855513025,0
+James Smyth,6 - Negotiating,0.29329630265253187,0
+Sven Seidenberg,1 - Active,0.29329630265253187,0
+Graham Burne,1 - Active,0.29329630265253187,0
+Henrik Holm,6 - Negotiating,0.29329630265253187,0
+Marta Greliak-Telesinska,5 - Solution of Choice,0.293011438407962,0
+Randi Hapenny,3 - Establishing Value,0.29283675593834635,0
+Andrew Sullivan,5 - Solution of Choice,0.29283675593834635,0
+Roberto Fabre,5 - Solution of Choice,0.29283675593834635,0
+Marshall Stevenson,2 - Presenting Solution,0.29283675593834635,0
+Craig Valentine,2 - Presenting Solution,0.29283675593834635,0
+Yeshvir Monteiro,2 - Presenting Solution,0.29283675593834635,0
+Craig Valentine,3 - Establishing Value,0.29283675593834635,0
+Tom Wells,1 - Active,0.2928110669314458,0
+Stuart Gomez,2 - Presenting Solution,0.2927540084290657,0
+Arun Singh,4 - Eliminating Alternatives,0.2925396730395758,0
+Arun Singh,5 - Solution of Choice,0.2925396730395758,0
+James Smyth,5 - Solution of Choice,0.292219624957935,0
+James Smyth,3 - Establishing Value,0.292219624957935,0
+James Smyth,1 - Active,0.292219624957935,0
+Raven Keenan,4 - Eliminating Alternatives,0.2913888000133836,0
+Sonny Lee,6 - Negotiating,0.2913888000133836,0
+Raven Keenan,3 - Establishing Value,0.2913888000133836,0
+Timothy Hirsch,3 - Establishing Value,0.2913888000133836,0
+Rob Neff (AR),5 - Solution of Choice,0.2913888000133836,0
+Melissa Booth,6 - Negotiating,0.2913888000133836,0
+Sebastian Eggers,4 - Eliminating Alternatives,0.2913888000133836,0
+Marlee Ragan,2 - Presenting Solution,0.2913888000133836,0
+Marlee Ragan,2 - Presenting Solution,0.2913888000133836,0
+Sonny Lee,2 - Presenting Solution,0.2913888000133836,0
+Bryony Hearn,4 - Eliminating Alternatives,0.2913888000133836,0
+Bryony Hearn,2 - Presenting Solution,0.2912142692800718,0
+Sean Carroll,4 - Eliminating Alternatives,0.291091717114613,0
+Marshall Stevenson,1 - Active,0.291091717114613,0
+Michael Vardo,1 - Active,0.2901993933009837,0
+Richard Brown,4 - Eliminating Alternatives,0.2901993933009837,0
+Michael Vardo,4 - Eliminating Alternatives,0.2901993933009837,0
+Andrew Sullivan,4 - Eliminating Alternatives,0.2901993933009837,0
+Sonny Lee,4 - Eliminating Alternatives,0.28990231040221315,0
+Marta Greliak-Telesinska,4 - Eliminating Alternatives,0.28990231040221315,0
+Giorgio Scappaticcio,4 - Eliminating Alternatives,0.28990231040221315,0
+Kelsey Young,1 - Active,0.28922542168178095,0
+Bart Jeurissen,1 - Active,0.28922542168178095,0
+Bryony Hearn,3 - Establishing Value,0.28922542168178095,0
+Sonny Lee,3 - Establishing Value,0.28922542168178095,0
+Kim Christiansen,4 - Eliminating Alternatives,0.28922542168178095,0
+Kristie Witherow,2 - Presenting Solution,0.28922542168178095,0
+Daniel Estreicher,6 - Negotiating,0.2889283387830104,0
+Sean Carroll,2 - Presenting Solution,0.2889283387830104,0
+Matt Spearing,1 - Active,0.2889283387830104,0
+Phil Sanderson,3 - Establishing Value,0.2889283387830104,0
+Daniel Estreicher,5 - Solution of Choice,0.2889283387830104,0
+Sonny Lee,4 - Eliminating Alternatives,0.2889283387830104,0
+Henrik Holm,1 - Active,0.2883606933927881,0
+Maria Capria,5 - Solution of Choice,0.2883606933927881,0
+Frans Peters,4 - Eliminating Alternatives,0.28742094365662174,0
+Thomas Culkeen,3 - Establishing Value,0.28742094365662174,0
+Gretchen David,4 - Eliminating Alternatives,0.2860344789084657,0
+Marshall Stevenson,4 - Eliminating Alternatives,0.2860344789084657,0
+Kenyan Branscomb,5 - Solution of Choice,0.28546255119572056,0
+Christopher Amoroso,4 - Eliminating Alternatives,0.28546255119572056,0
+Ivan Tomovic,1 - Active,0.28546255119572056,0
+Sonny Lee,2 - Presenting Solution,0.28516546829695,0
+Michael Wein,1 - Active,0.28516546829695,0
+Kenyan Branscomb,5 - Solution of Choice,0.28516546829695,0
+Bes Istrefi,3 - Establishing Value,0.28516546829695,0
+Stuart Gomez,5 - Solution of Choice,0.28516546829695,0
+Alex Blogg,4 - Eliminating Alternatives,0.28516546829695,0
+Bethany Haveron,1 - Active,0.28516546829695,0
+Alex Malam,3 - Establishing Value,0.28516546829695,0
+Sean Carroll,2 - Presenting Solution,0.28439546985001535,0
+Carl Eckert,1 - Active,0.2827860042748042,0
+Raven Keenan,2 - Presenting Solution,0.28223209151841266,0
+Jeff Lockheart,1 - Active,0.2820799554230592,0
+Sven Seidenberg,3 - Establishing Value,0.2820799554230592,0
+Priyanka Basavaraj,1 - Active,0.2810121776570629,0
+Jeff Lockheart,4 - Eliminating Alternatives,0.2810121776570629,0
+Frans Peters,3 - Establishing Value,0.2810121776570629,0
+Henrik Holm,3 - Establishing Value,0.2810121776570629,0
+Bart Jeurissen,2 - Presenting Solution,0.2810121776570629,0
+Andrew Sullivan,4 - Eliminating Alternatives,0.2810121776570629,0
+Matt Spearing,4 - Eliminating Alternatives,0.2799324283875204,0
+Sonny Lee,3 - Establishing Value,0.2799324283875204,0
+Tom Wells,3 - Establishing Value,0.2799324283875204,0
+Stuart Reynolds,4 - Eliminating Alternatives,0.2799324283875204,0
+Michael Soave,5 - Solution of Choice,0.2799324283875204,0
+Lennert Stepien,5 - Solution of Choice,0.2799324283875204,0
+Matthew Campbell,1 - Active,0.2799324283875204,0
+Tom Wells,2 - Presenting Solution,0.27987536988514033,0
+Nick Marchese,2 - Presenting Solution,0.27987536988514033,0
+Bethany Haveron,5 - Solution of Choice,0.27987536988514033,0
+Nick Marchese,3 - Establishing Value,0.27987536988514033,0
+Daniel Estreicher,1 - Active,0.27963534548874985,0
+Giorgio Scappaticcio,5 - Solution of Choice,0.27868596317274047,0
+Arun Singh,1 - Active,0.27868596317274047,0
+Arun Singh,2 - Presenting Solution,0.27868596317274047,0
+Arun Singh,3 - Establishing Value,0.27868596317274047,0
+Marshall Stevenson,1 - Active,0.27868596317274047,0
+Marcelo Boriero,6 - Negotiating,0.2777119915535377,0
+Amy Buchanan,2 - Presenting Solution,0.2777119915535377,0
+Bethany Haveron,2 - Presenting Solution,0.2777119915535377,0
+Sean Carroll,4 - Eliminating Alternatives,0.2777119915535377,0
+Miguel Valdez,4 - Eliminating Alternatives,0.2774952494131495,0
+Bes Istrefi,4 - Eliminating Alternatives,0.27572385738214883,0
+Jan-Willem Oliedam,4 - Eliminating Alternatives,0.27543748853907896,0
+Miguel Valdez,3 - Establishing Value,0.2751404056403084,0
+Miguel Valdez,1 - Active,0.2751404056403084,0
+Matthew Clifford,5 - Solution of Choice,0.2751404056403084,0
+Randi Hapenny,2 - Presenting Solution,0.2751404056403084,0
+Cindy Grogan MSP,5 - Solution of Choice,0.27394912106747726,0
+Sonny Lee,5 - Solution of Choice,0.27394912106747726,0
+Giorgio Scappaticcio,4 - Eliminating Alternatives,0.27394912106747726,0
+Bethany Haveron,1 - Active,0.27384793853224815,0
+Kas Subhan,5 - Solution of Choice,0.2728702814948651,0
+Andrew Sullivan,3 - Establishing Value,0.2725839126517952,0
+Miguel Valdez,2 - Presenting Solution,0.2725839126517952,0
+Sourav Patari,4 - Eliminating Alternatives,0.2725839126517952,0
+Stuart Gomez,3 - Establishing Value,0.2725839126517952,0
+Lennert Stepien,6 - Negotiating,0.2725839126517952,0
+Marcelo Boriero,4 - Eliminating Alternatives,0.2725839126517952,0
+Timothy Hirsch,6 - Negotiating,0.2725839126517952,0
+Graham Burne,5 - Solution of Choice,0.2725839126517952,0
+Marlee Ragan,4 - Eliminating Alternatives,0.2725839126517952,0
+Kristie Witherow,6 - Negotiating,0.2725839126517952,0
+Tom Wells,3 - Establishing Value,0.2725839126517952,0
+Sven Seidenberg,3 - Establishing Value,0.2725839126517952,0
+Markus Linder,2 - Presenting Solution,0.2725839126517952,0
+Matthew Campbell,4 - Eliminating Alternatives,0.2725839126517952,0
+Thomas Culkeen,3 - Establishing Value,0.2725839126517952,0
+Frans Peters,4 - Eliminating Alternatives,0.2725839126517952,0
+Maria Capria,3 - Establishing Value,0.2725839126517952,0
+Jose Luis Munoz Ajenjo,3 - Establishing Value,0.2725839126517952,0
+Kenza Ghaiti,3 - Establishing Value,0.2725839126517952,0
+Maria Capria,2 - Presenting Solution,0.2725839126517952,0
+Miguel Valdez,1 - Active,0.2725839126517952,0
+Tom Wells,6 - Negotiating,0.2725839126517952,0
+Sarah Farmer,6 - Negotiating,0.2725839126517952,0
+Stephane Mackenzie Thornton,1 - Active,0.2725839126517952,0
+Amy Buchanan,2 - Presenting Solution,0.2725839126517952,0
+Siegfried Gammay,1 - Active,0.2725839126517952,0
+Charlie Ingham,1 - Active,0.2722868297530246,0
+Alex Malam,4 - Eliminating Alternatives,0.2722868297530246,0
+Kas Subhan,3 - Establishing Value,0.2722868297530246,0
+Bethany Haveron,1 - Active,0.2722868297530246,0
+Velan Tasks,1 - Active,0.2722868297530246,0
+Gabriella Vecchitto (AR),2 - Presenting Solution,0.2722868297530246,0
+Alex Blogg,5 - Solution of Choice,0.2722868297530246,0
+Vignesh Pandian,1 - Active,0.2722868297530246,0
+Melissa Booth,3 - Establishing Value,0.2722868297530246,0
+Michael Nolfo,3 - Establishing Value,0.2722868297530246,0
+Marco Antonio Cruz Martín,4 - Eliminating Alternatives,0.2722868297530246,0
+Michael Soave,5 - Solution of Choice,0.2722868297530246,0
+Michael Nolfo,4 - Eliminating Alternatives,0.2722868297530246,0
+Justin Barkley,4 - Eliminating Alternatives,0.2722868297530246,0
+Sonny Lee,1 - Active,0.2722868297530246,0
+Sabrina Xing Fang,5 - Solution of Choice,0.2722868297530246,0
+Michael Papp,5 - Solution of Choice,0.2722868297530246,0
+Jamie Salmon,1 - Active,0.2722868297530246,0
+Sarah Farmer,5 - Solution of Choice,0.2722868297530246,0
+Lorena Rivas Garcia,6 - Negotiating,0.2722868297530246,0
+Michael Papp,2 - Presenting Solution,0.2722868297530246,0
+Randi Hapenny,2 - Presenting Solution,0.2722868297530246,0
+Sarah Farmer,6 - Negotiating,0.2722868297530246,0
+Melissa Booth,4 - Eliminating Alternatives,0.2722868297530246,0
+Justin Barkley,5 - Solution of Choice,0.2722868297530246,0
+Sonny Lee,1 - Active,0.2722868297530246,0
+Tom Wells,5 - Solution of Choice,0.2722868297530246,0
+Sonny Lee,5 - Solution of Choice,0.2722868297530246,0
+Sonny Lee,3 - Establishing Value,0.2722868297530246,0
+Marco Antonio Cruz Martín,6 - Negotiating,0.2722868297530246,0
+Roberto Fabre,2 - Presenting Solution,0.2722868297530246,0
+Stuart Reynolds,6 - Negotiating,0.2722868297530246,0
+Sonny Lee,2 - Presenting Solution,0.2722868297530246,0
+Rob Neff (AR),1 - Active,0.2722868297530246,0
+Michael Wein,2 - Presenting Solution,0.2722868297530246,0
+Richard Brown,1 - Active,0.2722868297530246,0
+Chris Gangloff,3 - Establishing Value,0.2722868297530246,0
+Bes Istrefi,4 - Eliminating Alternatives,0.2722868297530246,0
+Matthew Campbell,4 - Eliminating Alternatives,0.2705841594712717,0
+Sonny Lee,3 - Establishing Value,0.2684189982592771,0
+Lennert Stepien,3 - Establishing Value,0.268202256118889,0
+Amy Buchanan,3 - Establishing Value,0.26534534700363843,0
+Bryony Hearn,5 - Solution of Choice,0.2646166108692241,0
+Giovanni Ottimo,6 - Negotiating,0.26392405841083566,0
+Richard Brown,6 - Negotiating,0.26392405841083566,0
+Kenyan Branscomb,6 - Negotiating,0.2610704825235519,0
+Sven Seidenberg,1 - Active,0.2610704825235519,0
+Kelsey Young,1 - Active,0.2610704825235519,0
+Daniel Estreicher,2 - Presenting Solution,0.2610704825235519,0
+Daniel Estreicher,1 - Active,0.2610704825235519,0
+Lennert Stepien,5 - Solution of Choice,0.2610704825235519,0
+Adam Thomson,4 - Eliminating Alternatives,0.2610704825235519,0
+Stuart Gomez,4 - Eliminating Alternatives,0.2610704825235519,0
+Senol Verim,4 - Eliminating Alternatives,0.2610704825235519,0
+Alex Blogg,1 - Active,0.2610704825235519,0
+Markus Linder,4 - Eliminating Alternatives,0.2610704825235519,0
+Kas Subhan,2 - Presenting Solution,0.2610704825235519,0
+Miguel Valdez,1 - Active,0.2610704825235519,0
+Sam Roane,1 - Active,0.2610704825235519,0
+Ivan Tomovic,3 - Establishing Value,0.2610704825235519,0
+Giovanni Ottimo,2 - Presenting Solution,0.2610704825235519,0
+Sabrina Xing Fang,3 - Establishing Value,0.2610704825235519,0
+Jamie Salmon,1 - Active,0.2610704825235519,0
+Rich Villa,4 - Eliminating Alternatives,0.2610704825235519,0
+Tom Wells,5 - Solution of Choice,0.2610704825235519,0
+Sonny Lee,1 - Active,0.2610704825235519,0
+Sonny Lee,6 - Negotiating,0.2610704825235519,0
+Maria Capria,1 - Active,0.2610704825235519,0
+Bruce Passey,2 - Presenting Solution,0.2610704825235519,0
+Sonny Lee,5 - Solution of Choice,0.2610704825235519,0
+Daniel Estreicher,6 - Negotiating,0.2610704825235519,0
+Marshall Stevenson,1 - Active,0.2610704825235519,0
+Kenyan Branscomb,3 - Establishing Value,0.2610704825235519,0
+Rabah Belmiloud,5 - Solution of Choice,0.2609692999883228,0
+Rabah Belmiloud,4 - Eliminating Alternatives,0.25532361757496363,0
+Andrew Sullivan,6 - Negotiating,0.25432862265921086,0
+Brian Smogard,2 - Presenting Solution,0.25432862265921086,0
+Graham Burne,4 - Eliminating Alternatives,0.25362078425259754,0
+Rich Villa,3 - Establishing Value,0.25362078425259754,0
+Graham Burne,1 - Active,0.25362078425259754,0
+Gretchen David,5 - Solution of Choice,0.25362078425259754,0
+David Barros,2 - Presenting Solution,0.25362078425259754,0
+David Barros,1 - Active,0.25362078425259754,0
+Gretchen David,4 - Eliminating Alternatives,0.25362078425259754,0
+Bryony Hearn,6 - Negotiating,0.25362078425259754,0
+Bryony Hearn,2 - Presenting Solution,0.25362078425259754,0
+Brett Dean,4 - Eliminating Alternatives,0.25362078425259754,0
+Sonny Lee,2 - Presenting Solution,0.25362078425259754,0
+Jamie Salmon,1 - Active,0.25362078425259754,0
+Markus Linder,3 - Establishing Value,0.25362078425259754,0
+Mandar Desai,2 - Presenting Solution,0.2533546830870799,0
+Raven Keenan,5 - Solution of Choice,0.25119455423803255,0
+Andrew Sullivan,6 - Negotiating,0.25096826032448954,0
+Charlotte Sjostedt,1 - Active,0.24991894286988978,0
+Kim Christiansen,6 - Negotiating,0.24991894286988978,0
+Dan Orr,6 - Negotiating,0.24990231040221314,0
+Kelsey Young,3 - Establishing Value,0.24990231040221314,0
+Henrik Holm,4 - Eliminating Alternatives,0.24990231040221314,0
+Justin Barkley,1 - Active,0.24990231040221314,0
+Michael Ciabattari,3 - Establishing Value,0.24990231040221314,0
+Yeshvir Monteiro,1 - Active,0.24826147068230828,0
+Yeshvir Monteiro,1 - Active,0.24826147068230828,0
+Jeroen Allebe,1 - Active,0.24822660418533746,0
+Miguel Valdez,2 - Presenting Solution,0.2479751018392384,0
+Giorgio Scappaticcio,1 - Active,0.2479751018392384,0
+Alex Blogg,6 - Negotiating,0.2479751018392384,0
+Ryan Buck,4 - Eliminating Alternatives,0.2479751018392384,0
+Ryan Buck,4 - Eliminating Alternatives,0.2479751018392384,0
+Sean Carroll,4 - Eliminating Alternatives,0.2479751018392384,0
+Ryan Buck,3 - Establishing Value,0.2479751018392384,0
+Miguel Valdez,6 - Negotiating,0.2479751018392384,0
+Bes Istrefi,4 - Eliminating Alternatives,0.2479751018392384,0
+Bryony Hearn,2 - Presenting Solution,0.2479751018392384,0
+Gretchen David,1 - Active,0.2479751018392384,0
+Matthew Clifford,4 - Eliminating Alternatives,0.2479751018392384,0
+Marta Greliak-Telesinska,4 - Eliminating Alternatives,0.2479751018392384,0
+Jamie Salmon,1 - Active,0.2479751018392384,0
+Geoffrey Macquet,1 - Active,0.2479751018392384,0
+Sven Seidenberg,2 - Presenting Solution,0.2479751018392384,0
+Stuart Gomez,4 - Eliminating Alternatives,0.2479751018392384,0
+Steve Thiebault,4 - Eliminating Alternatives,0.24792952128656687,0
+Matthew Campbell,3 - Establishing Value,0.24792952128656687,0
+Timothy Boudreau,4 - Eliminating Alternatives,0.24792952128656687,0
+Jeroen Allebe,2 - Presenting Solution,0.24311227542973815,0
+Stuart Gomez,4 - Eliminating Alternatives,0.24311227542973815,0
+Lennert Stepien,6 - Negotiating,0.24311227542973815,0
+Stuart Gomez,5 - Solution of Choice,0.24311227542973815,0
+Bes Istrefi,4 - Eliminating Alternatives,0.24311227542973815,0
+Sonny Lee,2 - Presenting Solution,0.24124509034700314,0
+Jamie Salmon,1 - Active,0.2408677568524116,0
+Yeshvir Monteiro,2 - Presenting Solution,0.23975191309501684,0
+Sonny Lee,2 - Presenting Solution,0.23953404794363906,0
+Timothy Hirsch,2 - Presenting Solution,0.2386859631727404,0
+Melissa Booth,2 - Presenting Solution,0.2386859631727404,0
+Melissa Booth,1 - Active,0.2386859631727404,0
+Michael Soave,2 - Presenting Solution,0.2386859631727404,0
+Roberto Fabre,5 - Solution of Choice,0.2386859631727404,0
+Tom Wells,4 - Eliminating Alternatives,0.2386859631727404,0
+Monica Schell,5 - Solution of Choice,0.2386859631727404,0
+Arun Singh,6 - Negotiating,0.2386859631727404,0
+Sven Seidenberg,4 - Eliminating Alternatives,0.23832456560208123,0
+Bethany Haveron,2 - Presenting Solution,0.23682356218557624,0
+Tom Wells,6 - Negotiating,0.23682356218557624,0
+Jamie Salmon,1 - Active,0.23682356218557624,0
+Daniel Estreicher,6 - Negotiating,0.23682356218557624,0
+Marlee Ragan,3 - Establishing Value,0.23677798163290475,0
+Lennert Stepien,3 - Establishing Value,0.23677798163290475,0
+Raven Keenan,4 - Eliminating Alternatives,0.23671317405709416,0
+Sourav Patari,4 - Eliminating Alternatives,0.23671317405709416,0
+Bart Jeurissen,5 - Solution of Choice,0.23671317405709416,0
+Bryony Hearn,4 - Eliminating Alternatives,0.23671317405709416,0
+Sonny Lee,4 - Eliminating Alternatives,0.23671317405709416,0
+Miguel Valdez,1 - Active,0.2356625771587838,0
+Bruce Passey,3 - Establishing Value,0.2356625771587838,0
+Bibi Nafrin B N,1 - Active,0.2356625771587838,0
+Bibi Nafrin B N,1 - Active,0.2356625771587838,0
+Stuart Gomez,5 - Solution of Choice,0.23001689474542464,0
+Daniel Estreicher,6 - Negotiating,0.22997131419275316,0
+Justin Barkley,5 - Solution of Choice,0.22997131419275316,0
+Marlee Ragan,1 - Active,0.22966465656250099,0
+Drishya Anna Cherian,1 - Active,0.22926347578613981,0
+Sonny Lee,1 - Active,0.22753442351907827,0
+Sonny Lee,1 - Active,0.22671353512312623,0
+Giorgio Scappaticcio,3 - Establishing Value,0.22665653241070335,0
+Sabrina Xing Fang,1 - Active,0.22665653241070335,0
+Lorena Rivas Garcia,2 - Presenting Solution,0.2266284634286512,0
+Marshall Stevenson,4 - Eliminating Alternatives,0.22559058248842692,0
+Rabah Belmiloud,3 - Establishing Value,0.22483830559210408,0
+Brett Dean,4 - Eliminating Alternatives,0.22361779337278065,0
+Sonny Lee,4 - Eliminating Alternatives,0.22361779337278065,0
+Mandar Desai,4 - Eliminating Alternatives,0.22361779337278065,0
+Maria Capria,4 - Eliminating Alternatives,0.22361779337278065,0
+Matthew Schaefer,5 - Solution of Choice,0.22361779337278065,0
+Maria Capria,3 - Establishing Value,0.22361779337278065,0
+Chris Gangloff,4 - Eliminating Alternatives,0.22361779337278065,0
+Barry Lafferty,6 - Negotiating,0.22361779337278065,0
+Matthew Schaefer,4 - Eliminating Alternatives,0.22361779337278065,0
+Global Territory,1 - Active,0.22361779337278065,0
+Sonny Lee,1 - Active,0.22361779337278065,0
+Sonny Lee,2 - Presenting Solution,0.22361779337278065,0
+Lorena Rivas Garcia,4 - Eliminating Alternatives,0.22361779337278065,0
+Sourav Patari,2 - Presenting Solution,0.22361779337278065,0
+Daniel Estreicher,3 - Establishing Value,0.22361779337278065,0
+Daniel Estreicher,4 - Eliminating Alternatives,0.22361779337278065,0
+Markus Linder,4 - Eliminating Alternatives,0.22361779337278065,0
+Jamie Allen,5 - Solution of Choice,0.22361779337278065,0
+Tom Wells,2 - Presenting Solution,0.22345408271113146,0
+Tom Wells,5 - Solution of Choice,0.2209657087279465,0
+Kristin Santistevan,4 - Eliminating Alternatives,0.2209657087279465,0
+Sonny Lee,5 - Solution of Choice,0.22072775607892667,0
+Jamie Salmon,1 - Active,0.22072775607892667,0
+Patrick Phillips,5 - Solution of Choice,0.2204836929045305,0
+Kenza Ghaiti,2 - Presenting Solution,0.2203663585082675,0
+Miguel Valdez,3 - Establishing Value,0.22008472524812395,0
+Sourav Patari,2 - Presenting Solution,0.21907356007196524,0
+Roberto Fabre,6 - Negotiating,0.21875496696328042,0
+Bruce Passey,5 - Solution of Choice,0.21875496696328042,0
+Jeroen Allebe,4 - Eliminating Alternatives,0.21875496696328042,0
+Barry Lafferty,5 - Solution of Choice,0.21875496696328042,0
+Rabah Belmiloud,2 - Presenting Solution,0.21730085849515665,0
+Bethany Haveron,4 - Eliminating Alternatives,0.2151767394771813,0
+Bob Coen,4 - Eliminating Alternatives,0.21396725713562348,0
+Rabah Belmiloud,4 - Eliminating Alternatives,0.2124662537191185,0
+Steve Thiebault,2 - Presenting Solution,0.2124662537191185,0
+Mandar Desai,6 - Negotiating,0.2124662537191185,0
+Frans Peters,2 - Presenting Solution,0.2113052686923261,0
+Sabrina Xing Fang,4 - Eliminating Alternatives,0.2111945542380325,0
+Drishya Anna Cherian,1 - Active,0.20922176512238624,0
+Drishya Anna Cherian,1 - Active,0.20922176512238624,0
+Yeshvir Monteiro,1 - Active,0.2087553280293125,0
+Bethany Haveron,3 - Establishing Value,0.2087553280293125,0
+Senol Verim,4 - Eliminating Alternatives,0.20763237539461313,0
+Sam Roane,3 - Establishing Value,0.20565958627896688,0
+Markus Linder,4 - Eliminating Alternatives,0.20565958627896688,0
+Matthew Schaefer,1 - Active,0.20565958627896688,0
+Jamie Allen,1 - Active,0.20565958627896688,0
+Rich Villa,3 - Establishing Value,0.20565958627896688,0
+Daniel Estreicher,3 - Establishing Value,0.20565958627896688,0
+Michael Soave,1 - Active,0.20565958627896688,0
+Sonny Lee,4 - Eliminating Alternatives,0.20565958627896688,0
+Michael Nolfo,2 - Presenting Solution,0.20565958627896688,0
+Barry Lafferty,4 - Eliminating Alternatives,0.20565958627896688,0
+Sourav Patari,1 - Active,0.20565958627896688,0
+Rich Villa,4 - Eliminating Alternatives,0.20565958627896688,0
+Nick Marchese,5 - Solution of Choice,0.20432901577231474,0
+Matthew Schaefer,1 - Active,0.20374485596707817,0
+Daniel Estreicher,4 - Eliminating Alternatives,0.20281108941226,0
+Jose Luis Munoz Ajenjo,3 - Establishing Value,0.20281108941226,0
+Rabah Belmiloud,4 - Eliminating Alternatives,0.2023562266566685,0
+Sven Seidenberg,5 - Solution of Choice,0.2023562266566685,0
+Miguel Valdez,4 - Eliminating Alternatives,0.2022992239442456,0
+Amy Buchanan,4 - Eliminating Alternatives,0.20177206685143192,0
+Erik Oberthier,4 - Eliminating Alternatives,0.20072775607892668,0
+Rob Neff (AR),4 - Eliminating Alternatives,0.20072775607892668,0
+Ryan Buck,1 - Active,0.1992221261884183,0
+Ryan Vincent,1 - Active,0.198099173553719,0
+Sonny Lee,4 - Eliminating Alternatives,0.19728439457774627,0
+Graham Burne,5 - Solution of Choice,0.1965223761680981,0
+Maria Capria,5 - Solution of Choice,0.1965223761680981,0
+Tom Wells,4 - Eliminating Alternatives,0.19612638443807273,0
+Tom Wells,1 - Active,0.19612638443807273,0
+Erik Oberthier,4 - Eliminating Alternatives,0.19612638443807273,0
+Vignesh Pandian,1 - Active,0.19612638443807273,0
+Steve Bryant,1 - Active,0.19612638443807273,0
+Ryan Buck,5 - Solution of Choice,0.19612638443807273,0
+Sam Roane,4 - Eliminating Alternatives,0.19612638443807273,0
+Bruce Passey,1 - Active,0.19600905004180977,0
+Bryony Hearn,1 - Active,0.19428634167764602,0
+Matthew Schaefer,2 - Presenting Solution,0.19414225745394575,0
+Sonny Lee,3 - Establishing Value,0.19252271139063593,0
+Bryony Hearn,2 - Presenting Solution,0.19231355256199978,0
+Kenza Ghaiti,3 - Establishing Value,0.19120468700300633,0
+Alex Malam,3 - Establishing Value,0.19104938713692418,0
+Graham Burne,3 - Establishing Value,0.1897157087279465,0
+Brian Smogard,4 - Eliminating Alternatives,0.18801997229383796,0
+Sonny Lee,3 - Establishing Value,0.18794523459101153,0
+Kelsey Young,3 - Establishing Value,0.18763237539461317,0
+Tarek Majaj,1 - Active,0.18763237539461317,0
+Jamie Salmon,1 - Active,0.18763237539461317,0
+Edward Eisman,4 - Eliminating Alternatives,0.18763237539461317,0
+Sonny Lee,2 - Presenting Solution,0.18439801956285473,0
+Sonny Lee,1 - Active,0.18439801956285473,0
+Rabah Belmiloud,2 - Presenting Solution,0.18439801956285473,0
+Bryony Hearn,4 - Eliminating Alternatives,0.18439801956285473,0
+Michael Vardo,1 - Active,0.18384406231628456,0
+Graham Burne,3 - Establishing Value,0.1831113562665062,0
+Riya Nadig Prabhakar,1 - Active,0.18119096099333254,0
+Brian Smogard,4 - Eliminating Alternatives,0.18119096099333254,0
+Giorgio Scappaticcio,5 - Solution of Choice,0.18113856715085994,0
+Gretchen David,6 - Negotiating,0.18113856715085994,0
+Gretchen David,3 - Establishing Value,0.18113856715085994,0
+Barry Lafferty,1 - Active,0.18103765722813345,0
+Kenza Ghaiti,1 - Active,0.18073501589985108,0
+Kenza Ghaiti,5 - Solution of Choice,0.18006517249078935,0
+Andrew Sullivan,6 - Negotiating,0.17921817187768627,0
+Bethany Haveron,3 - Establishing Value,0.17921817187768627,0
+Elyse Redburn,5 - Solution of Choice,0.17921817187768627,0
+Sabrina Xing Fang,5 - Solution of Choice,0.1784867704529438,0
+Justin Barkley,3 - Establishing Value,0.178099173553719,0
+Jamie Salmon,1 - Active,0.178099173553719,0
+Tarek Majaj,4 - Eliminating Alternatives,0.176115046569592,0
+Jeff Lockheart,5 - Solution of Choice,0.176115046569592,0
+Lorena Rivas Garcia,3 - Establishing Value,0.17486481772196058,0
+Sonny Lee,1 - Active,0.17486481772196058,0
+Sonny Lee,2 - Presenting Solution,0.17486481772196058,0
+Jose Luis Munoz Ajenjo,4 - Eliminating Alternatives,0.17486481772196058,0
+Stuart Gomez,2 - Presenting Solution,0.17420005039052655,0
+Sabrina Xing Fang,5 - Solution of Choice,0.17420005039052655,0
+Miguel Valdez,4 - Eliminating Alternatives,0.1728806907378336,0
+Sonny Lee,3 - Establishing Value,0.1716053653099658,0
+Marshall Stevenson,2 - Presenting Solution,0.1716053653099658,0
+Sabrina Xing Fang,6 - Negotiating,0.17120181405895693,0
+Sonny Lee,3 - Establishing Value,0.17120181405895693,0
+Daniel Estreicher,4 - Eliminating Alternatives,0.17004571655734446,0
+Craig Valentine,6 - Negotiating,0.16956763564052912,0
+Giorgio Scappaticcio,2 - Presenting Solution,0.16921768707482995,0
+Stuart Gomez,5 - Solution of Choice,0.16921768707482995,0
+Arun Singh,6 - Negotiating,0.16921768707482995,0
+Michael Vardo,5 - Solution of Choice,0.16883623421578664,0
+Velan Tasks,1 - Active,0.16850321395775938,0
+Amritha Shankar (IS),1 - Active,0.16844863731656182,0
+Sonny Lee,4 - Eliminating Alternatives,0.1680272108843537,0
+Elyse Redburn,5 - Solution of Choice,0.1680272108843537,0
+Graham Burne,4 - Eliminating Alternatives,0.1665190869736324,0
+Bibi Nafrin B N,1 - Active,0.16646451033243484,0
+Bibi Nafrin B N,1 - Active,0.16646451033243484,0
+Sonny Lee,3 - Establishing Value,0.166370808678501,0
+Sonny Lee,3 - Establishing Value,0.16604308390022673,0
+Markus Linder,1 - Active,0.16349895316573101,0
+Sonny Lee,4 - Eliminating Alternatives,0.16327429432666588,0
+Gabriella Vecchitto (AR),2 - Presenting Solution,0.1627801764016723,0
+Jamie Salmon,2 - Presenting Solution,0.1618881118881119,0
+Melissa Booth,4 - Eliminating Alternatives,0.16119096099333255,0
+Steve Thiebault,3 - Establishing Value,0.1605121293800539,0
+Daniel Estreicher,4 - Eliminating Alternatives,0.15992679556825692,0
+Markus Linder,2 - Presenting Solution,0.15992079874011897,0
+Brett Dean,2 - Presenting Solution,0.15953320184089415,0
+Bibi Nafrin B N,1 - Active,0.15892094017094016,0
+Bibi Nafrin B N,1 - Active,0.15892094017094016,0
+Bibi Nafrin B N,1 - Active,0.15892094017094016,0
+Bibi Nafrin B N,1 - Active,0.15892094017094016,0
+Bibi Nafrin B N,1 - Active,0.15892094017094016,0
+Bibi Nafrin B N,1 - Active,0.15892094017094016,0
+Bibi Nafrin B N,1 - Active,0.15892094017094016,0
+Elyse Redburn,1 - Active,0.15842416803129797,0
+Elyse Redburn,2 - Presenting Solution,0.15842416803129797,0
+Stuart Gomez,3 - Establishing Value,0.15795660516157412,0
+Brian Smogard,5 - Solution of Choice,0.15795660516157412,0
+Brian Smogard,5 - Solution of Choice,0.15795660516157412,0
+Sonny Lee,4 - Eliminating Alternatives,0.15722520373683166,0
+Nick Marchese,6 - Negotiating,0.15683760683760684,0
+Jamie Salmon,1 - Active,0.15683760683760684,0
+Timothy Boudreau,2 - Presenting Solution,0.15683760683760684,0
+Sonny Lee,5 - Solution of Choice,0.15683760683760684,0
+Chris Gangloff,2 - Presenting Solution,0.15524107675270468,0
+Jose Luis Munoz Ajenjo,2 - Presenting Solution,0.15485347985347986,0
+Ryan Buck,5 - Solution of Choice,0.15429360149857044,0
+Sven Seidenberg,4 - Eliminating Alternatives,0.15357815442561204,0
+Jamie Salmon,1 - Active,0.15317460317460316,0
+Sven Seidenberg,2 - Presenting Solution,0.15192802165540018,0
+Randi Hapenny,5 - Solution of Choice,0.15192802165540018,0
+Michael Ciabattari,4 - Eliminating Alternatives,0.15159500139737295,0
+Timothy Boudreau,1 - Active,0.15159402744148506,0
+Ryan Buck,2 - Presenting Solution,0.15111899832396727,0
+Yeshvir Monteiro,2 - Presenting Solution,0.15111899832396727,0
+Sarah Farmer,3 - Establishing Value,0.15066385623032455,0
+David Barros,1 - Active,0.1501550343358253,0
+Elyse Redburn,5 - Solution of Choice,0.14985483289889165,0
+Elyse Redburn,6 - Negotiating,0.14985483289889165,0
+Brian Smogard,5 - Solution of Choice,0.14984702645421144,0
+Kenza Ghaiti,2 - Presenting Solution,0.1484034699150978,0
+Nick Marchese,1 - Active,0.14525752025752026,0
+Kenza Ghaiti,5 - Solution of Choice,0.14398219482965247,0
+Jamie Salmon,2 - Presenting Solution,0.14357864357864358,0
+Brian Smogard,6 - Negotiating,0.14031699117644517,0
+Stuart Gomez,1 - Active,0.14028799925767407,0
+Michael Soave,3 - Establishing Value,0.13992939427722037,0
+Sonny Lee,4 - Eliminating Alternatives,0.13992939427722037,0
+Stuart Gomez,1 - Active,0.13834972394755005,0
+Amy Buchanan,1 - Active,0.1370575387644504,0
+Miguel Valdez,2 - Presenting Solution,0.1370575387644504,0
+Marco Antonio Cruz Martín,1 - Active,0.13666994186522557,0
+Jose Luis Munoz Ajenjo,2 - Presenting Solution,0.1362663906142167,0
+Linda Venderbush,6 - Negotiating,0.13395582273431483,0
+Buddy Bender,2 - Presenting Solution,0.13347938433883835,0
+Stuart Gomez,3 - Establishing Value,0.13347938433883835,0
+Buddy Bender,1 - Active,0.13347938433883835,0
+Tom Wells,4 - Eliminating Alternatives,0.13347938433883835,0
+Yeshvir Monteiro,2 - Presenting Solution,0.13309178743961353,0
+Yeshvir Monteiro,2 - Presenting Solution,0.13309178743961353,0
+Jason Snook,3 - Establishing Value,0.13309178743961353,0
+Sonny Lee,6 - Negotiating,0.13309178743961353,0
+Graham Burne,1 - Active,0.1318276220145379,0
+Rabah Belmiloud,3 - Establishing Value,0.1283935413245758,0
+Graham Burne,2 - Presenting Solution,0.127073982269266,0
+Sonny Lee,5 - Solution of Choice,0.12580981684419038,0
+Elyse Redburn,4 - Eliminating Alternatives,0.12434412170665367,0
+Jamie Salmon,1 - Active,0.12349582784365393,0
+Jamie Salmon,2 - Presenting Solution,0.12349582784365393,0
+Kenza Ghaiti,1 - Active,0.12349582784365393,0
+Sonny Lee,4 - Eliminating Alternatives,0.12349582784365393,0
+Sonny Lee,3 - Establishing Value,0.12226078837332034,0
+Justin Barkley,2 - Presenting Solution,0.12030706258592316,0
+Daniel Estreicher,5 - Solution of Choice,0.11904289716084754,0
+Elyse Redburn,4 - Eliminating Alternatives,0.11864570154828603,0
+Bruce Passey,4 - Eliminating Alternatives,0.11864570154828603,0
+Charlotte Sjostedt,1 - Active,0.11779825897717727,0
+Yeshvir Monteiro,2 - Presenting Solution,0.11768620787312377,0
+Brian Smogard,3 - Establishing Value,0.11704761017392838,0
+Yeshvir Monteiro,1 - Active,0.1166440589229195,0
+Kelsey Young,3 - Establishing Value,0.11623625416728865,0
+Elyse Redburn,5 - Solution of Choice,0.1141002470028315,0
+Elyse Redburn,6 - Negotiating,0.1141002470028315,0
+Marshall Stevenson,1 - Active,0.1135204352781259,0
+Jamie Salmon,2 - Presenting Solution,0.11346945574831631,0
+Jamie Salmon,1 - Active,0.11266482877736074,0
+Miguel Valdez,4 - Eliminating Alternatives,0.11220529032324068,0
+Elyse Redburn,6 - Negotiating,0.1117939326275516,0
+Michael Soave,4 - Eliminating Alternatives,0.1117939326275516,0
+Miguel Valdez,4 - Eliminating Alternatives,0.10861932945294843,0
+Jason Snook,1 - Active,0.10861932945294843,0
+Bob Coen,5 - Solution of Choice,0.10861932945294843,0
+Velan Tasks,1 - Active,0.10861932945294843,0
+Barry Lafferty,5 - Solution of Choice,0.10861932945294843,0
+Sonny Lee,5 - Solution of Choice,0.10781470248199286,0
+Barry Lafferty,3 - Establishing Value,0.10781470248199286,0
+Sonny Lee,5 - Solution of Choice,0.1045042874068719,0
+Ivan Tomovic,4 - Eliminating Alternatives,0.10263845668202314,0
+Melissa Booth,3 - Establishing Value,0.10242911390312698,0
+Elyse Redburn,4 - Eliminating Alternatives,0.10242911390312698,0
+Kelsey Young,4 - Eliminating Alternatives,0.10137429125694751,0
+Bob Coen,6 - Negotiating,0.09778833038665524,0
+Michael Vardo,1 - Active,0.09778833038665524,0
+Elyse Redburn,3 - Establishing Value,0.09613079952063003,0
+Marshall Stevenson,1 - Active,0.09613079952063003,0
+Brian Smogard,4 - Eliminating Alternatives,0.09437371987888378,0
+Barry Lafferty,4 - Eliminating Alternatives,0.09159811483683379,0
+Brian Smogard,2 - Presenting Solution,0.08828769976171284,0
+Brian Smogard,1 - Active,0.08616969246327373,0
+Bryony Hearn,3 - Establishing Value,0.08610442742529241,0
+Marlee Ragan,2 - Presenting Solution,0.08587113747398722,0
+Brian Smogard,3 - Establishing Value,0.08322462695059192,0
+Brian Smogard,4 - Eliminating Alternatives,0.08205796102199407,0
+Elyse Redburn,1 - Active,0.08084155167517065,0
+Kelsey Young,5 - Solution of Choice,0.07968092192416576,0
+Buddy Bender,1 - Active,0.07865107548469447,0
+Maria Capria,3 - Establishing Value,0.07865107548469447,0
+Buddy Bender,2 - Presenting Solution,0.07865107548469447,0
+Brian Smogard,5 - Solution of Choice,0.07484671715860375,0
+Ivan Tomovic,3 - Establishing Value,0.07465133612534919,0
+Elyse Redburn,4 - Eliminating Alternatives,0.07255733039705166,0
+Sonny Lee,1 - Active,0.072460859934873,0
+Jason Snook,2 - Presenting Solution,0.07033898305084746,0
+Marshall Stevenson,2 - Presenting Solution,0.0702775875984526,0
+Barry Lafferty,3 - Establishing Value,0.06984725400631529,0
+Elyse Redburn,2 - Presenting Solution,0.06814850686037127,0
+Rob Neff (AR),3 - Establishing Value,0.06623993932105667,0
+Maria Capria,1 - Active,0.06623993932105667,0
+Jens Schaefer,1 - Active,0.06521009288158537,0
+Elyse Redburn,4 - Eliminating Alternatives,0.06521009288158537,0
+Sonny Lee,2 - Presenting Solution,0.06408737204863113,0
+Barry Lafferty,2 - Presenting Solution,0.06408737204863113,0
+Barry Lafferty,1 - Active,0.06408737204863113,0
+Bob Coen,3 - Establishing Value,0.06395055255950459,0
+Brian Smogard,4 - Eliminating Alternatives,0.05901987733176392,0
+Brian Smogard,5 - Solution of Choice,0.05901987733176392,0
+Muneer Mattummal,2 - Presenting Solution,0.058974017060496126,0
+Marshall Stevenson,1 - Active,0.056730490570211824,0
+Sonny Lee,3 - Establishing Value,0.056028951547814315,0
+Buddy Bender,5 - Solution of Choice,0.053376371144663835,0
+Yeshvir Monteiro,2 - Presenting Solution,0.053376371144663835,0
+Bob Coen,1 - Active,0.048568678836971524,0
+Bob Coen,4 - Eliminating Alternatives,0.04309442409442409,0
+Bob Coen,2 - Presenting Solution,0.023834823730976673,0

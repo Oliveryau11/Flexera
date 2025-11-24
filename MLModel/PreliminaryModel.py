@@ -1,7 +1,7 @@
 """
 Precision-First Win/Loss Modeling (Flexera-style) — with Robust Target Parsing
 -----------------------------------------------------------------------------
-- Robust target mapping for CRO Win (handles 'Yes/No', 'Y/N', 'True/False', case/whitespace)
+- Robust target mapping for CRO Win (handles 'Yes/No', 'Y/N', 'True/False', 'Closed Won/Lost', case/whitespace)
 - Leakage-safe feature selection (no stage/forecast/win/loss; drop ID-like cols)
 - Calibrated probabilities (isotonic)
 - Threshold tuned to hit target Precision (fallback to best-F1)
@@ -19,44 +19,12 @@ Outputs:
   feedback/segment_perf_regions.csv
   feedback/segment_perf_dealtypes.csv
   feedback/segment_perf_region_x_saletype.csv
+  feedback/loss_reasons_by_region.csv
+  feedback/loss_reasons_by_dealsize.csv
 """
 
 # ==============================================================
 #  Flexera MLModel - PreliminaryModel.py
-#  --------------------------------------------------------------
-#  Purpose:
-#      Main training + scoring pipeline for Flexera opportunity win prediction.
-#
-#  Notes for future extension (now partially implemented):
-#
-#  1️⃣  Cross-Validation Support (K-Fold)
-#       - USE_KFOLD_MODEL_SELECTION = True will run StratifiedKFold
-#         on the full labeled dataset to rank models by cv AUC/PR-AUC.
-#
-#  2️⃣  Temporal Split (time-based validation)
-#       - USE_TEMPORAL_SPLIT = True will split train/val by TEMP_SPLIT_COL
-#         (e.g. 'Created Date' or 'Close Date') and TEMP_SPLIT_FRACTION.
-#
-#  3️⃣  Feature Expansion
-#       - To be plugged in later before pick_cols():
-#           e.g. avg deal size per region, account historical win ratio,
-#           time since last opportunity, opportunity age features, etc.
-#
-#  4️⃣  Regularization tuning
-#       - LogisticRegression: adjust `C` based on dataset size
-#       - RandomForest: increase n_estimators, tune max_depth when data grows
-#
-#  5️⃣  Scalability
-#       - For large datasets, consider incremental training or batch scoring:
-#           e.g. partial_fit() for logistic regression, or Dask/Joblib parallelization
-#
-#  6️⃣  Model Registry & Drift Monitoring (optional)
-#       - Each run writes a JSON snapshot (model_registry.json) with
-#         model metadata, feature list and metrics for comparison over time.
-#
-#  --------------------------------------------------------------
-#  Current Version: Light pipeline (single train/val split)
-#  Next Upgrade Target: Richer feature engineering + model registry tooling
 # ==============================================================
 
 from pathlib import Path
@@ -83,10 +51,13 @@ from sklearn.metrics import (
 from sklearn.inspection import permutation_importance
 from scipy import sparse
 
+# NEW: XGBoost
+from xgboost import XGBClassifier
+
 # ----------------------- Config -----------------------
 EXCEL_PATH = Path("data.xlsx")
-SHEET = "Opportunities"
-TARGET_COL = "CRO Win"
+SHEET = "Export"
+TARGET_COL = "Current_Opportunity_Status"
 
 # Business fields (if present) for outputs
 ID_CANDIDATES    = ["Id", "Opportunity Id", "Opportunity ID"]
@@ -102,12 +73,12 @@ TEST_SIZE        = 0.30
 RANDOM_STATE     = 42
 
 # ---- New toggles: K-Fold & Temporal Split ----
-USE_KFOLD_MODEL_SELECTION = True   # True -> run CV to pick model type
+USE_KFOLD_MODEL_SELECTION = True
 N_FOLDS                    = 5
 
-USE_TEMPORAL_SPLIT   = True       # True -> split by time instead of random
-TEMP_SPLIT_COL       = CREATED_DATE_COL  # or CLOSE_DATE_COL
-TEMP_SPLIT_FRACTION  = 0.8         # first 80% as train, last 20% as val
+USE_TEMPORAL_SPLIT   = True
+TEMP_SPLIT_COL       = CREATED_DATE_COL
+TEMP_SPLIT_FRACTION  = 0.8
 
 OUT_METRICS = Path("model_metrics.csv")
 OUT_PROBS   = Path("win_probabilities.csv")
@@ -127,12 +98,53 @@ def first_present(df, candidates: List[str]) -> Optional[str]:
             return c
     return None
 
+def _combine_date_from_parts(df: pd.DataFrame,
+                             year_col: str,
+                             month_col: str,
+                             day_col: str,
+                             out_col: str) -> None:
+    """
+    Combine Y/M/D integer columns from Power BI export into a single datetime column.
+    Fills df[out_col] in-place if all three component columns exist.
+    """
+    if all(col in df.columns for col in [year_col, month_col, day_col]):
+        try:
+            df[out_col] = pd.to_datetime(
+                dict(
+                    year=df[year_col].astype("Int64"),
+                    month=df[month_col].astype("Int64"),
+                    day=df[day_col].astype("Int64"),
+                ),
+                errors="coerce",
+            )
+            print(f"[Prep] Built datetime column '{out_col}' from "
+                  f"'{year_col}/{month_col}/{day_col}'")
+        except Exception as e:
+            print(f"[Prep] Failed to build '{out_col}' from Y/M/D parts: {e}")
+
 def load_data() -> pd.DataFrame:
     df = pd.read_excel(EXCEL_PATH, sheet_name=SHEET)
     # Remove fully duplicated columns (some Excel exports repeat headers)
     df = df.loc[:, ~df.columns.duplicated()].copy()
     # Drop fully blank rows (all NaN)
     df = df.dropna(how="all")
+
+    # --- NEW: build Created Date & Close Date from PowerBI Y/M/Day columns ---
+    _combine_date_from_parts(
+        df,
+        "Opportunity Created Date - Year",
+        "Opportunity Created Date - Month",
+        "Opportunity Created Date - Day",
+        CREATED_DATE_COL,
+    )
+    _combine_date_from_parts(
+        df,
+        "Opportunity Close Date - Year",
+        "Opportunity Close Date - Month",
+        "Opportunity Close Date - Day",
+        CLOSE_DATE_COL,
+    )
+
     return df
 
 def normalize_str_col(s: pd.Series) -> pd.Series:
@@ -140,19 +152,30 @@ def normalize_str_col(s: pd.Series) -> pd.Series:
 
 def map_target(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Map CRO Win to y in {0,1}, robust to case/whitespace and common variants.
+    Map Current_Opportunity_Status to y in {0,1}, robust to variants like
+    'Closed Won', 'Closed Lost', 'Yes/No', etc.
     """
     if TARGET_COL not in df.columns:
         raise ValueError(f"Target column '{TARGET_COL}' not found in data.")
-    col = normalize_str_col(df[TARGET_COL]).str.lower()
-    # Accept common variants
-    pos = {"yes", "y", "true", "won", "1"}          # positive
-    neg = {"no", "n", "false", "lost", "0"}         # negative
+
+    col_norm = normalize_str_col(df[TARGET_COL]).str.lower()
+
+    pos_exact = {"yes", "y", "true", "won", "win", "1", "closed won"}
+    neg_exact = {"no", "n", "false", "lost", "lose", "0", "closed lost"}
 
     y = pd.Series(np.nan, index=df.index, dtype="float")
-    y[col.isin(pos)] = 1
-    y[col.isin(neg)] = 0
-    # everything else stays NaN -> goes to scoring set
+
+    # exact matches
+    y[col_norm.isin(pos_exact)] = 1
+    y[col_norm.isin(neg_exact)] = 0
+
+    # fuzzy contains for 'won' / 'lost'
+    won_mask = col_norm.str.contains("won", na=False) | col_norm.str.contains("赢", na=False)
+    lost_mask = col_norm.str.contains("lost", na=False) | col_norm.str.contains("输", na=False)
+
+    y[won_mask & y.isna()] = 1
+    y[lost_mask & y.isna()] = 0
+
     df = df.copy()
     df["y"] = y
     return df
@@ -244,9 +267,9 @@ def get_models(pre):
     logreg = Pipeline([
         ("prep", pre),
         ("clf", LogisticRegression(
-            solver="liblinear",    # steady for small binary problems
+            solver="liblinear",
             penalty="l2",
-            C=0.2,                 # stronger regularization helps convergence/generalization
+            C=0.2,
             max_iter=4000,
             class_weight="balanced",
         ))
@@ -258,7 +281,27 @@ def get_models(pre):
             max_depth=None, min_samples_leaf=2, class_weight="balanced_subsample"
         ))
     ])
-    return {"LogisticRegression": logreg, "RandomForest": rf}
+    xgb = Pipeline([
+        ("prep", pre),
+        ("clf", XGBClassifier(
+            objective="binary:logistic",
+            eval_metric="logloss",
+            n_estimators=400,
+            learning_rate=0.05,
+            max_depth=4,
+            subsample=0.8,
+            colsample_bytree=0.8,
+            reg_lambda=1.0,
+            n_jobs=-1,
+            random_state=RANDOM_STATE,
+            tree_method="hist",
+        ))
+    ])
+    return {
+        "LogisticRegression": logreg,
+        "RandomForest": rf,
+        "XGBoost": xgb,
+    }
 
 def evaluate_at_threshold(y_true, prob, thr):
     pred = (prob >= thr).astype(int)
@@ -357,6 +400,7 @@ def build_loss_drivers(train_df, fields=None, min_count=30):
             "Lead Source", "Lead Source Detail", "Opportunity Type",
             "Account Region", "Account Country", "Account Shipping Country",
         ]
+
     df = train_df.copy()
     df["is_lost"] = (df["y"] == 0).astype(int)
 
@@ -364,20 +408,33 @@ def build_loss_drivers(train_df, fields=None, min_count=30):
     for col in fields:
         if col not in df.columns:
             continue
+
         grp = (
             df.groupby(col, dropna=False)["is_lost"]
               .agg(count="size", loss_rate="mean")
               .reset_index()
         )
-        grp = grp.loc[grp["count"] >= min_count].sort_values("loss_rate", ascending=False)
+
+
+        grp.rename(columns={col: "value"}, inplace=True)
+
+
         grp.insert(0, "field", col)
+
+
+        grp = grp.loc[grp["count"] >= min_count] \
+                 .sort_values("loss_rate", ascending=False)
+
         rows.append(grp)
+
     if rows:
         out = pd.concat(rows, ignore_index=True)
     else:
         out = pd.DataFrame(columns=["field", "value", "count", "loss_rate"])
-    out.rename(columns={out.columns[1]: "value"}, inplace=True)
+
+
     return out
+
 
 def group_feature_importance(imp_df: pd.DataFrame) -> pd.DataFrame:
     bases = []
@@ -409,13 +466,6 @@ def segment_performance(
 ) -> pd.DataFrame:
     """
     Compute per-segment performance (precision/recall/F1/etc.) for labeled data.
-
-    df_labeled : dataframe with 'y' column (0/1)
-    probs      : predicted win probability for each row in df_labeled (same order)
-    thr        : classification threshold
-    segment_cols : list of column names to slice by
-    min_rows   : only report segments with at least this many rows
-    outfile    : optional path to CSV
     """
     df = df_labeled.copy()
     df["p_win"] = probs
@@ -455,6 +505,88 @@ def segment_performance(
     if outfile is not None:
         out.to_csv(outfile, index=False)
         print(f"[Feedback] wrote -> {outfile}")
+
+    return out
+
+# -------- NEW: loss reasons by segment helper --------
+def loss_reasons_by_segment(
+    train_df: pd.DataFrame,
+    segment_col: str,
+    reason_cols: Optional[List[str]] = None,
+    min_count: int = 10,
+    outfile: Optional[Path] = None,
+) -> pd.DataFrame:
+    """
+    For closed-lost opportunities (y=0), compute loss reason distribution
+    within each segment (e.g., Region / Deal Size Bucket).
+    """
+    if reason_cols is None:
+        reason_cols = [
+            "Opportunity Reason Lost",
+            "Opportunity Reason Lost Detail",
+            "Opportunity Reason of Churn",   # NEW
+        ]
+
+    if segment_col not in train_df.columns:
+        print(f"[LossReason] Skip '{segment_col}' (not in dataframe)")
+        out = pd.DataFrame([{
+            "info": f"segment_col '{segment_col}' not in dataframe"
+        }])
+        if outfile is not None:
+            out.to_csv(outfile, index=False)
+            print(f"[LossReason] wrote -> {outfile}")
+        return out
+
+    df = train_df.copy()
+    df = df[df["y"] == 0].copy()  # only lost
+
+    if df.empty:
+        out = pd.DataFrame([{"info": "No lost opportunities (y=0) in train_df."}])
+        if outfile is not None:
+            out.to_csv(outfile, index=False)
+            print(f"[LossReason] wrote -> {outfile}")
+        return out
+
+    rows = []
+    for seg_val, seg_df in df.groupby(segment_col, dropna=False):
+        seg_total = len(seg_df)
+        if seg_total == 0:
+            continue
+
+        for rcol in reason_cols:
+            if rcol not in seg_df.columns:
+                continue
+
+            for reason_val, reason_df in seg_df.groupby(rcol, dropna=False):
+                if pd.isna(reason_val):
+                    continue
+
+                n = len(reason_df)
+                if n < min_count:
+                    continue
+
+                rows.append({
+                    "segment_field": segment_col,
+                    "segment_value": seg_val,
+                    "reason_field": rcol,
+                    "reason_value": reason_val,
+                    "n_lost": n,
+                    "pct_of_lost_in_segment": n / seg_total,
+                })
+
+    if not rows:
+        out = pd.DataFrame([{
+            "info": f"No reason groups with count >= {min_count} for segment '{segment_col}'."
+        }])
+    else:
+        out = pd.DataFrame(rows).sort_values(
+            ["segment_field", "segment_value", "n_lost"],
+            ascending=[True, True, False]
+        )
+
+    if outfile is not None:
+        out.to_csv(outfile, index=False)
+        print(f"[LossReason] wrote -> {outfile}")
 
     return out
 
@@ -532,13 +664,13 @@ def train_and_score():
     # Diagnostics: raw shape & target distribution before mapping
     print(f"[Diag] Raw shape: {raw.shape}")
     if TARGET_COL in raw.columns:
-        print("[Diag] Raw CRO Win value counts (raw strings):")
+        print(f"[Diag] Raw {TARGET_COL} value counts (raw strings):")
         print(raw[TARGET_COL].astype(str).str.strip().value_counts(dropna=False).head(20))
 
     raw = map_target(raw)
 
     # Diagnostics: y distribution after mapping
-    print("[Diag] y value counts after mapping (0=No, 1=Yes, NaN=Unknown):")
+    print("[Diag] y value counts after mapping (1=Won, 0=Lost, NaN=Other/Open):")
     print(raw["y"].value_counts(dropna=False))
 
     # Train / score split by target availability
@@ -569,7 +701,6 @@ def train_and_score():
     pre = build_preprocessor(cat_cols, num_cols)
     models = get_models(pre)
 
-    # 2.1 可选：K-Fold 模型选择（不带 calibration，仅用来选 LogReg vs RF）
     cv_metrics: Dict[str, Dict[str, float]] = {}
     if USE_KFOLD_MODEL_SELECTION:
         print(f"[CV] Running StratifiedKFold (n_splits={N_FOLDS}) for model selection...")
@@ -578,11 +709,8 @@ def train_and_score():
             print(f"[CV] {name}: cv_auc={m['cv_auc']:.4f}, cv_prauc={m['cv_prauc']:.4f}")
     else:
         print("[CV] K-Fold model selection disabled; using single holdout metrics only.")
-
-    # 3) Train/val split（时间切分 or 随机切分）
     X_train, X_val, y_train, y_val = make_train_val_split(train_df, feat_cols)
 
-    # 3.1 只保留同时在 train & val 非空的列
     def nonempty_cols(df):
         return [c for c in df.columns if df[c].notna().any()]
 
@@ -599,7 +727,7 @@ def train_and_score():
 
     rows = []
     best_name, best_cal, best_val_prob, best_thr_prec = None, None, None, None
-    best_sel_metric = -1.0  # 用于选模型（优先 cv_auc，否则 val_auc）
+    best_sel_metric = -1.0
 
     for name, pipe in models.items():
         cal = CalibratedClassifierCV(estimator=pipe, method="isotonic", cv=3)
@@ -646,7 +774,6 @@ def train_and_score():
 
         rows.append(row)
 
-        # 选模型：如果开了 K-Fold，就用 cv_auc；否则用 val_auc
         if USE_KFOLD_MODEL_SELECTION and not np.isnan(cv_auc):
             sel_metric = cv_auc
         else:
@@ -722,7 +849,6 @@ def train_and_score():
                 "importance_std": r.importances_std[:k]
             }).sort_values("importance_mean", ascending=False)
             imp.to_csv(FEEDBACK_DIR / "feature_importance.csv", index=False)
-            # grouped by original field
             group_feature_importance(imp).to_csv(FEEDBACK_DIR / "feature_importance_grouped.csv", index=False)
         print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'feature_importance.csv'}")
         print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'feature_importance_grouped.csv'}")
@@ -737,7 +863,7 @@ def train_and_score():
     print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'calibration_table.csv'}")
 
     # 4) loss drivers on training set (closed-lost categories with enough support)
-    dynamic_min_count = max(3, len(train_df) // 10)  # adaptive threshold for small data
+    dynamic_min_count = 1000
     loss_drv = build_loss_drivers(train_df, min_count=dynamic_min_count)
     if loss_drv.empty:
         pd.DataFrame([{
@@ -775,7 +901,7 @@ def train_and_score():
             outfile=FEEDBACK_DIR / "segment_perf_dealtypes.csv",
         )
 
-        # Region × Sale Type combo (e.g. "EMEA | Renewal")
+        # Region × Sale Type combo
         if ("Account Region" in train_df.columns) and ("Sale Type" in train_df.columns):
             combo_df = train_df.copy()
             combo_df["Region x SaleType"] = (
@@ -793,6 +919,56 @@ def train_and_score():
             )
         else:
             print("[Seg] Skipping Region x SaleType combo (columns missing).")
+
+        # ---------- NEW: loss reasons by Region ----------
+        region_col = None
+        for cand in ["Account Region", "Assigned to Region"]:
+            if cand in train_df.columns:
+                region_col = cand
+                break
+
+        if region_col is not None:
+            loss_reasons_by_segment(
+                train_df,
+                segment_col=region_col,
+                reason_cols=[
+                    "Opportunity Reason Lost",
+                    "Opportunity Reason Lost Detail",
+                    "Opportunity Reason of Churn",
+                ],
+                min_count=5,
+                outfile=FEEDBACK_DIR / "loss_reasons_by_region.csv",
+            )
+        else:
+            print("[LossReason] No region column found for loss analysis.")
+
+        # ---------- NEW: loss reasons by Deal Size (bucketed) ----------
+        amount_col = first_present(train_df, AMOUNT_CANDIDATES)
+        if (amount_col is not None) and (amount_col in train_df.columns):
+            tmp = train_df.copy()
+            tmp = tmp[tmp[amount_col].notna()].copy()
+            try:
+                tmp["Deal Size Bucket"] = pd.qcut(
+                    tmp[amount_col],
+                    q=4,
+                    labels=["Q1-Small", "Q2-Medium", "Q3-Large", "Q4-XL"],
+                    duplicates="drop",
+                )
+                loss_reasons_by_segment(
+                    tmp,
+                    segment_col="Deal Size Bucket",
+                    reason_cols=[
+                        "Opportunity Reason Lost",
+                        "Opportunity Reason Lost Detail",
+                        "Opportunity Reason of Churn",
+                    ],
+                    min_count=5,
+                    outfile=FEEDBACK_DIR / "loss_reasons_by_dealsize.csv",
+                )
+            except Exception as e:
+                print(f"[LossReason] Deal size bucketing failed: {e}")
+        else:
+            print("[LossReason] No amount column found for deal size analysis.")
 
     # ---------- Score unknown/open opportunities ----------
     if best_cal is not None and not score_df.empty:
@@ -812,8 +988,11 @@ def train_and_score():
         owner_col = first_present(score_df, OWNER_CANDIDATES)
         amount_col= first_present(score_df, AMOUNT_CANDIDATES)
 
-        keep_cols = [c for c in [id_col, name_col, STAGE_COL, owner_col, CLOSE_DATE_COL, amount_col] if c]
+        keep_cols_raw = [id_col, name_col, STAGE_COL, owner_col, CLOSE_DATE_COL, amount_col]
+        keep_cols = [c for c in keep_cols_raw if c and c in score_df.columns]
+
         out = score_df[keep_cols].copy() if keep_cols else pd.DataFrame(index=score_df.index)
+
         out.rename(columns={id_col: "Opportunity ID",
                             name_col: "Opportunity Name",
                             owner_col: "Owner",

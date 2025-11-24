@@ -1,12 +1,6 @@
-field,value,count,loss_rate,Opportunity Reason Lost Detail,Account Region,Account Shipping Country
-Opportunity Reason Lost,,164,0.7804878048780488,,,
-Opportunity Reason Lost Detail,,164,0.7804878048780488,,,
-Account Region,,69,0.8840579710144928,,AMER,
-Account Region,,63,0.8253968253968254,,EMEA,
-Account Region,,68,0.75,,APAC,
-Account Shipping Country,,35,0.9428571428571428,,,France
-Account Shipping Country,,27,0.8888888888888888,,,Germany
-Account Shipping Country,,35,0.8571428571428571,,,Australia
-Account Shipping Country,,29,0.7931034482758621,,,India
-Account Shipping Country,,38,0.7631578947368421,,,United States
-Account Shipping Country,,36,0.6944444444444444,,,United Kingdom
+field,value,count,loss_rate
+Account Region,NAM,19983,0.5426112195366061
+Account Region,APAC,5154,0.5205665502522313
+Account Region,EMEA,17329,0.4973743435858965
+Account Shipping Country,United States,17612,0.5398024074494663
+Account Shipping Country,United Kingdom,4342,0.5274067250115154
