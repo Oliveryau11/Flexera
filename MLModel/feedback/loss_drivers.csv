@@ -2,5 +2,10 @@ field,value,count,loss_rate
 Account Region,NAM,19983,0.5426112195366061
 Account Region,APAC,5154,0.5205665502522313
 Account Region,EMEA,17329,0.4973743435858965
+Account Shipping Country,India,1138,0.5922671353251318
+Account Shipping Country,Canada,1316,0.5759878419452887
 Account Shipping Country,United States,17612,0.5398024074494663
+Account Shipping Country,Australia,1597,0.5372573575453976
 Account Shipping Country,United Kingdom,4342,0.5274067250115154
+Account Shipping Country,France,1078,0.5018552875695733
+Account Shipping Country,Germany,3904,0.4490266393442623
