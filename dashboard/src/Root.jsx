@@ -16,7 +16,7 @@ export default function Root() {
 
         <nav className="mt-4 flex gap-2">
           <NavLink className={tab} to="/">Dashboard Home</NavLink>
-          <NavLink className={tab} to="/deal/123">Deal Detail View</NavLink>
+          <NavLink className={tab} to="/deal">Deal Detail View</NavLink>
           <NavLink className={tab} to="/competitors">Competitor Tracker</NavLink>
         </nav>
       </header>
@@ -24,8 +24,9 @@ export default function Root() {
       <main className="p-6">
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/deal" element={<DealDetail />} /> 
           <Route path="/deal/:id" element={<DealDetail />} />
-            <Route path="/competitors" element={<CompetitorTracker />} />
+          <Route path="/competitors" element={<CompetitorTracker />} />
           {/* add other routes later */}
         </Routes>
       </main>

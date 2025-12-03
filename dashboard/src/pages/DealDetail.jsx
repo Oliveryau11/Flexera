@@ -121,34 +121,91 @@ async function loadDealById(id) {
   return null;
 }
 
+async function loadAllDeals() {
+  const excelRows = await fetchXLSXRows("/api/RealDummyData.xlsx", "Opportunities");
+  let csvRows = [];
+  try { csvRows = await fetchCSVRows("/api/win_probabilities.csv"); } catch {}
+
+  const csvMap = new Map();
+  for (const r of csvRows) {
+    const key = String(r["Opportunity ID"] || r.OpportunityID || r.id || "").trim();
+    if (key) csvMap.set(key, r);
+  }
+
+  const deals = [];
+  for (const e of excelRows) {
+    const oppId = String(e["Opportunity ID"] || e.OpportunityID || e.id || "").trim();
+    if (!oppId) continue;
+
+    const csv = csvMap.get(oppId);
+    const pRaw = csv ? toNum(csv.win_prob ?? csv.winProb) : NaN;
+
+    const row = {
+      id: oppId,
+      name: e["Opportunity Name"],
+      owner: e["Owner"] || e["Opportunity Owner"],
+      region: e["Account Region"],
+      acv: e["Opportunity Line ACV USD"],
+      stage: e["Stage"],
+      competitor: e["Primary Competitor"],
+      product: e["Product Reporting Solution Area"],
+      p_win: Number.isFinite(pRaw) ? Math.max(0, Math.min(1, pRaw)) : undefined,
+    };
+
+    deals.push(normalizeFromRow(row));
+  }
+
+  return deals;
+}
+
+
 /* ----------------- 页面 ----------------- */
 export default function DealDetail() {
   const { id } = useParams();
   const location = useLocation();
-  const [deal, setDeal] = useState(null);
+  const [deal, setDeal] = useState(null);      // single deal
+  const [deals, setDeals] = useState([]);  
   const [error, setError] = useState(null);
+  const isOverview = !id && !location.state?.deal;
 
-  useEffect(() => {
-    let mounted = true;
-    // 1) 有 state（从表格点进来）
-    const fromState = location.state?.deal;
-    if (fromState && mounted) {
-      setDeal(normalizeFromRow(fromState));
-      return () => { mounted = false; };
-    }
-    // 2) 无 state（刷新/直链）：从 Excel+CSV 查
-    (async () => {
-      try {
-        const d = await loadDealById(id);
-        if (!mounted) return;
-        if (d) setDeal(d);
-        else setError("Deal not found");
-      } catch (e) {
-        if (mounted) setError("No Deal");
+    useEffect(() => {
+      let mounted = true;
+
+      // 1) Coming from table with state (single deal)
+      const fromState = location.state?.deal;
+      if (fromState && mounted) {
+        setDeal(normalizeFromRow(fromState));
+        setDeals([]);
+        return () => { mounted = false; };
       }
+
+      // 2) No state → either /deal/:id or /deal
+      (async () => {
+        try {
+          if (id) {
+            const d = await loadDealById(id);
+            if (!mounted) return;
+            if (d) {
+              setDeal(d);
+              setDeals([]);
+            } else {
+              setError("Deal not found");
+            }
+          } else {
+            // /deal → overview mode
+            const all = await loadAllDeals();
+            if (!mounted) return;
+            setDeals(all);
+            setDeal(null);
+          }
+        } catch (e) {
+          if (mounted) setError("No Deal");
+        }
     })();
+
     return () => { mounted = false; };
   }, [id, location.key]);
+
 
   const kpis = useMemo(() => {
     if (!deal) return [];
@@ -165,6 +222,68 @@ export default function DealDetail() {
       <div className="p-5">
         <div className="text-rose-600 font-medium mb-2">{error}</div>
         <Link to="/" className="text-indigo-600 text-sm hover:underline">← Back to dashboard</Link>
+      </div>
+    );
+  }
+    if (isOverview) {
+    if (!deals.length) {
+      return <div className="text-sm text-slate-500 p-5">Loading…</div>;
+    }
+
+    return (
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <h2 className="text-xl font-semibold">All Deals</h2>
+          <Link
+            to="/"
+            className="text-sm text-indigo-600 hover:underline"
+          >
+            ← Back to dashboard
+          </Link>
+        </div>
+
+        <div className="rounded-2xl bg-white border border-slate-200 p-4">
+          <table className="min-w-full text-sm">
+            <thead className="text-xs uppercase text-slate-500 border-b border-slate-200">
+              <tr>
+                <th className="py-2 text-left">Deal #</th>
+                <th className="py-2 text-left">Opportunity</th>
+                <th className="py-2 text-left">AE</th>
+                <th className="py-2 text-left">Region</th>
+                <th className="py-2 text-right">Amount</th>
+                <th className="py-2 text-left">Stage</th>
+                <th className="py-2 text-right">Win %</th>
+              </tr>
+            </thead>
+            <tbody>
+              {deals.map((d) => (
+                <tr
+                  key={d.id}
+                  className="border-b border-slate-100 hover:bg-slate-50 cursor-pointer"
+                  onClick={() =>
+                    // go to single-deal view when you click a row
+                    (window.location.href = `/deal/${d.id}`)
+                  }
+                >
+                  {/* Deal number */}
+                  <td className="py-2 pr-2">{d.id}</td>
+
+                  {/* Human-readable name */}
+                  <td className="py-2 pr-2">{d.title}</td>
+                  <td className="py-2 pr-2">{d.accountExecutive}</td>
+                  <td className="py-2 pr-2">{d.region}</td>
+                  <td className="py-2 pr-2 text-right">
+                    ${ (d.amount || 0).toLocaleString() }
+                  </td>
+                  <td className="py-2 pr-2">{d.stage}</td>
+                  <td className="py-2 text-right">
+                    {Math.round((d.winProbability || 0) * 100)}%
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
