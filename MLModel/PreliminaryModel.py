@@ -90,7 +90,7 @@ FEEDBACK_DIR.mkdir(exist_ok=True)
 MODEL_REGISTRY_PATH = Path("model_registry.json")
 
 UNKNOWN_LABELS = {"Unknown", "unknown", "na", "n/a", "", "none", "nan", None}
-LEAK_PATTERNS  = ["forecast", "cro win", "win", "loss"]  # training-time exclusion
+LEAK_PATTERNS  = ["forecast", "cro win", "win", "loss", "won", "closed", "iacv", "bookings", "outcome", "result"]  # training-time exclusion (case-insensitive)
 # ------------------------------------------------------
 
 # ----------------------- Utilities -----------------------
@@ -297,6 +297,7 @@ def get_models(pre):
             n_jobs=-1,
             random_state=RANDOM_STATE,
             tree_method="hist",
+            # Note: scale_pos_weight set dynamically in train_and_score()
         ))
     ])
     return {
@@ -777,6 +778,14 @@ def train_and_score():
     # 4) Rebuild preprocessor & models AFTER columns are finalized
     pre = build_preprocessor(cat_cols, num_cols)
     models = get_models(pre)
+    
+    # 4b) Set XGBoost scale_pos_weight for class imbalance
+    n_neg = (y_train == 0).sum()
+    n_pos = (y_train == 1).sum()
+    scale_pos_weight = n_neg / n_pos if n_pos > 0 else 1.0
+    print(f"[Class Balance] n_neg={n_neg}, n_pos={n_pos}, scale_pos_weight={scale_pos_weight:.3f}")
+    if "XGBoost" in models:
+        models["XGBoost"].named_steps["clf"].scale_pos_weight = scale_pos_weight
 
     rows = []
     best_name, best_cal, best_val_prob, best_thr_prec = None, None, None, None
