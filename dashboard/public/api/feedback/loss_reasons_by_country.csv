@@ -1,0 +1,383 @@
+segment_field,segment_value,reason_field,reason_value,n_lost,pct_of_lost_in_segment
+Account Shipping Country,Australia,Opportunity Reason of Churn,Unknown,436,1.0
+Account Shipping Country,Australia,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",260,0.5963302752293578
+Account Shipping Country,Australia,Opportunity Reason Lost Detail,Change in priorities,126,0.2889908256880734
+Account Shipping Country,Australia,Opportunity Reason Lost Detail,Unknown,115,0.26376146788990823
+Account Shipping Country,Australia,Opportunity Reason Lost Detail,Stopped responding,100,0.22935779816513763
+Account Shipping Country,Australia,Opportunity Reason Lost,Unknown,94,0.21559633027522937
+Account Shipping Country,Australia,Opportunity Reason Lost,Duplicate,41,0.09403669724770643
+Account Shipping Country,Australia,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",41,0.09403669724770643
+Account Shipping Country,Australia,Opportunity Reason Lost Detail,Lost budget,38,0.0871559633027523
+Account Shipping Country,Australia,Opportunity Reason Lost Detail,Duplicate Oppt,21,0.0481651376146789
+Account Shipping Country,Australia,Opportunity Reason Lost Detail,Pricing too high,11,0.02522935779816514
+Account Shipping Country,Australia,Opportunity Reason Lost Detail,Executive overrule,9,0.020642201834862386
+Account Shipping Country,Austria,Opportunity Reason of Churn,Unknown,93,1.0
+Account Shipping Country,Austria,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",46,0.4946236559139785
+Account Shipping Country,Austria,Opportunity Reason Lost Detail,Unknown,37,0.3978494623655914
+Account Shipping Country,Austria,Opportunity Reason Lost Detail,Change in priorities,34,0.3655913978494624
+Account Shipping Country,Austria,Opportunity Reason Lost,Unknown,25,0.26881720430107525
+Account Shipping Country,Austria,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",12,0.12903225806451613
+Account Shipping Country,Austria,Opportunity Reason Lost Detail,Stopped responding,12,0.12903225806451613
+Account Shipping Country,Belgium,Opportunity Reason of Churn,Unknown,77,1.0
+Account Shipping Country,Belgium,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",47,0.6103896103896104
+Account Shipping Country,Belgium,Opportunity Reason Lost,Unknown,25,0.3246753246753247
+Account Shipping Country,Belgium,Opportunity Reason Lost Detail,Unknown,25,0.3246753246753247
+Account Shipping Country,Belgium,Opportunity Reason Lost Detail,Change in priorities,19,0.24675324675324675
+Account Shipping Country,Belgium,Opportunity Reason Lost Detail,Stopped responding,17,0.22077922077922077
+Account Shipping Country,Belgium,Opportunity Reason Lost Detail,Lost budget,11,0.14285714285714285
+Account Shipping Country,Belgium,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",5,0.06493506493506493
+Account Shipping Country,Brazil,Opportunity Reason of Churn,Unknown,129,0.9847328244274809
+Account Shipping Country,Brazil,Opportunity Reason Lost,Unknown,73,0.5572519083969466
+Account Shipping Country,Brazil,Opportunity Reason Lost Detail,Unknown,73,0.5572519083969466
+Account Shipping Country,Brazil,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",47,0.35877862595419846
+Account Shipping Country,Brazil,Opportunity Reason Lost Detail,Change in priorities,17,0.1297709923664122
+Account Shipping Country,Brazil,Opportunity Reason Lost Detail,Stopped responding,16,0.12213740458015267
+Account Shipping Country,Brazil,Opportunity Reason Lost Detail,Lost budget,14,0.10687022900763359
+Account Shipping Country,Brazil,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",8,0.061068702290076333
+Account Shipping Country,Bulgaria,Opportunity Reason of Churn,Unknown,17,1.0
+Account Shipping Country,Bulgaria,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",10,0.5882352941176471
+Account Shipping Country,Bulgaria,Opportunity Reason Lost Detail,Change in priorities,5,0.29411764705882354
+Account Shipping Country,Bulgaria,Opportunity Reason Lost Detail,Stopped responding,5,0.29411764705882354
+Account Shipping Country,Canada,Opportunity Reason of Churn,Unknown,244,1.0
+Account Shipping Country,Canada,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",109,0.44672131147540983
+Account Shipping Country,Canada,Opportunity Reason Lost Detail,Unknown,101,0.4139344262295082
+Account Shipping Country,Canada,Opportunity Reason Lost,Unknown,76,0.3114754098360656
+Account Shipping Country,Canada,Opportunity Reason Lost Detail,Change in priorities,48,0.19672131147540983
+Account Shipping Country,Canada,Opportunity Reason Lost Detail,Stopped responding,41,0.1680327868852459
+Account Shipping Country,Canada,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",37,0.15163934426229508
+Account Shipping Country,Canada,Opportunity Reason Lost Detail,Lost budget,23,0.0942622950819672
+Account Shipping Country,Canada,Opportunity Reason Lost,Duplicate,11,0.045081967213114756
+Account Shipping Country,Canada,Opportunity Reason Lost Detail,Pricing too high,9,0.036885245901639344
+Account Shipping Country,Canada,Opportunity Reason Lost Detail,Executive overrule,8,0.03278688524590164
+Account Shipping Country,Canada,Opportunity Reason Lost,Closed IBM: Shifted to Direct,6,0.02459016393442623
+Account Shipping Country,Canada,Opportunity Reason Lost Detail,Pricing Issues,6,0.02459016393442623
+Account Shipping Country,Canada,Opportunity Reason Lost,IBM OEM,5,0.020491803278688523
+Account Shipping Country,Chile,Opportunity Reason of Churn,Unknown,18,1.0
+Account Shipping Country,Chile,Opportunity Reason Lost,Unknown,8,0.4444444444444444
+Account Shipping Country,Chile,Opportunity Reason Lost Detail,Unknown,8,0.4444444444444444
+Account Shipping Country,Chile,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",5,0.2777777777777778
+Account Shipping Country,Chile,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",5,0.2777777777777778
+Account Shipping Country,China,Opportunity Reason of Churn,Unknown,22,1.0
+Account Shipping Country,China,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",10,0.45454545454545453
+Account Shipping Country,China,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",9,0.4090909090909091
+Account Shipping Country,China,Opportunity Reason Lost Detail,Stopped responding,8,0.36363636363636365
+Account Shipping Country,Colombia,Opportunity Reason of Churn,Unknown,13,1.0
+Account Shipping Country,Colombia,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",7,0.5384615384615384
+Account Shipping Country,Colombia,Opportunity Reason Lost Detail,Unknown,6,0.46153846153846156
+Account Shipping Country,Croatia,Opportunity Reason of Churn,Unknown,5,1.0
+Account Shipping Country,Cyprus,Opportunity Reason of Churn,Unknown,5,1.0
+Account Shipping Country,Czech Republic,Opportunity Reason of Churn,Unknown,6,1.0
+Account Shipping Country,Denmark,Opportunity Reason of Churn,Unknown,87,1.0
+Account Shipping Country,Denmark,Opportunity Reason Lost Detail,Unknown,40,0.45977011494252873
+Account Shipping Country,Denmark,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",36,0.41379310344827586
+Account Shipping Country,Denmark,Opportunity Reason Lost,Unknown,34,0.39080459770114945
+Account Shipping Country,Denmark,Opportunity Reason Lost Detail,Change in priorities,17,0.19540229885057472
+Account Shipping Country,Denmark,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",14,0.16091954022988506
+Account Shipping Country,Denmark,Opportunity Reason Lost Detail,Stopped responding,14,0.16091954022988506
+Account Shipping Country,Denmark,Opportunity Reason Lost Detail,Lost budget,5,0.05747126436781609
+Account Shipping Country,Finland,Opportunity Reason of Churn,Unknown,55,1.0
+Account Shipping Country,Finland,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",32,0.5818181818181818
+Account Shipping Country,Finland,Opportunity Reason Lost Detail,Stopped responding,17,0.3090909090909091
+Account Shipping Country,Finland,Opportunity Reason Lost Detail,Change in priorities,15,0.2727272727272727
+Account Shipping Country,Finland,Opportunity Reason Lost Detail,Unknown,12,0.21818181818181817
+Account Shipping Country,Finland,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",11,0.2
+Account Shipping Country,Finland,Opportunity Reason Lost,Unknown,10,0.18181818181818182
+Account Shipping Country,Finland,Opportunity Reason Lost Detail,Pricing too high,6,0.10909090909090909
+Account Shipping Country,France,Opportunity Reason of Churn,Unknown,207,1.0
+Account Shipping Country,France,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",93,0.4492753623188406
+Account Shipping Country,France,Opportunity Reason Lost Detail,Unknown,72,0.34782608695652173
+Account Shipping Country,France,Opportunity Reason Lost,Unknown,64,0.30917874396135264
+Account Shipping Country,France,Opportunity Reason Lost Detail,Stopped responding,43,0.20772946859903382
+Account Shipping Country,France,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",40,0.1932367149758454
+Account Shipping Country,France,Opportunity Reason Lost Detail,Change in priorities,40,0.1932367149758454
+Account Shipping Country,France,Opportunity Reason Lost Detail,Pricing too high,24,0.11594202898550725
+Account Shipping Country,France,Opportunity Reason Lost Detail,Lost budget,11,0.05314009661835749
+Account Shipping Country,France,Opportunity Reason Lost,Duplicate,9,0.043478260869565216
+Account Shipping Country,Germany,Opportunity Reason of Churn,Unknown,846,0.9941245593419507
+Account Shipping Country,Germany,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",439,0.5158636897767332
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Change in priorities,224,0.26321974148061106
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Unknown,206,0.24206815511163338
+Account Shipping Country,Germany,Opportunity Reason Lost,Unknown,168,0.19741480611045828
+Account Shipping Country,Germany,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",162,0.19036427732079905
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Stopped responding,154,0.1809635722679201
+Account Shipping Country,Germany,Opportunity Reason Lost,Duplicate,70,0.08225616921269095
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Lost budget,61,0.07168037602820211
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Pricing too high,52,0.06110458284371328
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Duplicate Oppt,46,0.05405405405405406
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Moved to Competitor Product,25,0.02937720329024677
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Executive overrule,16,0.01880141010575793
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Product lacks functionality,16,0.01880141010575793
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,"Other issues - See ""comments""",15,0.01762632197414806
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Pricing Issues,12,0.01410105757931845
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Unwilling to give reason,10,0.011750881316098707
+Account Shipping Country,Germany,Opportunity Reason Lost,"Deal Registration Expiry, on 2024-12-11 00:00:00",5,0.005875440658049354
+Account Shipping Country,Germany,Opportunity Reason Lost Detail,Product Quality Issues,5,0.005875440658049354
+Account Shipping Country,Guatemala,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",5,1.0
+Account Shipping Country,Guatemala,Opportunity Reason Lost Detail,Unwilling to give reason,5,1.0
+Account Shipping Country,Guatemala,Opportunity Reason of Churn,Unknown,5,1.0
+Account Shipping Country,Hong Kong,Opportunity Reason of Churn,Unknown,12,1.0
+Account Shipping Country,Hong Kong,Opportunity Reason Lost,Unknown,6,0.5
+Account Shipping Country,Hong Kong,Opportunity Reason Lost Detail,Unknown,6,0.5
+Account Shipping Country,Hong Kong,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",5,0.4166666666666667
+Account Shipping Country,Hungary,Opportunity Reason of Churn,Unknown,13,1.0
+Account Shipping Country,Hungary,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",5,0.38461538461538464
+Account Shipping Country,Iceland,Opportunity Reason of Churn,Unknown,16,1.0
+Account Shipping Country,Iceland,Opportunity Reason Lost,Unknown,9,0.5625
+Account Shipping Country,Iceland,Opportunity Reason Lost Detail,Unknown,9,0.5625
+Account Shipping Country,Iceland,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",5,0.3125
+Account Shipping Country,Iceland,Opportunity Reason Lost Detail,Stopped responding,5,0.3125
+Account Shipping Country,India,Opportunity Reason of Churn,Unknown,279,1.0
+Account Shipping Country,India,Opportunity Reason Lost Detail,Unknown,133,0.4767025089605735
+Account Shipping Country,India,Opportunity Reason Lost,Unknown,117,0.41935483870967744
+Account Shipping Country,India,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",112,0.4014336917562724
+Account Shipping Country,India,Opportunity Reason Lost Detail,Stopped responding,46,0.16487455197132617
+Account Shipping Country,India,Opportunity Reason Lost Detail,Change in priorities,43,0.15412186379928317
+Account Shipping Country,India,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",31,0.1111111111111111
+Account Shipping Country,India,Opportunity Reason Lost Detail,Lost budget,24,0.08602150537634409
+Account Shipping Country,India,Opportunity Reason Lost,Duplicate,12,0.043010752688172046
+Account Shipping Country,India,Opportunity Reason Lost Detail,Executive overrule,7,0.025089605734767026
+Account Shipping Country,India,Opportunity Reason Lost Detail,Pricing Issues,7,0.025089605734767026
+Account Shipping Country,India,Opportunity Reason Lost Detail,Pricing too high,7,0.025089605734767026
+Account Shipping Country,India,Opportunity Reason Lost Detail,Duplicate Oppt,6,0.021505376344086023
+Account Shipping Country,India,Opportunity Reason Lost,Duplicate - Do not use if deal can be merged instead,5,0.017921146953405017
+Account Shipping Country,Indonesia,Opportunity Reason of Churn,Unknown,18,1.0
+Account Shipping Country,Indonesia,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",14,0.7777777777777778
+Account Shipping Country,Indonesia,Opportunity Reason Lost Detail,Change in priorities,11,0.6111111111111112
+Account Shipping Country,Ireland,Opportunity Reason of Churn,Unknown,33,1.0
+Account Shipping Country,Ireland,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",12,0.36363636363636365
+Account Shipping Country,Ireland,Opportunity Reason Lost Detail,Unknown,12,0.36363636363636365
+Account Shipping Country,Ireland,Opportunity Reason Lost,Unknown,10,0.30303030303030304
+Account Shipping Country,Ireland,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",9,0.2727272727272727
+Account Shipping Country,Ireland,Opportunity Reason Lost Detail,Change in priorities,6,0.18181818181818182
+Account Shipping Country,Ireland,Opportunity Reason Lost Detail,Pricing too high,5,0.15151515151515152
+Account Shipping Country,Israel,Opportunity Reason of Churn,Unknown,122,1.0
+Account Shipping Country,Israel,Opportunity Reason Lost Detail,Unknown,99,0.8114754098360656
+Account Shipping Country,Israel,Opportunity Reason Lost,Unknown,88,0.7213114754098361
+Account Shipping Country,Israel,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",19,0.1557377049180328
+Account Shipping Country,Israel,Opportunity Reason Lost Detail,Stopped responding,14,0.11475409836065574
+Account Shipping Country,Israel,Opportunity Reason Lost,"Deal Registration Expiry, on 2024-09-04 00:00:00",9,0.07377049180327869
+Account Shipping Country,Italy,Opportunity Reason of Churn,Unknown,109,1.0
+Account Shipping Country,Italy,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",79,0.7247706422018348
+Account Shipping Country,Italy,Opportunity Reason Lost Detail,Change in priorities,52,0.47706422018348627
+Account Shipping Country,Italy,Opportunity Reason Lost Detail,Unknown,23,0.21100917431192662
+Account Shipping Country,Italy,Opportunity Reason Lost,Unknown,19,0.1743119266055046
+Account Shipping Country,Italy,Opportunity Reason Lost Detail,Lost budget,18,0.1651376146788991
+Account Shipping Country,Italy,Opportunity Reason Lost Detail,Stopped responding,9,0.08256880733944955
+Account Shipping Country,Italy,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",6,0.05504587155963303
+Account Shipping Country,Italy,Opportunity Reason Lost Detail,Pricing too high,5,0.045871559633027525
+Account Shipping Country,Japan,Opportunity Reason of Churn,Unknown,80,1.0
+Account Shipping Country,Japan,Opportunity Reason Lost Detail,Unknown,35,0.4375
+Account Shipping Country,Japan,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",34,0.425
+Account Shipping Country,Japan,Opportunity Reason Lost,Unknown,31,0.3875
+Account Shipping Country,Japan,Opportunity Reason Lost Detail,Change in priorities,21,0.2625
+Account Shipping Country,Japan,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",11,0.1375
+Account Shipping Country,Japan,Opportunity Reason Lost Detail,Stopped responding,8,0.1
+Account Shipping Country,Japan,Opportunity Reason Lost Detail,Pricing too high,7,0.0875
+Account Shipping Country,Japan,Opportunity Reason Lost Detail,Lost budget,5,0.0625
+Account Shipping Country,Kazakhstan,Opportunity Reason of Churn,Unknown,16,1.0
+Account Shipping Country,Kazakhstan,Opportunity Reason Lost Detail,Unknown,11,0.6875
+Account Shipping Country,Kazakhstan,Opportunity Reason Lost,Unknown,9,0.5625
+Account Shipping Country,Kazakhstan,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",5,0.3125
+Account Shipping Country,Kenya,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",9,1.0
+Account Shipping Country,Kenya,Opportunity Reason of Churn,Unknown,9,1.0
+Account Shipping Country,Kenya,Opportunity Reason Lost Detail,Stopped responding,6,0.6666666666666666
+Account Shipping Country,"Korea, Republic of",Opportunity Reason Lost,Unknown,28,1.0
+Account Shipping Country,"Korea, Republic of",Opportunity Reason Lost Detail,Unknown,28,1.0
+Account Shipping Country,"Korea, Republic of",Opportunity Reason of Churn,Unknown,28,1.0
+Account Shipping Country,Kuwait,Opportunity Reason of Churn,Unknown,12,1.0
+Account Shipping Country,Kuwait,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",8,0.6666666666666666
+Account Shipping Country,Luxembourg,Opportunity Reason of Churn,Unknown,12,1.0
+Account Shipping Country,Luxembourg,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",7,0.5833333333333334
+Account Shipping Country,Malaysia,Opportunity Reason of Churn,Unknown,58,1.0
+Account Shipping Country,Malaysia,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",28,0.4827586206896552
+Account Shipping Country,Malaysia,Opportunity Reason Lost Detail,Unknown,20,0.3448275862068966
+Account Shipping Country,Malaysia,Opportunity Reason Lost,Unknown,16,0.27586206896551724
+Account Shipping Country,Malaysia,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",10,0.1724137931034483
+Account Shipping Country,Malaysia,Opportunity Reason Lost Detail,Lost budget,10,0.1724137931034483
+Account Shipping Country,Malaysia,Opportunity Reason Lost Detail,Change in priorities,9,0.15517241379310345
+Account Shipping Country,Malaysia,Opportunity Reason Lost Detail,Stopped responding,9,0.15517241379310345
+Account Shipping Country,Mexico,Opportunity Reason of Churn,Unknown,17,1.0
+Account Shipping Country,Mexico,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",9,0.5294117647058824
+Account Shipping Country,Mexico,Opportunity Reason Lost,Unknown,6,0.35294117647058826
+Account Shipping Country,Mexico,Opportunity Reason Lost Detail,Lost budget,6,0.35294117647058826
+Account Shipping Country,Mexico,Opportunity Reason Lost Detail,Unknown,6,0.35294117647058826
+Account Shipping Country,Netherlands,Opportunity Reason of Churn,Unknown,267,1.0
+Account Shipping Country,Netherlands,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",130,0.4868913857677903
+Account Shipping Country,Netherlands,Opportunity Reason Lost Detail,Unknown,75,0.2808988764044944
+Account Shipping Country,Netherlands,Opportunity Reason Lost Detail,Change in priorities,62,0.23220973782771537
+Account Shipping Country,Netherlands,Opportunity Reason Lost Detail,Stopped responding,50,0.18726591760299627
+Account Shipping Country,Netherlands,Opportunity Reason Lost,Unknown,48,0.1797752808988764
+Account Shipping Country,Netherlands,Opportunity Reason Lost,Duplicate,43,0.16104868913857678
+Account Shipping Country,Netherlands,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",43,0.16104868913857678
+Account Shipping Country,Netherlands,Opportunity Reason Lost Detail,Duplicate Oppt,24,0.0898876404494382
+Account Shipping Country,Netherlands,Opportunity Reason Lost Detail,Lost budget,22,0.08239700374531835
+Account Shipping Country,Netherlands,Opportunity Reason Lost Detail,Executive overrule,9,0.033707865168539325
+Account Shipping Country,Netherlands,Opportunity Reason Lost Detail,Pricing too high,9,0.033707865168539325
+Account Shipping Country,Netherlands,Opportunity Reason Lost Detail,Moved to Competitor Product,7,0.026217228464419477
+Account Shipping Country,Netherlands,Opportunity Reason Lost Detail,Product lacks functionality,6,0.02247191011235955
+Account Shipping Country,New Zealand,Opportunity Reason of Churn,Unknown,87,1.0
+Account Shipping Country,New Zealand,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",58,0.6666666666666666
+Account Shipping Country,New Zealand,Opportunity Reason Lost Detail,Change in priorities,32,0.367816091954023
+Account Shipping Country,New Zealand,Opportunity Reason Lost Detail,Unknown,23,0.26436781609195403
+Account Shipping Country,New Zealand,Opportunity Reason Lost,Unknown,20,0.22988505747126436
+Account Shipping Country,New Zealand,Opportunity Reason Lost Detail,Lost budget,14,0.16091954022988506
+Account Shipping Country,New Zealand,Opportunity Reason Lost Detail,Stopped responding,12,0.13793103448275862
+Account Shipping Country,New Zealand,Opportunity Reason Lost,Duplicate,5,0.05747126436781609
+Account Shipping Country,Norway,Opportunity Reason of Churn,Unknown,71,1.0
+Account Shipping Country,Norway,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",41,0.5774647887323944
+Account Shipping Country,Norway,Opportunity Reason Lost Detail,Stopped responding,24,0.3380281690140845
+Account Shipping Country,Norway,Opportunity Reason Lost Detail,Unknown,19,0.2676056338028169
+Account Shipping Country,Norway,Opportunity Reason Lost,Unknown,16,0.22535211267605634
+Account Shipping Country,Norway,Opportunity Reason Lost Detail,Change in priorities,16,0.22535211267605634
+Account Shipping Country,Norway,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",9,0.1267605633802817
+Account Shipping Country,Norway,Opportunity Reason Lost Detail,Pricing too high,8,0.11267605633802817
+Account Shipping Country,Norway,Opportunity Reason Lost,Duplicate,5,0.07042253521126761
+Account Shipping Country,Oman,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",9,1.0
+Account Shipping Country,Oman,Opportunity Reason of Churn,Unknown,9,1.0
+Account Shipping Country,Oman,Opportunity Reason Lost Detail,Stopped responding,6,0.6666666666666666
+Account Shipping Country,Peru,Opportunity Reason of Churn,Unknown,6,1.0
+Account Shipping Country,Philippines,Opportunity Reason of Churn,Unknown,11,1.0
+Account Shipping Country,Poland,Opportunity Reason of Churn,Unknown,60,1.0
+Account Shipping Country,Poland,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",35,0.5833333333333334
+Account Shipping Country,Poland,Opportunity Reason Lost Detail,Change in priorities,19,0.31666666666666665
+Account Shipping Country,Poland,Opportunity Reason Lost Detail,Stopped responding,16,0.26666666666666666
+Account Shipping Country,Poland,Opportunity Reason Lost Detail,Unknown,12,0.2
+Account Shipping Country,Poland,Opportunity Reason Lost,Duplicate,9,0.15
+Account Shipping Country,Poland,Opportunity Reason Lost,Unknown,7,0.11666666666666667
+Account Shipping Country,Poland,Opportunity Reason Lost Detail,Duplicate Oppt,7,0.11666666666666667
+Account Shipping Country,Poland,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",6,0.1
+Account Shipping Country,Portugal,Opportunity Reason of Churn,Unknown,16,1.0
+Account Shipping Country,Portugal,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",11,0.6875
+Account Shipping Country,Portugal,Opportunity Reason Lost Detail,Change in priorities,8,0.5
+Account Shipping Country,Portugal,Opportunity Reason Lost,Unknown,5,0.3125
+Account Shipping Country,Portugal,Opportunity Reason Lost Detail,Unknown,5,0.3125
+Account Shipping Country,Qatar,Opportunity Reason of Churn,Unknown,19,1.0
+Account Shipping Country,Qatar,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",7,0.3684210526315789
+Account Shipping Country,Qatar,Opportunity Reason Lost Detail,Unknown,7,0.3684210526315789
+Account Shipping Country,Qatar,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",6,0.3157894736842105
+Account Shipping Country,Qatar,Opportunity Reason Lost,Unknown,6,0.3157894736842105
+Account Shipping Country,Saudi Arabia,Opportunity Reason of Churn,Unknown,25,1.0
+Account Shipping Country,Saudi Arabia,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",19,0.76
+Account Shipping Country,Saudi Arabia,Opportunity Reason Lost Detail,Change in priorities,8,0.32
+Account Shipping Country,Saudi Arabia,Opportunity Reason Lost Detail,Stopped responding,8,0.32
+Account Shipping Country,Saudi Arabia,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",6,0.24
+Account Shipping Country,Singapore,Opportunity Reason of Churn,Unknown,50,1.0
+Account Shipping Country,Singapore,Opportunity Reason Lost Detail,Unknown,24,0.48
+Account Shipping Country,Singapore,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",22,0.44
+Account Shipping Country,Singapore,Opportunity Reason Lost,Unknown,21,0.42
+Account Shipping Country,Singapore,Opportunity Reason Lost Detail,Change in priorities,14,0.28
+Account Shipping Country,Singapore,Opportunity Reason Lost Detail,Stopped responding,7,0.14
+Account Shipping Country,Slovenia,Opportunity Reason of Churn,Unknown,8,1.0
+Account Shipping Country,Slovenia,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",7,0.875
+Account Shipping Country,South Africa,Opportunity Reason of Churn,Unknown,40,1.0
+Account Shipping Country,South Africa,Opportunity Reason Lost Detail,Unknown,27,0.675
+Account Shipping Country,South Africa,Opportunity Reason Lost,Unknown,22,0.55
+Account Shipping Country,South Africa,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",13,0.325
+Account Shipping Country,South Africa,Opportunity Reason Lost Detail,Lost budget,7,0.175
+Account Shipping Country,South Africa,Opportunity Reason Lost Detail,Change in priorities,6,0.15
+Account Shipping Country,South Africa,Opportunity Reason Lost,"Deal Registration Expiry, on 2024-08-13 00:00:00",5,0.125
+Account Shipping Country,South Korea,Opportunity Reason of Churn,Unknown,26,1.0
+Account Shipping Country,South Korea,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",11,0.4230769230769231
+Account Shipping Country,South Korea,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",9,0.34615384615384615
+Account Shipping Country,South Korea,Opportunity Reason Lost,Unknown,6,0.23076923076923078
+Account Shipping Country,South Korea,Opportunity Reason Lost Detail,Executive overrule,6,0.23076923076923078
+Account Shipping Country,South Korea,Opportunity Reason Lost Detail,Unknown,6,0.23076923076923078
+Account Shipping Country,Spain,Opportunity Reason of Churn,Unknown,118,1.0
+Account Shipping Country,Spain,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",56,0.4745762711864407
+Account Shipping Country,Spain,Opportunity Reason Lost Detail,Unknown,44,0.3728813559322034
+Account Shipping Country,Spain,Opportunity Reason Lost,Unknown,35,0.2966101694915254
+Account Shipping Country,Spain,Opportunity Reason Lost Detail,Stopped responding,29,0.2457627118644068
+Account Shipping Country,Spain,Opportunity Reason Lost,Duplicate,16,0.13559322033898305
+Account Shipping Country,Spain,Opportunity Reason Lost Detail,Change in priorities,16,0.13559322033898305
+Account Shipping Country,Spain,Opportunity Reason Lost Detail,Lost budget,14,0.11864406779661017
+Account Shipping Country,Spain,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",11,0.09322033898305085
+Account Shipping Country,Spain,Opportunity Reason Lost Detail,Duplicate Oppt,7,0.059322033898305086
+Account Shipping Country,Spain,Opportunity Reason Lost Detail,Pricing too high,6,0.05084745762711865
+Account Shipping Country,Sweden,Opportunity Reason of Churn,Unknown,188,1.0
+Account Shipping Country,Sweden,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",77,0.4095744680851064
+Account Shipping Country,Sweden,Opportunity Reason Lost Detail,Unknown,65,0.34574468085106386
+Account Shipping Country,Sweden,Opportunity Reason Lost Detail,Change in priorities,51,0.2712765957446808
+Account Shipping Country,Sweden,Opportunity Reason Lost,Unknown,50,0.26595744680851063
+Account Shipping Country,Sweden,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",31,0.16489361702127658
+Account Shipping Country,Sweden,Opportunity Reason Lost,Duplicate,21,0.11170212765957446
+Account Shipping Country,Sweden,Opportunity Reason Lost Detail,Stopped responding,18,0.09574468085106383
+Account Shipping Country,Sweden,Opportunity Reason Lost Detail,Duplicate Oppt,15,0.0797872340425532
+Account Shipping Country,Sweden,Opportunity Reason Lost,Deal Registration Expiry.,9,0.047872340425531915
+Account Shipping Country,Sweden,Opportunity Reason Lost Detail,Lost budget,8,0.0425531914893617
+Account Shipping Country,Sweden,Opportunity Reason Lost Detail,Moved to Competitor Product,8,0.0425531914893617
+Account Shipping Country,Sweden,Opportunity Reason Lost Detail,Executive overrule,6,0.031914893617021274
+Account Shipping Country,Sweden,Opportunity Reason Lost Detail,Partner experience,6,0.031914893617021274
+Account Shipping Country,Switzerland,Opportunity Reason of Churn,Unknown,102,0.9902912621359223
+Account Shipping Country,Switzerland,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",61,0.5922330097087378
+Account Shipping Country,Switzerland,Opportunity Reason Lost Detail,Change in priorities,30,0.2912621359223301
+Account Shipping Country,Switzerland,Opportunity Reason Lost Detail,Unknown,21,0.20388349514563106
+Account Shipping Country,Switzerland,Opportunity Reason Lost Detail,Stopped responding,20,0.1941747572815534
+Account Shipping Country,Switzerland,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",19,0.18446601941747573
+Account Shipping Country,Switzerland,Opportunity Reason Lost,Unknown,14,0.13592233009708737
+Account Shipping Country,Switzerland,Opportunity Reason Lost Detail,Lost budget,11,0.10679611650485436
+Account Shipping Country,Switzerland,Opportunity Reason Lost,Duplicate,6,0.05825242718446602
+Account Shipping Country,Switzerland,Opportunity Reason Lost Detail,Executive overrule,6,0.05825242718446602
+Account Shipping Country,Switzerland,Opportunity Reason Lost Detail,Pricing too high,6,0.05825242718446602
+Account Shipping Country,Taiwan,Opportunity Reason of Churn,Unknown,7,1.0
+Account Shipping Country,Taiwan,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",5,0.7142857142857143
+Account Shipping Country,Taiwan,Opportunity Reason Lost Detail,Change in priorities,5,0.7142857142857143
+Account Shipping Country,Thailand,Opportunity Reason Lost,Unknown,5,1.0
+Account Shipping Country,Thailand,Opportunity Reason Lost Detail,Unknown,5,1.0
+Account Shipping Country,Thailand,Opportunity Reason of Churn,Unknown,5,1.0
+Account Shipping Country,Trinidad and Tobago,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",6,1.0
+Account Shipping Country,Trinidad and Tobago,Opportunity Reason Lost Detail,Pricing too high,6,1.0
+Account Shipping Country,Trinidad and Tobago,Opportunity Reason of Churn,Unknown,6,1.0
+Account Shipping Country,Turkey,Opportunity Reason of Churn,Unknown,22,1.0
+Account Shipping Country,Turkey,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",16,0.7272727272727273
+Account Shipping Country,Turkey,Opportunity Reason Lost Detail,Stopped responding,11,0.5
+Account Shipping Country,Ukraine,Opportunity Reason of Churn,Unknown,6,1.0
+Account Shipping Country,United Arab Emirates,Opportunity Reason of Churn,Unknown,67,1.0
+Account Shipping Country,United Arab Emirates,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",53,0.7910447761194029
+Account Shipping Country,United Arab Emirates,Opportunity Reason Lost Detail,Change in priorities,21,0.31343283582089554
+Account Shipping Country,United Arab Emirates,Opportunity Reason Lost Detail,Stopped responding,18,0.26865671641791045
+Account Shipping Country,United Arab Emirates,Opportunity Reason Lost Detail,Lost budget,14,0.208955223880597
+Account Shipping Country,United Arab Emirates,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",11,0.16417910447761194
+Account Shipping Country,United Arab Emirates,Opportunity Reason Lost Detail,Moved to Competitor Product,11,0.16417910447761194
+Account Shipping Country,United Kingdom,Opportunity Reason of Churn,Unknown,968,0.9979381443298969
+Account Shipping Country,United Kingdom,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",501,0.5164948453608248
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Unknown,333,0.34329896907216495
+Account Shipping Country,United Kingdom,Opportunity Reason Lost,Unknown,261,0.2690721649484536
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Stopped responding,212,0.21855670103092784
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Change in priorities,207,0.2134020618556701
+Account Shipping Country,United Kingdom,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",108,0.11134020618556702
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Lost budget,83,0.08556701030927835
+Account Shipping Country,United Kingdom,Opportunity Reason Lost,Duplicate,79,0.08144329896907217
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Duplicate Oppt,34,0.03505154639175258
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Moved to Competitor Product,28,0.0288659793814433
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Pricing too high,24,0.024742268041237112
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Product lacks functionality,15,0.015463917525773196
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Executive overrule,13,0.013402061855670102
+Account Shipping Country,United Kingdom,Opportunity Reason Lost,Merged with Existing Opportunity,8,0.008247422680412371
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,"Other issues - See ""comments""",8,0.008247422680412371
+Account Shipping Country,United Kingdom,Opportunity Reason Lost Detail,Customer experience,6,0.006185567010309278
+Account Shipping Country,United States,Opportunity Reason of Churn,Unknown,2558,0.9996092223524814
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Unknown,1119,0.4372801875732708
+Account Shipping Country,United States,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",1050,0.41031652989449
+Account Shipping Country,United States,Opportunity Reason Lost,Unknown,928,0.3626416568972255
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Change in priorities,485,0.18952715904650255
+Account Shipping Country,United States,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",370,0.1445877295818679
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Stopped responding,342,0.1336459554513482
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Lost budget,237,0.09261430246189918
+Account Shipping Country,United States,Opportunity Reason Lost,Duplicate,151,0.05900742477530285
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Pricing too high,86,0.03360687768659633
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Product lacks functionality,77,0.03008987885892927
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Executive overrule,57,0.022274325908558032
+Account Shipping Country,United States,Opportunity Reason Lost Detail,"Other issues - See ""comments""",42,0.016412661195779603
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Duplicate Oppt,41,0.016021883548261038
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Moved to Competitor Product,31,0.01211410707307542
+Account Shipping Country,United States,Opportunity Reason Lost,Merged with Existing Opportunity,16,0.0062524423602969914
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Pricing Issues,15,0.005861664712778429
+Account Shipping Country,United States,Opportunity Reason Lost,Duplicate - Do not use if deal can be merged instead,11,0.0042985541227041815
+Account Shipping Country,United States,Opportunity Reason Lost,Do Nothing: Existing Homegrown,10,0.003907776475185619
+Account Shipping Country,United States,Opportunity Reason Lost,Closed IBM: Shifted to Direct,9,0.0035169988276670576
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Unwilling to give reason,6,0.0023446658851113715
+Account Shipping Country,United States,Opportunity Reason Lost,IBM OEM,5,0.0019538882375928096
+Account Shipping Country,United States,Opportunity Reason Lost Detail,Project Ended/Canceled,5,0.0019538882375928096
+Account Shipping Country,Unknown,Opportunity Reason Lost Detail,Unknown,16,1.0
+Account Shipping Country,Unknown,Opportunity Reason of Churn,Unknown,16,1.0
+Account Shipping Country,Unknown,Opportunity Reason Lost,Unknown,15,0.9375

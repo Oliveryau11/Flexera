@@ -1,0 +1,27 @@
+reason_field,reason_value,n_lost
+Opportunity Reason of Churn,Unknown,7931
+Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",3716
+Opportunity Reason Lost Detail,Unknown,2934
+Opportunity Reason Lost,Unknown,2428
+Opportunity Reason Lost Detail,Change in priorities,1715
+Opportunity Reason Lost Detail,Stopped responding,1360
+Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",1111
+Opportunity Reason Lost Detail,Lost budget,673
+Opportunity Reason Lost,Duplicate,522
+Opportunity Reason Lost Detail,Pricing too high,306
+Opportunity Reason Lost Detail,Duplicate Oppt,235
+Opportunity Reason Lost Detail,Executive overrule,164
+Opportunity Reason Lost Detail,Product lacks functionality,139
+Opportunity Reason Lost Detail,Moved to Competitor Product,137
+Opportunity Reason Lost Detail,"Other issues - See ""comments""",98
+Opportunity Reason Lost Detail,Pricing Issues,70
+Opportunity Reason Lost Detail,Unwilling to give reason,38
+Opportunity Reason Lost,Merged with Existing Opportunity,28
+Opportunity Reason Lost Detail,Partner experience,20
+Opportunity Reason Lost Detail,Customer experience,17
+Opportunity Reason Lost,Closed IBM: Shifted to Direct,16
+Opportunity Reason Lost,Duplicate - Do not use if deal can be merged instead,16
+Opportunity Reason Lost,Deal Registration Expiry.,15
+Opportunity Reason Lost,IBM OEM,14
+Opportunity Reason Lost,Do Nothing: Existing Homegrown,13
+Opportunity Reason Lost Detail,Project Ended/Canceled,11

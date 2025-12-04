@@ -1,0 +1,71 @@
+segment_field,segment_value,reason_field,reason_value,n_lost,pct_of_lost_in_segment
+Account Region,APAC,Opportunity Reason of Churn,Unknown,1126,1.0
+Account Region,APAC,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",565,0.5017761989342806
+Account Region,APAC,Opportunity Reason Lost Detail,Unknown,408,0.3623445825932504
+Account Region,APAC,Opportunity Reason Lost,Unknown,358,0.31793960923623443
+Account Region,APAC,Opportunity Reason Lost Detail,Change in priorities,270,0.23978685612788633
+Account Region,APAC,Opportunity Reason Lost Detail,Stopped responding,202,0.17939609236234458
+Account Region,APAC,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",127,0.1127886323268206
+Account Region,APAC,Opportunity Reason Lost Detail,Lost budget,98,0.08703374777975133
+Account Region,APAC,Opportunity Reason Lost,Duplicate,69,0.06127886323268206
+Account Region,APAC,Opportunity Reason Lost Detail,Pricing too high,39,0.03463587921847247
+Account Region,APAC,Opportunity Reason Lost Detail,Duplicate Oppt,31,0.027531083481349913
+Account Region,APAC,Opportunity Reason Lost Detail,Executive overrule,27,0.023978685612788632
+Account Region,APAC,Opportunity Reason Lost Detail,Pricing Issues,13,0.011545293072824156
+Account Region,APAC,Opportunity Reason Lost Detail,"Other issues - See ""comments""",12,0.010657193605683837
+Account Region,APAC,Opportunity Reason Lost Detail,Moved to Competitor Product,10,0.008880994671403197
+Account Region,APAC,Opportunity Reason Lost Detail,Unwilling to give reason,6,0.0053285968028419185
+Account Region,APAC,Opportunity Reason Lost,Duplicate - Do not use if deal can be merged instead,5,0.004440497335701598
+Account Region,EMEA,Opportunity Reason of Churn,Unknown,3808,0.9979035639412998
+Account Region,EMEA,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",1939,0.5081236897274634
+Account Region,EMEA,Opportunity Reason Lost Detail,Unknown,1197,0.3136792452830189
+Account Region,EMEA,Opportunity Reason Lost,Unknown,961,0.2518343815513627
+Account Region,EMEA,Opportunity Reason Lost Detail,Change in priorities,895,0.23453878406708595
+Account Region,EMEA,Opportunity Reason Lost Detail,Stopped responding,747,0.1957547169811321
+Account Region,EMEA,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",550,0.1441299790356394
+Account Region,EMEA,Opportunity Reason Lost Detail,Lost budget,307,0.08045073375262055
+Account Region,EMEA,Opportunity Reason Lost,Duplicate,282,0.07389937106918239
+Account Region,EMEA,Opportunity Reason Lost Detail,Pricing too high,163,0.042714884696016774
+Account Region,EMEA,Opportunity Reason Lost Detail,Duplicate Oppt,153,0.04009433962264151
+Account Region,EMEA,Opportunity Reason Lost Detail,Moved to Competitor Product,89,0.023322851153039833
+Account Region,EMEA,Opportunity Reason Lost Detail,Executive overrule,72,0.018867924528301886
+Account Region,EMEA,Opportunity Reason Lost Detail,Product lacks functionality,51,0.013364779874213837
+Account Region,EMEA,Opportunity Reason Lost Detail,"Other issues - See ""comments""",43,0.011268343815513627
+Account Region,EMEA,Opportunity Reason Lost Detail,Pricing Issues,36,0.009433962264150943
+Account Region,EMEA,Opportunity Reason Lost Detail,Unwilling to give reason,19,0.004979035639412998
+Account Region,EMEA,Opportunity Reason Lost Detail,Partner experience,18,0.0047169811320754715
+Account Region,EMEA,Opportunity Reason Lost,Deal Registration Expiry.,14,0.003668763102725367
+Account Region,EMEA,Opportunity Reason Lost,Merged with Existing Opportunity,12,0.0031446540880503146
+Account Region,EMEA,Opportunity Reason Lost Detail,Customer experience,10,0.002620545073375262
+Account Region,EMEA,Opportunity Reason Lost,"Deal Registration Expiry, on 2024-09-04 00:00:00",9,0.0023584905660377358
+Account Region,EMEA,Opportunity Reason Lost,"Deal Registration Expiry, on 2025-02-04 00:00:00",6,0.0015723270440251573
+Account Region,EMEA,Opportunity Reason Lost Detail,Product Quality Issues,6,0.0015723270440251573
+Account Region,EMEA,Opportunity Reason Lost Detail,Project Ended/Canceled,6,0.0015723270440251573
+Account Region,EMEA,Opportunity Reason Lost,"Deal Registration Expiry, on 2024-08-13 00:00:00",5,0.001310272536687631
+Account Region,EMEA,Opportunity Reason Lost,"Deal Registration Expiry, on 2024-12-11 00:00:00",5,0.001310272536687631
+Account Region,NAM,Opportunity Reason of Churn,Unknown,2983,0.9989953114534494
+Account Region,NAM,Opportunity Reason Lost Detail,Unknown,1315,0.44038847957133287
+Account Region,NAM,Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",1212,0.40589417280643003
+Account Region,NAM,Opportunity Reason Lost,Unknown,1096,0.36704621567314133
+Account Region,NAM,Opportunity Reason Lost Detail,Change in priorities,550,0.1841929002009377
+Account Region,NAM,Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",434,0.14534494306764903
+Account Region,NAM,Opportunity Reason Lost Detail,Stopped responding,411,0.137642330877428
+Account Region,NAM,Opportunity Reason Lost Detail,Lost budget,268,0.08975217682518419
+Account Region,NAM,Opportunity Reason Lost,Duplicate,170,0.056932350971198926
+Account Region,NAM,Opportunity Reason Lost Detail,Pricing too high,104,0.034829202947086406
+Account Region,NAM,Opportunity Reason Lost Detail,Product lacks functionality,84,0.02813127930341594
+Account Region,NAM,Opportunity Reason Lost Detail,Executive overrule,65,0.021768251841929
+Account Region,NAM,Opportunity Reason Lost Detail,Duplicate Oppt,51,0.01707970529135968
+Account Region,NAM,Opportunity Reason Lost Detail,"Other issues - See ""comments""",43,0.014400535833891493
+Account Region,NAM,Opportunity Reason Lost Detail,Moved to Competitor Product,38,0.012726054922973878
+Account Region,NAM,Opportunity Reason Lost Detail,Pricing Issues,21,0.007032819825853985
+Account Region,NAM,Opportunity Reason Lost,Merged with Existing Opportunity,16,0.0053583389149363695
+Account Region,NAM,Opportunity Reason Lost,Closed IBM: Shifted to Direct,15,0.005023442732752847
+Account Region,NAM,Opportunity Reason Lost Detail,Unwilling to give reason,13,0.004353650368385801
+Account Region,NAM,Opportunity Reason Lost,Duplicate - Do not use if deal can be merged instead,11,0.003683858004018754
+Account Region,NAM,Opportunity Reason Lost,Do Nothing: Existing Homegrown,10,0.003348961821835231
+Account Region,NAM,Opportunity Reason Lost,IBM OEM,10,0.003348961821835231
+Account Region,NAM,Opportunity Reason Lost Detail,Project Ended/Canceled,5,0.0016744809109176155
+Account Region,Unknown,Opportunity Reason Lost Detail,Unknown,13,1.0
+Account Region,Unknown,Opportunity Reason of Churn,Unknown,13,1.0
+Account Region,Unknown,Opportunity Reason Lost,Unknown,12,0.9230769230769231

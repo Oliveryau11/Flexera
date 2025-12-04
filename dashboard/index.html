@@ -4,7 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dashboard</title>
+    <meta name="theme-color" content="#0f0f0f" />
+    <title>Flexera · Win/Loss Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      body {
+        margin: 0;
+        background: #0f0f0f;
+      }
+      /* Initial loading state */
+      #root:empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        color: #737373;
+        font-family: system-ui, sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+      }
+      #root:empty::after {
+        content: 'Loading…';
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

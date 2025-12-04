@@ -1,0 +1,63 @@
+feature_type,feature_name
+categorical,Account Region
+categorical,Account Shipping Country
+categorical,ACV Type
+categorical,Assigned to Region
+categorical,Calculated Organization Name
+categorical,Calculated Segment
+categorical,Close Date - Quarter
+categorical,Close Date before Created
+categorical,Close Date Month
+categorical,Close Date in Past
+categorical,Close Date Quarter
+categorical,Closed Won iACV Bookings
+categorical,Created Date - Quarter
+categorical,Created Date Month
+categorical,Created Date Quarter
+categorical,Flexera 6Sense Segment Name
+categorical,Flexera One
+categorical,Has iACV
+categorical,ISO Code
+categorical,Last Meeting Date (PeopleAI) - Quarter
+categorical,Last Touch (PeopleAI) - Quarter
+categorical,Next Meeting Date (PeopleAI) - Quarter
+categorical,Open Pipeline Opportunity
+categorical,Opportunity Deal Registration
+categorical,Opportunity Line End Date - Quarter
+categorical,Opportunity Line Start Date - Quarter
+categorical,Opportunity Owner Manager
+categorical,Opportunity Owner Name
+categorical,Opportunity Primary Partner Role
+categorical,Opportunity Record Type
+categorical,Organization Name
+categorical,Partner Involved
+categorical,Primary Alliances Manager
+categorical,Primary Partner Account Name
+categorical,Primary Partner Organization Name
+categorical,Primary Solution Engineer Name
+categorical,Product Name
+categorical,Product Reporting Division
+categorical,Product Reporting Segment
+categorical,Product Reporting Solution Area
+categorical,Project Blackbeard
+categorical,Revenue License Type
+categorical,RevOps Product Group
+categorical,RevOps Product Subgroup
+categorical,ROSA
+categorical,Sales Cycle less than 10 Days
+categorical,Secondary Alliances Manager
+categorical,Secondary Partner Account Name
+numeric,Close Date - Year
+numeric,Close Date - Day
+numeric,Created Date - Year
+numeric,Created Date - Day
+numeric,Last Meeting Date (PeopleAI) - Year
+numeric,Last Meeting Date (PeopleAI) - Day
+numeric,Last Touch (PeopleAI) - Year
+numeric,Last Touch (PeopleAI) - Day
+numeric,Next Meeting Date (PeopleAI) - Year
+numeric,Next Meeting Date (PeopleAI) - Day
+numeric,Opportunity Line End Date - Year
+numeric,Opportunity Line End Date - Day
+numeric,Opportunity Line Start Date - Year
+numeric,Opportunity Line Start Date - Day

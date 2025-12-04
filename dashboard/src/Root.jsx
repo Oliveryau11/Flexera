@@ -2,32 +2,61 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import App from "./App.jsx";
 import DealDetail from "./pages/DealDetail.jsx";
 import CompetitorTracker from "./pages/CompetitorTracker.jsx";
+import ModelInsights from "./pages/ModelInsights.jsx";
 
 export default function Root() {
-  const tab = ({ isActive }) =>
-    "px-3 py-2 rounded-xl text-sm font-medium " +
-    (isActive ? "bg-[#0056D2] border-[#0056D2] text-white"     : "bg-white text-slate-700 border-slate-200 hover:border-[#0056D2] hover:text-[#0056D2] hover:bg-slate-50");
-
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="px-6 pt-6">
-        <h1 className="text-3xl font-bold">Win/Loss AI Dashboard</h1>
-        <p className="text-slate-600 mt-1">AI-powered sales analytics and competitive intelligence</p>
+    <div className="min-h-screen bg-[#0f0f0f]">
+      {/* Minimal top bar */}
+      <nav className="border-b border-neutral-800 bg-[#0f0f0f]">
+        <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-between h-12">
+          <NavLink to="/" className="text-neutral-400 hover:text-neutral-100 text-xs uppercase tracking-[0.15em]">
+            Flexera
+          </NavLink>
+          <div className="flex items-center gap-6">
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => 
+                `text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-amber-500' : 'text-neutral-500 hover:text-neutral-300'}`
+              }
+            >
+              Dashboard
+            </NavLink>
+            <NavLink 
+              to="/model-insights" 
+              className={({ isActive }) => 
+                `text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-amber-500' : 'text-neutral-500 hover:text-neutral-300'}`
+              }
+            >
+              Model
+            </NavLink>
+            <NavLink 
+              to="/deal" 
+              className={({ isActive }) => 
+                `text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-amber-500' : 'text-neutral-500 hover:text-neutral-300'}`
+              }
+            >
+              Deals
+            </NavLink>
+            <NavLink 
+              to="/competitors" 
+              className={({ isActive }) => 
+                `text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-amber-500' : 'text-neutral-500 hover:text-neutral-300'}`
+              }
+            >
+              Analytics
+            </NavLink>
+          </div>
+        </div>
+      </nav>
 
-        <nav className="mt-4 flex gap-2">
-          <NavLink className={tab} to="/">Dashboard Home</NavLink>
-          <NavLink className={tab} to="/deal">Deal Detail View</NavLink>
-          <NavLink className={tab} to="/competitors">Competitor Tracker</NavLink>
-        </nav>
-      </header>
-
-      <main className="p-6">
+      <main>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/model-insights" element={<ModelInsights />} />
           <Route path="/deal" element={<DealDetail />} /> 
           <Route path="/deal/:id" element={<DealDetail />} />
           <Route path="/competitors" element={<CompetitorTracker />} />
-          {/* add other routes later */}
         </Routes>
       </main>
     </div>
