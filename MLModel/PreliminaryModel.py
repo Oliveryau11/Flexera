@@ -20,7 +20,9 @@ Outputs:
   feedback/segment_perf_dealtypes.csv
   feedback/segment_perf_region_x_saletype.csv
   feedback/loss_reasons_by_region.csv
+  feedback/loss_reasons_by_country.csv
   feedback/loss_reasons_by_dealsize.csv
+  feedback/loss_reasons_overall.csv
 """
 
 # ==============================================================
@@ -56,8 +58,8 @@ from xgboost import XGBClassifier
 
 # ----------------------- Config -----------------------
 EXCEL_PATH = Path("data.xlsx")
-SHEET = "Export"
-TARGET_COL = "Current_Opportunity_Status"
+SHEET = 0
+TARGET_COL = "CRO Win"
 
 # Business fields (if present) for outputs
 ID_CANDIDATES    = ["Id", "Opportunity Id", "Opportunity ID"]
@@ -73,7 +75,7 @@ TEST_SIZE        = 0.30
 RANDOM_STATE     = 42
 
 # ---- New toggles: K-Fold & Temporal Split ----
-USE_KFOLD_MODEL_SELECTION = True
+USE_KFOLD_MODEL_SELECTION = False
 N_FOLDS                    = 5
 
 USE_TEMPORAL_SPLIT   = True
@@ -87,7 +89,7 @@ FEEDBACK_DIR.mkdir(exist_ok=True)
 
 MODEL_REGISTRY_PATH = Path("model_registry.json")
 
-UNKNOWN_LABELS = {"unknown", "na", "n/a", "", "none", "nan", None}
+UNKNOWN_LABELS = {"Unknown", "unknown", "na", "n/a", "", "none", "nan", None}
 LEAK_PATTERNS  = ["forecast", "cro win", "win", "loss"]  # training-time exclusion
 # ------------------------------------------------------
 
@@ -152,7 +154,7 @@ def normalize_str_col(s: pd.Series) -> pd.Series:
 
 def map_target(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Map Current_Opportunity_Status to y in {0,1}, robust to variants like
+    Map CRO Win to y in {0,1}, robust to variants like
     'Closed Won', 'Closed Lost', 'Yes/No', etc.
     """
     if TARGET_COL not in df.columns:
@@ -415,13 +417,8 @@ def build_loss_drivers(train_df, fields=None, min_count=30):
               .reset_index()
         )
 
-
         grp.rename(columns={col: "value"}, inplace=True)
-
-
         grp.insert(0, "field", col)
-
-
         grp = grp.loc[grp["count"] >= min_count] \
                  .sort_values("loss_rate", ascending=False)
 
@@ -432,9 +429,7 @@ def build_loss_drivers(train_df, fields=None, min_count=30):
     else:
         out = pd.DataFrame(columns=["field", "value", "count", "loss_rate"])
 
-
     return out
-
 
 def group_feature_importance(imp_df: pd.DataFrame) -> pd.DataFrame:
     bases = []
@@ -590,6 +585,63 @@ def loss_reasons_by_segment(
 
     return out
 
+# -------- NEW: overall loss reasons helper --------
+def overall_loss_reasons(
+    train_df: pd.DataFrame,
+    reason_cols: Optional[List[str]] = None,
+    min_count: int = 10,
+    outfile: Optional[Path] = None,
+) -> pd.DataFrame:
+    """
+    Overall top loss reasons (no segment), just count how often each reason appears
+    among y=0 (lost) opportunities.
+    """
+    if reason_cols is None:
+        reason_cols = [
+            "Opportunity Reason Lost",
+            "Opportunity Reason Lost Detail",
+            "Opportunity Reason of Churn",
+        ]
+
+    df = train_df.copy()
+    df = df[df["y"] == 0].copy()
+    if df.empty:
+        out = pd.DataFrame([{"info": "No lost opportunities (y=0) in train_df."}])
+        if outfile is not None:
+            out.to_csv(outfile, index=False)
+        return out
+
+    rows = []
+    for rcol in reason_cols:
+        if rcol not in df.columns:
+            continue
+        for val, sub in df.groupby(rcol, dropna=False):
+            if pd.isna(val):
+                continue
+            n = len(sub)
+            if n < min_count:
+                continue
+            rows.append({
+                "reason_field": rcol,
+                "reason_value": val,
+                "n_lost": n,
+            })
+
+    if not rows:
+        out = pd.DataFrame([{
+            "info": f"No loss reasons with count >= {min_count}."
+        }])
+    else:
+        out = pd.DataFrame(rows).sort_values(
+            ["n_lost"], ascending=False
+        )
+
+    if outfile is not None:
+        out.to_csv(outfile, index=False)
+        print(f"[LossReason] wrote -> {outfile}")
+
+    return out
+
 # -------- NEW: K-Fold model selection helper --------
 def cross_validate_models(models: Dict[str, Pipeline],
                           X: pd.DataFrame,
@@ -709,6 +761,7 @@ def train_and_score():
             print(f"[CV] {name}: cv_auc={m['cv_auc']:.4f}, cv_prauc={m['cv_prauc']:.4f}")
     else:
         print("[CV] K-Fold model selection disabled; using single holdout metrics only.")
+
     X_train, X_val, y_train, y_val = make_train_val_split(train_df, feat_cols)
 
     def nonempty_cols(df):
@@ -873,6 +926,18 @@ def train_and_score():
         loss_drv.to_csv(FEEDBACK_DIR / "loss_drivers.csv", index=False)
     print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'loss_drivers.csv'}")
 
+    # NEW: overall top loss reasons (no segment)
+    overall_loss_reasons(
+        train_df,
+        reason_cols=[
+            "Opportunity Reason Lost",
+            "Opportunity Reason Lost Detail",
+            "Opportunity Reason of Churn",
+        ],
+        min_count=10,
+        outfile=FEEDBACK_DIR / "loss_reasons_overall.csv",
+    )
+
     # ---------- segment analysis (regions, deal types, combos) ----------
     if best_cal is not None and len(train_df) > 0:
         X_all = train_df[feat_cols].copy()
@@ -941,6 +1006,28 @@ def train_and_score():
             )
         else:
             print("[LossReason] No region column found for loss analysis.")
+
+        # NEW: loss reasons by Country
+        country_col = None
+        for cand in ["Account Country", "Account Shipping Country"]:
+            if cand in train_df.columns:
+                country_col = cand
+                break
+
+        if country_col is not None:
+            loss_reasons_by_segment(
+                train_df,
+                segment_col=country_col,
+                reason_cols=[
+                    "Opportunity Reason Lost",
+                    "Opportunity Reason Lost Detail",
+                    "Opportunity Reason of Churn",
+                ],
+                min_count=5,
+                outfile=FEEDBACK_DIR / "loss_reasons_by_country.csv",
+            )
+        else:
+            print("[LossReason] No country column found for loss analysis.")
 
         # ---------- NEW: loss reasons by Deal Size (bucketed) ----------
         amount_col = first_present(train_df, AMOUNT_CANDIDATES)

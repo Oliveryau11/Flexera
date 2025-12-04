@@ -1,11 +1,19 @@
 field,value,count,loss_rate
-Account Region,NAM,19983,0.5426112195366061
-Account Region,APAC,5154,0.5205665502522313
-Account Region,EMEA,17329,0.4973743435858965
-Account Shipping Country,India,1138,0.5922671353251318
-Account Shipping Country,Canada,1316,0.5759878419452887
-Account Shipping Country,United States,17612,0.5398024074494663
-Account Shipping Country,Australia,1597,0.5372573575453976
-Account Shipping Country,United Kingdom,4342,0.5274067250115154
-Account Shipping Country,France,1078,0.5018552875695733
-Account Shipping Country,Germany,3904,0.4490266393442623
+Opportunity Reason Lost,"Not Progressing - Customer said ""not now""",4346,0.8550391164289002
+Opportunity Reason Lost,"Lost - Customer said ""not Flexera""",1315,0.8448669201520913
+Opportunity Reason Lost,Unknown,33303,0.07290634477374411
+Opportunity Reason Lost Detail,Stopped responding,1491,0.9121395036887995
+Opportunity Reason Lost Detail,Change in priorities,2047,0.8378114313629702
+Opportunity Reason Lost Detail,Unknown,34472,0.08511255511719656
+Account Region,APAC,5145,0.21885325558794946
+Account Region,EMEA,19462,0.19607440139759533
+Account Region,NAM,15778,0.1892508556217518
+Account Shipping Country,United Kingdom,4440,0.21846846846846846
+Account Shipping Country,India,1281,0.21779859484777517
+Account Shipping Country,Netherlands,1260,0.2119047619047619
+Account Shipping Country,United States,13249,0.19314665257755304
+Account Shipping Country,Germany,4971,0.1711929189297928
+Account Shipping Country,France,1214,0.17051070840197693
+Account Shipping Country,Sweden,1170,0.1606837606837607
+Account Shipping Country,Canada,1527,0.15979043876882776
+Account Shipping Country,Australia,2966,0.14699932569116655
