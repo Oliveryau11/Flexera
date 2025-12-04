@@ -6,18 +6,18 @@ import ModelInsights from "./pages/ModelInsights.jsx";
 
 export default function Root() {
   return (
-    <div className="min-h-screen bg-[#0f0f0f]">
-      {/* Minimal top bar */}
-      <nav className="border-b border-neutral-800 bg-[#0f0f0f]">
-        <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-between h-12">
-          <NavLink to="/" className="text-neutral-400 hover:text-neutral-100 text-xs uppercase tracking-[0.15em]">
+    <div className="min-h-screen bg-slate-50">
+      {/* Navigation */}
+      <nav className="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50">
+        <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-between h-14">
+          <NavLink to="/" className="text-slate-800 hover:text-blue-600 font-semibold text-sm uppercase tracking-wider">
             Flexera
           </NavLink>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-8">
             <NavLink 
               to="/" 
               className={({ isActive }) => 
-                `text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-amber-500' : 'text-neutral-500 hover:text-neutral-300'}`
+                `text-sm font-medium transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400 hover:text-slate-600'}`
               }
             >
               Dashboard
@@ -25,7 +25,7 @@ export default function Root() {
             <NavLink 
               to="/model-insights" 
               className={({ isActive }) => 
-                `text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-amber-500' : 'text-neutral-500 hover:text-neutral-300'}`
+                `text-sm font-medium transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400 hover:text-slate-600'}`
               }
             >
               Model
@@ -33,7 +33,7 @@ export default function Root() {
             <NavLink 
               to="/deal" 
               className={({ isActive }) => 
-                `text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-amber-500' : 'text-neutral-500 hover:text-neutral-300'}`
+                `text-sm font-medium transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400 hover:text-slate-600'}`
               }
             >
               Deals
@@ -41,7 +41,7 @@ export default function Root() {
             <NavLink 
               to="/competitors" 
               className={({ isActive }) => 
-                `text-xs uppercase tracking-wider transition-colors ${isActive ? 'text-amber-500' : 'text-neutral-500 hover:text-neutral-300'}`
+                `text-sm font-medium transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400 hover:text-slate-600'}`
               }
             >
               Analytics

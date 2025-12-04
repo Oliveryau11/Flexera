@@ -1083,8 +1083,9 @@ def train_and_score():
         name_col  = first_present(score_df, NAME_CANDIDATES)
         owner_col = first_present(score_df, OWNER_CANDIDATES)
         amount_col= first_present(score_df, AMOUNT_CANDIDATES)
+        region_col = "Account Region" if "Account Region" in score_df.columns else None
 
-        keep_cols_raw = [id_col, name_col, STAGE_COL, owner_col, CLOSE_DATE_COL, amount_col]
+        keep_cols_raw = [id_col, name_col, STAGE_COL, owner_col, CLOSE_DATE_COL, amount_col, region_col]
         keep_cols = [c for c in keep_cols_raw if c and c in score_df.columns]
 
         out = score_df[keep_cols].copy() if keep_cols else pd.DataFrame(index=score_df.index)
@@ -1092,7 +1093,8 @@ def train_and_score():
         out.rename(columns={id_col: "Opportunity ID",
                             name_col: "Opportunity Name",
                             owner_col: "Owner",
-                            amount_col: "Amount"}, inplace=True)
+                            amount_col: "Amount",
+                            region_col: "Region"}, inplace=True)
         out["win_prob"] = prob
         out["pred_at_prec_thr"] = (out["win_prob"] >= best_thr_prec).astype(int)
         out = out.sort_values("win_prob", ascending=False)

@@ -49,6 +49,7 @@ function transformPrediction(row, idx) {
   const name = row["Opportunity Name"] || "Unnamed Opportunity";
   const stage = row["Stage"] || "Unknown";
   const owner = row["Owner"] || "Unassigned";
+  const region = row["Region"] || "Unknown";
   const pWin = toNum(row["win_prob"]);
   const predAtThr = row["pred_at_prec_thr"] === "1";
   
@@ -71,7 +72,7 @@ function transformPrediction(row, idx) {
 
   return {
     id, name: name.length > 55 ? name.substring(0, 55) + "…" : name,
-    fullName: name, stage, owner,
+    fullName: name, stage, owner, region,
     p_win: Number.isFinite(pWin) ? pWin : null,
     pred_win: predAtThr, oppType, confidence, isClosed,
     status: isWon ? "Won" : (isLost ? "Lost" : (isMerged ? "Merged" : "Open")),
@@ -86,7 +87,7 @@ export default function App() {
   const [lossRegional, setLossRegional] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("overview");
-  const [filters, setFilters] = useState({ oppType: "All", confidence: "All", status: "Open" });
+  const [filters, setFilters] = useState({ oppType: "All", confidence: "All", status: "Open", region: "All" });
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -130,12 +131,14 @@ export default function App() {
   // Filter options & apply
   const oppTypes = useMemo(() => ["All", ...Array.from(new Set(deals.map(d => d.oppType)))], [deals]);
   const statuses = useMemo(() => ["All", ...Array.from(new Set(deals.map(d => d.status)))], [deals]);
+  const regions = useMemo(() => ["All", ...Array.from(new Set(deals.map(d => d.region).filter(r => r && r !== "Unknown")))], [deals]);
   
   const filtered = useMemo(() => {
     return deals.filter(d => {
       if (filters.oppType !== "All" && d.oppType !== filters.oppType) return false;
       if (filters.confidence !== "All" && d.confidence !== filters.confidence) return false;
       if (filters.status !== "All" && d.status !== filters.status) return false;
+      if (filters.region !== "All" && d.region !== filters.region) return false;
       if (searchTerm && !d.name.toLowerCase().includes(searchTerm.toLowerCase()) && 
           !d.id.toLowerCase().includes(searchTerm.toLowerCase())) return false;
       return true;
@@ -245,39 +248,39 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0f0f0f] flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-8 h-8 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto" />
-          <div className="mt-4 text-neutral-400 text-sm tracking-wide">Loading data…</div>
+          <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="mt-4 text-slate-500 text-sm">Loading data…</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-neutral-100">
+    <div className="min-h-screen bg-slate-50 text-slate-800">
       {/* Header */}
-      <header className="border-b border-neutral-800">
+      <header className="bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-[1400px] mx-auto px-8 py-5">
           <div className="flex items-end justify-between">
             <div>
-              <div className="text-xs text-neutral-500 uppercase tracking-[0.2em] mb-1">Flexera Intelligence</div>
-              <h1 className="text-2xl font-light tracking-tight">Win/Loss Analytics</h1>
+              <div className="text-xs text-slate-400 uppercase tracking-[0.2em] mb-1">Flexera Intelligence</div>
+              <h1 className="text-2xl font-semibold text-slate-800">Win/Loss Analytics</h1>
             </div>
             <div className="flex items-center gap-10 text-sm">
               <div>
-                <div className="text-neutral-500 text-xs mb-0.5">Model</div>
-                <div className="text-amber-500 font-medium">{modelInfo?.best_model || "XGBoost"}</div>
+                <div className="text-slate-400 text-xs mb-0.5">Model</div>
+                <div className="text-blue-600 font-semibold">{modelInfo?.best_model || "XGBoost"}</div>
               </div>
               <div>
-                <div className="text-neutral-500 text-xs mb-0.5">AUC Score</div>
-                <div className="font-medium">{modelMetrics ? (parseFloat(modelMetrics.val_auc) * 100).toFixed(1) : "—"}%</div>
+                <div className="text-slate-400 text-xs mb-0.5">AUC Score</div>
+                <div className="font-semibold text-slate-700">{modelMetrics ? (parseFloat(modelMetrics.val_auc) * 100).toFixed(1) : "—"}%</div>
               </div>
               <div>
-                <div className="text-neutral-500 text-xs mb-0.5">Total Deals</div>
-                <div className="font-medium">{deals.length.toLocaleString()}</div>
+                <div className="text-slate-400 text-xs mb-0.5">Total Deals</div>
+                <div className="font-semibold text-slate-700">{deals.length.toLocaleString()}</div>
               </div>
-              <Link to="/model-insights" className="text-amber-500 hover:text-amber-400 text-xs uppercase tracking-wider">
+              <Link to="/model-insights" className="text-blue-600 hover:text-blue-700 text-xs font-medium uppercase tracking-wider">
                 Model Details →
               </Link>
             </div>
@@ -287,18 +290,18 @@ export default function App() {
 
       <div className="max-w-[1400px] mx-auto px-8 py-6">
         {/* Tab Navigation */}
-        <div className="flex gap-1 mb-8 border-b border-neutral-800">
+        <div className="flex gap-1 mb-8 border-b border-slate-200">
           <button onClick={() => setActiveTab("overview")}
-            className={`px-5 py-3 text-sm tracking-wide transition-colors relative ${
-              activeTab === "overview" ? "text-neutral-100" : "text-neutral-500 hover:text-neutral-300"}`}>
+            className={`px-5 py-3 text-sm font-medium transition-colors relative ${
+              activeTab === "overview" ? "text-slate-800" : "text-slate-400 hover:text-slate-600"}`}>
             Pipeline
-            {activeTab === "overview" && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-500" />}
+            {activeTab === "overview" && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 rounded-full" />}
           </button>
           <button onClick={() => setActiveTab("loss")}
-            className={`px-5 py-3 text-sm tracking-wide transition-colors relative ${
-              activeTab === "loss" ? "text-neutral-100" : "text-neutral-500 hover:text-neutral-300"}`}>
+            className={`px-5 py-3 text-sm font-medium transition-colors relative ${
+              activeTab === "loss" ? "text-slate-800" : "text-slate-400 hover:text-slate-600"}`}>
             Loss Analysis
-            {activeTab === "loss" && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500" />}
+            {activeTab === "loss" && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-rose-500 rounded-full" />}
           </button>
         </div>
 
@@ -306,155 +309,159 @@ export default function App() {
           <>
             {/* Metrics Row */}
             <div className="grid grid-cols-3 gap-6 mb-8">
-              <div className="bg-amber-950/30 border border-amber-900/50 p-5">
-                <div className="text-amber-400/70 text-xs uppercase tracking-wider mb-2">
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-5 text-white shadow-lg shadow-blue-500/20">
+                <div className="text-blue-100 text-xs uppercase tracking-wider mb-2">
                   {filters.status === "Open" ? "Avg Predicted p(Win)" : 
                    filters.status === "Won" ? "Avg p(Win) — Won" :
                    filters.status === "Lost" ? "Avg p(Win) — Lost" : "Avg p(Win)"}
                 </div>
-                <div className="text-3xl font-light text-amber-400">{(avgProbability * 100).toFixed(1)}%</div>
-                <div className="text-xs text-neutral-600 mt-1">{dealsWithProb.length.toLocaleString()} deals</div>
+                <div className="text-3xl font-bold">{(avgProbability * 100).toFixed(1)}%</div>
+                <div className="text-xs text-blue-100 mt-1">{dealsWithProb.length.toLocaleString()} deals</div>
               </div>
-              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Confidence Split</div>
-                <div className="flex items-baseline gap-3">
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-slate-400 text-xs uppercase tracking-wider mb-2">Confidence Split</div>
+                <div className="flex items-baseline gap-4">
                   <div className="text-center">
-                    <div className="text-xl text-emerald-500">{confidenceCounts.high.toLocaleString()}</div>
-                    <div className="text-xs text-neutral-600">High</div>
+                    <div className="text-xl font-bold text-emerald-500">{confidenceCounts.high.toLocaleString()}</div>
+                    <div className="text-xs text-slate-400">High</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl text-amber-500">{confidenceCounts.medium.toLocaleString()}</div>
-                    <div className="text-xs text-neutral-600">Med</div>
+                    <div className="text-xl font-bold text-amber-500">{confidenceCounts.medium.toLocaleString()}</div>
+                    <div className="text-xs text-slate-400">Med</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl text-red-400">{confidenceCounts.low.toLocaleString()}</div>
-                    <div className="text-xs text-neutral-600">Low</div>
+                    <div className="text-xl font-bold text-rose-500">{confidenceCounts.low.toLocaleString()}</div>
+                    <div className="text-xs text-slate-400">Low</div>
                   </div>
                 </div>
               </div>
-              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Historical Win Rate</div>
-                <div className="text-3xl font-light">{(historicalWinRate * 100).toFixed(1)}%</div>
-                <div className="text-xs text-neutral-600 mt-1">All time ({deals.filter(d => d.isClosed).length.toLocaleString()} closed)</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-slate-400 text-xs uppercase tracking-wider mb-2">Historical Win Rate</div>
+                <div className="text-3xl font-bold text-slate-700">{(historicalWinRate * 100).toFixed(1)}%</div>
+                <div className="text-xs text-slate-400 mt-1">All time ({deals.filter(d => d.isClosed).length.toLocaleString()} closed)</div>
               </div>
             </div>
 
             {/* Filters */}
-            <div className="bg-neutral-900/30 border border-neutral-800 p-4 mb-6">
-              <div className="flex flex-wrap items-center gap-4">
+            <div className="bg-white rounded-xl border border-slate-200 p-4 mb-6 shadow-sm">
+              <div className="flex flex-wrap items-center gap-3">
                 <input type="text" placeholder="Search opportunities…" value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="flex-1 min-w-[200px] bg-transparent border border-neutral-700 px-4 py-2 text-sm focus:outline-none focus:border-amber-500/50 placeholder:text-neutral-600" />
+                  className="flex-1 min-w-[180px] bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 placeholder:text-slate-400" />
+                <select value={filters.region} onChange={(e) => setFilters(f => ({ ...f, region: e.target.value }))}
+                  className="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400">
+                  {regions.map(r => <option key={r} value={r}>{r === "All" ? "All regions" : r}</option>)}
+                </select>
                 <select value={filters.oppType} onChange={(e) => setFilters(f => ({ ...f, oppType: e.target.value }))}
-                  className="bg-transparent border border-neutral-700 px-3 py-2 text-sm focus:outline-none">
-                  {oppTypes.map(t => <option key={t} value={t} className="bg-neutral-900">{t === "All" ? "All types" : t}</option>)}
+                  className="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400">
+                  {oppTypes.map(t => <option key={t} value={t}>{t === "All" ? "All types" : t}</option>)}
                 </select>
                 <select value={filters.confidence} onChange={(e) => setFilters(f => ({ ...f, confidence: e.target.value }))}
-                  className="bg-transparent border border-neutral-700 px-3 py-2 text-sm focus:outline-none">
-                  <option value="All" className="bg-neutral-900">All confidence</option>
-                  <option value="High" className="bg-neutral-900">High (≥90%)</option>
-                  <option value="Medium" className="bg-neutral-900">Medium (70-90%)</option>
-                  <option value="Low" className="bg-neutral-900">Low (&lt;70%)</option>
+                  className="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400">
+                  <option value="All">All confidence</option>
+                  <option value="High">High (≥90%)</option>
+                  <option value="Medium">Medium (70-90%)</option>
+                  <option value="Low">Low (&lt;70%)</option>
                 </select>
                 <select value={filters.status} onChange={(e) => setFilters(f => ({ ...f, status: e.target.value }))}
-                  className="bg-transparent border border-neutral-700 px-3 py-2 text-sm focus:outline-none">
-                  {statuses.map(s => <option key={s} value={s} className="bg-neutral-900">{s === "All" ? "All statuses" : s}</option>)}
+                  className="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400">
+                  {statuses.map(s => <option key={s} value={s}>{s === "All" ? "All statuses" : s}</option>)}
                 </select>
-                <button onClick={() => { setFilters({ oppType: "All", confidence: "All", status: "Open" }); setSearchTerm(""); }}
-                  className="text-xs text-neutral-500 hover:text-neutral-300">Reset</button>
-                <div className="text-xs text-neutral-500 ml-auto">{filtered.length.toLocaleString()} {filters.status === "All" ? "deals" : filters.status.toLowerCase() + " deals"}</div>
+                <button onClick={() => { setFilters({ oppType: "All", confidence: "All", status: "Open", region: "All" }); setSearchTerm(""); }}
+                  className="text-xs text-slate-400 hover:text-slate-600 font-medium">Reset</button>
+                <div className="text-xs text-slate-500 ml-auto font-medium">{filtered.length.toLocaleString()} {filters.status === "All" ? "deals" : filters.status.toLowerCase() + " deals"}</div>
               </div>
             </div>
 
             {/* Charts */}
             <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="bg-neutral-900/30 border border-neutral-800 p-5">
-                <div className="text-xs text-neutral-500 uppercase tracking-wider mb-4">Probability Distribution</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-xs text-slate-400 uppercase tracking-wider mb-4 font-medium">Probability Distribution</div>
                 <div className="h-56">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={probDist}>
                       <defs>
                         <linearGradient id="probGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#f59e0b" stopOpacity={0.3}/>
-                          <stop offset="100%" stopColor="#f59e0b" stopOpacity={0}/>
+                          <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.3}/>
+                          <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.05}/>
                         </linearGradient>
                       </defs>
-                      <CartesianGrid stroke="#262626" strokeDasharray="3 3" />
-                      <XAxis dataKey="range" tick={{ fill: '#737373', fontSize: 10 }} axisLine={{ stroke: '#404040' }} />
-                      <YAxis tick={{ fill: '#737373', fontSize: 10 }} axisLine={{ stroke: '#404040' }} />
-                      <Tooltip contentStyle={{ background: '#171717', border: '1px solid #404040', borderRadius: 0 }} />
-                      <Area type="monotone" dataKey="count" stroke="#f59e0b" strokeWidth={1.5} fill="url(#probGrad)" />
+                      <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" />
+                      <XAxis dataKey="range" tick={{ fill: '#64748b', fontSize: 10 }} axisLine={{ stroke: '#cbd5e1' }} />
+                      <YAxis tick={{ fill: '#64748b', fontSize: 10 }} axisLine={{ stroke: '#cbd5e1' }} />
+                      <Tooltip contentStyle={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 8, boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
+                      <Area type="monotone" dataKey="count" stroke="#3b82f6" strokeWidth={2} fill="url(#probGrad)" />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>
               </div>
 
-              <div className="bg-neutral-900/30 border border-neutral-800 p-5">
-                <div className="text-xs text-neutral-500 uppercase tracking-wider mb-4">By Opportunity Type</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-xs text-slate-400 uppercase tracking-wider mb-4 font-medium">By Opportunity Type</div>
                 <div className="h-56">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={byOppType}>
-                      <CartesianGrid stroke="#262626" strokeDasharray="3 3" />
-                      <XAxis dataKey="type" tick={{ fill: '#737373', fontSize: 10 }} axisLine={{ stroke: '#404040' }} />
-                      <YAxis yAxisId="l" tick={{ fill: '#737373', fontSize: 10 }} axisLine={{ stroke: '#404040' }} />
-                      <YAxis yAxisId="r" orientation="right" tick={{ fill: '#737373', fontSize: 10 }} axisLine={{ stroke: '#404040' }} />
-                      <Tooltip contentStyle={{ background: '#171717', border: '1px solid #404040', borderRadius: 0 }} />
-                      <Bar yAxisId="l" dataKey="count" fill="#525252" name="Count" />
-                      <Bar yAxisId="r" dataKey="avgP" fill="#f59e0b" name="Avg %" />
+                      <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" />
+                      <XAxis dataKey="type" tick={{ fill: '#64748b', fontSize: 10 }} axisLine={{ stroke: '#cbd5e1' }} />
+                      <YAxis yAxisId="l" tick={{ fill: '#64748b', fontSize: 10 }} axisLine={{ stroke: '#cbd5e1' }} />
+                      <YAxis yAxisId="r" orientation="right" tick={{ fill: '#64748b', fontSize: 10 }} axisLine={{ stroke: '#cbd5e1' }} />
+                      <Tooltip contentStyle={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 8 }} />
+                      <Bar yAxisId="l" dataKey="count" fill="#94a3b8" name="Count" radius={[4, 4, 0, 0]} />
+                      <Bar yAxisId="r" dataKey="avgP" fill="#3b82f6" name="Avg %" radius={[4, 4, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
               </div>
 
-              <div className="bg-neutral-900/30 border border-neutral-800 p-5">
-                <div className="text-xs text-neutral-500 uppercase tracking-wider mb-4">Confidence Breakdown</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-xs text-slate-400 uppercase tracking-wider mb-4 font-medium">Confidence Breakdown</div>
                 <div className="h-56 flex items-center justify-center">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                       <Pie data={byConfidence} cx="50%" cy="50%" innerRadius={50} outerRadius={80} dataKey="value" nameKey="name">
                         <Cell fill="#10b981" />
                         <Cell fill="#f59e0b" />
-                        <Cell fill="#ef4444" />
+                        <Cell fill="#f43f5e" />
                       </Pie>
-                      <Tooltip contentStyle={{ background: '#171717', border: '1px solid #404040', borderRadius: 0 }} />
+                      <Tooltip contentStyle={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 8 }} />
                     </PieChart>
                   </ResponsiveContainer>
-                  <div className="text-xs space-y-2">
-                    <div className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500" /> High (≥90%)</div>
-                    <div className="flex items-center gap-2"><div className="w-2 h-2 bg-amber-500" /> Medium (70-90%)</div>
-                    <div className="flex items-center gap-2"><div className="w-2 h-2 bg-red-500" /> Low (&lt;70%)</div>
+                  <div className="text-xs space-y-2 text-slate-600">
+                    <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-500" /> High (≥90%)</div>
+                    <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-amber-500" /> Medium (70-90%)</div>
+                    <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-rose-500" /> Low (&lt;70%)</div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-neutral-900/30 border border-neutral-800 p-5">
-                <div className="text-xs text-neutral-500 uppercase tracking-wider mb-4">Quick Actions</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-xs text-slate-400 uppercase tracking-wider mb-4 font-medium">Quick Actions</div>
                 <div className="space-y-3">
-                  <Link to="/deal" className="block p-3 border border-neutral-700 hover:border-amber-500/50 transition-colors">
-                    <div className="text-sm font-medium">View All Deals</div>
-                    <div className="text-xs text-neutral-500 mt-0.5">Browse {deals.length.toLocaleString()} opportunities</div>
+                  <Link to="/deal" className="block p-3 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                    <div className="text-sm font-semibold text-slate-700">View All Deals</div>
+                    <div className="text-xs text-slate-400 mt-0.5">Browse {deals.length.toLocaleString()} opportunities</div>
                   </Link>
-                  <button onClick={() => setActiveTab("loss")} className="w-full text-left p-3 border border-neutral-700 hover:border-red-500/50 transition-colors">
-                    <div className="text-sm font-medium">Analyze Losses</div>
-                    <div className="text-xs text-neutral-500 mt-0.5">Understand why deals are lost</div>
+                  <button onClick={() => setActiveTab("loss")} className="w-full text-left p-3 bg-slate-50 rounded-lg border border-slate-200 hover:border-rose-300 hover:bg-rose-50 transition-colors">
+                    <div className="text-sm font-semibold text-slate-700">Analyze Losses</div>
+                    <div className="text-xs text-slate-400 mt-0.5">Understand why deals are lost</div>
                   </button>
-                  <Link to="/competitors" className="block p-3 border border-neutral-700 hover:border-amber-500/50 transition-colors">
-                    <div className="text-sm font-medium">Team Performance</div>
-                    <div className="text-xs text-neutral-500 mt-0.5">Sales analytics by owner</div>
+                  <Link to="/competitors" className="block p-3 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                    <div className="text-sm font-semibold text-slate-700">Team Performance</div>
+                    <div className="text-xs text-slate-400 mt-0.5">Sales analytics by owner</div>
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Table */}
-            <div className="bg-neutral-900/30 border border-neutral-800">
-              <div className="px-5 py-4 border-b border-neutral-800">
-                <div className="text-xs text-neutral-500 uppercase tracking-wider">Opportunities</div>
+            <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+              <div className="px-5 py-4 border-b border-slate-100 bg-slate-50">
+                <div className="text-xs text-slate-500 uppercase tracking-wider font-medium">Opportunities</div>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="text-left text-neutral-500 text-xs uppercase tracking-wider border-b border-neutral-800">
+                    <tr className="text-left text-slate-400 text-xs uppercase tracking-wider border-b border-slate-100 bg-slate-50/50">
                       <th className="px-5 py-3 font-medium">Opportunity</th>
                       <th className="px-5 py-3 font-medium">Type</th>
                       <th className="px-5 py-3 font-medium">Owner</th>
@@ -465,32 +472,32 @@ export default function App() {
                   </thead>
                   <tbody>
                     {filtered.slice(0, 50).map((d, i) => (
-                      <tr key={d.id} className={`border-b border-neutral-800/50 hover:bg-neutral-800/30 ${i % 2 === 0 ? 'bg-neutral-900/20' : ''}`}>
+                      <tr key={d.id} className={`border-b border-slate-100 hover:bg-blue-50/50 transition-colors ${i % 2 === 0 ? 'bg-slate-50/30' : ''}`}>
                         <td className="px-5 py-3">
-                          <Link to={`/deal/${encodeURIComponent(d.id)}`} state={{ deal: d }} className="text-amber-500 hover:underline">
+                          <Link to={`/deal/${encodeURIComponent(d.id)}`} state={{ deal: d }} className="text-blue-600 hover:text-blue-700 font-medium hover:underline">
                             {d.name}
                           </Link>
-                          <div className="text-xs text-neutral-600 mt-0.5">{d.id}</div>
+                          <div className="text-xs text-slate-400 mt-0.5">{d.id}</div>
                         </td>
-                        <td className="px-5 py-3 text-neutral-400">{d.oppType}</td>
-                        <td className="px-5 py-3 text-neutral-400">{d.owner}</td>
-                        <td className="px-5 py-3 text-neutral-500 text-xs">{d.stage}</td>
+                        <td className="px-5 py-3 text-slate-600">{d.oppType}</td>
+                        <td className="px-5 py-3 text-slate-600">{d.owner}</td>
+                        <td className="px-5 py-3 text-slate-400 text-xs">{d.stage}</td>
                         <td className="px-5 py-3 text-right">
                           {d.p_win !== null ? (
-                            <span className={
-                              d.p_win >= 0.9 ? 'text-emerald-500' : 
-                              d.p_win >= 0.7 ? 'text-amber-500' : 
-                              'text-red-400'
-                            }>
+                            <span className={`font-semibold ${
+                              d.p_win >= 0.9 ? 'text-emerald-600' : 
+                              d.p_win >= 0.7 ? 'text-amber-600' : 
+                              'text-rose-600'
+                            }`}>
                               {(d.p_win * 100).toFixed(1)}%
                             </span>
                           ) : '—'}
                         </td>
                         <td className="px-5 py-3">
-                          <span className={`text-xs px-2 py-0.5 ${
-                            d.status === 'Won' ? 'bg-emerald-500/20 text-emerald-400' :
-                            d.status === 'Lost' ? 'bg-red-500/20 text-red-400' :
-                            'bg-neutral-700/50 text-neutral-400'
+                          <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${
+                            d.status === 'Won' ? 'bg-emerald-100 text-emerald-700' :
+                            d.status === 'Lost' ? 'bg-rose-100 text-rose-700' :
+                            'bg-slate-100 text-slate-600'
                           }`}>{d.status}</span>
                         </td>
                       </tr>
@@ -499,8 +506,8 @@ export default function App() {
                 </table>
               </div>
               {filtered.length > 50 && (
-                <div className="px-5 py-3 text-xs text-neutral-500 border-t border-neutral-800">
-                  Showing 50 of {filtered.length.toLocaleString()} — <Link to="/deal" className="text-amber-500 hover:underline">View all</Link>
+                <div className="px-5 py-3 text-xs text-slate-500 border-t border-slate-100 bg-slate-50">
+                  Showing 50 of {filtered.length.toLocaleString()} — <Link to="/deal" className="text-blue-600 hover:underline font-medium">View all</Link>
                 </div>
               )}
             </div>
@@ -510,102 +517,102 @@ export default function App() {
           <>
             {/* Loss Metrics */}
             <div className="grid grid-cols-4 gap-6 mb-8">
-              <div className="bg-red-950/30 border border-red-900/50 p-5">
-                <div className="text-red-400/70 text-xs uppercase tracking-wider mb-2">Total Lost</div>
-                <div className="text-3xl font-light text-red-400">{totalLostDeals.toLocaleString()}</div>
+              <div className="bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl p-5 text-white shadow-lg shadow-rose-500/20">
+                <div className="text-rose-100 text-xs uppercase tracking-wider mb-2">Total Lost</div>
+                <div className="text-3xl font-bold">{totalLostDeals.toLocaleString()}</div>
               </div>
-              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Top Reason</div>
-                <div className="text-xl font-light">Timing Issues</div>
-                <div className="text-xs text-neutral-600 mt-1">{lossCategories[0]?.value?.toLocaleString() || 0} deals</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-slate-400 text-xs uppercase tracking-wider mb-2">Top Reason</div>
+                <div className="text-xl font-bold text-slate-700">Timing Issues</div>
+                <div className="text-xs text-slate-400 mt-1">{lossCategories[0]?.value?.toLocaleString() || 0} deals</div>
               </div>
-              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Competitive Loss</div>
-                <div className="text-xl font-light text-orange-400">{(lossCategories.find(c => c.name === "Competition")?.value || 0).toLocaleString()}</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-slate-400 text-xs uppercase tracking-wider mb-2">Competitive Loss</div>
+                <div className="text-xl font-bold text-orange-500">{(lossCategories.find(c => c.name === "Competition")?.value || 0).toLocaleString()}</div>
               </div>
-              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Pricing Issues</div>
-                <div className="text-xl font-light text-amber-400">{(lossCategories.find(c => c.name === "Pricing")?.value || 0).toLocaleString()}</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-slate-400 text-xs uppercase tracking-wider mb-2">Pricing Issues</div>
+                <div className="text-xl font-bold text-amber-500">{(lossCategories.find(c => c.name === "Pricing")?.value || 0).toLocaleString()}</div>
               </div>
             </div>
 
             {/* Key Insights */}
-            <div className="bg-red-950/20 border border-red-900/30 p-6 mb-8">
-              <div className="text-xs text-red-400/70 uppercase tracking-wider mb-4">Key Findings</div>
+            <div className="bg-rose-50 border border-rose-200 rounded-xl p-6 mb-8">
+              <div className="text-xs text-rose-600 uppercase tracking-wider mb-4 font-semibold">Key Findings</div>
               <div className="grid grid-cols-3 gap-6">
                 <div>
-                  <div className="text-2xl font-light text-red-400 mb-1">#1</div>
-                  <div className="font-medium">Timing & Readiness</div>
-                  <div className="text-sm text-neutral-400 mt-1">Most deals lost due to customers not being ready. Consider better qualification earlier in the cycle.</div>
+                  <div className="text-2xl font-bold text-rose-500 mb-1">#1</div>
+                  <div className="font-semibold text-slate-700">Timing & Readiness</div>
+                  <div className="text-sm text-slate-500 mt-1">Most deals lost due to customers not being ready. Consider better qualification earlier in the cycle.</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-light text-orange-400 mb-1">#2</div>
-                  <div className="font-medium">Competitive Pressure</div>
-                  <div className="text-sm text-neutral-400 mt-1">Significant losses to competitors. Review battle cards and differentiation messaging.</div>
+                  <div className="text-2xl font-bold text-orange-500 mb-1">#2</div>
+                  <div className="font-semibold text-slate-700">Competitive Pressure</div>
+                  <div className="text-sm text-slate-500 mt-1">Significant losses to competitors. Review battle cards and differentiation messaging.</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-light text-amber-400 mb-1">#3</div>
-                  <div className="font-medium">Budget & Pricing</div>
-                  <div className="text-sm text-neutral-400 mt-1">Combined budget and pricing issues represent notable loss driver. Consider value-based selling.</div>
+                  <div className="text-2xl font-bold text-amber-500 mb-1">#3</div>
+                  <div className="font-semibold text-slate-700">Budget & Pricing</div>
+                  <div className="text-sm text-slate-500 mt-1">Combined budget and pricing issues represent notable loss driver. Consider value-based selling.</div>
                 </div>
               </div>
             </div>
 
             {/* Loss Charts */}
             <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="bg-neutral-900/30 border border-neutral-800 p-5">
-                <div className="text-xs text-neutral-500 uppercase tracking-wider mb-4">Loss Reasons</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-xs text-slate-400 uppercase tracking-wider mb-4 font-medium">Loss Reasons</div>
                 <div className="h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={topLossReasons} layout="vertical">
-                      <CartesianGrid stroke="#262626" strokeDasharray="3 3" />
-                      <XAxis type="number" tick={{ fill: '#737373', fontSize: 10 }} axisLine={{ stroke: '#404040' }} />
-                      <YAxis type="category" dataKey="reason" tick={{ fill: '#a3a3a3', fontSize: 10 }} width={100} axisLine={{ stroke: '#404040' }} />
-                      <Tooltip contentStyle={{ background: '#171717', border: '1px solid #404040', borderRadius: 0 }}
+                      <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" />
+                      <XAxis type="number" tick={{ fill: '#64748b', fontSize: 10 }} axisLine={{ stroke: '#cbd5e1' }} />
+                      <YAxis type="category" dataKey="reason" tick={{ fill: '#475569', fontSize: 10 }} width={100} axisLine={{ stroke: '#cbd5e1' }} />
+                      <Tooltip contentStyle={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 8 }}
                         formatter={(v) => [v.toLocaleString(), "Lost"]}
                         labelFormatter={(_, p) => p?.[0]?.payload?.fullReason || ""} />
-                      <Bar dataKey="count" fill="#ef4444" />
+                      <Bar dataKey="count" fill="#f43f5e" radius={[0, 4, 4, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
               </div>
 
-              <div className="bg-neutral-900/30 border border-neutral-800 p-5">
-                <div className="text-xs text-neutral-500 uppercase tracking-wider mb-4">Loss Categories</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                <div className="text-xs text-slate-400 uppercase tracking-wider mb-4 font-medium">Loss Categories</div>
                 <div className="h-64 flex items-center">
                   <ResponsiveContainer width="60%" height="100%">
                     <PieChart>
                       <Pie data={lossCategories} cx="50%" cy="50%" innerRadius={45} outerRadius={75} dataKey="value">
                         {lossCategories.map((_, i) => (
-                          <Cell key={i} fill={['#ef4444', '#f97316', '#eab308', '#a3e635', '#22d3ee', '#818cf8'][i % 6]} />
+                          <Cell key={i} fill={['#f43f5e', '#f97316', '#eab308', '#22c55e', '#06b6d4', '#8b5cf6'][i % 6]} />
                         ))}
                       </Pie>
-                      <Tooltip contentStyle={{ background: '#171717', border: '1px solid #404040', borderRadius: 0 }} />
+                      <Tooltip contentStyle={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 8 }} />
                     </PieChart>
                   </ResponsiveContainer>
                   <div className="text-xs space-y-1.5">
                     {lossCategories.slice(0, 5).map((c, i) => (
                       <div key={c.name} className="flex items-center gap-2">
-                        <div className="w-2 h-2" style={{ background: ['#ef4444', '#f97316', '#eab308', '#a3e635', '#22d3ee'][i] }} />
-                        <span className="text-neutral-400">{c.name}</span>
+                        <div className="w-2 h-2 rounded-full" style={{ background: ['#f43f5e', '#f97316', '#eab308', '#22c55e', '#06b6d4'][i] }} />
+                        <span className="text-slate-600">{c.name}</span>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <div className="bg-neutral-900/30 border border-neutral-800 p-5 col-span-2">
-                <div className="text-xs text-neutral-500 uppercase tracking-wider mb-4">Loss Patterns by Region</div>
+              <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm col-span-2">
+                <div className="text-xs text-slate-400 uppercase tracking-wider mb-4 font-medium">Loss Patterns by Region</div>
                 <div className="h-56">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={lossByRegion}>
-                      <CartesianGrid stroke="#262626" strokeDasharray="3 3" />
-                      <XAxis dataKey="region" tick={{ fill: '#737373', fontSize: 11 }} axisLine={{ stroke: '#404040' }} />
-                      <YAxis tick={{ fill: '#737373', fontSize: 10 }} axisLine={{ stroke: '#404040' }} />
-                      <Tooltip contentStyle={{ background: '#171717', border: '1px solid #404040', borderRadius: 0 }} />
+                      <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" />
+                      <XAxis dataKey="region" tick={{ fill: '#64748b', fontSize: 11 }} axisLine={{ stroke: '#cbd5e1' }} />
+                      <YAxis tick={{ fill: '#64748b', fontSize: 10 }} axisLine={{ stroke: '#cbd5e1' }} />
+                      <Tooltip contentStyle={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 8 }} />
                       <Legend wrapperStyle={{ fontSize: 11 }} />
-                      <Bar dataKey="timing" name="Timing" stackId="a" fill="#f59e0b" />
-                      <Bar dataKey="competition" name="Competition" stackId="a" fill="#ef4444" />
+                      <Bar dataKey="timing" name="Timing" stackId="a" fill="#f59e0b" radius={[4, 4, 0, 0]} />
+                      <Bar dataKey="competition" name="Competition" stackId="a" fill="#f43f5e" />
                       <Bar dataKey="budget" name="Budget" stackId="a" fill="#8b5cf6" />
                       <Bar dataKey="pricing" name="Pricing" stackId="a" fill="#06b6d4" />
                     </BarChart>
@@ -615,13 +622,13 @@ export default function App() {
             </div>
 
             {/* Loss Reasons Table */}
-            <div className="bg-neutral-900/30 border border-neutral-800">
-              <div className="px-5 py-4 border-b border-neutral-800">
-                <div className="text-xs text-neutral-500 uppercase tracking-wider">All Loss Reasons</div>
+            <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+              <div className="px-5 py-4 border-b border-slate-100 bg-slate-50">
+                <div className="text-xs text-slate-500 uppercase tracking-wider font-medium">All Loss Reasons</div>
               </div>
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-left text-neutral-500 text-xs uppercase tracking-wider border-b border-neutral-800">
+                  <tr className="text-left text-slate-400 text-xs uppercase tracking-wider border-b border-slate-100 bg-slate-50/50">
                     <th className="px-5 py-3 font-medium w-8">#</th>
                     <th className="px-5 py-3 font-medium">Reason</th>
                     <th className="px-5 py-3 font-medium text-right">Lost Deals</th>
@@ -630,13 +637,13 @@ export default function App() {
                 </thead>
                 <tbody>
                   {topLossReasons.map((r, i) => (
-                    <tr key={i} className="border-b border-neutral-800/50 hover:bg-neutral-800/30">
-                      <td className="px-5 py-3 text-neutral-600">{i + 1}</td>
-                      <td className="px-5 py-3">{r.fullReason}</td>
-                      <td className="px-5 py-3 text-right text-red-400 font-medium">{r.count.toLocaleString()}</td>
+                    <tr key={i} className="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                      <td className="px-5 py-3 text-slate-400">{i + 1}</td>
+                      <td className="px-5 py-3 text-slate-700">{r.fullReason}</td>
+                      <td className="px-5 py-3 text-right text-rose-600 font-semibold">{r.count.toLocaleString()}</td>
                       <td className="px-5 py-3">
-                        <div className="h-1.5 bg-neutral-800 w-full">
-                          <div className="h-full bg-red-500" style={{ width: `${(r.count / (topLossReasons[0]?.count || 1)) * 100}%` }} />
+                        <div className="h-2 bg-slate-100 rounded-full w-full overflow-hidden">
+                          <div className="h-full bg-rose-500 rounded-full" style={{ width: `${(r.count / (topLossReasons[0]?.count || 1)) * 100}%` }} />
                         </div>
                       </td>
                     </tr>

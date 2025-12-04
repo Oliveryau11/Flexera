@@ -128,98 +128,98 @@ export default function CompetitorTracker() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0f0f0f] flex items-center justify-center">
-        <div className="w-6 h-6 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-neutral-100">
+    <div className="min-h-screen bg-slate-50 text-slate-800">
       <div className="max-w-[1400px] mx-auto px-8 py-8">
         <div className="flex items-end justify-between mb-8">
           <div>
-            <div className="text-xs text-neutral-500 uppercase tracking-[0.2em] mb-1">Performance</div>
-            <h1 className="text-2xl font-light">Team Analytics</h1>
+            <div className="text-xs text-slate-400 uppercase tracking-[0.2em] mb-1">Performance</div>
+            <h1 className="text-2xl font-semibold text-slate-800">Team Analytics</h1>
           </div>
           <select value={filter} onChange={(e) => setFilter(e.target.value)}
-            className="bg-transparent border border-neutral-700 px-4 py-2 text-sm focus:outline-none">
-            <option value="All" className="bg-neutral-900">All confidence</option>
-            <option value="High" className="bg-neutral-900">High</option>
-            <option value="Medium" className="bg-neutral-900">Medium</option>
-            <option value="Low" className="bg-neutral-900">Low</option>
+            className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-400 shadow-sm">
+            <option value="All">All confidence</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
           </select>
         </div>
 
         {/* Metrics */}
         <div className="grid grid-cols-4 gap-6 mb-8">
-          <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-            <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Total Deals</div>
-            <div className="text-3xl font-light">{filtered.length.toLocaleString()}</div>
+          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-5 text-white shadow-lg shadow-blue-500/20">
+            <div className="text-blue-100 text-xs uppercase tracking-wider mb-2">Total Deals</div>
+            <div className="text-3xl font-bold">{filtered.length.toLocaleString()}</div>
           </div>
-          <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-            <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Avg Probability</div>
-            <div className="text-3xl font-light text-amber-500">{(avgProbability * 100).toFixed(1)}%</div>
+          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+            <div className="text-slate-400 text-xs uppercase tracking-wider mb-2">Avg Probability</div>
+            <div className="text-3xl font-bold text-amber-500">{(avgProbability * 100).toFixed(1)}%</div>
           </div>
-          <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-            <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Win Rate</div>
-            <div className="text-3xl font-light text-emerald-500">{(winRate * 100).toFixed(1)}%</div>
+          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+            <div className="text-slate-400 text-xs uppercase tracking-wider mb-2">Win Rate</div>
+            <div className="text-3xl font-bold text-emerald-600">{(winRate * 100).toFixed(1)}%</div>
           </div>
-          <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-            <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Top Performer</div>
-            <div className="text-xl font-light">{byOwner[0]?.owner?.split(" ")[0] || "—"}</div>
-            <div className="text-xs text-neutral-600 mt-1">{byOwner[0]?.total || 0} deals</div>
+          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+            <div className="text-slate-400 text-xs uppercase tracking-wider mb-2">Top Performer</div>
+            <div className="text-xl font-bold text-slate-700">{byOwner[0]?.owner?.split(" ")[0] || "—"}</div>
+            <div className="text-xs text-slate-400 mt-1">{byOwner[0]?.total || 0} deals</div>
           </div>
         </div>
 
         {/* Charts */}
         <div className="grid grid-cols-2 gap-6 mb-8">
-          <div className="bg-neutral-900/30 border border-neutral-800 p-5">
-            <div className="text-xs text-neutral-500 uppercase tracking-wider mb-4">By Opportunity Type</div>
+          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+            <div className="text-xs text-slate-400 uppercase tracking-wider mb-4 font-medium">By Opportunity Type</div>
             <div className="h-56">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={byType}>
-                  <CartesianGrid stroke="#262626" strokeDasharray="3 3" />
-                  <XAxis dataKey="type" tick={{ fill: '#737373', fontSize: 11 }} axisLine={{ stroke: '#404040' }} />
-                  <YAxis tick={{ fill: '#737373', fontSize: 10 }} axisLine={{ stroke: '#404040' }} />
-                  <Tooltip contentStyle={{ background: '#171717', border: '1px solid #404040', borderRadius: 0 }} />
-                  <Bar dataKey="total" fill="#525252" name="Total" />
-                  <Bar dataKey="won" fill="#10b981" name="Won" />
+                  <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" />
+                  <XAxis dataKey="type" tick={{ fill: '#64748b', fontSize: 11 }} axisLine={{ stroke: '#cbd5e1' }} />
+                  <YAxis tick={{ fill: '#64748b', fontSize: 10 }} axisLine={{ stroke: '#cbd5e1' }} />
+                  <Tooltip contentStyle={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 8 }} />
+                  <Bar dataKey="total" fill="#94a3b8" name="Total" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="won" fill="#10b981" name="Won" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
           </div>
 
-          <div className="bg-neutral-900/30 border border-neutral-800 p-5">
-            <div className="text-xs text-neutral-500 uppercase tracking-wider mb-4">Confidence Distribution</div>
+          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+            <div className="text-xs text-slate-400 uppercase tracking-wider mb-4 font-medium">Confidence Distribution</div>
             <div className="h-56 flex items-center">
               <ResponsiveContainer width="60%" height="100%">
                 <PieChart>
                   <Pie data={byConfidence} cx="50%" cy="50%" innerRadius={40} outerRadius={70} dataKey="value">
                     <Cell fill="#10b981" />
                     <Cell fill="#f59e0b" />
-                    <Cell fill="#ef4444" />
+                    <Cell fill="#f43f5e" />
                   </Pie>
-                  <Tooltip contentStyle={{ background: '#171717', border: '1px solid #404040', borderRadius: 0 }} />
+                  <Tooltip contentStyle={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 8 }} />
                 </PieChart>
               </ResponsiveContainer>
-              <div className="text-xs space-y-2">
-                <div className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500" /> High</div>
-                <div className="flex items-center gap-2"><div className="w-2 h-2 bg-amber-500" /> Medium</div>
-                <div className="flex items-center gap-2"><div className="w-2 h-2 bg-red-500" /> Low</div>
+              <div className="text-xs space-y-2 text-slate-600">
+                <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-500" /> High</div>
+                <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-amber-500" /> Medium</div>
+                <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-rose-500" /> Low</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Leaderboard */}
-        <div className="bg-neutral-900/30 border border-neutral-800">
-          <div className="px-5 py-4 border-b border-neutral-800">
-            <div className="text-xs text-neutral-500 uppercase tracking-wider">Sales Leaderboard</div>
+        <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="px-5 py-4 border-b border-slate-100 bg-slate-50">
+            <div className="text-xs text-slate-500 uppercase tracking-wider font-medium">Sales Leaderboard</div>
           </div>
           <table className="w-full text-sm">
             <thead>
-              <tr className="text-left text-neutral-500 text-xs uppercase tracking-wider border-b border-neutral-800">
+              <tr className="text-left text-slate-400 text-xs uppercase tracking-wider border-b border-slate-100 bg-slate-50/50">
                 <th className="px-5 py-3 font-medium w-8">#</th>
                 <th className="px-5 py-3 font-medium">Account Executive</th>
                 <th className="px-5 py-3 font-medium text-right">Total</th>
@@ -231,22 +231,22 @@ export default function CompetitorTracker() {
             </thead>
             <tbody>
               {byOwner.map((o, i) => (
-                <tr key={o.owner} className={`border-b border-neutral-800/50 hover:bg-neutral-800/30 ${i % 2 === 0 ? 'bg-neutral-900/20' : ''}`}>
-                  <td className="px-5 py-3 text-neutral-600">{i + 1}</td>
-                  <td className="px-5 py-3 font-medium">{o.owner}</td>
-                  <td className="px-5 py-3 text-right">{o.total}</td>
-                  <td className="px-5 py-3 text-right text-emerald-500">{o.won}</td>
-                  <td className="px-5 py-3 text-right">{o.high}</td>
+                <tr key={o.owner} className={`border-b border-slate-100 hover:bg-blue-50/50 transition-colors ${i % 2 === 0 ? 'bg-slate-50/30' : ''}`}>
+                  <td className="px-5 py-3 text-slate-400">{i + 1}</td>
+                  <td className="px-5 py-3 font-semibold text-slate-700">{o.owner}</td>
+                  <td className="px-5 py-3 text-right text-slate-600">{o.total}</td>
+                  <td className="px-5 py-3 text-right text-emerald-600 font-medium">{o.won}</td>
+                  <td className="px-5 py-3 text-right text-slate-600">{o.high}</td>
                   <td className="px-5 py-3 text-right">
-                    <span className={o.avgP >= 90 ? 'text-emerald-500' : o.avgP >= 70 ? 'text-amber-500' : 'text-neutral-400'}>
+                    <span className={`font-medium ${o.avgP >= 90 ? 'text-emerald-600' : o.avgP >= 70 ? 'text-amber-600' : 'text-slate-500'}`}>
                       {o.avgP.toFixed(1)}%
                     </span>
                   </td>
                   <td className="px-5 py-3 text-right">
-                    <span className={`text-xs px-2 py-0.5 ${
-                      o.winRate >= 80 ? 'bg-emerald-500/20 text-emerald-400' :
-                      o.winRate >= 50 ? 'bg-amber-500/20 text-amber-400' :
-                      'bg-red-500/20 text-red-400'
+                    <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${
+                      o.winRate >= 80 ? 'bg-emerald-100 text-emerald-700' :
+                      o.winRate >= 50 ? 'bg-amber-100 text-amber-700' :
+                      'bg-rose-100 text-rose-700'
                     }`}>{o.winRate.toFixed(0)}%</span>
                   </td>
                 </tr>
