@@ -10,13 +10,11 @@ categorical,Close Date before Created
 categorical,Close Date Month
 categorical,Close Date in Past
 categorical,Close Date Quarter
-categorical,Closed Won iACV Bookings
 categorical,Created Date - Quarter
 categorical,Created Date Month
 categorical,Created Date Quarter
 categorical,Flexera 6Sense Segment Name
 categorical,Flexera One
-categorical,Has iACV
 categorical,ISO Code
 categorical,Last Meeting Date (PeopleAI) - Quarter
 categorical,Last Touch (PeopleAI) - Quarter

@@ -1,2 +1,2 @@
 info
-"Permutation importance failed: Unable to allocate 550. MiB for an array with shape (12121, 48) and data type <U248"
+"Permutation importance failed: Unable to allocate 527. MiB for an array with shape (12121, 46) and data type <U248"

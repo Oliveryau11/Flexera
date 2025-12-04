@@ -55,6 +55,7 @@ function transformPrediction(row, idx) {
   const isWon = /closed won/i.test(stage);
   const isLost = /closed lost/i.test(stage);
   const isMerged = /merged/i.test(stage);
+  const isClosed = isWon || isLost || isMerged;
   
   let oppType = "Other";
   if (/renewal/i.test(name)) oppType = "Renewal";
@@ -65,13 +66,14 @@ function transformPrediction(row, idx) {
   if (Number.isFinite(pWin)) {
     if (pWin >= 0.9) confidence = "High";
     else if (pWin >= 0.7) confidence = "Medium";
+    // Low includes everything below 70%
   }
 
   return {
     id, name: name.length > 55 ? name.substring(0, 55) + "…" : name,
     fullName: name, stage, owner,
     p_win: Number.isFinite(pWin) ? pWin : null,
-    pred_win: predAtThr, oppType, confidence,
+    pred_win: predAtThr, oppType, confidence, isClosed,
     status: isWon ? "Won" : (isLost ? "Lost" : (isMerged ? "Merged" : "Open")),
   };
 }
@@ -84,7 +86,7 @@ export default function App() {
   const [lossRegional, setLossRegional] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("overview");
-  const [filters, setFilters] = useState({ oppType: "All", confidence: "All", status: "All", minProb: 0 });
+  const [filters, setFilters] = useState({ oppType: "All", confidence: "All", status: "Open" });
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -134,22 +136,35 @@ export default function App() {
       if (filters.oppType !== "All" && d.oppType !== filters.oppType) return false;
       if (filters.confidence !== "All" && d.confidence !== filters.confidence) return false;
       if (filters.status !== "All" && d.status !== filters.status) return false;
-      if (d.p_win !== null && d.p_win < filters.minProb / 100) return false;
       if (searchTerm && !d.name.toLowerCase().includes(searchTerm.toLowerCase()) && 
           !d.id.toLowerCase().includes(searchTerm.toLowerCase())) return false;
       return true;
     });
   }, [deals, filters, searchTerm]);
 
-  // KPIs
+  // KPIs - Context-aware based on current filter
   const dealsWithProb = useMemo(() => filtered.filter(d => d.p_win !== null), [filtered]);
-  const avgPWin = useMemo(() => dealsWithProb.length === 0 ? 0 : dealsWithProb.reduce((s, d) => s + d.p_win, 0) / dealsWithProb.length, [dealsWithProb]);
-  const highConfCount = useMemo(() => dealsWithProb.filter(d => d.p_win >= 0.9).length, [dealsWithProb]);
-  const lostDealsCount = useMemo(() => filtered.filter(d => d.status === "Lost").length, [filtered]);
-  const winRate = useMemo(() => {
-    const closed = filtered.filter(d => d.status === "Won" || d.status === "Lost");
-    return closed.length === 0 ? 0 : closed.filter(d => d.status === "Won").length / closed.length;
-  }, [filtered]);
+  const avgProbability = useMemo(() => {
+    if (dealsWithProb.length === 0) return 0;
+    return dealsWithProb.reduce((s, d) => s + d.p_win, 0) / dealsWithProb.length;
+  }, [dealsWithProb]);
+  
+  
+  // Confidence distribution for current view
+  const confidenceCounts = useMemo(() => ({
+    high: dealsWithProb.filter(d => d.p_win >= 0.9).length,
+    medium: dealsWithProb.filter(d => d.p_win >= 0.7 && d.p_win < 0.9).length,
+    low: dealsWithProb.filter(d => d.p_win < 0.7).length,
+  }), [dealsWithProb]);
+  
+  // Historical win rate from ALL closed deals (not filtered)
+  const historicalWinRate = useMemo(() => {
+    const allClosed = deals.filter(d => d.status === "Won" || d.status === "Lost");
+    return allClosed.length === 0 ? 0 : allClosed.filter(d => d.status === "Won").length / allClosed.length;
+  }, [deals]);
+  
+  // Total lost deals count
+  const totalLostDeals = useMemo(() => deals.filter(d => d.status === "Lost").length, [deals]);
 
   // Loss Analysis
   const topLossReasons = useMemo(() => {
@@ -210,9 +225,10 @@ export default function App() {
     return Object.values(g).map(v => ({ ...v, avgP: v.count > 0 ? Math.round((v.total / v.count) * 100) : 0 }));
   }, [filtered]);
 
+  // Charts use current filtered data
   const byConfidence = useMemo(() => {
     const g = { High: 0, Medium: 0, Low: 0 };
-    for (const d of dealsWithProb) g[d.confidence]++;
+    for (const d of dealsWithProb) g[d.confidence] = (g[d.confidence] || 0) + 1;
     return Object.entries(g).map(([name, value]) => ({ name, value }));
   }, [dealsWithProb]);
 
@@ -258,8 +274,8 @@ export default function App() {
                 <div className="font-medium">{modelMetrics ? (parseFloat(modelMetrics.val_auc) * 100).toFixed(1) : "—"}%</div>
               </div>
               <div>
-                <div className="text-neutral-500 text-xs mb-0.5">Predictions</div>
-                <div className="font-medium">{dealsWithProb.length.toLocaleString()}</div>
+                <div className="text-neutral-500 text-xs mb-0.5">Total Deals</div>
+                <div className="font-medium">{deals.length.toLocaleString()}</div>
               </div>
               <Link to="/model-insights" className="text-amber-500 hover:text-amber-400 text-xs uppercase tracking-wider">
                 Model Details →
@@ -289,27 +305,37 @@ export default function App() {
         {activeTab === "overview" ? (
           <>
             {/* Metrics Row */}
-            <div className="grid grid-cols-4 gap-6 mb-8">
-              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Avg Probability</div>
-                <div className="text-3xl font-light text-amber-500">{(avgPWin * 100).toFixed(1)}%</div>
-              </div>
-              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">High Confidence</div>
-                <div className="text-3xl font-light text-emerald-500">{highConfCount.toLocaleString()}</div>
-                <div className="text-xs text-neutral-600 mt-1">{((highConfCount / Math.max(dealsWithProb.length, 1)) * 100).toFixed(0)}% of total</div>
-              </div>
-              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Win Rate</div>
-                <div className="text-3xl font-light">{(winRate * 100).toFixed(1)}%</div>
-                <div className="text-xs text-neutral-600 mt-1">Historical closed</div>
-              </div>
-              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
-                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Lost Deals</div>
-                <div className="text-3xl font-light text-red-400">{lostDealsCount.toLocaleString()}</div>
-                <div className="text-xs text-neutral-600 mt-1">
-                  <button onClick={() => setActiveTab("loss")} className="text-red-400 hover:underline">View analysis →</button>
+            <div className="grid grid-cols-3 gap-6 mb-8">
+              <div className="bg-amber-950/30 border border-amber-900/50 p-5">
+                <div className="text-amber-400/70 text-xs uppercase tracking-wider mb-2">
+                  {filters.status === "Open" ? "Avg Predicted p(Win)" : 
+                   filters.status === "Won" ? "Avg p(Win) — Won" :
+                   filters.status === "Lost" ? "Avg p(Win) — Lost" : "Avg p(Win)"}
                 </div>
+                <div className="text-3xl font-light text-amber-400">{(avgProbability * 100).toFixed(1)}%</div>
+                <div className="text-xs text-neutral-600 mt-1">{dealsWithProb.length.toLocaleString()} deals</div>
+              </div>
+              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
+                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Confidence Split</div>
+                <div className="flex items-baseline gap-3">
+                  <div className="text-center">
+                    <div className="text-xl text-emerald-500">{confidenceCounts.high.toLocaleString()}</div>
+                    <div className="text-xs text-neutral-600">High</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-xl text-amber-500">{confidenceCounts.medium.toLocaleString()}</div>
+                    <div className="text-xs text-neutral-600">Med</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-xl text-red-400">{confidenceCounts.low.toLocaleString()}</div>
+                    <div className="text-xs text-neutral-600">Low</div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-neutral-900/50 border border-neutral-800 p-5">
+                <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Historical Win Rate</div>
+                <div className="text-3xl font-light">{(historicalWinRate * 100).toFixed(1)}%</div>
+                <div className="text-xs text-neutral-600 mt-1">All time ({deals.filter(d => d.isClosed).length.toLocaleString()} closed)</div>
               </div>
             </div>
 
@@ -319,13 +345,6 @@ export default function App() {
                 <input type="text" placeholder="Search opportunities…" value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="flex-1 min-w-[200px] bg-transparent border border-neutral-700 px-4 py-2 text-sm focus:outline-none focus:border-amber-500/50 placeholder:text-neutral-600" />
-                <div className="flex items-center gap-2">
-                  <span className="text-xs text-neutral-500">Min prob:</span>
-                  <input type="range" min="0" max="100" value={filters.minProb}
-                    onChange={(e) => setFilters(f => ({ ...f, minProb: parseInt(e.target.value) }))}
-                    className="w-24 accent-amber-500" />
-                  <span className="text-xs text-amber-500 w-8">{filters.minProb}%</span>
-                </div>
                 <select value={filters.oppType} onChange={(e) => setFilters(f => ({ ...f, oppType: e.target.value }))}
                   className="bg-transparent border border-neutral-700 px-3 py-2 text-sm focus:outline-none">
                   {oppTypes.map(t => <option key={t} value={t} className="bg-neutral-900">{t === "All" ? "All types" : t}</option>)}
@@ -333,17 +352,17 @@ export default function App() {
                 <select value={filters.confidence} onChange={(e) => setFilters(f => ({ ...f, confidence: e.target.value }))}
                   className="bg-transparent border border-neutral-700 px-3 py-2 text-sm focus:outline-none">
                   <option value="All" className="bg-neutral-900">All confidence</option>
-                  <option value="High" className="bg-neutral-900">High</option>
-                  <option value="Medium" className="bg-neutral-900">Medium</option>
-                  <option value="Low" className="bg-neutral-900">Low</option>
+                  <option value="High" className="bg-neutral-900">High (≥90%)</option>
+                  <option value="Medium" className="bg-neutral-900">Medium (70-90%)</option>
+                  <option value="Low" className="bg-neutral-900">Low (&lt;70%)</option>
                 </select>
                 <select value={filters.status} onChange={(e) => setFilters(f => ({ ...f, status: e.target.value }))}
                   className="bg-transparent border border-neutral-700 px-3 py-2 text-sm focus:outline-none">
                   {statuses.map(s => <option key={s} value={s} className="bg-neutral-900">{s === "All" ? "All statuses" : s}</option>)}
                 </select>
-                <button onClick={() => { setFilters({ oppType: "All", confidence: "All", status: "All", minProb: 0 }); setSearchTerm(""); }}
+                <button onClick={() => { setFilters({ oppType: "All", confidence: "All", status: "Open" }); setSearchTerm(""); }}
                   className="text-xs text-neutral-500 hover:text-neutral-300">Reset</button>
-                <div className="text-xs text-neutral-500 ml-auto">{filtered.length.toLocaleString()} results</div>
+                <div className="text-xs text-neutral-500 ml-auto">{filtered.length.toLocaleString()} {filters.status === "All" ? "deals" : filters.status.toLowerCase() + " deals"}</div>
               </div>
             </div>
 
@@ -401,9 +420,9 @@ export default function App() {
                     </PieChart>
                   </ResponsiveContainer>
                   <div className="text-xs space-y-2">
-                    <div className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500" /> High</div>
-                    <div className="flex items-center gap-2"><div className="w-2 h-2 bg-amber-500" /> Medium</div>
-                    <div className="flex items-center gap-2"><div className="w-2 h-2 bg-red-500" /> Low</div>
+                    <div className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500" /> High (≥90%)</div>
+                    <div className="flex items-center gap-2"><div className="w-2 h-2 bg-amber-500" /> Medium (70-90%)</div>
+                    <div className="flex items-center gap-2"><div className="w-2 h-2 bg-red-500" /> Low (&lt;70%)</div>
                   </div>
                 </div>
               </div>
@@ -458,7 +477,11 @@ export default function App() {
                         <td className="px-5 py-3 text-neutral-500 text-xs">{d.stage}</td>
                         <td className="px-5 py-3 text-right">
                           {d.p_win !== null ? (
-                            <span className={d.p_win >= 0.9 ? 'text-emerald-500' : d.p_win >= 0.7 ? 'text-amber-500' : 'text-red-400'}>
+                            <span className={
+                              d.p_win >= 0.9 ? 'text-emerald-500' : 
+                              d.p_win >= 0.7 ? 'text-amber-500' : 
+                              'text-red-400'
+                            }>
                               {(d.p_win * 100).toFixed(1)}%
                             </span>
                           ) : '—'}
@@ -489,7 +512,7 @@ export default function App() {
             <div className="grid grid-cols-4 gap-6 mb-8">
               <div className="bg-red-950/30 border border-red-900/50 p-5">
                 <div className="text-red-400/70 text-xs uppercase tracking-wider mb-2">Total Lost</div>
-                <div className="text-3xl font-light text-red-400">{lostDealsCount.toLocaleString()}</div>
+                <div className="text-3xl font-light text-red-400">{totalLostDeals.toLocaleString()}</div>
               </div>
               <div className="bg-neutral-900/50 border border-neutral-800 p-5">
                 <div className="text-neutral-500 text-xs uppercase tracking-wider mb-2">Top Reason</div>
