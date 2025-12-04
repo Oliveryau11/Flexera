@@ -53,7 +53,6 @@ from sklearn.metrics import (
 from sklearn.inspection import permutation_importance
 from scipy import sparse
 
-# NEW: XGBoost
 from xgboost import XGBClassifier
 
 # ----------------------- Config -----------------------
@@ -69,6 +68,11 @@ AMOUNT_CANDIDATES= ["Amount", "Opportunity Line ACV USD", "ACV", "ARR"]
 STAGE_COL        = "Stage"
 CLOSE_DATE_COL   = "Close Date"
 CREATED_DATE_COL = "Created Date"   # for optional temporal split
+REGION_CANDIDATES        = ["Account Region", "Assigned to Region"]
+COUNTRY_CANDIDATES       = ["Account Country", "Account Shipping Country"]
+COMPETITOR_CANDIDATES    = ["Primary Competitor", "Opportunity Competitor Solution Purchased"]
+PRODUCT_CANDIDATES       = ["Product Name", "Flexera/Snow Product", "Product Reporting Product Platform"]
+ORG_NAME_CANDIDATES      = ["Calculated Organization Name", "Organization Name"]
 
 TARGET_PRECISION = 0.95
 TEST_SIZE        = 0.30
@@ -126,12 +130,9 @@ def _combine_date_from_parts(df: pd.DataFrame,
 
 def load_data() -> pd.DataFrame:
     df = pd.read_excel(EXCEL_PATH, sheet_name=SHEET)
-    # Remove fully duplicated columns (some Excel exports repeat headers)
     df = df.loc[:, ~df.columns.duplicated()].copy()
-    # Drop fully blank rows (all NaN)
     df = df.dropna(how="all")
 
-    # --- NEW: build Created Date & Close Date from PowerBI Y/M/Day columns ---
     _combine_date_from_parts(
         df,
         "Opportunity Created Date - Year",
@@ -152,26 +153,39 @@ def load_data() -> pd.DataFrame:
 def normalize_str_col(s: pd.Series) -> pd.Series:
     return s.astype(str).str.strip().str.replace(r"\s+", " ", regex=True)
 
+# ----------------------- Target mapping helpers -----------------------
+
+POS_EXACT = {"yes", "y", "true", "won", "win", "1", "closed won"}
+NEG_EXACT = {"no", "n", "false", "lost", "lose", "0", "closed lost"}
+
+def outcome_from_raw(val: object) -> str:
+    if val is None:
+        return "Open/Other"
+    s = str(val).strip().lower()
+    if s in POS_EXACT:
+        return "Closed Won"
+    if s in NEG_EXACT:
+        return "Closed Lost"
+    return "Open/Other"
+
+
 def map_target(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Map CRO Win to y in {0,1}, robust to variants like
-    'Closed Won', 'Closed Lost', 'Yes/No', etc.
-    """
     if TARGET_COL not in df.columns:
         raise ValueError(f"Target column '{TARGET_COL}' not found in data.")
 
-    col_norm = normalize_str_col(df[TARGET_COL]).str.lower()
-
-    pos_exact = {"yes", "y", "true", "won", "win", "1", "closed won"}
-    neg_exact = {"no", "n", "false", "lost", "lose", "0", "closed lost"}
+    col_norm = (
+        df[TARGET_COL]
+        .astype(str)
+        .str.strip()
+        .str.replace(r"\s+", " ", regex=True)
+        .str.lower()
+    )
 
     y = pd.Series(np.nan, index=df.index, dtype="float")
 
-    # exact matches
-    y[col_norm.isin(pos_exact)] = 1
-    y[col_norm.isin(neg_exact)] = 0
+    y[col_norm.isin(POS_EXACT)] = 1
+    y[col_norm.isin(NEG_EXACT)] = 0
 
-    # fuzzy contains for 'won' / 'lost'
     won_mask = col_norm.str.contains("won", na=False) | col_norm.str.contains("赢", na=False)
     lost_mask = col_norm.str.contains("lost", na=False) | col_norm.str.contains("输", na=False)
 
@@ -180,10 +194,12 @@ def map_target(df: pd.DataFrame) -> pd.DataFrame:
 
     df = df.copy()
     df["y"] = y
+
     return df
 
+
 # -------- Feature picking (leak-safe + ID-like value guard) --------
-ID_VALUE_RE = re.compile(r"^[A-Za-z0-9\-_/]{6,}$")  # token-ish values
+ID_VALUE_RE = re.compile(r"^[A-Za-z0-9\-_/]{6,}$")
 
 def looks_like_id_value(series: pd.Series, sample_size: int = 200, ratio_thresh: float = 0.6) -> bool:
     s = series.dropna().astype(str)
@@ -200,11 +216,9 @@ def pick_cols(df: pd.DataFrame):
     - drop columns whose NAME contains: id, stage, forecast, cro win, win, loss
     - for categoricals: drop ID-like VALUE columns and high-cardinality (likely-ID) columns
     """
-    # 0) drop all-missing
     keep = [c for c in df.columns if df[c].notna().any()]
     df = df[keep].copy()
 
-    # 1) normalize booleans
     for c in df.columns:
         if pd.api.types.is_bool_dtype(df[c]):
             df[c] = df[c].astype(int)
@@ -221,7 +235,6 @@ def pick_cols(df: pd.DataFrame):
     prelim_num = [c for c in prelim_num if not bad_name(c)]
     prelim_cat = [c for c in prelim_cat if not bad_name(c)]
 
-    # value-level guards on categoricals
     def is_high_card(col):
         s = df[col].dropna()
         if len(s) == 0:
@@ -232,15 +245,14 @@ def pick_cols(df: pd.DataFrame):
 
     cat_cols = []
     for c in prelim_cat:
-        if looks_like_id_value(df[c]):  # token-like column
+        if looks_like_id_value(df[c]):
             continue
-        if is_high_card(c):             # likely ID-valued column
+        if is_high_card(c):
             continue
         cat_cols.append(c)
 
     num_cols = prelim_num
 
-    # dedup & disjoint
     cat_cols = list(dict.fromkeys(cat_cols))
     num_cols = [c for c in dict.fromkeys(num_cols) if c not in cat_cols]
     return cat_cols, num_cols
@@ -288,12 +300,14 @@ def get_models(pre):
         ("clf", XGBClassifier(
             objective="binary:logistic",
             eval_metric="logloss",
-            n_estimators=400,
-            learning_rate=0.05,
-            max_depth=4,
-            subsample=0.8,
-            colsample_bytree=0.8,
-            reg_lambda=1.0,
+            n_estimators=250,
+            learning_rate=0.07,
+            max_depth=3,
+            min_child_weight=5,
+            subsample=0.7,
+            colsample_bytree=0.7,
+            reg_lambda=5.0,
+            reg_alpha=0.1,
             n_jobs=-1,
             random_state=RANDOM_STATE,
             tree_method="hist",
@@ -323,16 +337,15 @@ def pick_precision_first_threshold(y_true, prob, target_prec=0.8):
         best_i = idx[np.argmax(recall[idx])]
         thr = float(thresholds[best_i]) if best_i < len(thresholds) else 1.0
         return thr, True
-    # fallback: best-F1
     f1s = 2 * (precision * recall) / np.maximum(precision + recall, 1e-9)
     best_i = np.nanargmax(f1s)
     thr = float(thresholds[best_i]) if best_i < len(thresholds) else 0.5
     return thr, False
 
 def get_underlying_estimator(calibrated):
-    if hasattr(calibrated, "estimator"):       # sklearn >= 1.6
+    if hasattr(calibrated, "estimator"):
         return calibrated.estimator
-    if hasattr(calibrated, "base_estimator"):  # sklearn <= 1.5
+    if hasattr(calibrated, "base_estimator"):
         return calibrated.base_estimator
     raise AttributeError("Cannot find underlying estimator on CalibratedClassifierCV")
 
@@ -349,12 +362,10 @@ def calibration_table(y_true, prob, bins=10):
 
 def extract_ohe_feature_names(fitted_pre, cat_cols):
     names = []
-    # numeric transformer
     if len(fitted_pre.transformers_) > 0 and fitted_pre.transformers_[0][0] == "num":
         num_sel = fitted_pre.transformers_[0][2]
         if isinstance(num_sel, (list, tuple)):
             names.extend(list(num_sel))
-    # categorical transformer
     if len(fitted_pre.transformers_) > 1 and fitted_pre.transformers_[1][0] == "cat":
         ohe = fitted_pre.transformers_[1][1].named_steps.get("ohe", None)
         if ohe is not None:
@@ -374,14 +385,13 @@ def per_example_reason_codes_logreg(calibrated, X_val, cat_cols, topk=3):
         contrib = Xtr * coef
 
     feat_names = extract_ohe_feature_names(pre, cat_cols)
-    # group by original feature (before OHE): split at last underscore
     groups = []
     num_names = list(pre.transformers_[0][2]) if len(pre.transformers_) > 0 else []
     for f in feat_names:
-        if f in num_names:  # numeric original name
+        if f in num_names:
             groups.append(f)
         else:
-            groups.append(f.rsplit("_", 1)[0])  # 'Account Region_US' -> 'Account Region'
+            groups.append(f.rsplit("_", 1)[0])
 
     groups = np.array(groups)
 
@@ -431,21 +441,48 @@ def build_loss_drivers(train_df, fields=None, min_count=30):
 
     return out
 
-def group_feature_importance(imp_df: pd.DataFrame) -> pd.DataFrame:
-    bases = []
+def group_feature_importance(
+    imp_df: pd.DataFrame,
+    cat_cols: List[str],
+    num_cols: List[str],
+) -> pd.DataFrame:
+    """
+    Aggregate permutation importance back to ORIGINAL column names.
+
+    - numeric features: name is already the original column name.
+    - categorical features: OneHotEncoder names look like
+        "Column Name_category value"
+      we map them back by matching the prefix "Column Name_".
+    """
+    base_fields: List[str] = []
+
     for f in imp_df["feature"].astype(str):
-        if "_" in f:
-            base = f.rsplit("_", 1)[0]
-        else:
-            base = f
-        bases.append(base)
+        if f in num_cols:
+            base_fields.append(f)
+            continue
+
+        matched = None
+        for c in cat_cols:
+            prefix = c + "_"
+            if f.startswith(prefix):
+                matched = c
+                break
+
+        if matched is None:
+            matched = f.split("_", 1)[0]
+
+        base_fields.append(matched)
+
     g = imp_df.copy()
-    g["base_field"] = bases
+    g["base_field"] = base_fields
+
     grouped = (
         g.groupby("base_field", as_index=False)
-         .agg(importance_mean_sum=("importance_mean", "sum"),
-              importance_mean_max=("importance_mean", "max"),
-              features_count=("feature", "count"))
+         .agg(
+             importance_mean_sum=("importance_mean", "sum"),
+             importance_mean_max=("importance_mean", "max"),
+             features_count=("feature", "count"),
+         )
          .sort_values("importance_mean_sum", ascending=False)
     )
     return grouped
@@ -459,9 +496,6 @@ def segment_performance(
     min_rows: int = 20,
     outfile: Optional[Path] = None,
 ) -> pd.DataFrame:
-    """
-    Compute per-segment performance (precision/recall/F1/etc.) for labeled data.
-    """
     df = df_labeled.copy()
     df["p_win"] = probs
     df["is_win"] = (df["y"] == 1).astype(int)
@@ -503,7 +537,6 @@ def segment_performance(
 
     return out
 
-# -------- NEW: loss reasons by segment helper --------
 def loss_reasons_by_segment(
     train_df: pd.DataFrame,
     segment_col: str,
@@ -511,15 +544,11 @@ def loss_reasons_by_segment(
     min_count: int = 10,
     outfile: Optional[Path] = None,
 ) -> pd.DataFrame:
-    """
-    For closed-lost opportunities (y=0), compute loss reason distribution
-    within each segment (e.g., Region / Deal Size Bucket).
-    """
     if reason_cols is None:
         reason_cols = [
             "Opportunity Reason Lost",
             "Opportunity Reason Lost Detail",
-            "Opportunity Reason of Churn",   # NEW
+            "Opportunity Reason of Churn",
         ]
 
     if segment_col not in train_df.columns:
@@ -533,7 +562,7 @@ def loss_reasons_by_segment(
         return out
 
     df = train_df.copy()
-    df = df[df["y"] == 0].copy()  # only lost
+    df = df[df["y"] == 0].copy()
 
     if df.empty:
         out = pd.DataFrame([{"info": "No lost opportunities (y=0) in train_df."}])
@@ -585,17 +614,12 @@ def loss_reasons_by_segment(
 
     return out
 
-# -------- NEW: overall loss reasons helper --------
 def overall_loss_reasons(
     train_df: pd.DataFrame,
     reason_cols: Optional[List[str]] = None,
     min_count: int = 10,
     outfile: Optional[Path] = None,
 ) -> pd.DataFrame:
-    """
-    Overall top loss reasons (no segment), just count how often each reason appears
-    among y=0 (lost) opportunities.
-    """
     if reason_cols is None:
         reason_cols = [
             "Opportunity Reason Lost",
@@ -642,15 +666,10 @@ def overall_loss_reasons(
 
     return out
 
-# -------- NEW: K-Fold model selection helper --------
 def cross_validate_models(models: Dict[str, Pipeline],
                           X: pd.DataFrame,
                           y: np.ndarray,
                           n_splits: int = 5) -> Dict[str, Dict[str, float]]:
-    """
-    Run StratifiedKFold CV for each candidate model (without calibration),
-    return mean AUC and PR-AUC per model.
-    """
     cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=RANDOM_STATE)
     metrics = {name: {"cv_auc": [], "cv_prauc": []} for name in models}
 
@@ -674,7 +693,6 @@ def cross_validate_models(models: Dict[str, Pipeline],
         }
     return out
 
-# -------- NEW: temporal or random train/val split helper --------
 def make_train_val_split(train_df: pd.DataFrame,
                          feat_cols: List[str]):
 
@@ -699,7 +717,6 @@ def make_train_val_split(train_df: pd.DataFrame,
             y_val   = train_df.loc[val_idx, "y"].astype(int).values
             return X_train, X_val, y_train, y_val
 
-    # default: stratified random split
     print("[Split] Using stratified random train/val split")
     X = train_df[feat_cols].copy()
     y = train_df["y"].astype(int).values
@@ -710,10 +727,8 @@ def make_train_val_split(train_df: pd.DataFrame,
 
 # ----------------------- Main -----------------------
 def train_and_score():
-    # ---------- Load ----------
     raw = load_data()
 
-    # Diagnostics: raw shape & target distribution before mapping
     print(f"[Diag] Raw shape: {raw.shape}")
     if TARGET_COL in raw.columns:
         print(f"[Diag] Raw {TARGET_COL} value counts (raw strings):")
@@ -721,22 +736,18 @@ def train_and_score():
 
     raw = map_target(raw)
 
-    # Diagnostics: y distribution after mapping
     print("[Diag] y value counts after mapping (1=Won, 0=Lost, NaN=Other/Open):")
     print(raw["y"].value_counts(dropna=False))
 
-    # Train / score split by target availability
     train_df = raw[raw["y"].isin([0, 1])].copy()
-    score_df = raw[~raw["y"].isin([0, 1])].copy()  # unknown/NA goes here
+    score_df = raw[~raw["y"].isin([0, 1])].copy()
 
     print(f"[Diag] Trainable rows: {len(train_df)} | To-score rows: {len(score_df)}")
 
-    # 1) Pick candidate columns (leak-safe) on FULL train_df
     feature_space_df = train_df.drop(columns=[TARGET_COL, "y"], errors="ignore")
     cat_cols, num_cols = pick_cols(feature_space_df)
     feat_cols = cat_cols + num_cols
 
-    # Save used features
     used = pd.DataFrame({
         "feature_type": (["categorical"] * len(cat_cols)) + (["numeric"] * len(num_cols)),
         "feature_name": feat_cols
@@ -745,11 +756,9 @@ def train_and_score():
     print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'used_features.csv'}")
     print(f"[Diag] #categorical={len(cat_cols)}  #numeric={len(num_cols)}")
 
-    # X/y on full train_df（用于 K-Fold / split）
     X_full = train_df[feat_cols].copy()
     y_full = train_df["y"].astype(int).values
 
-    # 2) Build preprocessor & models
     pre = build_preprocessor(cat_cols, num_cols)
     models = get_models(pre)
 
@@ -772,9 +781,8 @@ def train_and_score():
     X_val   = X_val[keep_cols].copy()
     cat_cols = [c for c in cat_cols if c in keep_cols]
     num_cols = [c for c in num_cols if c in keep_cols]
-    feat_cols = cat_cols + num_cols  # finalized training feature order
+    feat_cols = cat_cols + num_cols
 
-    # 4) Rebuild preprocessor & models AFTER columns are finalized
     pre = build_preprocessor(cat_cols, num_cols)
     models = get_models(pre)
 
@@ -783,7 +791,7 @@ def train_and_score():
     best_sel_metric = -1.0
 
     for name, pipe in models.items():
-        cal = CalibratedClassifierCV(estimator=pipe, method="isotonic", cv=3)
+        cal = CalibratedClassifierCV(estimator=pipe, method="sigmoid", cv=3)
         cal.fit(X_train, y_train)
 
         val_prob = cal.predict_proba(X_val)[:, 1]
@@ -791,12 +799,10 @@ def train_and_score():
         prauc = average_precision_score(y_val, val_prob)
         brier = brier_score_loss(y_val, val_prob)
 
-        # thresholds
         metrics_05 = evaluate_at_threshold(y_val, val_prob, 0.5)
         thr_prec, hit = pick_precision_first_threshold(y_val, val_prob, TARGET_PRECISION)
         metrics_prec = evaluate_at_threshold(y_val, val_prob, thr_prec)
 
-        # attach CV metrics if available
         cv_auc   = cv_metrics.get(name, {}).get("cv_auc", np.nan)
         cv_prauc = cv_metrics.get(name, {}).get("cv_prauc", np.nan)
 
@@ -839,14 +845,11 @@ def train_and_score():
             best_val_prob = val_prob
             best_thr_prec = thr_prec
 
-    # write metrics
     metrics_df = pd.DataFrame(rows)
     metrics_df.to_csv(OUT_METRICS, index=False)
     print(f"[Metrics] wrote -> {OUT_METRICS}")
     print(metrics_df)
 
-    # ---------- Feedback pack on validation ----------
-    # 1) error analysis: FPs and FNs at the precision-first threshold
     val_pred = (best_val_prob >= best_thr_prec).astype(int)
     err_mask = val_pred != y_val
 
@@ -855,7 +858,6 @@ def train_and_score():
     err_df["p_win"] = best_val_prob
     err_df["y_pred"] = val_pred
     err_df["error_type"] = np.where((val_pred == 1) & (y_val == 0), "FP", "FN")
-
     err_df = err_df.loc[err_mask].copy()
 
     if len(err_df) == 0:
@@ -878,7 +880,6 @@ def train_and_score():
         err_df.to_csv(FEEDBACK_DIR / "error_analysis_val.csv", index=False)
         print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'error_analysis_val.csv'}")
 
-    # 2) global feature importance (permutation on validation)
     try:
         base = get_underlying_estimator(best_cal)
         base.fit(X_train, y_train)
@@ -902,7 +903,9 @@ def train_and_score():
                 "importance_std": r.importances_std[:k]
             }).sort_values("importance_mean", ascending=False)
             imp.to_csv(FEEDBACK_DIR / "feature_importance.csv", index=False)
-            group_feature_importance(imp).to_csv(FEEDBACK_DIR / "feature_importance_grouped.csv", index=False)
+            group_feature_importance(imp, cat_cols, num_cols).to_csv(
+                FEEDBACK_DIR / "feature_importance_grouped.csv", index=False
+            )
         print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'feature_importance.csv'}")
         print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'feature_importance_grouped.csv'}")
     except Exception as e:
@@ -910,12 +913,10 @@ def train_and_score():
         pd.DataFrame([{"info": f"Permutation importance failed: {e}"}]) \
           .to_csv(FEEDBACK_DIR / "feature_importance.csv", index=False)
 
-    # 3) calibration table (deciles)
     calib = calibration_table(y_val, best_val_prob, bins=10)
     calib.to_csv(FEEDBACK_DIR / "calibration_table.csv", index=False)
     print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'calibration_table.csv'}")
 
-    # 4) loss drivers on training set (closed-lost categories with enough support)
     dynamic_min_count = 1000
     loss_drv = build_loss_drivers(train_df, min_count=dynamic_min_count)
     if loss_drv.empty:
@@ -926,7 +927,6 @@ def train_and_score():
         loss_drv.to_csv(FEEDBACK_DIR / "loss_drivers.csv", index=False)
     print(f"[Feedback] wrote -> {FEEDBACK_DIR / 'loss_drivers.csv'}")
 
-    # NEW: overall top loss reasons (no segment)
     overall_loss_reasons(
         train_df,
         reason_cols=[
@@ -938,13 +938,11 @@ def train_and_score():
         outfile=FEEDBACK_DIR / "loss_reasons_overall.csv",
     )
 
-    # ---------- segment analysis (regions, deal types, combos) ----------
     if best_cal is not None and len(train_df) > 0:
         X_all = train_df[feat_cols].copy()
         X_all = X_all[[c for c in feat_cols if c in X_all.columns]]
         prob_all = best_cal.predict_proba(X_all)[:, 1]
 
-        # Regions: EMEA / APAC / AMER etc.
         region_cols = ["Account Region", "Assigned to Region"]
         segment_performance(
             train_df,
@@ -955,7 +953,6 @@ def train_and_score():
             outfile=FEEDBACK_DIR / "segment_perf_regions.csv",
         )
 
-        # Deal types: New / Renewal / Expansion etc.
         dealtype_cols = ["Sale Type", "Opportunity Record Type"]
         segment_performance(
             train_df,
@@ -966,7 +963,6 @@ def train_and_score():
             outfile=FEEDBACK_DIR / "segment_perf_dealtypes.csv",
         )
 
-        # Region × Sale Type combo
         if ("Account Region" in train_df.columns) and ("Sale Type" in train_df.columns):
             combo_df = train_df.copy()
             combo_df["Region x SaleType"] = (
@@ -985,7 +981,6 @@ def train_and_score():
         else:
             print("[Seg] Skipping Region x SaleType combo (columns missing).")
 
-        # ---------- NEW: loss reasons by Region ----------
         region_col = None
         for cand in ["Account Region", "Assigned to Region"]:
             if cand in train_df.columns:
@@ -1007,7 +1002,6 @@ def train_and_score():
         else:
             print("[LossReason] No region column found for loss analysis.")
 
-        # NEW: loss reasons by Country
         country_col = None
         for cand in ["Account Country", "Account Shipping Country"]:
             if cand in train_df.columns:
@@ -1029,7 +1023,6 @@ def train_and_score():
         else:
             print("[LossReason] No country column found for loss analysis.")
 
-        # ---------- NEW: loss reasons by Deal Size (bucketed) ----------
         amount_col = first_present(train_df, AMOUNT_CANDIDATES)
         if (amount_col is not None) and (amount_col in train_df.columns):
             tmp = train_df.copy()
@@ -1057,7 +1050,7 @@ def train_and_score():
         else:
             print("[LossReason] No amount column found for deal size analysis.")
 
-    # ---------- Score unknown/open opportunities ----------
+        # ---------- Score unknown/open opportunities ----------
     if best_cal is not None and not score_df.empty:
         needed = feat_cols  # finalized training feature order
 
@@ -1070,29 +1063,60 @@ def train_and_score():
 
         prob = best_cal.predict_proba(X_score)[:, 1]
 
-        id_col    = first_present(score_df, ID_CANDIDATES)
-        name_col  = first_present(score_df, NAME_CANDIDATES)
-        owner_col = first_present(score_df, OWNER_CANDIDATES)
-        amount_col= first_present(score_df, AMOUNT_CANDIDATES)
+        id_col     = first_present(score_df, ID_CANDIDATES)
+        name_col   = first_present(score_df, NAME_CANDIDATES)
+        owner_col  = first_present(score_df, OWNER_CANDIDATES)
+        amount_col = first_present(score_df, AMOUNT_CANDIDATES)
 
         keep_cols_raw = [id_col, name_col, STAGE_COL, owner_col, CLOSE_DATE_COL, amount_col]
         keep_cols = [c for c in keep_cols_raw if c and c in score_df.columns]
 
         out = score_df[keep_cols].copy() if keep_cols else pd.DataFrame(index=score_df.index)
 
-        out.rename(columns={id_col: "Opportunity ID",
-                            name_col: "Opportunity Name",
-                            owner_col: "Owner",
-                            amount_col: "Amount"}, inplace=True)
+        rename_map = {}
+        if id_col and id_col in out.columns:
+            rename_map[id_col] = "Opportunity ID"
+        if name_col and name_col in out.columns:
+            rename_map[name_col] = "Opportunity Name"
+        if owner_col and owner_col in out.columns:
+            rename_map[owner_col] = "Owner"
+        if amount_col and amount_col in out.columns:
+            rename_map[amount_col] = "Amount"
+        out.rename(columns=rename_map, inplace=True)
+
+        # ------------- 新增：业务字段 -------------
+        region_col     = first_present(score_df, REGION_CANDIDATES)
+        country_col    = first_present(score_df, COUNTRY_CANDIDATES)
+        competitor_col = first_present(score_df, COMPETITOR_CANDIDATES)
+        product_col    = first_present(score_df, PRODUCT_CANDIDATES)
+        org_name_col   = first_present(score_df, ORG_NAME_CANDIDATES)
+
+        if region_col and region_col in score_df.columns:
+            out["Region"] = score_df.loc[out.index, region_col]
+        if country_col and country_col in score_df.columns:
+            out["Country"] = score_df.loc[out.index, country_col]
+        if competitor_col and competitor_col in score_df.columns:
+            out["Top Competitors"] = score_df.loc[out.index, competitor_col]
+        if product_col and product_col in score_df.columns:
+            out["Product"] = score_df.loc[out.index, product_col]
+        if org_name_col and org_name_col in score_df.columns:
+            out["Calculated Organization Name"] = score_df.loc[out.index, org_name_col]
+
+        # Outcome（open / closed）
+        if TARGET_COL in score_df.columns:
+            out["Outcome"] = score_df.loc[out.index, TARGET_COL].map(outcome_from_raw)
+        else:
+            out["Outcome"] = "Open/Other"
+
         out["win_prob"] = prob
         out["pred_at_prec_thr"] = (out["win_prob"] >= best_thr_prec).astype(int)
+
         out = out.sort_values("win_prob", ascending=False)
         out.to_csv(OUT_PROBS, index=False)
         print(f"[Scoring] wrote -> {OUT_PROBS}")
     else:
         print("[Info] No unknown/open opportunities to score.")
 
-    # ---------- Model registry snapshot ----------
     try:
         registry_entry = {
             "timestamp": datetime.utcnow().isoformat() + "Z",
